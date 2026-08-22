@@ -92,6 +92,26 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
+/* Smooth green-to-photo blend on the left edge of the photo panel */
+.hero-photo-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 160px;
+  background: linear-gradient(
+    to right,
+    #0B3D2E 0%,
+    rgba(11, 61, 46, 0.85) 25%,
+    rgba(11, 61, 46, 0.45) 55%,
+    rgba(11, 61, 46, 0.10) 80%,
+    transparent 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
 .hero-tech-img {
   width: 100%;
   height: 100%;
