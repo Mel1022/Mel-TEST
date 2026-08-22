@@ -99,11 +99,11 @@ export default function HomePage() {
         style={{
           minHeight: "600px",
           backgroundImage: [
-            "linear-gradient(to right, rgba(7,31,23,0.98) 0%, rgba(11,61,46,0.97) 30%, rgba(11,61,46,0.80) 52%, rgba(11,61,46,0.40) 72%, rgba(11,61,46,0.15) 100%)",
+            "linear-gradient(to right, rgba(7,31,23,1) 0%, rgba(7,31,23,0.98) 32%, rgba(7,31,23,0.72) 44%, rgba(7,31,23,0.18) 56%, rgba(7,31,23,0) 66%)",
             "url('/images/hero-tech.jpg')",
           ].join(", "),
           backgroundSize: "cover",
-          backgroundPosition: "right center",
+          backgroundPosition: "center center",
           backgroundRepeat: "no-repeat",
           /* Fallback when no photo: pure dark gradient */
           backgroundColor: "#071f17",
