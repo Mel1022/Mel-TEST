@@ -20,7 +20,7 @@ export default function PageHero({
   safetyWarning,
 }: PageHeroProps) {
   return (
-    <section className="bg-navy">
+    <section className="bg-navy-dark">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
         {eyebrow && (
           <p className="text-gold font-bold uppercase tracking-wide text-sm mb-3">{eyebrow}</p>
@@ -35,7 +35,7 @@ export default function PageHero({
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href={ctaHref}
-            className="inline-flex items-center justify-center rounded-card bg-gold px-7 py-3.5 text-sm font-bold text-navy shadow-card hover:bg-gold-dark hover:text-white transition-colors w-full sm:w-auto"
+            className="inline-flex items-center justify-center rounded-card bg-gold px-7 py-3.5 text-sm font-bold text-navy-dark shadow-card hover:bg-gold-dark hover:text-white transition-colors w-full sm:w-auto"
           >
             {ctaLabel}
           </Link>
@@ -44,7 +44,7 @@ export default function PageHero({
             className="inline-flex items-center justify-center gap-2 rounded-card border-2 border-white/40 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors w-full sm:w-auto"
           >
             <IconPhone className="w-4 h-4" />
-            Call the Champ
+            {siteConfig.phone.display}
           </a>
         </div>
 

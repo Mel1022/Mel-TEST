@@ -1,36 +1,48 @@
-// All business-identifying details below are placeholders.
-// Replace them with confirmed information before launch — nothing here is invented fact.
-
 export const siteConfig = {
   name: "DoorChamp",
   descriptor: "Garage Door Service & Repair",
-  tagline: "When Your Door Needs a Champ.",
-  subTagline: "Diagnose. Explain. Fix.",
-  url: "https://example.com", // [WEBSITE URL]
+  tagline: "Richmond's Trusted Garage Door Experts.",
+  subTagline: "Same-Day Service · Family-Owned · Licensed & Insured",
+  url: "https://doorchamp.ca",
   phone: {
-    display: "[PHONE NUMBER]",
-    href: "tel:+10000000000", // [PHONE NUMBER] — placeholder tel link, update before launch
+    display: "(778) 800-0769",
+    href: "tel:+17788000769",
   },
-  email: "[EMAIL ADDRESS]",
+  email: "service@doorchamp.ca",
   address: {
-    line: "[BUSINESS ADDRESS]",
+    line: "12740 Trites Rd Unit 24B, Richmond BC V7E 3R8",
+    street: "12740 Trites Rd Unit 24B",
+    city: "Richmond",
+    province: "BC",
+    postal: "V7E 3R8",
+    country: "CA",
   },
-  hours: "[BUSINESS HOURS]",
+  hours: "Mon–Sat 7am–8pm",
   social: {
-    facebook: "#", // [FACEBOOK URL]
-    instagram: "#", // [INSTAGRAM URL]
-    google: "#", // [GOOGLE BUSINESS PROFILE URL]
+    facebook: "#",
+    instagram: "#",
+    google: "#",
   },
 };
 
+export const residentialNav = [
+  { label: "Repair", fullLabel: "Garage Door Repair", href: "/garage-door-repair/" },
+  { label: "Springs", fullLabel: "Spring Repair & Replacement", href: "/garage-door-spring-repair/" },
+  { label: "Openers", fullLabel: "Opener Service & Install", href: "/garage-door-openers/" },
+  { label: "Installation", fullLabel: "New Door Installation", href: "/garage-door-installation/" },
+  { label: "Maintenance", fullLabel: "Maintenance & Tune-Up", href: "/garage-door-maintenance/" },
+];
+
 export const primaryNav = [
   { label: "Repair", fullLabel: "Garage Door Repair", href: "/garage-door-repair/" },
-  { label: "Springs", fullLabel: "Spring Replacement", href: "/garage-door-spring-replacement/" },
-  { label: "Openers", fullLabel: "Opener Service", href: "/garage-door-opener-repair-installation/" },
-  { label: "Installation", fullLabel: "Installation", href: "/garage-door-installation/" },
-  { label: "Maintenance", fullLabel: "Maintenance", href: "/garage-door-maintenance/" },
-  { label: "Parts", fullLabel: "Parts & Components", href: "/garage-door-parts-components/" },
+  { label: "Springs", fullLabel: "Spring Repair & Replacement", href: "/garage-door-spring-repair/" },
+  { label: "Openers", fullLabel: "Opener Service & Install", href: "/garage-door-openers/" },
+  { label: "Installation", fullLabel: "New Door Installation", href: "/garage-door-installation/" },
+  { label: "Maintenance", fullLabel: "Maintenance & Tune-Up", href: "/garage-door-maintenance/" },
+  { label: "Commercial", fullLabel: "Commercial Services", href: "/commercial/" },
+  { label: "Strata", fullLabel: "Strata & Multi-Family", href: "/strata/" },
   { label: "Service Areas", fullLabel: "Service Areas", href: "/service-areas/" },
-  { label: "About", fullLabel: "About", href: "/about/" },
+  { label: "About", fullLabel: "About DoorChamp", href: "/about/" },
+  { label: "FAQ", fullLabel: "FAQ", href: "/faq/" },
   { label: "Contact", fullLabel: "Contact", href: "/contact/" },
 ];

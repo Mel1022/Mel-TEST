@@ -1,123 +1,186 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TrustBadges from "@/components/TrustBadges";
-import ProblemCard from "@/components/ProblemCard";
-import ServiceCard from "@/components/ServiceCard";
-import ChampCheck from "@/components/ChampCheck";
 import CTASection from "@/components/CTASection";
-import TestimonialCard from "@/components/TestimonialCard";
 import FAQAccordion from "@/components/FAQAccordion";
-import HeroIllustration from "@/components/HeroIllustration";
-import { IconPhone, IconCheck } from "@/components/Icons";
-import { commonProblems, services, generalFaqs } from "@/lib/services";
+import { IconPhone, IconCheck, IconWrench, IconSpring, IconOpener, IconInstall, IconMaintenance } from "@/components/Icons";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Garage Door Service & Repair | DoorChamp",
+  title: "Richmond Garage Door Repair & Service | DoorChamp",
   description:
-    "Professional garage door repair, spring replacement, opener service, installation and maintenance. When your door needs a champ, call DoorChamp.",
+    "Same-day garage door repair, spring replacement, and opener service in Richmond BC. Family-owned since 2007. Licensed, insured & WCB compliant. Call (778) 800-0769.",
   alternates: { canonical: "/" },
 };
 
-const whyChoose = [
+const services = [
   {
-    title: "Professional Service",
-    body: "From the first call to the final check, we treat your garage door system like the mechanical asset it is.",
+    icon: <IconWrench className="w-7 h-7" />,
+    title: "Garage Door Repair",
+    body: "Same-day repair for broken panels, cables, rollers, tracks, and more. We fix it fast, we fix it right.",
+    href: "/garage-door-repair/",
   },
   {
-    title: "Straightforward Recommendations",
-    body: "We explain what we find and why we recommend it — so you can make an informed decision.",
+    icon: <IconSpring className="w-7 h-7" />,
+    title: "Spring Repair & Replacement",
+    body: "Torsion and extension spring service done safely by a licensed technician. Never attempt springs DIY.",
+    href: "/garage-door-spring-repair/",
   },
   {
-    title: "Quality Parts",
-    body: "We use parts suited to your specific door and opener, not a one-size-fits-all fix.",
+    icon: <IconOpener className="w-7 h-7" />,
+    title: "Opener Service & Install",
+    body: "LiftMaster, Chamberlain, Genie, and all major brands. Repair, reprogram, or upgrade your opener.",
+    href: "/garage-door-openers/",
   },
   {
-    title: "Respect for Your Home",
-    body: "Technicians who show up prepared and treat your property the way they'd want theirs treated.",
+    icon: <IconInstall className="w-7 h-7" />,
+    title: "New Door Installation",
+    body: "Steel, aluminum, wood composite — we supply and install quality doors with full warranty.",
+    href: "/garage-door-installation/",
   },
   {
-    title: "Reliable Communication",
-    body: "Clear updates on what's wrong, what it takes to fix it, and what to expect next.",
+    icon: <IconMaintenance className="w-7 h-7" />,
+    title: "Maintenance & Tune-Up",
+    body: "Annual servicing extends door life by years. We lubricate, adjust, balance, and inspect every component.",
+    href: "/garage-door-maintenance/",
+  },
+  {
+    icon: <IconWrench className="w-7 h-7" />,
+    title: "Commercial & Strata",
+    body: "Industrial doors, loading docks, sliding gates, and full strata management programs.",
+    href: "/commercial/",
   },
 ];
 
+const problems = [
+  { title: "Door Won't Open or Close", body: "Could be a broken spring, dead opener, or sensor misalignment — we diagnose it on-site." },
+  { title: "Loud Grinding or Banging", body: "Worn rollers, loose hardware, or a spring under stress. Don't ignore loud noises." },
+  { title: "Door Off Its Track", body: "A derailed door is a safety hazard. Call immediately — don't try to force it back." },
+  { title: "Broken or Bent Spring", body: "Spring failure is the #1 reason doors stop working. Requires professional service." },
+  { title: "Opener Not Responding", body: "Dead batteries, lost programming, or a failed logic board. We handle all brands." },
+  { title: "Slow or Uneven Movement", body: "Could be worn cables, a balance issue, or aging rollers. Early service prevents failure." },
+  { title: "Door Reverses Before Closing", body: "Safety sensor misalignment or logic board issue. A quick fix that stops a frustrating cycle." },
+  { title: "Sagging or Damaged Panel", body: "Cosmetic damage or structural compromise — we assess whether repair or replacement is best." },
+];
+
+const whyDoorChamp = [
+  { title: "Same-Day Service", body: "We keep Richmond and Metro Vancouver covered 7 days a week with fast response times." },
+  { title: "Family-Owned Since 2007", body: "Nearly two decades serving the same community. Our reputation is everything to us." },
+  { title: "Licensed & Insured", body: "Fully licensed, $5M liability coverage, and WCB compliant for your complete protection." },
+  { title: "Two-Year Labour Warranty", body: "We stand behind our work. Every repair includes a full two-year labour warranty." },
+  { title: "Honest Recommendations", body: "We tell you what you need — not what costs the most. Transparent pricing, no surprises." },
+  { title: "Quality Parts Only", body: "We use manufacturer-grade parts suited to your specific door and opener model." },
+];
+
 const steps = [
-  {
-    number: "1",
-    title: "Tell Us What's Wrong",
-    body: "Reach out by phone or request a quote online. Give us a quick rundown of what your door is doing.",
-  },
-  {
-    number: "2",
-    title: "We Diagnose the Problem",
-    body: "A technician inspects the full system — not just the symptom — to find the actual cause.",
-  },
-  {
-    number: "3",
-    title: "We Get Your Door Working Again",
-    body: "You get a clear recommendation and a repair done right, so the problem doesn't come right back.",
-  },
+  { n: "1", title: "Call or Request a Quote", body: "Reach us at (778) 800-0769 or submit the online form. Tell us what's happening with your door." },
+  { n: "2", title: "Same-Day Technician Visit", body: "A licensed technician arrives at your Richmond property, inspects the full system, and explains what's wrong." },
+  { n: "3", title: "Repair Done Right", body: "We fix it with quality parts and back it with our two-year labour warranty. Job done." },
+];
+
+const faqs = [
+  { q: "How quickly can you get to me in Richmond?", a: "We offer same-day service throughout Richmond and Metro Vancouver. In most cases we can reach you within a few hours of your call." },
+  { q: "Are you licensed and insured?", a: "Yes. DoorChamp is fully licensed, carries $5M in liability insurance, and is WCB compliant. We're happy to provide documentation on request." },
+  { q: "How much does a garage door repair cost?", a: "Costs vary by what's needed — a spring replacement is different from a panel repair. We provide a clear quote before any work begins, with no surprises." },
+  { q: "Do you service commercial garage doors?", a: "Absolutely. We handle commercial sectional doors, high-speed doors, loading docks, sliding gates, and full strata maintenance programs." },
+  { q: "What brands of openers do you service?", a: "We work on all major brands including LiftMaster, Chamberlain, Genie, Craftsman, Marantec, and more." },
+  { q: "Do you offer a warranty?", a: "Yes — every repair includes a two-year labour warranty. Parts are also covered by manufacturer warranty." },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section className="bg-navy overflow-hidden">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-20 grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-gold font-bold uppercase tracking-wide text-sm mb-4">
-              Residential Garage Door Service
+      {/* HERO — photo-ready design: swap background-image in inline style once photo is available */}
+      <section
+        className="relative overflow-hidden"
+        style={{
+          background: "linear-gradient(105deg, #0B3D2E 0%, #0B3D2E 55%, #146B4D 100%)",
+          minHeight: "560px",
+        }}
+      >
+        {/* Subtle texture overlay */}
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+          aria-hidden="true"
+        />
+
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32">
+          <div className="max-w-2xl animate-fade-up">
+            <p className="text-gold font-bold uppercase tracking-widest text-xs sm:text-sm mb-4">
+              Richmond BC · Same-Day Service
             </p>
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl text-white leading-[1.08]">
-              Garage Door Problems?
+            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.06]">
+              Richmond&apos;s Trusted
               <br />
-              Call the Champ.
+              <span className="text-gold">Garage Door</span>
+              <br />
+              Experts.
             </h1>
-            <p className="mt-6 text-white/75 text-lg leading-relaxed max-w-lg">
-              Fast, professional garage door repair and service from a team that knows how to get
-              your door working right.
+            <p className="mt-6 text-white/80 text-lg leading-relaxed max-w-lg animate-fade-up-delay-1">
+              Same-day repair, spring replacement, opener service, and new door installation.
+              Family-owned since 2007. Licensed, insured &amp; WCB compliant.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-up-delay-2">
+              <a
+                href={siteConfig.phone.href}
+                className="inline-flex items-center justify-center gap-2.5 rounded-card bg-gold px-7 py-4 text-base font-bold text-navy-dark shadow-card hover:bg-gold-dark hover:text-white transition-colors"
+              >
+                <IconPhone className="w-5 h-5" />
+                {siteConfig.phone.display}
+              </a>
               <Link
                 href="/request-a-quote/"
-                className="inline-flex items-center justify-center rounded-card bg-gold px-7 py-3.5 text-sm font-bold text-navy shadow-card hover:bg-gold-dark hover:text-white transition-colors"
+                className="inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-7 py-4 text-base font-bold hover:border-white hover:bg-white/10 transition-colors"
               >
                 Get a Free Quote
               </Link>
-              <a
-                href={siteConfig.phone.href}
-                className="inline-flex items-center justify-center gap-2 rounded-card border-2 border-white/40 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors"
-              >
-                <IconPhone className="w-4 h-4" />
-                Call the Champ
-              </a>
             </div>
-            <p className="mt-5 text-sm text-white/50">{siteConfig.subTagline}</p>
+            <p className="mt-5 text-sm text-white/50 animate-fade-up-delay-3">
+              Mon–Sat 7am–8pm · 12740 Trites Rd, Richmond BC
+            </p>
           </div>
+        </div>
 
-          <HeroIllustration className="w-full max-w-lg mx-auto rounded-card shadow-cardHover" />
+        {/* Diagonal cut */}
+        <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none" aria-hidden="true">
+          <svg viewBox="0 0 1440 40" preserveAspectRatio="none" className="w-full h-10 fill-white">
+            <polygon points="0,40 1440,0 1440,40" />
+          </svg>
         </div>
       </section>
 
       <TrustBadges />
 
-      {/* PROBLEM SECTION */}
+      {/* PROBLEMS SECTION */}
       <section className="bg-surface">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
               Is Your Garage Door Giving You Trouble?
             </h2>
             <p className="mt-3 text-steel">
-              Whatever it's doing, there's a reason. Here are the issues we see most often.
+              Whatever it&apos;s doing, there&apos;s a reason — and we can fix it today.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {commonProblems.map((problem) => (
-              <ProblemCard key={problem.title} problem={problem} />
+            {problems.map((p) => (
+              <div key={p.title} className="rounded-card bg-white border border-steel/10 p-6 shadow-card hover:shadow-cardHover transition-shadow">
+                <h3 className="font-heading font-bold text-navy-dark text-base mb-2">{p.title}</h3>
+                <p className="text-sm text-steel leading-relaxed">{p.body}</p>
+              </div>
             ))}
+          </div>
+          <div className="text-center mt-10">
+            <a
+              href={siteConfig.phone.href}
+              className="inline-flex items-center gap-2 rounded-card bg-navy px-7 py-3.5 text-sm font-bold text-white hover:bg-navy-dark transition-colors"
+            >
+              <IconPhone className="w-4 h-4" />
+              Call for Same-Day Service
+            </a>
           </div>
         </div>
       </section>
@@ -126,84 +189,97 @@ export default function HomePage() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy">
-              Garage Door Services That Get the Job Done.
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
+              Garage Door Services in Richmond & Metro Vancouver
             </h2>
+            <p className="mt-3 text-steel">Residential, commercial, and strata — we do it all.</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service) => (
-              <ServiceCard key={service.slug} service={service} />
+            {services.map((s) => (
+              <Link
+                key={s.href}
+                href={s.href}
+                className="group rounded-card border border-steel/15 bg-white p-7 shadow-card hover:shadow-cardHover hover:border-navy/30 transition-all"
+              >
+                <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-navy/10 text-navy group-hover:bg-navy group-hover:text-white transition-colors">
+                  {s.icon}
+                </span>
+                <h3 className="mt-4 font-heading font-bold text-lg text-navy-dark">{s.title}</h3>
+                <p className="mt-2 text-sm text-steel leading-relaxed">{s.body}</p>
+                <span className="mt-4 inline-flex items-center text-sm font-semibold text-navy group-hover:text-navy-dark transition-colors">
+                  Learn more →
+                </span>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <CTASection
-        heading="Not sure what's wrong? That's exactly what we're here for."
-        body="Tell us what your door is doing and we'll help you figure out the next step."
-        tone="light"
-      />
-
-      {/* BRAND STORY */}
-      <section className="bg-navy">
+      {/* ABOUT / BRAND STORY */}
+      <section className="bg-navy-dark">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-gold font-bold uppercase tracking-wide text-sm mb-3">
-              Meet DoorChamp
+              Family-Owned Since 2007
             </p>
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white leading-tight">
-              Your Door. Our Expertise.
+              Richmond&apos;s Garage Door Experts — For Nearly Two Decades.
             </h2>
             <p className="mt-5 text-white/75 leading-relaxed">
-              Your garage door is one of the largest moving systems in your home. When something
-              goes wrong, you need someone who understands the problem — not someone who simply
-              guesses.
+              DoorChamp was built on the belief that homeowners and businesses in Richmond deserve
+              straightforward, honest garage door service — not overselling, not guessing, not cutting corners.
             </p>
             <p className="mt-4 text-white/75 leading-relaxed">
-              DoorChamp provides professional garage door repair, opener service, spring
-              replacement, maintenance, and installation with straightforward recommendations and
-              dependable service.
+              Since 2007, we&apos;ve served thousands of Richmond, Vancouver, and Metro Vancouver customers
+              with the same commitment: diagnose it right, explain it clearly, fix it properly.
             </p>
-            <Link
-              href="/about/"
-              className="mt-7 inline-flex items-center justify-center rounded-card bg-gold px-7 py-3.5 text-sm font-bold text-navy shadow-card hover:bg-gold-dark hover:text-white transition-colors"
-            >
-              Meet DoorChamp
-            </Link>
+            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+              <Link
+                href="/about/"
+                className="inline-flex items-center justify-center rounded-card bg-gold px-6 py-3 text-sm font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors"
+              >
+                About DoorChamp
+              </Link>
+              <a
+                href={siteConfig.phone.href}
+                className="inline-flex items-center justify-center gap-2 rounded-card border-2 border-white/30 px-6 py-3 text-sm font-bold text-white hover:border-white transition-colors"
+              >
+                <IconPhone className="w-4 h-4" />
+                {siteConfig.phone.display}
+              </a>
+            </div>
           </div>
-          <div className="rounded-card bg-white/5 border border-white/10 p-8">
-            <p className="font-heading font-bold text-gold text-sm uppercase tracking-wide mb-4">
-              Diagnose. Explain. Fix.
-            </p>
-            <ul className="space-y-4">
-              {["We inspect the full system, not just the symptom.", "We explain what we find in plain language.", "We recommend the repair that actually solves it."].map(
-                (line) => (
-                  <li key={line} className="flex items-start gap-3 text-white/85">
-                    <IconCheck className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                    <span>{line}</span>
-                  </li>
-                )
-              )}
-            </ul>
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              { stat: "2007", label: "Founded in Richmond" },
+              { stat: "$5M", label: "Liability Coverage" },
+              { stat: "2 Year", label: "Labour Warranty" },
+              { stat: "WCB", label: "Compliant & Insured" },
+            ].map((item) => (
+              <div key={item.label} className="rounded-card bg-white/8 border border-white/10 p-6 text-center">
+                <p className="font-heading font-extrabold text-3xl text-gold">{item.stat}</p>
+                <p className="mt-1 text-sm text-white/70">{item.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="bg-surface">
+      <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy">
-              Getting Your Door Fixed Is Simple.
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
+              Getting Your Garage Door Fixed Is Simple.
             </h2>
           </div>
           <div className="grid sm:grid-cols-3 gap-6">
             {steps.map((step) => (
-              <div key={step.number} className="rounded-card bg-white border border-steel/15 p-7">
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-navy text-gold font-heading font-extrabold">
-                  {step.number}
+              <div key={step.n} className="rounded-card bg-surface border border-steel/10 p-7">
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-navy text-white font-heading font-extrabold text-lg">
+                  {step.n}
                 </span>
-                <h3 className="mt-5 font-heading font-bold text-lg text-navy">{step.title}</h3>
+                <h3 className="mt-5 font-heading font-bold text-lg text-navy-dark">{step.title}</h3>
                 <p className="mt-2 text-sm text-steel leading-relaxed">{step.body}</p>
               </div>
             ))}
@@ -212,17 +288,20 @@ export default function HomePage() {
       </section>
 
       {/* WHY DOORCHAMP */}
-      <section className="bg-white">
+      <section className="bg-surface">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy">
-              Why Homeowners Choose DoorChamp
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
+              Why Richmond Homeowners Choose DoorChamp
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
-            {whyChoose.map((item) => (
-              <div key={item.title} className="rounded-card bg-surface p-6">
-                <h3 className="font-heading font-bold text-navy text-base">{item.title}</h3>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {whyDoorChamp.map((item) => (
+              <div key={item.title} className="rounded-card bg-white p-6 shadow-card">
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-navy/10 text-navy mb-4">
+                  <IconCheck className="w-4 h-4" />
+                </span>
+                <h3 className="font-heading font-bold text-navy-dark text-base">{item.title}</h3>
                 <p className="mt-2 text-sm text-steel leading-relaxed">{item.body}</p>
               </div>
             ))}
@@ -230,23 +309,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      <ChampCheck />
-
-      {/* TESTIMONIALS */}
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy">
-              What Homeowners Are Saying
-            </h2>
-            <p className="mt-3 text-steel text-sm">
-              Reviews below are placeholders and will be replaced with real customer feedback.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <TestimonialCard key={i} index={i} />
-            ))}
+      {/* SERVICE AREAS CALLOUT */}
+      <section className="bg-navy">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div>
+              <h2 className="font-heading font-bold text-xl sm:text-2xl text-white">
+                Serving Richmond &amp; All Metro Vancouver
+              </h2>
+              <p className="mt-2 text-white/70 text-sm">
+                Richmond · Vancouver · Burnaby · Delta · Surrey · New Westminster · Coquitlam · Ladner · Tsawwassen
+              </p>
+            </div>
+            <Link
+              href="/service-areas/"
+              className="flex-shrink-0 inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-6 py-3 text-sm font-bold hover:border-white hover:bg-white/10 transition-colors"
+            >
+              View All Service Areas
+            </Link>
           </div>
         </div>
       </section>
@@ -255,18 +335,23 @@ export default function HomePage() {
       <section className="bg-white">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="text-center mb-10">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
               Common Questions
             </h2>
           </div>
-          <FAQAccordion faqs={generalFaqs} />
+          <FAQAccordion faqs={faqs} />
+          <p className="mt-8 text-center text-sm text-steel">
+            More questions?{" "}
+            <Link href="/faq/" className="text-navy font-semibold hover:underline">See our full FAQ</Link>
+            {" "}or{" "}
+            <a href={siteConfig.phone.href} className="text-navy font-semibold hover:underline">call us directly</a>.
+          </p>
         </div>
       </section>
 
-      {/* FINAL CTA */}
       <CTASection
-        heading="Your Garage Door Should Work. Let's Make Sure It Does."
-        body="Tell us what's going on and we'll help you figure out the next step."
+        heading="Need Garage Door Help in Richmond? We're Ready."
+        body="Same-day service available. Call now or request a quote online — we'll get back to you fast."
       />
     </>
   );

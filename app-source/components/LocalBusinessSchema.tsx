@@ -1,25 +1,57 @@
 import { siteConfig } from "@/lib/site-config";
 
-// All values below are placeholders pulled from siteConfig and must be
-// confirmed with real business details before this schema goes live.
 export default function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "GarageDoorRepair",
-    name: siteConfig.name,
-    alternateName: `${siteConfig.name} ${siteConfig.descriptor}`,
+    name: "DoorChamp Garage Door Service & Repair",
+    alternateName: "DoorChamp",
     description:
-      "Professional garage door repair, spring replacement, opener service, installation and maintenance.",
+      "Richmond BC's trusted garage door experts. Same-day repair, spring replacement, opener service, new door installation, commercial doors, loading docks, and sliding gates. Family-owned since 2007.",
     url: siteConfig.url,
-    telephone: "[PHONE NUMBER]",
-    email: "[EMAIL ADDRESS]",
+    telephone: siteConfig.phone.href.replace("tel:", ""),
+    email: siteConfig.email,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "[BUSINESS ADDRESS]",
+      streetAddress: siteConfig.address.street,
+      addressLocality: siteConfig.address.city,
+      addressRegion: siteConfig.address.province,
+      postalCode: siteConfig.address.postal,
+      addressCountry: siteConfig.address.country,
     },
-    areaServed: "[CONFIRMED SERVICE AREAS]",
-    openingHours: "[BUSINESS HOURS]",
-    slogan: siteConfig.tagline,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 49.1374,
+      longitude: -123.0638,
+    },
+    areaServed: [
+      "Richmond", "Vancouver", "Burnaby", "Delta", "Surrey",
+      "New Westminster", "Coquitlam", "Port Coquitlam", "Ladner", "Tsawwassen",
+    ],
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        opens: "07:00",
+        closes: "20:00",
+      },
+    ],
+    priceRange: "$$",
+    foundingDate: "2007",
+    slogan: "Richmond's Trusted Garage Door Experts.",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Garage Door Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Garage Door Repair" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Spring Repair & Replacement" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Opener Service & Installation" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "New Door Installation" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Commercial Garage Doors" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Loading Dock Service" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sliding Gate Service" } },
+      ],
+    },
   };
 
   return (

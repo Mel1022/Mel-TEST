@@ -1,12 +1,12 @@
 import Link from "next/link";
 import Logo from "./Logo";
-import { siteConfig, primaryNav } from "@/lib/site-config";
+import { siteConfig, residentialNav } from "@/lib/site-config";
 
 export default function Footer() {
   return (
     <footer className="bg-navy-dark text-white/80 pb-24 sm:pb-0">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <Logo variant="light" />
             <p className="mt-4 text-sm text-gold font-semibold">{siteConfig.tagline}</p>
@@ -27,10 +27,10 @@ export default function Footer() {
 
           <div>
             <h3 className="font-heading font-bold text-white text-sm uppercase tracking-wide mb-4">
-              Services
+              Residential
             </h3>
             <ul className="space-y-2 text-sm">
-              {primaryNav.slice(0, 6).map((item) => (
+              {residentialNav.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="hover:text-gold transition-colors">
                     {item.fullLabel}
@@ -42,12 +42,16 @@ export default function Footer() {
 
           <div>
             <h3 className="font-heading font-bold text-white text-sm uppercase tracking-wide mb-4">
-              Company
+              Commercial &amp; More
             </h3>
             <ul className="space-y-2 text-sm">
+              <li><Link href="/commercial/" className="hover:text-gold transition-colors">Commercial Doors</Link></li>
+              <li><Link href="/loading-docks/" className="hover:text-gold transition-colors">Loading Docks</Link></li>
+              <li><Link href="/sliding-gates/" className="hover:text-gold transition-colors">Sliding Gates</Link></li>
+              <li><Link href="/strata/" className="hover:text-gold transition-colors">Strata & Multi-Family</Link></li>
               <li><Link href="/service-areas/" className="hover:text-gold transition-colors">Service Areas</Link></li>
-              <li><Link href="/about/" className="hover:text-gold transition-colors">About</Link></li>
-              <li><Link href="/contact/" className="hover:text-gold transition-colors">Contact</Link></li>
+              <li><Link href="/about/" className="hover:text-gold transition-colors">About DoorChamp</Link></li>
+              <li><Link href="/faq/" className="hover:text-gold transition-colors">FAQ</Link></li>
               <li><Link href="/request-a-quote/" className="hover:text-gold transition-colors">Request a Quote</Link></li>
             </ul>
           </div>
@@ -57,17 +61,34 @@ export default function Footer() {
               Contact
             </h3>
             <ul className="space-y-2 text-sm text-white/70">
-              <li>Phone: {siteConfig.phone.display}</li>
-              <li>Email: {siteConfig.email}</li>
-              <li>{siteConfig.address.line}</li>
-              <li>Hours: {siteConfig.hours}</li>
+              <li>
+                <a href={siteConfig.phone.href} className="hover:text-gold transition-colors font-semibold">
+                  {siteConfig.phone.display}
+                </a>
+              </li>
+              <li>
+                <a href={`mailto:${siteConfig.email}`} className="hover:text-gold transition-colors">
+                  {siteConfig.email}
+                </a>
+              </li>
+              <li className="text-white/50">{siteConfig.address.line}</li>
+              <li className="text-white/50">Hours: {siteConfig.hours}</li>
             </ul>
+            <Link
+              href="/request-a-quote/"
+              className="mt-5 inline-flex items-center justify-center rounded-card bg-gold px-5 py-2.5 text-sm font-bold text-navy-dark hover:bg-gold-dark transition-colors"
+            >
+              Get a Free Quote
+            </Link>
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/50">
-          <p>&copy; {new Date().getFullYear()} DoorChamp. All rights reserved.</p>
-          <p>Garage Door Service &amp; Repair</p>
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
+          <p>&copy; {new Date().getFullYear()} DoorChamp Garage Door Service &amp; Repair. All rights reserved.</p>
+          <div className="flex gap-4">
+            <Link href="/privacy-policy/" className="hover:text-white/70 transition-colors">Privacy Policy</Link>
+            <Link href="/terms-of-service/" className="hover:text-white/70 transition-colors">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>

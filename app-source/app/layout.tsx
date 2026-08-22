@@ -10,16 +10,16 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Garage Door Service & Repair | DoorChamp",
-    template: `%s | ${siteConfig.name}`,
+    default: "Richmond Garage Door Repair & Service | DoorChamp",
+    template: `%s | DoorChamp Garage Doors`,
   },
   description:
-    "Professional garage door repair, spring replacement, opener service, installation and maintenance. When your door needs a champ, call DoorChamp.",
+    "Richmond BC's trusted garage door experts. Same-day repair, spring replacement, opener service, and installation. Family-owned since 2007. Licensed, insured & WCB compliant.",
   openGraph: {
-    title: "Garage Door Service & Repair | DoorChamp",
+    title: "Richmond Garage Door Repair & Service | DoorChamp",
     description:
-      "Professional garage door repair, spring replacement, opener service, installation and maintenance. When your door needs a champ, call DoorChamp.",
-    siteName: siteConfig.name,
+      "Richmond BC's trusted garage door experts. Same-day repair, spring replacement, opener service, and installation. Family-owned since 2007.",
+    siteName: "DoorChamp Garage Door Service & Repair",
     type: "website",
   },
   icons: {
@@ -34,7 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
         <LocalBusinessSchema />

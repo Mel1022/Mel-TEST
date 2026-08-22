@@ -1,111 +1,123 @@
 import type { Metadata } from "next";
-import PageHero from "@/components/PageHero";
+import Link from "next/link";
 import CTASection from "@/components/CTASection";
-import { IconCheck } from "@/components/Icons";
+import { IconCheck, IconPhone } from "@/components/Icons";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "About DoorChamp",
+  title: "About DoorChamp | Richmond's Trusted Garage Door Experts",
   description:
-    "DoorChamp provides professional garage door repair, opener service, spring replacement, maintenance, and installation with straightforward recommendations.",
+    "Family-owned since 2007, DoorChamp has served Richmond BC and Metro Vancouver for nearly two decades. Licensed, insured, WCB compliant. Learn our story.",
   alternates: { canonical: "/about/" },
 };
 
-const principles = [
-  {
-    title: "Diagnose",
-    body: "We start by understanding what's actually happening with your door — not guessing based on the most common cause.",
-  },
-  {
-    title: "Explain",
-    body: "You'll know what we found, why it matters, and what your options are, in plain language.",
-  },
-  {
-    title: "Fix",
-    body: "Once you've decided how to move forward, we complete the work with parts suited to your door.",
-  },
+const values = [
+  { title: "Honest Assessment", body: "We tell you what you need — not what costs the most. Repairs that make sense for your situation." },
+  { title: "Skilled Technicians", body: "Our team is trained, licensed, and WCB compliant. We take the craft seriously." },
+  { title: "Quality Parts", body: "We use parts suited to your specific door and opener model — not the cheapest option." },
+  { title: "Real Warranty", body: "Two-year labour warranty, backed by people who answer the phone in Richmond." },
+  { title: "Transparent Pricing", body: "Clear quotes before any work starts. No surprise charges, no bait-and-switch." },
+  { title: "Community Roots", body: "We've served the same Richmond community since 2007. Our reputation is everything." },
+];
+
+const credentials = [
+  "Licensed & fully insured",
+  "$5M general liability coverage",
+  "WCB compliant on every job",
+  "Family-owned since 2007",
+  "Two-year labour warranty on all work",
+  "Residential & commercial certified",
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="About DoorChamp"
-        headline="When Your Door Needs a Champ."
-        support="DoorChamp is a garage door service company built around one idea: understand the problem before recommending a fix."
-        ctaLabel="Get a Free Quote"
-      />
-
-      <section className="bg-white">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy">
-            Your Door. Our Expertise.
-          </h2>
-          <p className="mt-5 text-steel leading-relaxed">
-            Your garage door is one of the largest moving systems in your home. It's made up of
-            springs, cables, rollers, tracks, and an opener, all working together. When something
-            goes wrong, it's rarely just one part — and treating it that way can leave the real
-            problem unresolved.
-          </p>
-          <p className="mt-4 text-steel leading-relaxed">
-            DoorChamp approaches every job the same way: inspect the full system, explain what's
-            going on, and recommend the repair, replacement, or maintenance that actually fits the
-            situation — not the most expensive option, and not a guess.
+      {/* Hero */}
+      <section className="bg-navy-dark text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          <p className="text-gold font-bold uppercase tracking-wide text-sm mb-3">Richmond BC · Since 2007</p>
+          <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white max-w-3xl leading-tight">
+            About DoorChamp
+          </h1>
+          <p className="mt-5 text-white/75 text-lg max-w-2xl leading-relaxed">
+            We&apos;re Richmond&apos;s garage door specialists — family-owned, community-rooted,
+            and committed to doing the job right the first time.
           </p>
         </div>
       </section>
 
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-center max-w-xl mx-auto mb-12">
-            <p className="text-gold-dark font-bold uppercase tracking-wide text-sm mb-2">
-              How We Work
-            </p>
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy">
-              Diagnose. Explain. Fix.
+      {/* Story */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 grid lg:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-5">
+              Our Story
             </h2>
+            <p className="text-steel leading-relaxed mb-4">
+              DoorChamp was founded in Richmond, BC in 2007 with a simple premise: garage door
+              service in Metro Vancouver deserved to be better. Homeowners were being oversold,
+              given vague explanations, and charged for work they didn&apos;t need.
+            </p>
+            <p className="text-steel leading-relaxed mb-4">
+              We built DoorChamp around three commitments that still guide every service call:
+              diagnose the real problem, explain it clearly, and fix it with the right parts.
+            </p>
+            <p className="text-steel leading-relaxed mb-4">
+              Nearly two decades later, we&apos;ve served thousands of Richmond homeowners and
+              businesses — from emergency spring replacements to full commercial door programs
+              for strata complexes and industrial facilities.
+            </p>
+            <p className="text-steel leading-relaxed">
+              We&apos;re based at {siteConfig.address.line}. Every job we take on is backed by
+              our two-year labour warranty, $5M liability coverage, and the knowledge that
+              our customers can call us back if anything isn&apos;t right.
+            </p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {principles.map((p) => (
-              <div key={p.title} className="rounded-card bg-white border border-steel/15 p-7 text-center">
-                <h3 className="font-heading font-bold text-lg text-navy">{p.title}</h3>
-                <p className="mt-2 text-sm text-steel leading-relaxed">{p.body}</p>
+
+          <div>
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-5">
+              Our Credentials
+            </h2>
+            <ul className="space-y-3 mb-8">
+              {credentials.map((c) => (
+                <li key={c} className="flex items-start gap-3">
+                  <IconCheck className="w-5 h-5 text-navy flex-shrink-0 mt-0.5" />
+                  <span className="text-steel">{c}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="rounded-card bg-surface border border-steel/10 p-6">
+              <p className="text-sm font-semibold text-navy-dark mb-1">Questions or to schedule a visit:</p>
+              <a href={siteConfig.phone.href} className="inline-flex items-center gap-2 text-navy font-bold hover:text-navy-light transition-colors">
+                <IconPhone className="w-4 h-4" />
+                {siteConfig.phone.display}
+              </a>
+              <p className="mt-1 text-sm text-steel">{siteConfig.hours} · {siteConfig.address.city}, BC</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="bg-surface">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-10 text-center">
+            How We Work
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {values.map((v) => (
+              <div key={v.title} className="rounded-card bg-white border border-steel/10 p-7 shadow-card">
+                <h3 className="font-heading font-bold text-navy-dark text-base mb-2">{v.title}</h3>
+                <p className="text-sm text-steel leading-relaxed">{v.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16">
-          <h2 className="font-heading font-extrabold text-2xl text-navy text-center">
-            Credentials &amp; Coverage
-          </h2>
-          <p className="mt-4 text-steel leading-relaxed text-center">
-            Licensing, insurance, and warranty details specific to DoorChamp will be listed here
-            once confirmed. We won&apos;t make claims about credentials, years in business, or
-            guarantees that haven&apos;t been verified.
-          </p>
-          <ul className="mt-8 space-y-3 max-w-md mx-auto">
-            {[
-              "[LICENSE / CERTIFICATION INFORMATION]",
-              "[INSURANCE INFORMATION]",
-              "[WARRANTY DETAILS]",
-            ].map((item) => (
-              <li
-                key={item}
-                className="flex items-center gap-3 rounded-card bg-surface border border-dashed border-steel/40 px-4 py-3 text-sm text-steel"
-              >
-                <IconCheck className="w-4 h-4 text-steel flex-shrink-0" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       <CTASection
-        heading="Ready to Talk to the Champ?"
-        body="Tell us what's going on with your door and we'll help you figure out the next step."
+        heading="Ready to Work With Richmond's Garage Door Experts?"
+        body="Call or request a quote. We'll get your door working right."
       />
     </>
   );

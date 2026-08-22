@@ -10,9 +10,9 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          DEFAULT: "#142B4A",
-          light: "#1E3A5F",
-          dark: "#0D1F36",
+          DEFAULT: "#146B4D",
+          light: "#2E8B62",
+          dark: "#0B3D2E",
         },
         gold: {
           DEFAULT: "#D4A62A",
@@ -20,18 +20,18 @@ const config: Config = {
           dark: "#B08A1E",
         },
         steel: {
-          DEFAULT: "#66717C",
-          light: "#8A939C",
+          DEFAULT: "#5A7068",
+          light: "#7A9088",
         },
-        surface: "#F5F7FA",
+        surface: "#EBF7F1",
       },
       fontFamily: {
-        heading: ["var(--font-montserrat)", "system-ui", "sans-serif"],
-        body: ["var(--font-inter)", "system-ui", "sans-serif"],
+        heading: ["var(--font-manrope)", "system-ui", "sans-serif"],
+        body: ["var(--font-dmsans)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        card: "0 8px 30px -12px rgba(20, 43, 74, 0.18)",
-        cardHover: "0 16px 40px -14px rgba(20, 43, 74, 0.28)",
+        card: "0 8px 30px -12px rgba(11, 61, 46, 0.18)",
+        cardHover: "0 16px 40px -14px rgba(11, 61, 46, 0.28)",
       },
       borderRadius: {
         card: "12px",
