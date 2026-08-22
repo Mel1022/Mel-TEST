@@ -90,65 +90,65 @@ const faqs = [
 export default function HomePage() {
   return (
     <>
-      {/* HERO — photo-ready design: swap background-image in inline style once photo is available */}
+      {/* HERO
+           To activate the photo background: add your technician photo to
+           /app-source/public/images/hero-tech.jpg
+           The gradient overlay is already set up — the photo will show on the right side. */}
       <section
         className="relative overflow-hidden"
         style={{
-          background: "linear-gradient(105deg, #0B3D2E 0%, #0B3D2E 55%, #146B4D 100%)",
-          minHeight: "560px",
+          minHeight: "600px",
+          backgroundImage: [
+            "linear-gradient(to right, rgba(7,31,23,0.98) 0%, rgba(11,61,46,0.97) 30%, rgba(11,61,46,0.80) 52%, rgba(11,61,46,0.40) 72%, rgba(11,61,46,0.15) 100%)",
+            "url('/images/hero-tech.jpg')",
+          ].join(", "),
+          backgroundSize: "cover",
+          backgroundPosition: "right center",
+          backgroundRepeat: "no-repeat",
+          /* Fallback when no photo: pure dark gradient */
+          backgroundColor: "#071f17",
         }}
       >
-        {/* Subtle texture overlay */}
-        <div
-          className="absolute inset-0 opacity-5"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-          aria-hidden="true"
-        />
-
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32">
-          <div className="max-w-2xl animate-fade-up">
-            <p className="text-gold font-bold uppercase tracking-widest text-xs sm:text-sm mb-4">
-              Richmond BC · Same-Day Service
-            </p>
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white leading-[1.06]">
-              Richmond&apos;s Trusted
-              <br />
-              <span className="text-gold">Garage Door</span>
-              <br />
-              Experts.
+          <div className="max-w-xl animate-fade-up">
+            {/* Eyebrow with decorative line */}
+            <div className="flex items-center gap-3 mb-5">
+              <p className="text-[#4CAF80] font-bold uppercase tracking-[0.18em] text-xs sm:text-sm">
+                Garage Door Service &amp; Repair
+              </p>
+              <span className="flex-1 max-w-[60px] h-px bg-[#4CAF80]/60" aria-hidden="true" />
+            </div>
+
+            <h1 className="font-heading font-extrabold leading-[1.0]" style={{ fontSize: "clamp(2.6rem, 5vw, 4rem)" }}>
+              <span className="block text-white">Garage Door</span>
+              <span className="block text-white">Trouble?</span>
+              <span className="block text-[#4CAF80]">Call the Champ.</span>
             </h1>
-            <p className="mt-6 text-white/80 text-lg leading-relaxed max-w-lg animate-fade-up-delay-1">
-              Same-day repair, spring replacement, opener service, and new door installation.
-              Family-owned since 2007. Licensed, insured &amp; WCB compliant.
+
+            <p className="mt-5 text-white/90 text-lg sm:text-xl italic animate-fade-up-delay-1" style={{ fontFamily: "Georgia, serif" }}>
+              &ldquo;When Your Door Needs a Champ.&rdquo;
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 animate-fade-up-delay-2">
-              <a
-                href={siteConfig.phone.href}
-                className="inline-flex items-center justify-center gap-2.5 rounded-card bg-gold px-7 py-4 text-base font-bold text-navy-dark shadow-card hover:bg-gold-dark hover:text-white transition-colors"
-              >
-                <IconPhone className="w-5 h-5" />
-                {siteConfig.phone.display}
-              </a>
+
+            <p className="mt-4 text-white/70 text-base leading-relaxed animate-fade-up-delay-1">
+              Professional garage door repair, service and installation for Richmond homeowners and businesses.
+            </p>
+
+            <div className="mt-8 flex flex-col sm:flex-row gap-3 animate-fade-up-delay-2">
               <Link
                 href="/request-a-quote/"
-                className="inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-7 py-4 text-base font-bold hover:border-white hover:bg-white/10 transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-card bg-[#2E8B62] px-7 py-4 text-sm font-bold text-white hover:bg-[#146B4D] transition-colors"
               >
-                Get a Free Quote
+                Get a Free Quote →
               </Link>
+              <a
+                href={siteConfig.phone.href}
+                className="inline-flex items-center justify-center gap-2 rounded-card border-2 border-white/40 text-white px-7 py-4 text-sm font-bold hover:border-white hover:bg-white/10 transition-colors"
+              >
+                <IconPhone className="w-4 h-4" />
+                Call the Champ
+              </a>
             </div>
-            <p className="mt-5 text-sm text-white/50 animate-fade-up-delay-3">
-              Mon–Sat 7am–8pm · 12740 Trites Rd, Richmond BC
-            </p>
           </div>
-        </div>
-
-        {/* Diagonal cut */}
-        <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none" aria-hidden="true">
-          <svg viewBox="0 0 1440 40" preserveAspectRatio="none" className="w-full h-10 fill-white">
-            <polygon points="0,40 1440,0 1440,40" />
-          </svg>
         </div>
       </section>
 

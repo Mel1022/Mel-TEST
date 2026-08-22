@@ -18,15 +18,17 @@ export default function Header() {
   const [servicesOpen, setServicesOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-white/97 backdrop-blur border-b border-steel/15 shadow-sm">
+    <header className="sticky top-0 z-40 bg-white border-b border-[#e0ebe5]" style={{ boxShadow: "0 2px 12px rgba(11,61,46,0.08)" }}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-[72px]">
+
+          {/* Logo */}
           <Link href="/" aria-label="DoorChamp home" onClick={() => setOpen(false)}>
             <Logo />
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden xl:flex items-center gap-1" aria-label="Primary">
+          <nav className="hidden xl:flex items-center gap-0.5" aria-label="Primary">
             {/* Services dropdown */}
             <div
               className="relative"
@@ -35,30 +37,30 @@ export default function Header() {
             >
               <button
                 type="button"
-                className="flex items-center gap-1 px-3 py-2 text-sm font-semibold text-navy/80 hover:text-navy rounded-md hover:bg-surface transition-colors"
+                className="flex items-center gap-1 px-3.5 py-2 text-sm font-semibold text-[#1a3a2a] hover:text-[#146B4D] rounded transition-colors"
                 aria-expanded={servicesOpen}
               >
-                Services <IconChevron className="w-3.5 h-3.5" />
+                SERVICES <IconChevron className="w-3.5 h-3.5" />
               </button>
               {servicesOpen && (
-                <div className="absolute top-full left-0 w-56 bg-white border border-steel/15 rounded-card shadow-cardHover py-2 z-50">
-                  <p className="px-4 py-1 text-xs font-bold text-steel uppercase tracking-wide">Residential</p>
+                <div className="absolute top-full left-0 w-58 bg-white border border-[#d0e8dc] rounded-card shadow-cardHover py-2 z-50" style={{ minWidth: "220px" }}>
+                  <p className="px-4 pt-1 pb-0.5 text-[10px] font-bold text-[#5A7068] uppercase tracking-widest">Residential</p>
                   {residentialNav.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="block px-4 py-2 text-sm text-navy hover:bg-surface hover:text-navy-dark transition-colors"
+                      className="block px-4 py-2 text-sm text-[#1a3a2a] hover:bg-[#EBF7F1] hover:text-[#0B3D2E] transition-colors"
                     >
                       {item.fullLabel}
                     </Link>
                   ))}
-                  <div className="my-1 border-t border-steel/10" />
-                  <p className="px-4 py-1 text-xs font-bold text-steel uppercase tracking-wide">Commercial</p>
+                  <div className="my-1 border-t border-[#d0e8dc]" />
+                  <p className="px-4 pt-1 pb-0.5 text-[10px] font-bold text-[#5A7068] uppercase tracking-widest">Commercial</p>
                   {commercialLinks.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="block px-4 py-2 text-sm text-navy hover:bg-surface hover:text-navy-dark transition-colors"
+                      className="block px-4 py-2 text-sm text-[#1a3a2a] hover:bg-[#EBF7F1] hover:text-[#0B3D2E] transition-colors"
                     >
                       {item.label}
                     </Link>
@@ -67,39 +69,47 @@ export default function Header() {
               )}
             </div>
 
-            <Link href="/service-areas/" className="px-3 py-2 text-sm font-semibold text-navy/80 hover:text-navy rounded-md hover:bg-surface transition-colors whitespace-nowrap">
+            <Link href="/commercial/" className="px-3.5 py-2 text-sm font-semibold text-[#1a3a2a] hover:text-[#146B4D] rounded transition-colors uppercase">
+              Commercial
+            </Link>
+            <Link href="/strata/" className="px-3.5 py-2 text-sm font-semibold text-[#1a3a2a] hover:text-[#146B4D] rounded transition-colors uppercase">
+              Strata
+            </Link>
+            <Link href="/service-areas/" className="px-3.5 py-2 text-sm font-semibold text-[#1a3a2a] hover:text-[#146B4D] rounded transition-colors uppercase whitespace-nowrap">
               Service Areas
             </Link>
-            <Link href="/about/" className="px-3 py-2 text-sm font-semibold text-navy/80 hover:text-navy rounded-md hover:bg-surface transition-colors">
+            <Link href="/about/" className="px-3.5 py-2 text-sm font-semibold text-[#1a3a2a] hover:text-[#146B4D] rounded transition-colors uppercase">
               About
             </Link>
-            <Link href="/faq/" className="px-3 py-2 text-sm font-semibold text-navy/80 hover:text-navy rounded-md hover:bg-surface transition-colors">
+            <Link href="/faq/" className="px-3.5 py-2 text-sm font-semibold text-[#1a3a2a] hover:text-[#146B4D] rounded transition-colors uppercase">
               FAQ
             </Link>
-            <Link href="/contact/" className="px-3 py-2 text-sm font-semibold text-navy/80 hover:text-navy rounded-md hover:bg-surface transition-colors">
+            <Link href="/contact/" className="px-3.5 py-2 text-sm font-semibold text-[#1a3a2a] hover:text-[#146B4D] rounded transition-colors uppercase">
               Contact
             </Link>
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
+          {/* Right CTAs */}
+          <div className="hidden xl:flex items-center gap-3">
             <a
               href={siteConfig.phone.href}
-              className="hidden xl:inline-flex items-center gap-1.5 whitespace-nowrap text-sm font-bold text-navy hover:text-navy-light transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded border-2 border-[#146B4D] text-[#146B4D] text-sm font-bold hover:bg-[#EBF7F1] transition-colors whitespace-nowrap"
             >
               <IconPhone className="w-4 h-4" />
               {siteConfig.phone.display}
             </a>
             <Link
               href="/request-a-quote/"
-              className="whitespace-nowrap inline-flex items-center justify-center rounded-card bg-navy px-5 py-2.5 text-sm font-bold text-white shadow-card hover:bg-navy-dark transition-colors"
+              className="inline-flex items-center justify-center rounded-card bg-[#2E8B62] px-5 py-2.5 text-sm font-bold text-white hover:bg-[#146B4D] transition-colors whitespace-nowrap"
             >
-              Free Quote
+              GET A FREE QUOTE
             </Link>
           </div>
 
+          {/* Mobile hamburger */}
           <button
             type="button"
-            className="xl:hidden p-2 text-navy"
+            className="xl:hidden p-2 text-[#0B3D2E]"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -109,27 +119,28 @@ export default function Header() {
         </div>
       </div>
 
+      {/* Mobile menu */}
       {open && (
-        <div className="xl:hidden border-t border-steel/15 bg-white max-h-[80vh] overflow-y-auto">
+        <div className="xl:hidden border-t border-[#d0e8dc] bg-white max-h-[80vh] overflow-y-auto">
           <nav className="px-4 sm:px-6 py-4 flex flex-col" aria-label="Mobile">
-            <p className="py-2 text-xs font-bold text-steel uppercase tracking-wide">Residential Services</p>
+            <p className="py-2 text-[10px] font-bold text-[#5A7068] uppercase tracking-widest">Residential Services</p>
             {residentialNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="py-2.5 text-sm font-semibold text-navy border-b border-steel/10"
+                className="py-2.5 text-sm font-semibold text-[#0B3D2E] border-b border-[#d0e8dc]"
               >
                 {item.fullLabel}
               </Link>
             ))}
-            <p className="pt-4 py-2 text-xs font-bold text-steel uppercase tracking-wide">Commercial</p>
+            <p className="pt-4 py-2 text-[10px] font-bold text-[#5A7068] uppercase tracking-widest">Commercial</p>
             {commercialLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="py-2.5 text-sm font-semibold text-navy border-b border-steel/10"
+                className="py-2.5 text-sm font-semibold text-[#0B3D2E] border-b border-[#d0e8dc]"
               >
                 {item.label}
               </Link>
@@ -145,7 +156,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="py-2.5 text-sm font-semibold text-navy border-b border-steel/10 block"
+                  className="py-2.5 text-sm font-semibold text-[#0B3D2E] border-b border-[#d0e8dc] block"
                 >
                   {item.label}
                 </Link>
@@ -155,7 +166,7 @@ export default function Header() {
           <div className="px-4 sm:px-6 pb-6 pt-2 flex flex-col gap-3">
             <a
               href={siteConfig.phone.href}
-              className="inline-flex items-center justify-center gap-2 rounded-card border-2 border-navy px-5 py-3 text-sm font-bold text-navy"
+              className="inline-flex items-center justify-center gap-2 rounded-card border-2 border-[#146B4D] px-5 py-3 text-sm font-bold text-[#146B4D]"
             >
               <IconPhone className="w-4 h-4" />
               {siteConfig.phone.display}
@@ -163,9 +174,9 @@ export default function Header() {
             <Link
               href="/request-a-quote/"
               onClick={() => setOpen(false)}
-              className="inline-flex items-center justify-center rounded-card bg-navy px-5 py-3 text-sm font-bold text-white"
+              className="inline-flex items-center justify-center rounded-card bg-[#2E8B62] px-5 py-3 text-sm font-bold text-white"
             >
-              Get a Free Quote
+              GET A FREE QUOTE
             </Link>
           </div>
         </div>
