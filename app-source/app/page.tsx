@@ -90,31 +90,14 @@ const faqs = [
 export default function HomePage() {
   return (
     <>
-      <section
-        className="relative overflow-hidden"
-        style={{ height: "clamp(580px, 46vw, 720px)", backgroundColor: "#071f17" }}
-      >
-        {/* Photo — covers full section; object-position keeps technician/ladder visible on right */}
-        <img
-          src="/images/hero-tech.jpg"
-          alt=""
-          aria-hidden="true"
-          className="hero-photo"
-        />
+      {/* ─── HERO: TRUE TWO-COLUMN — LEFT GREEN / RIGHT PHOTO ─── */}
+      <section className="hero-split" aria-label="Hero">
 
-        {/* Gradient — fully dark left (text readable), clears to transparent by 72% */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "linear-gradient(to right, rgba(7,31,23,0.98) 0%, rgba(7,31,23,0.92) 22%, rgba(7,31,23,0.75) 36%, rgba(7,31,23,0.38) 48%, rgba(7,31,23,0.10) 58%, transparent 66%)",
-          }}
-        />
+        {/* LEFT COLUMN — green gradient, all text content, zero photo */}
+        <div className="hero-content">
+          <div className="relative z-10 animate-fade-up w-full">
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32">
-          <div className="max-w-xl animate-fade-up">
-            {/* Eyebrow with decorative line */}
+            {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-5">
               <p className="text-[#4CAF80] font-bold uppercase tracking-[0.18em] text-xs sm:text-sm">
                 Garage Door Service &amp; Repair
@@ -122,13 +105,13 @@ export default function HomePage() {
               <span className="flex-1 max-w-[60px] h-px bg-[#4CAF80]/60" aria-hidden="true" />
             </div>
 
-            <h1 className="font-heading font-extrabold leading-[1.0]" style={{ fontSize: "clamp(2.6rem, 5vw, 4rem)" }}>
+            <h1 className="font-heading font-extrabold leading-[1.0]" style={{ fontSize: "clamp(2.4rem, 3.8vw, 3.8rem)" }}>
               <span className="block text-white">Garage Door</span>
               <span className="block text-white">Trouble?</span>
               <span className="block text-[#4CAF80]">Call the Champ.</span>
             </h1>
 
-            <p className="mt-5 text-white/90 text-lg sm:text-xl italic animate-fade-up-delay-1" style={{ fontFamily: "Georgia, serif" }}>
+            <p className="mt-5 text-white/90 text-lg italic animate-fade-up-delay-1" style={{ fontFamily: "Georgia, serif" }}>
               &ldquo;When Your Door Needs a Champ.&rdquo;
             </p>
 
@@ -139,7 +122,7 @@ export default function HomePage() {
             <div className="mt-8 flex flex-col sm:flex-row gap-3 animate-fade-up-delay-2">
               <Link
                 href="/request-a-quote/"
-                className="inline-flex items-center justify-center gap-2 rounded-card bg-[#2E8B62] px-7 py-4 text-sm font-bold text-white hover:bg-[#146B4D] transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-card bg-[#2E8B62] px-7 py-4 text-sm font-bold text-white hover:bg-[#1a7a58] transition-colors"
               >
                 Get a Free Quote →
               </Link>
@@ -151,8 +134,26 @@ export default function HomePage() {
                 Call the Champ
               </a>
             </div>
+
+            <div className="mt-6 flex items-center gap-2 animate-fade-up-delay-3">
+              <IconPhone className="w-4 h-4 text-[#4CAF80] flex-shrink-0" />
+              <a href={siteConfig.phone.href} className="text-white/80 hover:text-white text-base font-semibold transition-colors">
+                (778) 800-0769
+              </a>
+            </div>
+
           </div>
         </div>
+
+        {/* RIGHT COLUMN — technician photo, sharp, no overlay */}
+        <div className="hero-photo-panel">
+          <img
+            src="/images/hero-tech.jpg"
+            alt="DoorChamp technician servicing a garage door, DoorChamp logo on uniform, branded truck and ladder visible"
+            className="hero-tech-img"
+          />
+        </div>
+
       </section>
 
       <TrustBadges />
