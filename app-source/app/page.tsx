@@ -90,25 +90,36 @@ const faqs = [
 export default function HomePage() {
   return (
     <>
-      {/* HERO
-           To activate the photo background: add your technician photo to
-           /app-source/public/images/hero-tech.jpg
-           The gradient overlay is already set up — the photo will show on the right side. */}
+      {/* HERO */}
       <section
         className="relative overflow-hidden"
         style={{
-          minHeight: "600px",
-          backgroundImage: [
-            "linear-gradient(to right, rgba(7,31,23,1) 0%, rgba(7,31,23,0.98) 32%, rgba(7,31,23,0.72) 44%, rgba(7,31,23,0.18) 56%, rgba(7,31,23,0) 66%)",
-            "url('/images/hero-tech.jpg')",
-          ].join(", "),
-          backgroundSize: "cover",
-          backgroundPosition: "center center",
-          backgroundRepeat: "no-repeat",
-          /* Fallback when no photo: pure dark gradient */
+          height: "clamp(560px, 46vw, 720px)",
           backgroundColor: "#071f17",
         }}
       >
+        {/* Photo layer — object-position 72% keeps technician right,
+            truck visible in left/centre; blur softens BG without
+            obscuring uniform logo */}
+        <img
+          src="/images/hero-tech.jpg"
+          alt=""
+          aria-hidden="true"
+          className="hero-photo"
+        />
+
+        {/* Gradient overlay — dark on left for text legibility,
+            clears by ~75% so photo reads naturally on the right */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(to right, rgba(7,31,23,1) 0%, rgba(7,31,23,0.97) 28%, rgba(11,61,46,0.78) 42%, rgba(11,61,46,0.30) 55%, rgba(11,61,46,0.08) 68%, transparent 78%)",
+          }}
+        />
+
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32">
           <div className="max-w-xl animate-fade-up">
             {/* Eyebrow with decorative line */}
