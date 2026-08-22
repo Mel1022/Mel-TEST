@@ -108,7 +108,7 @@ export default function HomePage() {
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(to right, rgba(7,31,23,1) 0%, rgba(7,31,23,0.97) 28%, rgba(7,31,23,0.82) 42%, rgba(7,31,23,0.28) 54%, rgba(7,31,23,0.06) 64%, transparent 72%)",
+            background: "linear-gradient(to right, rgba(7,31,23,0.98) 0%, rgba(7,31,23,0.92) 22%, rgba(7,31,23,0.75) 36%, rgba(7,31,23,0.38) 48%, rgba(7,31,23,0.10) 58%, transparent 66%)",
           }}
         />
 
