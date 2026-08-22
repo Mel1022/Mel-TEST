@@ -90,17 +90,11 @@ const faqs = [
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
       <section
         className="relative overflow-hidden"
-        style={{
-          height: "clamp(560px, 46vw, 720px)",
-          backgroundColor: "#071f17",
-        }}
+        style={{ height: "clamp(580px, 46vw, 720px)", backgroundColor: "#071f17" }}
       >
-        {/* Photo layer — object-position 72% keeps technician right,
-            truck visible in left/centre; blur softens BG without
-            obscuring uniform logo */}
+        {/* Photo — covers full section; object-position keeps technician/ladder visible on right */}
         <img
           src="/images/hero-tech.jpg"
           alt=""
@@ -108,15 +102,13 @@ export default function HomePage() {
           className="hero-photo"
         />
 
-        {/* Gradient overlay — dark on left for text legibility,
-            clears by ~75% so photo reads naturally on the right */}
+        {/* Gradient — fully dark left (text readable), clears to transparent by 72% */}
         <div
           aria-hidden="true"
           style={{
             position: "absolute",
             inset: 0,
-            background:
-              "linear-gradient(to right, rgba(7,31,23,1) 0%, rgba(7,31,23,0.97) 28%, rgba(11,61,46,0.78) 42%, rgba(11,61,46,0.30) 55%, rgba(11,61,46,0.08) 68%, transparent 78%)",
+            background: "linear-gradient(to right, rgba(7,31,23,1) 0%, rgba(7,31,23,0.97) 28%, rgba(7,31,23,0.82) 42%, rgba(7,31,23,0.28) 54%, rgba(7,31,23,0.06) 64%, transparent 72%)",
           }}
         />
 
