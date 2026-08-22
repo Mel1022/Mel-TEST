@@ -90,14 +90,20 @@ const faqs = [
 export default function HomePage() {
   return (
     <>
-      {/* ─── HERO: TRUE TWO-COLUMN — LEFT GREEN / RIGHT PHOTO ─── */}
-      <section className="hero-split" aria-label="Hero">
+      {/* ─── HERO: single pre-composed image, text in left green area ─── */}
+      <section className="hero-section" aria-label="Hero">
 
-        {/* LEFT COLUMN — green gradient, all text content, zero photo */}
-        <div className="hero-content">
-          <div className="relative z-10 animate-fade-up w-full">
+        {/* Pre-composed image: green on left baked in, sharp photo on right */}
+        <img
+          src="/images/hero-tech.jpg"
+          alt="DoorChamp technician servicing a garage door — DoorChamp logo on uniform, branded truck and ladder visible"
+          className="hero-bg-img"
+        />
 
-            {/* Eyebrow */}
+        {/* Text overlay — sits inside the green left area of the image */}
+        <div className="hero-inner">
+          <div className="hero-text animate-fade-up">
+
             <div className="flex items-center gap-3 mb-5">
               <p className="text-[#4CAF80] font-bold uppercase tracking-[0.18em] text-xs sm:text-sm">
                 Garage Door Service &amp; Repair
@@ -143,15 +149,6 @@ export default function HomePage() {
             </div>
 
           </div>
-        </div>
-
-        {/* RIGHT COLUMN — technician photo, sharp, no overlay */}
-        <div className="hero-photo-panel">
-          <img
-            src="/images/hero-tech.jpg"
-            alt="DoorChamp technician servicing a garage door, DoorChamp logo on uniform, branded truck and ladder visible"
-            className="hero-tech-img"
-          />
         </div>
 
       </section>
