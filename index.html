@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DoorX — Garage Doors That Just Work</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#top">Door<span>X</span></a>
+    <nav class="nav">
+      <a href="#features">Features</a>
+      <a href="#gallery">Styles</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact" class="nav-cta">Get a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Residential &amp; Commercial</p>
+        <h1>Garage doors built to move smoothly, every single time.</h1>
+        <p class="lede">Quiet motors. Insulated panels. A fit-and-finish that makes the whole house look better. See it in action before you buy.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary" id="toggle-door">Close the door</button>
+          <a href="#contact" class="btn btn-ghost">Book a free consult</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>15k+</strong><span>Doors installed</span></div>
+          <div><strong>4.9★</strong><span>Average rating</span></div>
+          <div><strong>10yr</strong><span>Warranty</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="false">
+        <div class="garage" role="img" aria-label="Animated garage door demo, currently open">
+          <div class="garage-facade">
+            <div class="garage-opening">
+              <div class="opening-shadow"></div>
+              <div class="door-track door-track-left"></div>
+              <div class="door-track door-track-right"></div>
+              <div class="door" id="garage-door">
+                <div class="door-panel"><span class="handle"></span></div>
+                <div class="door-panel"></div>
+                <div class="door-panel"></div>
+                <div class="door-panel"></div>
+              </div>
+            </div>
+            <div class="garage-roofline"></div>
+          </div>
+          <div class="ground"></div>
+        </div>
+        <p class="visual-caption" id="door-status">Door status: <strong>Open</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="container">
+      <h2>Why homeowners switch to DoorX</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⚙️</div>
+          <h3>Whisper-quiet operation</h3>
+          <p>Belt-drive openers and nylon rollers cut noise by up to 70% compared to chain drives.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Built for safety</h3>
+          <p>Auto-reverse sensors, pinch-resistant panels, and battery backup keep your family covered.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🧊</div>
+          <h3>Insulated for every season</h3>
+          <p>Polyurethane-core panels keep the garage — and the rooms next to it — comfortable year round.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Open it from anywhere</h3>
+          <p>Smart controllers let you check, open, or close your door from your phone in one tap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <h2>A style for every home</h2>
+      <div class="style-grid">
+        <div class="style-card" style="--panel:#f4efe7;--frame:#8a7a63;">
+          <div class="style-swatch"></div>
+          <h3>Carriage House</h3>
+          <p>Classic paneling with wrought-iron accents.</p>
+        </div>
+        <div class="style-card" style="--panel:#2b2f33;--frame:#111315;">
+          <div class="style-swatch"></div>
+          <h3>Modern Flush</h3>
+          <p>Clean lines and a matte finish for contemporary builds.</p>
+        </div>
+        <div class="style-card" style="--panel:#c98a4b;--frame:#5c3d22;">
+          <div class="style-swatch"></div>
+          <h3>Woodgrain</h3>
+          <p>The warmth of real wood, without the upkeep.</p>
+        </div>
+        <div class="style-card" style="--panel:#e7e9ea;--frame:#9aa1a6;">
+          <div class="style-swatch"></div>
+          <h3>Full-View Glass</h3>
+          <p>Aluminum frame with frosted glass panels for natural light.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h2>Simple, upfront pricing</h2>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Essential</h3>
+          <p class="price">$899</p>
+          <ul>
+            <li>Steel single-layer door</li>
+            <li>Standard chain-drive opener</li>
+            <li>2-year warranty</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Choose Essential</a>
+        </div>
+        <div class="price-card featured">
+          <p class="badge">Most popular</p>
+          <h3>Comfort</h3>
+          <p class="price">$1,499</p>
+          <ul>
+            <li>Insulated double-layer door</li>
+            <li>Belt-drive opener + smart control</li>
+            <li>5-year warranty</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary">Choose Comfort</a>
+        </div>
+        <div class="price-card">
+          <h3>Premium</h3>
+          <p class="price">$2,299</p>
+          <ul>
+            <li>Triple-layer insulated door</li>
+            <li>Ultra-quiet opener + battery backup</li>
+            <li>10-year warranty</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Choose Premium</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container contact-inner">
+      <div>
+        <h2>Get a free, no-pressure quote</h2>
+        <p>Tell us about your garage and we'll get back to you within one business day.</p>
+      </div>
+      <form class="contact-form" id="quote-form">
+        <input type="text" placeholder="Full name" required>
+        <input type="email" placeholder="Email address" required>
+        <input type="tel" placeholder="Phone number">
+        <textarea placeholder="Tell us about your project" rows="3"></textarea>
+        <button type="submit" class="btn btn-primary">Request my quote</button>
+        <p class="form-note" id="form-note" hidden>Thanks! We'll be in touch shortly.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 2026 DoorX Garage Doors.</span>
+    <span>Made with care for smoother mornings.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
