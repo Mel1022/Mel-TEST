@@ -48,18 +48,82 @@ h1, h2, h3, h4, h5, h6 {
 .animate-fade-up-delay-2 { animation: fadeUp 0.6s 0.30s ease-out both; }
 .animate-fade-up-delay-3 { animation: fadeUp 0.6s 0.45s ease-out both; }
 
-/* Hero photo — precise focal-point control via object-position */
-.hero-photo {
+/* ─── TWO-COLUMN HERO ─── */
+.hero-split {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  min-height: 700px;
+}
+
+.hero-content {
+  background: linear-gradient(160deg, #0f4a36 0%, #146B4D 45%, #0B3D2E 100%);
+  display: flex;
+  align-items: center;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4.5vw, 3.5rem);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle garage-door panel lines on green column */
+.hero-content::before {
+  content: "";
   position: absolute;
   inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 47px,
+    rgba(255,255,255,0.035) 47px,
+    rgba(255,255,255,0.035) 50px
+  );
+  pointer-events: none;
+}
+
+.hero-content::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(78,200,140,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-photo-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-tech-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 45% center;
+  object-position: 10% center;
+  display: block;
 }
 
-@media (max-width: 768px) {
-  .hero-photo {
-    object-position: 60% center;
+@media (max-width: 900px) {
+  .hero-split {
+    grid-template-columns: 50% 50%;
+    min-height: 600px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-split {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .hero-content {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .hero-photo-panel {
+    height: 420px;
+    flex-shrink: 0;
+  }
+
+  .hero-tech-img {
+    object-position: 15% center;
   }
 }
