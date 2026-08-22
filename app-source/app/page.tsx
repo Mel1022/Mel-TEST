@@ -104,6 +104,7 @@ export default function HomePage() {
         <div className="hero-inner">
           <div className="hero-text animate-fade-up">
 
+            {/* Eyebrow */}
             <div className="flex items-center gap-3 mb-5">
               <p className="text-[#4CAF80] font-bold uppercase tracking-[0.18em] text-xs sm:text-sm">
                 Garage Door Service &amp; Repair
@@ -111,40 +112,40 @@ export default function HomePage() {
               <span className="flex-1 max-w-[60px] h-px bg-[#4CAF80]/60" aria-hidden="true" />
             </div>
 
-            <h1 className="font-heading font-extrabold leading-[1.0]" style={{ fontSize: "clamp(2.4rem, 3.8vw, 3.8rem)" }}>
-              <span className="block text-white">Garage Door</span>
-              <span className="block text-white">Trouble?</span>
-              <span className="block text-[#4CAF80]">Call the Champ.</span>
+            {/* Headline — two-line hierarchy */}
+            <h1 className="font-heading font-extrabold leading-[1.05]">
+              <span className="block text-white" style={{ fontSize: "clamp(1.5rem, 2.4vw, 2.4rem)" }}>
+                When Your Garage Door Stops—
+              </span>
+              <span className="block text-white" style={{ fontSize: "clamp(2.8rem, 4.6vw, 4.6rem)", lineHeight: "1.0" }}>
+                We Show Up.
+              </span>
             </h1>
 
-            <p className="mt-5 text-white/90 text-lg italic animate-fade-up-delay-1" style={{ fontFamily: "Georgia, serif" }}>
-              &ldquo;When Your Door Needs a Champ.&rdquo;
+            {/* Supporting copy */}
+            <p className="mt-5 text-white/80 text-base leading-relaxed animate-fade-up-delay-1">
+              Fast, professional garage door service for Richmond homeowners and businesses.
             </p>
 
-            <p className="mt-4 text-white/70 text-base leading-relaxed animate-fade-up-delay-1">
-              Professional garage door repair, service and installation for Richmond homeowners and businesses.
+            {/* Brand statement */}
+            <p className="mt-4 text-[#4CAF80] font-bold uppercase tracking-[0.2em] text-sm animate-fade-up-delay-1">
+              Call the Champ.
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-3 animate-fade-up-delay-2">
+            {/* CTA buttons */}
+            <div className="mt-7 flex flex-col sm:flex-row gap-3 animate-fade-up-delay-2">
               <Link
                 href="/request-a-quote/"
-                className="inline-flex items-center justify-center gap-2 rounded-card bg-[#2E8B62] px-7 py-4 text-sm font-bold text-white hover:bg-[#1a7a58] transition-colors"
+                className="inline-flex items-center justify-center gap-2 rounded-card bg-[#2E8B62] px-7 py-4 text-sm font-bold text-white hover:bg-[#1a7a58] transition-colors uppercase tracking-wide"
               >
-                Get a Free Quote →
+                Get a Free Quote
               </Link>
               <a
-                href={siteConfig.phone.href}
-                className="inline-flex items-center justify-center gap-2 rounded-card border-2 border-white/40 text-white px-7 py-4 text-sm font-bold hover:border-white hover:bg-white/10 transition-colors"
+                href="tel:+17788000769"
+                className="inline-flex items-center justify-center gap-2 rounded-card border-2 border-white/40 text-white px-7 py-4 text-sm font-bold hover:border-white hover:bg-white/10 transition-colors uppercase tracking-wide"
               >
                 <IconPhone className="w-4 h-4" />
-                Call the Champ
-              </a>
-            </div>
-
-            <div className="mt-6 flex items-center gap-2 animate-fade-up-delay-3">
-              <IconPhone className="w-4 h-4 text-[#4CAF80] flex-shrink-0" />
-              <a href={siteConfig.phone.href} className="text-white/80 hover:text-white text-base font-semibold transition-colors">
-                (778) 800-0769
+                Call Now
               </a>
             </div>
 
