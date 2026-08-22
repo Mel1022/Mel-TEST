@@ -90,25 +90,28 @@ const faqs = [
 export default function HomePage() {
   return (
     <>
-      {/* HERO
-           To activate the photo background: add your technician photo to
-           /app-source/public/images/hero-tech.jpg
-           The gradient overlay is already set up — the photo will show on the right side. */}
       <section
         className="relative overflow-hidden"
-        style={{
-          minHeight: "600px",
-          backgroundImage: [
-            "linear-gradient(to right, rgba(7,31,23,0.98) 0%, rgba(11,61,46,0.97) 30%, rgba(11,61,46,0.80) 52%, rgba(11,61,46,0.40) 72%, rgba(11,61,46,0.15) 100%)",
-            "url('/images/hero-tech.jpg')",
-          ].join(", "),
-          backgroundSize: "cover",
-          backgroundPosition: "right center",
-          backgroundRepeat: "no-repeat",
-          /* Fallback when no photo: pure dark gradient */
-          backgroundColor: "#071f17",
-        }}
+        style={{ height: "clamp(580px, 46vw, 720px)", backgroundColor: "#071f17" }}
       >
+        {/* Photo — covers full section; object-position keeps technician/ladder visible on right */}
+        <img
+          src="/images/hero-tech.jpg"
+          alt=""
+          aria-hidden="true"
+          className="hero-photo"
+        />
+
+        {/* Gradient — fully dark left (text readable), clears to transparent by 72% */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(to right, rgba(7,31,23,1) 0%, rgba(7,31,23,0.97) 28%, rgba(7,31,23,0.82) 42%, rgba(7,31,23,0.28) 54%, rgba(7,31,23,0.06) 64%, transparent 72%)",
+          }}
+        />
+
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32">
           <div className="max-w-xl animate-fade-up">
             {/* Eyebrow with decorative line */}
