@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import TrustBadges from "@/components/TrustBadges";
 import CTASection from "@/components/CTASection";
+import ServiceCarousel from "@/components/ServiceCarousel";
 import FAQAccordion from "@/components/FAQAccordion";
 import { IconPhone, IconCheck, IconWrench, IconSpring, IconOpener, IconInstall, IconMaintenance } from "@/components/Icons";
 import { siteConfig } from "@/lib/site-config";
@@ -187,32 +188,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+      {/* SERVICES CAROUSEL */}
+      <section className="bg-white overflow-hidden">
+        <div className="py-16 sm:py-20">
+          <div className="text-center max-w-2xl mx-auto mb-10 px-4 sm:px-6 lg:px-8">
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
-              Garage Door Services in Richmond & Metro Vancouver
+              Garage Door Services in Richmond &amp; Metro Vancouver
             </h2>
             <p className="mt-3 text-steel">Residential, commercial, and strata — we do it all.</p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((s) => (
-              <Link
-                key={s.href}
-                href={s.href}
-                className="group rounded-card border border-steel/15 bg-white p-7 shadow-card hover:shadow-cardHover hover:border-navy/30 transition-all"
-              >
-                <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-navy/10 text-navy group-hover:bg-navy group-hover:text-white transition-colors">
-                  {s.icon}
-                </span>
-                <h3 className="mt-4 font-heading font-bold text-lg text-navy-dark">{s.title}</h3>
-                <p className="mt-2 text-sm text-steel leading-relaxed">{s.body}</p>
-                <span className="mt-4 inline-flex items-center text-sm font-semibold text-navy group-hover:text-navy-dark transition-colors">
-                  Learn more →
-                </span>
-              </Link>
-            ))}
+          <div className="px-4 sm:px-6 lg:px-8">
+            <ServiceCarousel />
           </div>
         </div>
       </section>
