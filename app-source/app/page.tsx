@@ -4,6 +4,7 @@ import TrustBadges from "@/components/TrustBadges";
 import CTASection from "@/components/CTASection";
 import ServiceCarousel from "@/components/ServiceCarousel";
 import ProblemsSection from "@/components/ProblemsSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
 import FAQAccordion from "@/components/FAQAccordion";
 import { IconPhone, IconCheck, IconWrench, IconSpring, IconOpener, IconInstall, IconMaintenance } from "@/components/Icons";
 import { siteConfig } from "@/lib/site-config";
@@ -225,27 +226,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
-              Getting Your Garage Door Fixed Is Simple.
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {steps.map((step) => (
-              <div key={step.n} className="rounded-card bg-surface border border-steel/10 p-7">
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-navy text-white font-heading font-extrabold text-lg">
-                  {step.n}
-                </span>
-                <h3 className="mt-5 font-heading font-bold text-lg text-navy-dark">{step.title}</h3>
-                <p className="mt-2 text-sm text-steel leading-relaxed">{step.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HowItWorksSection />
 
       {/* WHY DOORCHAMP */}
       <section className="bg-surface">

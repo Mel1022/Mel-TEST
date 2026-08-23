@@ -169,6 +169,113 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 40%;
 }
 
+/* ─── HOW IT WORKS SECTION ─── */
+
+/* Base reveal state */
+.hiw-reveal {
+  opacity: 0;
+  transform: translateY(22px) scale(0.97);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+
+/* Accent line under heading */
+.hiw-accent-line {
+  transition: width 0.45s ease-out;
+}
+
+/* Step card hover */
+.hiw-card {
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.hiw-card:hover {
+  box-shadow: 0 16px 40px -14px rgba(11, 61, 46, 0.22);
+  border-color: rgba(20, 107, 77, 0.25);
+  transform: translateY(-3px);
+}
+
+/* Horizontal connector line (desktop) */
+.hiw-line-h {
+  height: 2px;
+  background: linear-gradient(90deg, #146B4D 0%, #2E8B62 100%);
+  border-radius: 1px;
+  width: 0;
+  transition: width 0.6s ease-out;
+  display: block;
+}
+
+/* Arrow after horizontal line */
+.hiw-arrow-h {
+  color: #146B4D;
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  margin-left: 2px;
+}
+
+/* Vertical connector line (mobile) */
+.hiw-line-v {
+  width: 2px;
+  background: linear-gradient(180deg, #146B4D 0%, #2E8B62 100%);
+  border-radius: 1px;
+  height: 0;
+  transition: height 0.6s ease-out;
+  display: block;
+}
+
+/* Arrow after vertical line */
+.hiw-arrow-v {
+  color: #146B4D;
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  margin-top: 2px;
+}
+
+/* Icon nudge on step card hover */
+.hiw-card:hover .hiw-icon {
+  transform: translateY(-2px);
+}
+
+/* Number badge */
+.hiw-number {
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Reduced motion — skip all HIW animations */
+@media (prefers-reduced-motion: reduce) {
+  .hiw-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hiw-accent-line {
+    transition: none !important;
+  }
+  .hiw-line-h, .hiw-line-v {
+    transition: none !important;
+  }
+  .hiw-arrow-h, .hiw-arrow-v {
+    opacity: 1 !important;
+    transition: none !important;
+  }
+  .hiw-card {
+    transition: box-shadow 0.15s ease, border-color 0.15s ease !important;
+    transform: none !important;
+  }
+  .hiw-card:hover {
+    transform: none !important;
+  }
+  .hiw-number {
+    transition: none !important;
+  }
+}
+
 /* Mobile: stack green content panel above, then photo below */
 @media (max-width: 640px) {
   .hero-section {
