@@ -169,6 +169,92 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 40%;
 }
 
+/* ─── WHY CALL THE CHAMP SECTION ─── */
+
+.wtc-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+
+.wtc-accent-line {
+  transition: width 0.45s ease-out;
+}
+
+/* Primary card hover */
+.wtc-card-primary {
+  transition:
+    box-shadow 0.25s ease-out,
+    border-color 0.25s ease-out,
+    transform 0.25s ease-out;
+}
+
+.wtc-card-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px -14px rgba(11, 61, 46, 0.26);
+  border-color: rgba(20, 107, 77, 0.28);
+}
+
+.wtc-card-primary:hover .wtc-icon-lg {
+  transform: scale(1.05);
+}
+
+.wtc-icon-lg {
+  transition: transform 0.25s ease-out;
+}
+
+/* Secondary card hover */
+.wtc-card-secondary {
+  transition:
+    box-shadow 0.25s ease-out,
+    border-color 0.25s ease-out,
+    transform 0.25s ease-out;
+}
+
+.wtc-card-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px -10px rgba(11, 61, 46, 0.18);
+  border-color: rgba(20, 107, 77, 0.22);
+  background-color: #ffffff;
+}
+
+.wtc-card-secondary:hover .wtc-icon-sm {
+  transform: scale(1.05);
+}
+
+.wtc-icon-sm {
+  transition: transform 0.25s ease-out;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .wtc-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .wtc-accent-line {
+    transition: none !important;
+  }
+  .wtc-card-primary,
+  .wtc-card-secondary {
+    transition: box-shadow 0.15s ease, border-color 0.15s ease !important;
+  }
+  .wtc-card-primary:hover,
+  .wtc-card-secondary:hover {
+    transform: none !important;
+  }
+  .wtc-icon-lg,
+  .wtc-icon-sm {
+    transition: none !important;
+    transform: none !important;
+  }
+  .wtc-card-primary:hover .wtc-icon-lg,
+  .wtc-card-secondary:hover .wtc-icon-sm {
+    transform: none !important;
+  }
+}
+
 /* ─── HOW IT WORKS SECTION ─── */
 
 /* Base reveal state */
