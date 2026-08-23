@@ -177,6 +177,28 @@ h1, h2, h3, h4, h5, h6 {
   transition: opacity 0.55s ease-out, transform 0.55s ease-out;
 }
 
+/* Photo reveal slides from right */
+.wtc-reveal-right {
+  opacity: 0;
+  transform: translateX(22px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Photo wrap + hover */
+.wtc-photo-wrap {
+  transition: box-shadow 0.28s ease-out, transform 0.28s ease-out;
+}
+
+.wtc-photo-wrap:hover {
+  box-shadow: 0 24px 60px -16px rgba(11, 61, 46, 0.32);
+  transform: scale(1.01);
+}
+
+/* Caption gradient overlay */
+.wtc-photo-caption {
+  background: linear-gradient(to top, rgba(11, 61, 46, 0.72) 0%, transparent 100%);
+}
+
 .wtc-accent-line {
   transition: width 0.45s ease-out;
 }
@@ -228,7 +250,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .wtc-reveal {
+  .wtc-reveal,
+  .wtc-reveal-right {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
@@ -251,6 +274,11 @@ h1, h2, h3, h4, h5, h6 {
   }
   .wtc-card-primary:hover .wtc-icon-lg,
   .wtc-card-secondary:hover .wtc-icon-sm {
+    transform: none !important;
+  }
+  .wtc-photo-wrap,
+  .wtc-photo-wrap:hover {
+    transition: box-shadow 0.15s ease !important;
     transform: none !important;
   }
 }
