@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent, type ReactNode } from "react";
+import { useState, useEffect, type FormEvent, type ReactNode } from "react";
 
 const helpOptions = [
   "Garage Door Repair",
@@ -15,9 +15,16 @@ const helpOptions = [
 
 export default function QuoteForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [selectedHelp, setSelectedHelp] = useState("");
 
-  // No backend is connected yet — this form needs to be wired to a
-  // form endpoint, email service, or CRM before it goes live.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const problem = params.get("problem");
+    if (problem && helpOptions.includes(problem)) {
+      setSelectedHelp(problem);
+    }
+  }, []);
+
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setSubmitted(true);
@@ -55,7 +62,7 @@ export default function QuoteForm() {
       </div>
 
       <Field label="What Can We Help With?" htmlFor="qf-help">
-        <select id="qf-help" name="helpType" required defaultValue="" className={inputClass}>
+        <select id="qf-help" name="helpType" required value={selectedHelp} onChange={e => setSelectedHelp(e.target.value)} className={inputClass}>
           <option value="" disabled>
             Select an option
           </option>

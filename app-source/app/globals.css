@@ -48,6 +48,75 @@ h1, h2, h3, h4, h5, h6 {
 .animate-fade-up-delay-2 { animation: fadeUp 0.6s 0.30s ease-out both; }
 .animate-fade-up-delay-3 { animation: fadeUp 0.6s 0.45s ease-out both; }
 
+/* ─── PROBLEMS SECTION — scroll-reveal & interactions ─── */
+
+/* Base: hidden until revealed */
+.prob-reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+
+/* Accent line under heading */
+.prob-accent-line {
+  transition: width 0.5s ease-out;
+}
+
+/* Problem card */
+.prob-card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.prob-card:hover {
+  box-shadow: 0 16px 40px -14px rgba(11, 61, 46, 0.28);
+  border-color: rgba(20, 107, 77, 0.3);
+  transform: translateY(-4px);
+}
+
+/* Left accent bar — slides in on hover */
+.prob-accent-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #146B4D;
+  border-radius: 0 2px 2px 0;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 0.25s ease;
+}
+
+.prob-card:hover .prob-accent-bar,
+.prob-card:focus-visible .prob-accent-bar {
+  transform: scaleY(1);
+}
+
+/* Reduced motion — skip all animations */
+@media (prefers-reduced-motion: reduce) {
+  .prob-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .prob-accent-line {
+    transition: none !important;
+  }
+  .prob-card {
+    transition: box-shadow 0.15s ease, border-color 0.15s ease !important;
+    transform: none !important;
+  }
+  .prob-card:hover {
+    transform: none !important;
+  }
+}
+
 /* ─── SERVICE CAROUSEL ─── */
 .carousel-item {
   flex-shrink: 0;

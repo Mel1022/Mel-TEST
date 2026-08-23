@@ -3,6 +3,7 @@ import Link from "next/link";
 import TrustBadges from "@/components/TrustBadges";
 import CTASection from "@/components/CTASection";
 import ServiceCarousel from "@/components/ServiceCarousel";
+import ProblemsSection from "@/components/ProblemsSection";
 import FAQAccordion from "@/components/FAQAccordion";
 import { IconPhone, IconCheck, IconWrench, IconSpring, IconOpener, IconInstall, IconMaintenance } from "@/components/Icons";
 import { siteConfig } from "@/lib/site-config";
@@ -157,36 +158,7 @@ export default function HomePage() {
 
       <TrustBadges />
 
-      {/* PROBLEMS SECTION */}
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
-              Is Your Garage Door Giving You Trouble?
-            </h2>
-            <p className="mt-3 text-steel">
-              Whatever it&apos;s doing, there&apos;s a reason — and we can fix it today.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {problems.map((p) => (
-              <div key={p.title} className="rounded-card bg-white border border-steel/10 p-6 shadow-card hover:shadow-cardHover transition-shadow">
-                <h3 className="font-heading font-bold text-navy-dark text-base mb-2">{p.title}</h3>
-                <p className="text-sm text-steel leading-relaxed">{p.body}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <a
-              href={siteConfig.phone.href}
-              className="inline-flex items-center gap-2 rounded-card bg-navy px-7 py-3.5 text-sm font-bold text-white hover:bg-navy-dark transition-colors"
-            >
-              <IconPhone className="w-4 h-4" />
-              Call for Same-Day Service
-            </a>
-          </div>
-        </div>
-      </section>
+      <ProblemsSection />
 
       {/* SERVICES CAROUSEL */}
       <section className="bg-white overflow-hidden">
