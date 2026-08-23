@@ -1,9 +1,8 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
 import { IconPhone } from "@/components/Icons";
-import { siteConfig } from "@/lib/site-config";
 
-/* ── Problem-to-form mapping ── */
+/* ── Problem data ── */
 const PROBLEMS = [
   {
     title: "Door Won't Open or Close",
@@ -55,157 +54,296 @@ const PROBLEMS = [
   },
 ];
 
+/* ── Stack geometry ── */
+const CARD_H   = 370; // px – height of each card
+const PEEK_PAD = 52;  // px – extra container height so layers 1 & 2 peek below
+const WRAP_H   = CARD_H + PEEK_PAD;
+
+/* ── Per-layer transform/opacity ── */
+function stackStyle(offset: number): React.CSSProperties {
+  const base: React.CSSProperties = {
+    position: "absolute",
+    top: 0, left: 0, right: 0,
+    height: CARD_H,
+    willChange: "transform, opacity",
+    transition: "opacity 0.42s ease-out, transform 0.42s ease-out",
+  };
+  if (offset === 0)  return { ...base, opacity: 1,    transform: "translateY(0px) scale(1)",     zIndex: 30, pointerEvents: "auto" };
+  if (offset === 1)  return { ...base, opacity: 0.72, transform: "translateY(19px) scale(0.965)", zIndex: 20, pointerEvents: "none" };
+  if (offset === 2)  return { ...base, opacity: 0.42, transform: "translateY(38px) scale(0.93)",  zIndex: 10, pointerEvents: "none" };
+  if (offset === -1) return { ...base, opacity: 0,    transform: "translateY(-30px) scale(0.97)", zIndex: 5,  pointerEvents: "none" };
+  const dir = offset < 0 ? -55 : 55;
+  return { ...base, opacity: 0, transform: `translateY(${dir}px) scale(0.88)`, zIndex: 0, pointerEvents: "none" };
+}
+
+/* ── Component ── */
 export default function ProblemsSection() {
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const wrapRef    = useRef<HTMLDivElement>(null);
+  const [active,   setActive]   = useState(0);
   const [revealed, setRevealed] = useState(false);
-  const prefersReduced = useRef(false);
+  const [isReduced, setIsReduced] = useState(false);
 
   useEffect(() => {
-    prefersReduced.current = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (mq.matches) { setIsReduced(true); setRevealed(true); return; }
 
-    if (prefersReduced.current) {
-      setRevealed(true);
-      return;
-    }
-
-    const el = sectionRef.current;
+    const el = wrapRef.current;
     if (!el) return;
+
     const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setRevealed(true);
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.1 }
+      ([e]) => { if (e.isIntersecting) setRevealed(true); },
+      { threshold: 0.04 }
     );
     obs.observe(el);
-    return () => obs.disconnect();
+
+    const elRef = el;
+    function onScroll() {
+      const rect  = elRef.getBoundingClientRect();
+      const wrapH = elRef.offsetHeight;
+      const vh    = window.innerHeight;
+      const scrolled = Math.max(0, -rect.top);
+      const total    = Math.max(1, wrapH - vh);
+      const progress = Math.min(0.9999, scrolled / total); // never reach exactly 1
+      const idx = Math.min(PROBLEMS.length - 1, Math.floor(progress * PROBLEMS.length));
+      setActive(idx);
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => { obs.disconnect(); window.removeEventListener("scroll", onScroll); };
   }, []);
 
-  function handleProblemClick(formValue: string) {
-    const url = `/request-a-quote/?problem=${encodeURIComponent(formValue)}`;
-    window.location.href = url;
+  function handleGetHelp(formValue: string) {
+    window.location.href = `/request-a-quote/?problem=${encodeURIComponent(formValue)}`;
   }
 
-  const reduced = typeof window !== "undefined"
-    ? window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    : false;
+  /* ── Reduced-motion fallback: original accessible grid ── */
+  if (isReduced) {
+    return (
+      <section className="bg-surface">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
+              Is Your Garage Door Giving You Trouble?
+            </h2>
+            <p className="mt-3 text-steel">
+              Whatever it&apos;s doing, there&apos;s a reason — and we can fix it today.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {PROBLEMS.map((p) => (
+              <button
+                key={p.title}
+                type="button"
+                onClick={() => handleGetHelp(p.formValue)}
+                aria-label={`${p.title} — click to request service`}
+                className="prob-card group text-left rounded-card bg-white border border-steel/10 p-6 shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy"
+              >
+                <span className="prob-accent-bar" aria-hidden="true" />
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-navy/8 text-navy mb-4">
+                  {p.icon}
+                </span>
+                <h3 className="font-heading font-bold text-navy-dark text-base mb-2">{p.title}</h3>
+                <p className="text-sm text-steel leading-relaxed">{p.body}</p>
+                <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-navy/60 group-hover:text-navy transition-colors">
+                  Get help
+                  <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
+                </span>
+              </button>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <a href="tel:+17788000769"
+              className="inline-flex items-center gap-2 rounded-card bg-navy px-7 py-3.5 text-sm font-bold text-white hover:bg-navy-dark hover:-translate-y-0.5 transition-all duration-200">
+              <IconPhone className="w-4 h-4" />
+              Call for Same-Day Service
+            </a>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  /* ── Stack experience ── */
+  /* Wrapper is taller than viewport so sticky inner plays through scroll */
+  const WRAP_VH = 100 + PROBLEMS.length * 14; // e.g. 212vh → ~112vh of scrollable range
 
   return (
-    <section className="bg-surface" ref={sectionRef}>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <div
+      ref={wrapRef}
+      style={{ height: `${WRAP_VH}vh` }}
+      className="relative"
+    >
+      {/* Sticky panel */}
+      <div
+        className="sticky top-0 overflow-hidden bg-surface"
+        style={{ minHeight: "100vh" }}
+        role="region"
+        aria-label="Common garage door problems"
+        onKeyDown={(e) => {
+          if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+            e.preventDefault();
+            setActive((a) => Math.min(PROBLEMS.length - 1, a + 1));
+          }
+          if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+            e.preventDefault();
+            setActive((a) => Math.max(0, a - 1));
+          }
+        }}
+        tabIndex={-1}
+      >
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8 lg:gap-16 items-center py-12 sm:py-16 lg:py-20"
+             style={{ minHeight: "100vh" }}>
 
-        {/* Heading */}
-        <div
-          className="text-center max-w-2xl mx-auto mb-12 prob-reveal"
-          style={revealed ? { opacity: 1, transform: "translateY(0)" } : undefined}
-        >
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
-            Is Your Garage Door Giving You Trouble?
-          </h2>
+          {/* ── LEFT: heading + dots + CTA ── */}
+          <div
+            className="w-full lg:w-[42%] flex-shrink-0 pstack-reveal"
+            style={revealed
+              ? { opacity: 1, transform: "translateY(0)", transition: "opacity 0.55s ease-out, transform 0.55s ease-out" }
+              : { opacity: 0, transform: "translateY(20px)" }}
+          >
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-navy mb-3">
+              Common Garage Door Problems
+            </p>
+            <h2
+              className="font-heading font-extrabold text-navy-dark"
+              style={{ fontSize: "clamp(1.75rem, 2.6vw, 2.7rem)", lineHeight: 1.1 }}
+            >
+              Is Your Garage Door Giving You Trouble?
+            </h2>
+            <div className="h-[3px] rounded-full bg-navy mt-3 mb-5"
+                 style={revealed
+                   ? { width: 56, transition: "width 0.45s ease-out 0.2s" }
+                   : { width: 0 }} />
+            <p className="text-steel text-base leading-relaxed mb-8">
+              Whatever it&apos;s doing, there&apos;s a reason — and we can fix it today.
+            </p>
 
-          {/* Green accent line */}
-          <div className="flex justify-center mt-3 mb-3">
-            <span
-              className="block h-[3px] rounded-full bg-navy prob-accent-line"
-              style={
-                revealed
-                  ? { width: 60, transitionDelay: "200ms" }
-                  : { width: 0 }
-              }
-            />
+            {/* Progress pill dots */}
+            <div className="flex items-center gap-2 mb-8" role="navigation" aria-label="Problem steps">
+              {PROBLEMS.map((p, i) => (
+                <button
+                  key={p.title}
+                  onClick={() => setActive(i)}
+                  aria-label={`Problem ${i + 1}: ${p.title}${i === active ? " (current)" : ""}`}
+                  aria-current={i === active ? "step" : undefined}
+                  className="rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy transition-all duration-300 ease-out"
+                  style={{
+                    width:  i === active ? 24 : 10,
+                    height: i === active ? 10 : 10,
+                    background: i === active ? "#146B4D" : i < active ? "rgba(20,107,77,0.45)" : "rgba(20,107,77,0.18)",
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Active card label (mobile preview) */}
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-navy/60 mb-6 lg:hidden">
+              {String(active + 1).padStart(2, "0")} / {String(PROBLEMS.length).padStart(2, "0")} &nbsp;·&nbsp; {PROBLEMS[active].title}
+            </p>
+
+            <a
+              href="tel:+17788000769"
+              className="inline-flex items-center gap-2 rounded-card bg-navy px-6 py-3.5 text-sm font-bold text-white hover:bg-navy-dark hover:-translate-y-0.5 hover:shadow-cardHover transition-all duration-200"
+            >
+              <IconPhone className="w-4 h-4" />
+              Call for Same-Day Service
+            </a>
           </div>
 
-          <p
-            className="text-steel prob-reveal"
-            style={
-              revealed
-                ? {
-                    opacity: 1,
-                    transform: "translateY(0)",
-                    transitionDelay: reduced ? "0ms" : "150ms",
-                  }
-                : undefined
-            }
+          {/* ── RIGHT: card stack ── */}
+          <div
+            className="w-full lg:flex-1 relative pstack-reveal"
+            style={{
+              height: WRAP_H,
+              ...(revealed
+                ? { opacity: 1, transform: "translateY(0)", transition: "opacity 0.55s ease-out 0.12s, transform 0.55s ease-out 0.12s" }
+                : { opacity: 0, transform: "translateY(28px)" }),
+            }}
           >
-            Whatever it&apos;s doing, there&apos;s a reason — and we can fix it today.
-          </p>
+            {/* Subtle background circle */}
+            <div
+              className="absolute pointer-events-none rounded-full"
+              style={{
+                width: 340, height: 340,
+                background: "radial-gradient(circle, rgba(20,107,77,0.07) 0%, transparent 70%)",
+                top: "50%", left: "50%",
+                transform: "translate(-50%, -55%)",
+              }}
+              aria-hidden="true"
+            />
+
+            {/* Cards */}
+            {PROBLEMS.map((p, i) => (
+              <div
+                key={p.title}
+                style={stackStyle(i - active)}
+                aria-hidden={i !== active}
+              >
+                <div className="rounded-card bg-white border border-steel/10 shadow-card h-full flex flex-col p-7 pstack-card-inner">
+
+                  {/* Counter row */}
+                  <div className="flex items-center gap-3 mb-5" aria-hidden="true">
+                    <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-navy/45">
+                      {String(i + 1).padStart(2, "0")}&nbsp;/&nbsp;{String(PROBLEMS.length).padStart(2, "0")}
+                    </span>
+                    <span className="flex-1 h-px bg-navy/8" />
+                  </div>
+
+                  {/* Icon */}
+                  <span className="inline-flex items-center justify-center w-11 h-11 rounded-full bg-navy/8 text-navy mb-4 flex-shrink-0">
+                    {p.icon}
+                  </span>
+
+                  {/* Title */}
+                  <h3
+                    className="font-heading font-extrabold text-navy-dark mb-3"
+                    style={{ fontSize: "clamp(1rem, 1.5vw, 1.2rem)", lineHeight: 1.2 }}
+                  >
+                    {p.title}
+                  </h3>
+
+                  {/* Body */}
+                  <p className="text-sm text-steel leading-relaxed flex-1">
+                    {p.body}
+                  </p>
+
+                  {/* CTA */}
+                  <button
+                    type="button"
+                    onClick={() => handleGetHelp(p.formValue)}
+                    tabIndex={i === active ? 0 : -1}
+                    className="mt-5 self-start inline-flex items-center gap-2 text-sm font-bold text-navy hover:text-navy-dark transition-colors duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy focus-visible:ring-offset-2 rounded"
+                  >
+                    Get Help
+                    <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
         </div>
 
-        {/* Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {PROBLEMS.map((p, i) => (
-            <button
-              key={p.title}
-              type="button"
-              onClick={() => handleProblemClick(p.formValue)}
-              aria-label={`${p.title} — click to request service`}
-              className="prob-card group text-left rounded-card bg-white border border-steel/10 p-6 shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy prob-reveal"
-              style={
-                revealed
-                  ? {
-                      opacity: 1,
-                      transform: "translateY(0)",
-                      transitionDelay: reduced ? "0ms" : `${i * 80}ms`,
-                    }
-                  : undefined
-              }
-            >
-              {/* Left accent bar (hover) */}
-              <span
-                className="prob-accent-bar"
-                aria-hidden="true"
-              />
-
-              {/* Icon */}
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-navy/8 text-navy mb-4 prob-icon transition-transform duration-300 group-hover:-translate-y-0.5">
-                {p.icon}
-              </span>
-
-              <h3 className="font-heading font-bold text-navy-dark text-base mb-2 transition-colors duration-200 group-hover:text-navy">
-                {p.title}
-              </h3>
-              <p className="text-sm text-steel leading-relaxed">
-                {p.body}
-              </p>
-
-              <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-navy/60 group-hover:text-navy transition-colors duration-200">
-                Get help
-                <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
-              </span>
-            </button>
-          ))}
-        </div>
-
-        {/* CTA */}
-        <div
-          className="text-center mt-10 prob-reveal"
-          style={
-            revealed
-              ? {
-                  opacity: 1,
-                  transform: "translateY(0)",
-                  transitionDelay: reduced ? "0ms" : "680ms",
-                }
-              : undefined
-          }
-        >
-          <a
-            href="tel:+17788000769"
-            className="inline-flex items-center gap-2 rounded-card bg-navy px-7 py-3.5 text-sm font-bold text-white hover:bg-navy-dark hover:-translate-y-0.5 hover:shadow-cardHover transition-all duration-200"
+        {/* Scroll hint — visible until midway */}
+        {active < PROBLEMS.length - 1 && (
+          <div
+            className="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 pointer-events-none"
+            aria-hidden="true"
           >
-            <IconPhone className="w-4 h-4 transition-transform duration-200 group-hover:-translate-y-0.5" />
-            Call for Same-Day Service
-          </a>
-        </div>
-
+            <p className="text-[9px] font-extrabold uppercase tracking-[0.2em] text-navy/40">Scroll</p>
+            <svg width="14" height="20" viewBox="0 0 14 20" fill="none" className="text-navy/30">
+              <rect x="1" y="1" width="12" height="18" rx="6" stroke="currentColor" strokeWidth="1.5" />
+              <circle cx="7" cy="6" r="2" fill="currentColor" className="animate-bounce" />
+            </svg>
+          </div>
+        )}
       </div>
-    </section>
+    </div>
   );
 }
+
+/* ── Hover lift on active card inner (CSS class handles it) ── */
 
 /* ── Inline SVG icons ── */
 
