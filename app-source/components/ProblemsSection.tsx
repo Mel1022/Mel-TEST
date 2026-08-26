@@ -280,7 +280,34 @@ export default function ProblemsSection() {
                 style={stackStyle(i - active)}
                 aria-hidden={i !== active}
               >
-                <div className="rounded-card bg-white border border-steel/10 shadow-card h-full flex flex-col p-7 pstack-card-inner">
+                <div className={`rounded-card border shadow-card h-full flex flex-col p-7 pstack-card-inner relative overflow-hidden ${i === 0 ? "border-steel/10 bg-white" : "border-steel/10 bg-white"}`}>
+
+                  {/* Background image (first card only) */}
+                  {i === 0 && (
+                    <>
+                      <div
+                        aria-hidden="true"
+                        style={{
+                          position: "absolute", inset: 0,
+                          backgroundImage: "url(/images/garage-door-wont-open.webp)",
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          filter: "blur(3px) brightness(1.05)",
+                          transform: "scale(1.06)",
+                        }}
+                      />
+                      <div
+                        aria-hidden="true"
+                        style={{
+                          position: "absolute", inset: 0,
+                          background: "rgba(255,255,255,0.72)",
+                        }}
+                      />
+                    </>
+                  )}
+
+                  {/* Card content (above background layers) */}
+                  <div className="relative z-10 flex flex-col h-full">
 
                   {/* Counter row */}
                   <div className="flex items-center gap-3 mb-5" aria-hidden="true">
@@ -318,6 +345,7 @@ export default function ProblemsSection() {
                     Get Help
                     <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
                   </button>
+                  </div>{/* end relative z-10 content wrapper */}
                 </div>
               </div>
             ))}
