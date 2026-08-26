@@ -282,14 +282,14 @@ export default function ProblemsSection() {
               >
                 <div className="rounded-card border border-steel/10 bg-white shadow-card h-full flex flex-col p-7 pstack-card-inner relative overflow-hidden">
 
-                  {/* Background image (cards 0–3) */}
-                  {(i === 0 || i === 1 || i === 2 || i === 3) && (
+                  {/* Background image (cards 0–4) */}
+                  {(i === 0 || i === 1 || i === 2 || i === 3 || i === 4) && (
                     <>
                       <div
                         aria-hidden="true"
                         style={{
                           position: "absolute", inset: 0,
-                          backgroundImage: i === 0 ? "url(/images/garage-door-wont-open.webp)" : i === 1 ? "url(/images/garage-door-grinding.jpg)" : i === 2 ? "url(/images/garage-door-off-track.jpg)" : "url(/images/garage-door-spring.jpg)",
+                          backgroundImage: i === 0 ? "url(/images/garage-door-wont-open.webp)" : i === 1 ? "url(/images/garage-door-grinding.jpg)" : i === 2 ? "url(/images/garage-door-off-track.jpg)" : i === 3 ? "url(/images/garage-door-spring.jpg)" : "url(/images/garage-door-opener.jpg)",
                           backgroundSize: "cover",
                           backgroundPosition: "center",
                         }}
@@ -309,27 +309,27 @@ export default function ProblemsSection() {
 
                   {/* Counter row */}
                   <div className="flex items-center gap-3 mb-5" aria-hidden="true">
-                    <span className={`text-[10px] font-extrabold uppercase tracking-[0.2em] ${i <= 3 ? "text-white/60" : "text-navy/45"}`}>
+                    <span className={`text-[10px] font-extrabold uppercase tracking-[0.2em] ${i <= 4 ? "text-white/60" : "text-navy/45"}`}>
                       {String(i + 1).padStart(2, "0")}&nbsp;/&nbsp;{String(PROBLEMS.length).padStart(2, "0")}
                     </span>
-                    <span className={`flex-1 h-px ${i <= 3 ? "bg-white/20" : "bg-navy/8"}`} />
+                    <span className={`flex-1 h-px ${i <= 4 ? "bg-white/20" : "bg-navy/8"}`} />
                   </div>
 
                   {/* Icon */}
-                  <span className={`inline-flex items-center justify-center w-11 h-11 rounded-full mb-4 flex-shrink-0 ${i <= 3 ? "bg-white/15 text-white" : "bg-navy/8 text-navy"}`}>
+                  <span className={`inline-flex items-center justify-center w-11 h-11 rounded-full mb-4 flex-shrink-0 ${i <= 4 ? "bg-white/15 text-white" : "bg-navy/8 text-navy"}`}>
                     {p.icon}
                   </span>
 
                   {/* Title */}
                   <h3
-                    className={`font-heading font-extrabold mb-3 ${i <= 3 ? "text-white" : "text-navy-dark"}`}
+                    className={`font-heading font-extrabold mb-3 ${i <= 4 ? "text-white" : "text-navy-dark"}`}
                     style={{ fontSize: "clamp(1rem, 1.5vw, 1.2rem)", lineHeight: 1.2 }}
                   >
                     {p.title}
                   </h3>
 
                   {/* Body */}
-                  <p className={`text-sm leading-relaxed flex-1 ${i <= 3 ? "text-white/80" : "text-steel"}`}>
+                  <p className={`text-sm leading-relaxed flex-1 ${i <= 4 ? "text-white/80" : "text-steel"}`}>
                     {p.body}
                   </p>
 
@@ -338,7 +338,7 @@ export default function ProblemsSection() {
                     type="button"
                     onClick={() => handleGetHelp(p.formValue)}
                     tabIndex={i === active ? 0 : -1}
-                    className={`mt-5 self-start inline-flex items-center gap-2 text-sm font-bold transition-colors duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded ${i <= 3 ? "text-white hover:text-white/80 focus-visible:ring-white" : "text-navy hover:text-navy-dark focus-visible:ring-navy"}`}
+                    className={`mt-5 self-start inline-flex items-center gap-2 text-sm font-bold transition-colors duration-200 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded ${i <= 4 ? "text-white hover:text-white/80 focus-visible:ring-white" : "text-navy hover:text-navy-dark focus-visible:ring-navy"}`}
                   >
                     Get Help
                     <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
