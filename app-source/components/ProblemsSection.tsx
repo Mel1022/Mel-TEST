@@ -77,26 +77,52 @@ function stackStyle(offset: number): React.CSSProperties {
 }
 
 /* ── Decorative background parts ── */
-const DOOR_PANEL = <><rect x="4" y="6" width="40" height="36" rx="2" stroke="#146B4D" strokeWidth="2"/><line x1="4" y1="24" x2="44" y2="24" stroke="#146B4D" strokeWidth="1.2" strokeDasharray="3 2" opacity="0.5"/><line x1="24" y1="6" x2="24" y2="42" stroke="#146B4D" strokeWidth="1.2" strokeDasharray="3 2" opacity="0.5"/></>;
-const SPRING    = <><path d="M12 8h24M10 14h28M12 20h24M10 26h28M12 32h24M10 38h28" stroke="#146B4D" strokeWidth="2" strokeLinecap="round"/><line x1="12" y1="8" x2="10" y2="14" stroke="#146B4D" strokeWidth="1.4"/><line x1="36" y1="8" x2="38" y2="14" stroke="#146B4D" strokeWidth="1.4"/><line x1="10" y1="14" x2="12" y2="20" stroke="#146B4D" strokeWidth="1.4"/><line x1="38" y1="14" x2="36" y2="20" stroke="#146B4D" strokeWidth="1.4"/><line x1="12" y1="20" x2="10" y2="26" stroke="#146B4D" strokeWidth="1.4"/><line x1="36" y1="20" x2="38" y2="26" stroke="#146B4D" strokeWidth="1.4"/><line x1="10" y1="26" x2="12" y2="32" stroke="#146B4D" strokeWidth="1.4"/><line x1="38" y1="26" x2="36" y2="32" stroke="#146B4D" strokeWidth="1.4"/><line x1="12" y1="32" x2="10" y2="38" stroke="#146B4D" strokeWidth="1.4"/><line x1="36" y1="32" x2="38" y2="38" stroke="#146B4D" strokeWidth="1.4"/></>;
-const REMOTE    = <><rect x="14" y="4" width="20" height="40" rx="5" stroke="#146B4D" strokeWidth="2"/><rect x="18" y="10" width="12" height="8" rx="1.5" stroke="#146B4D" strokeWidth="1.4"/><circle cx="24" cy="28" r="3" stroke="#146B4D" strokeWidth="1.5"/><circle cx="24" cy="37" r="2" stroke="#146B4D" strokeWidth="1.3"/></>;
-const TRACK     = <><line x1="6" y1="36" x2="42" y2="36" stroke="#146B4D" strokeWidth="2.5" strokeLinecap="round"/><rect x="14" y="14" width="20" height="22" rx="2" stroke="#146B4D" strokeWidth="2"/><circle cx="14" cy="10" r="3.5" stroke="#146B4D" strokeWidth="1.5"/><circle cx="34" cy="10" r="3.5" stroke="#146B4D" strokeWidth="1.5"/></>;
-const GEAR      = <><circle cx="24" cy="24" r="8" stroke="#146B4D" strokeWidth="2"/><path d="M24 4v4M24 40v4M4 24h4M40 24h4M8.1 8.1l2.8 2.8M37.1 37.1l2.8 2.8M8.1 39.9l2.8-2.8M37.1 10.9l2.8-2.8" stroke="#146B4D" strokeWidth="2.2" strokeLinecap="round"/></>;
-const DRUM      = <><circle cx="24" cy="24" r="14" stroke="#146B4D" strokeWidth="2"/><circle cx="24" cy="24" r="6" stroke="#146B4D" strokeWidth="1.5"/><path d="M24 10 Q34 14 38 24 Q34 34 24 38 Q14 34 10 24 Q14 14 24 10Z" stroke="#146B4D" strokeWidth="1" strokeDasharray="2 3" fill="none"/></>;
+const S = "#146B4D"; // stroke color shorthand
+const DOOR_PANEL  = <><rect x="4" y="6" width="40" height="36" rx="2" stroke={S} strokeWidth="2"/><line x1="4" y1="24" x2="44" y2="24" stroke={S} strokeWidth="1.2" strokeDasharray="3 2" opacity="0.5"/><line x1="24" y1="6" x2="24" y2="42" stroke={S} strokeWidth="1.2" strokeDasharray="3 2" opacity="0.5"/><line x1="4" y1="15" x2="44" y2="15" stroke={S} strokeWidth="0.8" strokeDasharray="2 3" opacity="0.3"/><line x1="4" y1="33" x2="44" y2="33" stroke={S} strokeWidth="0.8" strokeDasharray="2 3" opacity="0.3"/></>;
+const SPRING      = <><path d="M12 8h24M10 14h28M12 20h24M10 26h28M12 32h24M10 38h28" stroke={S} strokeWidth="2" strokeLinecap="round"/><line x1="12" y1="8" x2="10" y2="14" stroke={S} strokeWidth="1.4"/><line x1="36" y1="8" x2="38" y2="14" stroke={S} strokeWidth="1.4"/><line x1="10" y1="14" x2="12" y2="20" stroke={S} strokeWidth="1.4"/><line x1="38" y1="14" x2="36" y2="20" stroke={S} strokeWidth="1.4"/><line x1="12" y1="20" x2="10" y2="26" stroke={S} strokeWidth="1.4"/><line x1="36" y1="20" x2="38" y2="26" stroke={S} strokeWidth="1.4"/><line x1="10" y1="26" x2="12" y2="32" stroke={S} strokeWidth="1.4"/><line x1="38" y1="26" x2="36" y2="32" stroke={S} strokeWidth="1.4"/><line x1="12" y1="32" x2="10" y2="38" stroke={S} strokeWidth="1.4"/><line x1="36" y1="32" x2="38" y2="38" stroke={S} strokeWidth="1.4"/></>;
+const REMOTE      = <><rect x="14" y="4" width="20" height="40" rx="5" stroke={S} strokeWidth="2"/><rect x="18" y="10" width="12" height="8" rx="1.5" stroke={S} strokeWidth="1.4"/><circle cx="24" cy="28" r="3" stroke={S} strokeWidth="1.5"/><circle cx="24" cy="37" r="2" stroke={S} strokeWidth="1.3"/></>;
+const TRACK       = <><line x1="6" y1="36" x2="42" y2="36" stroke={S} strokeWidth="2.5" strokeLinecap="round"/><rect x="14" y="14" width="20" height="22" rx="2" stroke={S} strokeWidth="2"/><circle cx="14" cy="10" r="3.5" stroke={S} strokeWidth="1.5"/><circle cx="34" cy="10" r="3.5" stroke={S} strokeWidth="1.5"/></>;
+const DRUM        = <><circle cx="24" cy="24" r="14" stroke={S} strokeWidth="2"/><circle cx="24" cy="24" r="6" stroke={S} strokeWidth="1.5"/><path d="M24 10 Q34 14 38 24 Q34 34 24 38 Q14 34 10 24 Q14 14 24 10Z" stroke={S} strokeWidth="1" strokeDasharray="2 3" fill="none"/></>;
+/* Roller — wheel with spokes and axle */
+const ROLLER      = <><circle cx="24" cy="24" r="16" stroke={S} strokeWidth="2"/><circle cx="24" cy="24" r="5" stroke={S} strokeWidth="1.8"/><line x1="24" y1="8" x2="24" y2="19" stroke={S} strokeWidth="1.3"/><line x1="24" y1="29" x2="24" y2="40" stroke={S} strokeWidth="1.3"/><line x1="8" y1="24" x2="19" y2="24" stroke={S} strokeWidth="1.3"/><line x1="29" y1="24" x2="40" y2="24" stroke={S} strokeWidth="1.3"/><line x1="12.7" y1="12.7" x2="20.4" y2="20.4" stroke={S} strokeWidth="1.1"/><line x1="27.6" y1="27.6" x2="35.3" y2="35.3" stroke={S} strokeWidth="1.1"/><line x1="35.3" y1="12.7" x2="27.6" y2="20.4" stroke={S} strokeWidth="1.1"/><line x1="20.4" y1="27.6" x2="12.7" y2="35.3" stroke={S} strokeWidth="1.1"/></>;
+/* Hinge — side-mount bracket with holes */
+const HINGE       = <><rect x="6" y="4" width="14" height="40" rx="2" stroke={S} strokeWidth="2"/><rect x="20" y="16" width="22" height="16" rx="2" stroke={S} strokeWidth="2"/><circle cx="13" cy="12" r="3" stroke={S} strokeWidth="1.5"/><circle cx="13" cy="24" r="3" stroke={S} strokeWidth="1.5"/><circle cx="13" cy="36" r="3" stroke={S} strokeWidth="1.5"/><circle cx="31" cy="24" r="3" stroke={S} strokeWidth="1.5"/></>;
+/* Photo-eye sensor — small box with lens and cord */
+const SENSOR      = <><rect x="10" y="14" width="28" height="20" rx="3" stroke={S} strokeWidth="2"/><circle cx="24" cy="24" r="6" stroke={S} strokeWidth="1.8"/><circle cx="24" cy="24" r="2.5" stroke={S} strokeWidth="1.4"/><line x1="24" y1="34" x2="24" y2="44" stroke={S} strokeWidth="1.5" strokeLinecap="round"/><line x1="18" y1="44" x2="30" y2="44" stroke={S} strokeWidth="1.5" strokeLinecap="round"/></>;
+/* Winding cone — tapered cylinder at spring end */
+const WINDING     = <><path d="M10 8 L38 8 L44 40 L4 40 Z" stroke={S} strokeWidth="2" fill="none"/><line x1="10" y1="8" x2="4" y2="40" stroke={S} strokeWidth="1"/><line x1="38" y1="8" x2="44" y2="40" stroke={S} strokeWidth="1"/><line x1="7" y1="20" x2="41" y2="20" stroke={S} strokeWidth="1" strokeDasharray="2 2"/><line x1="5.5" y1="30" x2="42.5" y2="30" stroke={S} strokeWidth="1" strokeDasharray="2 2"/><circle cx="24" cy="8" r="3" stroke={S} strokeWidth="1.5"/></>;
+/* Bottom bracket — L-shaped corner bracket */
+const BRACKET     = <><path d="M8 4 L8 40 L44 40" stroke={S} strokeWidth="2.5" strokeLinecap="round" fill="none"/><line x1="8" y1="4" x2="16" y2="4" stroke={S} strokeWidth="2.5" strokeLinecap="round"/><circle cx="8" cy="14" r="2.5" stroke={S} strokeWidth="1.5"/><circle cx="8" cy="28" r="2.5" stroke={S} strokeWidth="1.5"/><circle cx="22" cy="40" r="2.5" stroke={S} strokeWidth="1.5"/><circle cx="36" cy="40" r="2.5" stroke={S} strokeWidth="1.5"/></>;
+/* Cable — looped wire with end fitting */
+const CABLE       = <><path d="M8 24 Q8 8 24 8 Q40 8 40 24 Q40 40 24 40 Q16 40 12 34" stroke={S} strokeWidth="2" fill="none" strokeLinecap="round"/><circle cx="10" cy="34" r="4" stroke={S} strokeWidth="1.8"/><line x1="6" y1="38" x2="14" y2="30" stroke={S} strokeWidth="1.4"/></>;
+/* Strut / reinforcement bar — horizontal bar with gussets */
+const STRUT       = <><rect x="2" y="20" width="44" height="8" rx="1.5" stroke={S} strokeWidth="2"/><line x1="10" y1="20" x2="10" y2="28" stroke={S} strokeWidth="1.2"/><line x1="20" y1="20" x2="20" y2="28" stroke={S} strokeWidth="1.2"/><line x1="28" y1="20" x2="28" y2="28" stroke={S} strokeWidth="1.2"/><line x1="38" y1="20" x2="38" y2="28" stroke={S} strokeWidth="1.2"/><circle cx="6" cy="24" r="2" stroke={S} strokeWidth="1.4"/><circle cx="42" cy="24" r="2" stroke={S} strokeWidth="1.4"/></>;
+/* Pulley — grooved wheel on mount */
+const PULLEY      = <><circle cx="24" cy="20" r="12" stroke={S} strokeWidth="2"/><circle cx="24" cy="20" r="7" stroke={S} strokeWidth="1.5"/><circle cx="24" cy="20" r="3" stroke={S} strokeWidth="1.5"/><line x1="24" y1="8" x2="24" y2="4" stroke={S} strokeWidth="2"/><rect x="18" y="2" width="12" height="4" rx="1" stroke={S} strokeWidth="1.5"/><line x1="14" y1="32" x2="10" y2="44" stroke={S} strokeWidth="1.5" strokeLinecap="round"/><line x1="34" y1="32" x2="38" y2="44" stroke={S} strokeWidth="1.5" strokeLinecap="round"/></>;
 
 const DECO_PARTS: { path: React.ReactNode; size: number; x: string; y: string; r: number; op: number }[] = [
-  { path: DOOR_PANEL, size: 110, x: "2%",  y: "5%",  r: -8,  op: 0.055 },
-  { path: SPRING,     size: 70,  x: "18%", y: "72%", r: 15,  op: 0.07  },
-  { path: REMOTE,     size: 64,  x: "38%", y: "8%",  r: 12,  op: 0.06  },
-  { path: TRACK,      size: 90,  x: "55%", y: "78%", r: -5,  op: 0.05  },
-  { path: GEAR,       size: 80,  x: "72%", y: "4%",  r: 20,  op: 0.065 },
-  { path: DRUM,       size: 76,  x: "88%", y: "55%", r: -12, op: 0.055 },
-  { path: SPRING,     size: 54,  x: "80%", y: "18%", r: -20, op: 0.05  },
-  { path: DOOR_PANEL, size: 72,  x: "6%",  y: "55%", r: 10,  op: 0.045 },
-  { path: REMOTE,     size: 50,  x: "46%", y: "60%", r: -15, op: 0.045 },
-  { path: GEAR,       size: 56,  x: "28%", y: "30%", r: 35,  op: 0.04  },
-  { path: TRACK,      size: 68,  x: "64%", y: "38%", r: 8,   op: 0.05  },
-  { path: DRUM,       size: 60,  x: "14%", y: "88%", r: 25,  op: 0.055 },
+  { path: DOOR_PANEL, size: 110, x: "2%",   y: "4%",  r: -8,  op: 0.06  },
+  { path: SPRING,     size: 72,  x: "18%",  y: "70%", r: 15,  op: 0.07  },
+  { path: REMOTE,     size: 62,  x: "38%",  y: "6%",  r: 12,  op: 0.065 },
+  { path: TRACK,      size: 90,  x: "55%",  y: "76%", r: -5,  op: 0.055 },
+  { path: DRUM,       size: 80,  x: "72%",  y: "3%",  r: 20,  op: 0.065 },
+  { path: ROLLER,     size: 76,  x: "88%",  y: "52%", r: -12, op: 0.06  },
+  { path: HINGE,      size: 58,  x: "80%",  y: "16%", r: -20, op: 0.055 },
+  { path: DOOR_PANEL, size: 72,  x: "5%",   y: "52%", r: 10,  op: 0.05  },
+  { path: SENSOR,     size: 56,  x: "46%",  y: "58%", r: -10, op: 0.055 },
+  { path: WINDING,    size: 60,  x: "28%",  y: "28%", r: 35,  op: 0.05  },
+  { path: BRACKET,    size: 68,  x: "64%",  y: "36%", r: 8,   op: 0.055 },
+  { path: CABLE,      size: 64,  x: "14%",  y: "86%", r: 25,  op: 0.065 },
+  { path: PULLEY,     size: 70,  x: "92%",  y: "82%", r: -5,  op: 0.055 },
+  { path: STRUT,      size: 80,  x: "32%",  y: "88%", r: -3,  op: 0.05  },
+  { path: ROLLER,     size: 50,  x: "8%",   y: "32%", r: 18,  op: 0.045 },
+  { path: SPRING,     size: 52,  x: "58%",  y: "14%", r: -25, op: 0.05  },
+  { path: HINGE,      size: 44,  x: "76%",  y: "68%", r: 12,  op: 0.045 },
+  { path: CABLE,      size: 54,  x: "22%",  y: "46%", r: -30, op: 0.045 },
+  { path: WINDING,    size: 48,  x: "50%",  y: "38%", r: 15,  op: 0.04  },
+  { path: PULLEY,     size: 56,  x: "42%",  y: "82%", r: 22,  op: 0.05  },
+  { path: BRACKET,    size: 46,  x: "84%",  y: "34%", r: -18, op: 0.045 },
+  { path: STRUT,      size: 62,  x: "2%",   y: "78%", r: 5,   op: 0.045 },
 ];
 
 /* ── Component ── */
