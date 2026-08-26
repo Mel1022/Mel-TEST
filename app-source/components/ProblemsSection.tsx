@@ -76,6 +76,29 @@ function stackStyle(offset: number): React.CSSProperties {
   return { ...base, opacity: 0, transform: `translateY(${dir}px) scale(0.88)`, zIndex: 0, pointerEvents: "none" };
 }
 
+/* ── Decorative background parts ── */
+const DOOR_PANEL = <><rect x="4" y="6" width="40" height="36" rx="2" stroke="#146B4D" strokeWidth="2"/><line x1="4" y1="24" x2="44" y2="24" stroke="#146B4D" strokeWidth="1.2" strokeDasharray="3 2" opacity="0.5"/><line x1="24" y1="6" x2="24" y2="42" stroke="#146B4D" strokeWidth="1.2" strokeDasharray="3 2" opacity="0.5"/></>;
+const SPRING    = <><path d="M12 8h24M10 14h28M12 20h24M10 26h28M12 32h24M10 38h28" stroke="#146B4D" strokeWidth="2" strokeLinecap="round"/><line x1="12" y1="8" x2="10" y2="14" stroke="#146B4D" strokeWidth="1.4"/><line x1="36" y1="8" x2="38" y2="14" stroke="#146B4D" strokeWidth="1.4"/><line x1="10" y1="14" x2="12" y2="20" stroke="#146B4D" strokeWidth="1.4"/><line x1="38" y1="14" x2="36" y2="20" stroke="#146B4D" strokeWidth="1.4"/><line x1="12" y1="20" x2="10" y2="26" stroke="#146B4D" strokeWidth="1.4"/><line x1="36" y1="20" x2="38" y2="26" stroke="#146B4D" strokeWidth="1.4"/><line x1="10" y1="26" x2="12" y2="32" stroke="#146B4D" strokeWidth="1.4"/><line x1="38" y1="26" x2="36" y2="32" stroke="#146B4D" strokeWidth="1.4"/><line x1="12" y1="32" x2="10" y2="38" stroke="#146B4D" strokeWidth="1.4"/><line x1="36" y1="32" x2="38" y2="38" stroke="#146B4D" strokeWidth="1.4"/></>;
+const REMOTE    = <><rect x="14" y="4" width="20" height="40" rx="5" stroke="#146B4D" strokeWidth="2"/><rect x="18" y="10" width="12" height="8" rx="1.5" stroke="#146B4D" strokeWidth="1.4"/><circle cx="24" cy="28" r="3" stroke="#146B4D" strokeWidth="1.5"/><circle cx="24" cy="37" r="2" stroke="#146B4D" strokeWidth="1.3"/></>;
+const TRACK     = <><line x1="6" y1="36" x2="42" y2="36" stroke="#146B4D" strokeWidth="2.5" strokeLinecap="round"/><rect x="14" y="14" width="20" height="22" rx="2" stroke="#146B4D" strokeWidth="2"/><circle cx="14" cy="10" r="3.5" stroke="#146B4D" strokeWidth="1.5"/><circle cx="34" cy="10" r="3.5" stroke="#146B4D" strokeWidth="1.5"/></>;
+const GEAR      = <><circle cx="24" cy="24" r="8" stroke="#146B4D" strokeWidth="2"/><path d="M24 4v4M24 40v4M4 24h4M40 24h4M8.1 8.1l2.8 2.8M37.1 37.1l2.8 2.8M8.1 39.9l2.8-2.8M37.1 10.9l2.8-2.8" stroke="#146B4D" strokeWidth="2.2" strokeLinecap="round"/></>;
+const DRUM      = <><circle cx="24" cy="24" r="14" stroke="#146B4D" strokeWidth="2"/><circle cx="24" cy="24" r="6" stroke="#146B4D" strokeWidth="1.5"/><path d="M24 10 Q34 14 38 24 Q34 34 24 38 Q14 34 10 24 Q14 14 24 10Z" stroke="#146B4D" strokeWidth="1" strokeDasharray="2 3" fill="none"/></>;
+
+const DECO_PARTS: { path: React.ReactNode; size: number; x: string; y: string; r: number; op: number }[] = [
+  { path: DOOR_PANEL, size: 110, x: "2%",  y: "5%",  r: -8,  op: 0.055 },
+  { path: SPRING,     size: 70,  x: "18%", y: "72%", r: 15,  op: 0.07  },
+  { path: REMOTE,     size: 64,  x: "38%", y: "8%",  r: 12,  op: 0.06  },
+  { path: TRACK,      size: 90,  x: "55%", y: "78%", r: -5,  op: 0.05  },
+  { path: GEAR,       size: 80,  x: "72%", y: "4%",  r: 20,  op: 0.065 },
+  { path: DRUM,       size: 76,  x: "88%", y: "55%", r: -12, op: 0.055 },
+  { path: SPRING,     size: 54,  x: "80%", y: "18%", r: -20, op: 0.05  },
+  { path: DOOR_PANEL, size: 72,  x: "6%",  y: "55%", r: 10,  op: 0.045 },
+  { path: REMOTE,     size: 50,  x: "46%", y: "60%", r: -15, op: 0.045 },
+  { path: GEAR,       size: 56,  x: "28%", y: "30%", r: 35,  op: 0.04  },
+  { path: TRACK,      size: 68,  x: "64%", y: "38%", r: 8,   op: 0.05  },
+  { path: DRUM,       size: 60,  x: "14%", y: "88%", r: 25,  op: 0.055 },
+];
+
 /* ── Component ── */
 export default function ProblemsSection() {
   const wrapRef    = useRef<HTMLDivElement>(null);
@@ -192,6 +215,26 @@ export default function ProblemsSection() {
         }}
         tabIndex={-1}
       >
+        {/* ── Decorative garage-part silhouettes ── */}
+        <div aria-hidden="true" className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+          {DECO_PARTS.map((d, idx) => (
+            <svg
+              key={idx}
+              width={d.size} height={d.size}
+              viewBox="0 0 48 48"
+              fill="none"
+              style={{
+                position: "absolute",
+                left: d.x, top: d.y,
+                opacity: d.op,
+                transform: `rotate(${d.r}deg)`,
+              }}
+            >
+              {d.path}
+            </svg>
+          ))}
+        </div>
+
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-8 lg:gap-16 items-center py-12 sm:py-16 lg:py-20"
              style={{ minHeight: "100vh" }}>
 
