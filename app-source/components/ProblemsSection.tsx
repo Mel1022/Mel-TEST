@@ -292,7 +292,7 @@ export default function ProblemsSection() {
                           backgroundImage: "url(/images/garage-door-wont-open.webp)",
                           backgroundSize: "cover",
                           backgroundPosition: "center",
-                          filter: "blur(3px) brightness(1.05)",
+                          filter: "blur(2px) brightness(1.05)",
                           transform: "scale(1.06)",
                         }}
                       />
@@ -300,7 +300,7 @@ export default function ProblemsSection() {
                         aria-hidden="true"
                         style={{
                           position: "absolute", inset: 0,
-                          background: "rgba(255,255,255,0.72)",
+                          background: "rgba(255,255,255,0.48)",
                         }}
                       />
                     </>
