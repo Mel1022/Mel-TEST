@@ -140,14 +140,14 @@ export default function ServiceCarousel() {
         <button
           onClick={() => manualScroll(-1)}
           aria-label="Previous services"
-          className="w-9 h-9 rounded-full border-2 border-navy text-navy flex items-center justify-center text-sm font-bold hover:bg-navy hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy transition-colors"
+          className="w-9 h-9 rounded-full border-2 border-white/60 text-white flex items-center justify-center text-sm font-bold hover:bg-white hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white transition-colors"
         >
           ←
         </button>
         <button
           onClick={() => manualScroll(1)}
           aria-label="Next services"
-          className="w-9 h-9 rounded-full border-2 border-navy text-navy flex items-center justify-center text-sm font-bold hover:bg-navy hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy transition-colors"
+          className="w-9 h-9 rounded-full border-2 border-white/60 text-white flex items-center justify-center text-sm font-bold hover:bg-white hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white transition-colors"
         >
           →
         </button>

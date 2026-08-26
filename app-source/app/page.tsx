@@ -99,13 +99,25 @@ export default function HomePage() {
       <ProblemsSection />
 
       {/* SERVICES CAROUSEL */}
-      <section className="bg-white overflow-hidden">
-        <div className="py-16 sm:py-20">
+      <section className="relative overflow-hidden">
+        {/* Background image */}
+        <div aria-hidden="true" style={{
+          position: "absolute", inset: 0,
+          backgroundImage: "url(/images/services-bg.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center 30%",
+        }} />
+        {/* Dark overlay */}
+        <div aria-hidden="true" style={{
+          position: "absolute", inset: 0,
+          background: "rgba(11,61,46,0.74)",
+        }} />
+        <div className="relative z-10 py-16 sm:py-20">
           <div className="text-center max-w-2xl mx-auto mb-10 px-4 sm:px-6 lg:px-8">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white">
               Garage Door Services in Richmond &amp; Metro Vancouver
             </h2>
-            <p className="mt-3 text-steel">Residential, commercial, and strata — we do it all.</p>
+            <p className="mt-3 text-white/70">Residential, commercial, and strata — we do it all.</p>
           </div>
           <div className="px-4 sm:px-6 lg:px-8">
             <ServiceCarousel />
