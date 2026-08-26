@@ -77,29 +77,41 @@ export default function HowItWorksSection() {
   }
 
   return (
-    <section ref={sectionRef} className="bg-white">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <section ref={sectionRef} className="relative overflow-hidden">
+      {/* Background image */}
+      <div aria-hidden="true" style={{
+        position: "absolute", inset: 0,
+        backgroundImage: "url(/images/hiw-bg.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center 20%",
+      }} />
+      {/* Dark overlay */}
+      <div aria-hidden="true" style={{
+        position: "absolute", inset: 0,
+        background: "rgba(11,61,46,0.78)",
+      }} />
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
 
         {/* ── Heading ── */}
         <div
           className="text-center max-w-2xl mx-auto mb-14 hiw-reveal"
           style={rev(0)}
         >
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-navy mb-3">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/60 mb-3">
             How It Works
           </p>
-          <h2 className="font-heading font-extrabold leading-tight text-navy-dark"
+          <h2 className="font-heading font-extrabold leading-tight text-white"
             style={{ fontSize: "clamp(1.9rem, 3vw, 2.8rem)" }}>
             From Broken Door<br />
-            <span className="text-navy">to Back in Action.</span>
+            <span className="text-white/80">to Back in Action.</span>
           </h2>
           <div className="flex justify-center mt-3 mb-4">
             <span
-              className="block h-[3px] rounded-full bg-navy hiw-accent-line"
+              className="block h-[3px] rounded-full bg-white/50 hiw-accent-line"
               style={r ? { width: 56, transitionDelay: rd ? "0ms" : "180ms" } : { width: 0 }}
             />
           </div>
-          <p className="text-steel text-base">
+          <p className="text-white/65 text-base">
             Getting garage-door service shouldn&apos;t be complicated.
           </p>
         </div>
@@ -111,34 +123,34 @@ export default function HowItWorksSection() {
 
               {/* Card */}
               <div
-                className="hiw-card hiw-reveal group rounded-card bg-surface border border-steel/10 p-7 sm:flex-1 cursor-default"
+                className="hiw-card hiw-reveal group rounded-card bg-white/10 border border-white/15 p-7 sm:flex-1 cursor-default backdrop-blur-sm"
                 style={rev(STEP_DELAY[i])}
               >
                 {/* Step number */}
                 <span
-                  className="hiw-number inline-flex items-center justify-center w-12 h-12 rounded-full bg-navy text-white font-heading font-extrabold text-lg mb-5 hiw-reveal"
+                  className="hiw-number inline-flex items-center justify-center w-12 h-12 rounded-full bg-white text-navy font-heading font-extrabold text-lg mb-5 hiw-reveal"
                   style={numRev(STEP_DELAY[i])}
                 >
                   {step.n}
                 </span>
 
                 {/* Icon */}
-                <div className="mb-4 text-navy opacity-70 group-hover:opacity-100 hiw-icon transition-all duration-300">
+                <div className="mb-4 text-white/70 group-hover:text-white hiw-icon transition-all duration-300">
                   {step.icon}
                 </div>
 
                 {/* Label */}
-                <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-navy mb-2 group-hover:text-navy-dark transition-colors duration-200">
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.18em] text-white/55 mb-2 group-hover:text-white/80 transition-colors duration-200">
                   {step.label}
                 </p>
 
                 {/* Title */}
-                <h3 className="font-heading font-bold text-base text-navy-dark mb-2 group-hover:text-navy transition-colors duration-200">
+                <h3 className="font-heading font-bold text-base text-white mb-2 group-hover:text-white/90 transition-colors duration-200">
                   {step.title}
                 </h3>
 
                 {/* Body */}
-                <p className="text-sm text-steel leading-relaxed">
+                <p className="text-sm text-white/70 leading-relaxed">
                   {step.body}
                 </p>
               </div>
@@ -153,16 +165,16 @@ export default function HowItWorksSection() {
                         className="hiw-line-h"
                         style={
                           r
-                            ? { width: 40, transitionDelay: rd ? "0ms" : `${LINE_DELAY[i]}ms` }
-                            : { width: 0 }
+                            ? { width: 40, transitionDelay: rd ? "0ms" : `${LINE_DELAY[i]}ms`, background: "rgba(255,255,255,0.3)" }
+                            : { width: 0, background: "rgba(255,255,255,0.3)" }
                         }
                       />
                       <span
                         className="hiw-arrow-h"
                         style={
                           r
-                            ? { opacity: 1, transitionDelay: rd ? "0ms" : `${LINE_DELAY[i] + 350}ms` }
-                            : { opacity: 0 }
+                            ? { opacity: 1, transitionDelay: rd ? "0ms" : `${LINE_DELAY[i] + 350}ms`, color: "rgba(255,255,255,0.4)" }
+                            : { opacity: 0, color: "rgba(255,255,255,0.4)" }
                         }
                       >
                         →
@@ -177,16 +189,16 @@ export default function HowItWorksSection() {
                         className="hiw-line-v"
                         style={
                           r
-                            ? { height: 36, transitionDelay: rd ? "0ms" : `${LINE_DELAY[i]}ms` }
-                            : { height: 0 }
+                            ? { height: 36, transitionDelay: rd ? "0ms" : `${LINE_DELAY[i]}ms`, background: "rgba(255,255,255,0.3)" }
+                            : { height: 0, background: "rgba(255,255,255,0.3)" }
                         }
                       />
                       <span
                         className="hiw-arrow-v"
                         style={
                           r
-                            ? { opacity: 1, transitionDelay: rd ? "0ms" : `${LINE_DELAY[i] + 350}ms` }
-                            : { opacity: 0 }
+                            ? { opacity: 1, transitionDelay: rd ? "0ms" : `${LINE_DELAY[i] + 350}ms`, color: "rgba(255,255,255,0.4)" }
+                            : { opacity: 0, color: "rgba(255,255,255,0.4)" }
                         }
                       >
                         ↓
@@ -207,20 +219,20 @@ export default function HowItWorksSection() {
         >
           <Link
             href="/request-a-quote/"
-            className="inline-flex items-center justify-center gap-2 rounded-card bg-navy px-8 py-4 text-sm font-bold text-white hover:bg-navy-dark hover:-translate-y-0.5 hover:shadow-cardHover transition-all duration-200 uppercase tracking-wide"
+            className="inline-flex items-center justify-center gap-2 rounded-card bg-white px-8 py-4 text-sm font-bold text-navy hover:bg-white/90 hover:-translate-y-0.5 hover:shadow-cardHover transition-all duration-200 uppercase tracking-wide"
           >
             Get a Free Quote
           </Link>
           <a
             href="tel:+17788000769"
-            className="inline-flex items-center justify-center gap-2 rounded-card border-2 border-navy text-navy px-8 py-4 text-sm font-bold hover:bg-navy hover:text-white hover:-translate-y-0.5 transition-all duration-200 uppercase tracking-wide"
+            className="inline-flex items-center justify-center gap-2 rounded-card border-2 border-white/60 text-white px-8 py-4 text-sm font-bold hover:bg-white hover:text-navy hover:-translate-y-0.5 transition-all duration-200 uppercase tracking-wide"
           >
             <IconPhone className="w-4 h-4" />
             Call the Champ
           </a>
         </div>
 
-      </div>
+      </div>{/* end relative z-10 */}
     </section>
   );
 }
