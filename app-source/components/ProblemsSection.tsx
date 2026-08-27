@@ -55,8 +55,8 @@ const PROBLEMS = [
 ];
 
 /* ── Stack geometry ── */
-const CARD_H   = 370; // px – height of each card
-const PEEK_PAD = 52;  // px – extra container height so layers 1 & 2 peek below
+const CARD_H   = 440; // px – height of each card
+const PEEK_PAD = 80;  // px – extra container height so layers 1 & 2 peek below
 const WRAP_H   = CARD_H + PEEK_PAD;
 
 /* ── Per-layer transform/opacity ── */
@@ -69,8 +69,8 @@ function stackStyle(offset: number): React.CSSProperties {
     transition: "opacity 0.42s ease-out, transform 0.42s ease-out",
   };
   if (offset === 0)  return { ...base, opacity: 1,    transform: "translateY(0px) scale(1)",     zIndex: 30, pointerEvents: "auto" };
-  if (offset === 1)  return { ...base, opacity: 0.72, transform: "translateY(19px) scale(0.965)", zIndex: 20, pointerEvents: "none" };
-  if (offset === 2)  return { ...base, opacity: 0.42, transform: "translateY(38px) scale(0.93)",  zIndex: 10, pointerEvents: "none" };
+  if (offset === 1)  return { ...base, opacity: 0.88, transform: "translateY(26px) scale(0.962)", zIndex: 20, pointerEvents: "none" };
+  if (offset === 2)  return { ...base, opacity: 0.65, transform: "translateY(52px) scale(0.924)", zIndex: 10, pointerEvents: "none" };
   if (offset === -1) return { ...base, opacity: 0,    transform: "translateY(-30px) scale(0.97)", zIndex: 5,  pointerEvents: "none" };
   const dir = offset < 0 ? -55 : 55;
   return { ...base, opacity: 0, transform: `translateY(${dir}px) scale(0.88)`, zIndex: 0, pointerEvents: "none" };
