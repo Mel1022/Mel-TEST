@@ -35,7 +35,7 @@ export default function HomePage() {
 
         {/* Pre-composed image: green on left baked in, sharp photo on right */}
         <img
-          src="/images/hero-champ-v2.jpg"
+          src="/images/hero-champ-v3.jpg"
           alt="DoorChamp technician servicing a garage door — DoorChamp logo on uniform, branded truck and ladder visible"
           className="hero-bg-img"
         />
