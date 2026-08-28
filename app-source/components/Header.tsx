@@ -40,7 +40,7 @@ export default function Header() {
                 className="flex items-center gap-1 px-3.5 py-2 text-sm font-semibold text-[#1a3a2a] hover:text-[#146B4D] rounded transition-colors"
                 aria-expanded={servicesOpen}
               >
-                SERVICES <IconChevron className="w-3.5 h-3.5" />
+                RESIDENTIAL <IconChevron className="w-3.5 h-3.5" />
               </button>
               {servicesOpen && (
                 <div className="absolute top-full left-0 w-58 bg-white border border-[#d0e8dc] rounded-card shadow-cardHover py-2 z-50" style={{ minWidth: "220px" }}>
