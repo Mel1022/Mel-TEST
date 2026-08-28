@@ -271,10 +271,10 @@ export default function WhyCallTheChamp() {
           >
             <div className="wtc-photo-wrap relative rounded-[20px] overflow-hidden shadow-cardHover">
               <Image
-                src="/images/doorchamp-team.jpg"
+                src="/images/wtc-photo.jpg"
                 alt="DoorChamp garage door service team in front of the shop and branded van"
-                width={1448}
-                height={1086}
+                width={1983}
+                height={793}
                 className="wtc-photo block w-full h-auto object-cover"
                 priority={false}
                 sizes="(max-width: 1024px) 100vw, 40vw"
