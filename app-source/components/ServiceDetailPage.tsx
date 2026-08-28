@@ -5,7 +5,7 @@ import FAQAccordion from "./FAQAccordion";
 import { IconCheck } from "./Icons";
 import type { Service } from "@/lib/services";
 
-export default function ServiceDetailPage({ service }: { service: Service }) {
+export default function ServiceDetailPage({ service, bgImage }: { service: Service; bgImage?: string }) {
   return (
     <>
       <PageHero
@@ -14,6 +14,7 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
         support={service.heroSupport}
         ctaLabel={service.ctaLabel}
         safetyWarning={service.safetyWarning}
+        bgImage={bgImage}
       />
 
       {/* Problem explanation */}
