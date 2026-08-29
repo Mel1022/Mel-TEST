@@ -22,20 +22,6 @@ const symptoms = [
   "Opener straining and making grinding sounds",
 ];
 
-const springTypes = [
-  {
-    title: "Torsion Springs",
-    body: "Mounted above the door on a metal rod. Most modern residential doors use one or two torsion springs. They store rotational energy to counterbalance the door's weight.",
-  },
-  {
-    title: "Extension Springs",
-    body: "Run parallel to the horizontal tracks on each side. Common on older and lighter doors. They stretch and contract as the door moves.",
-  },
-  {
-    title: "High-Cycle Springs",
-    body: "Premium torsion springs rated for 50,000+ cycles instead of the standard 10,000. Ideal for busy households or commercial applications.",
-  },
-];
 
 export default function SpringRepairPage() {
   return (
@@ -92,23 +78,6 @@ export default function SpringRepairPage() {
               <div key={s} className="flex items-start gap-3 rounded-card bg-white p-4 border border-steel/10">
                 <IconCheck className="w-4 h-4 text-navy mt-0.5 flex-shrink-0" />
                 <span className="text-sm font-medium text-navy-dark">{s}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Spring Types */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-8">
-            Types of Garage Door Springs We Service
-          </h2>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {springTypes.map((t) => (
-              <div key={t.title} className="rounded-card bg-surface border border-steel/10 p-7">
-                <h3 className="font-heading font-bold text-lg text-navy-dark mb-3">{t.title}</h3>
-                <p className="text-sm text-steel leading-relaxed">{t.body}</p>
               </div>
             ))}
           </div>
