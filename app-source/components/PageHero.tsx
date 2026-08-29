@@ -21,22 +21,15 @@ export default function PageHero({
   safetyWarning,
   bgImage,
 }: PageHeroProps) {
+  const sectionStyle = bgImage ? {
+    backgroundImage: `linear-gradient(rgba(11,61,46,0.78), rgba(11,61,46,0.78)), url(${bgImage})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundColor: "#0B3D2E",
+  } : { backgroundColor: "#0B3D2E" };
+
   return (
-    <section className="relative bg-navy-dark overflow-hidden">
-      {bgImage && (
-        <>
-          <div aria-hidden="true" style={{
-            position: "absolute", inset: 0,
-            backgroundImage: `url(${bgImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }} />
-          <div aria-hidden="true" style={{
-            position: "absolute", inset: 0,
-            background: "rgba(11,61,46,0.78)",
-          }} />
-        </>
-      )}
+    <section className="relative overflow-hidden" style={sectionStyle}>
       <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
         {eyebrow && (
           <p className="text-gold font-bold uppercase tracking-wide text-sm mb-3">{eyebrow}</p>

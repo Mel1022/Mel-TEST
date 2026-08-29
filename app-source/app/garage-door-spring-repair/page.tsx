@@ -41,17 +41,12 @@ export default function SpringRepairPage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-navy-dark text-white overflow-hidden">
-        <div aria-hidden="true" style={{
-          position: "absolute", inset: 0,
-          backgroundImage: "url(/images/spring-hero-bg.jpg)",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }} />
-        <div aria-hidden="true" style={{
-          position: "absolute", inset: 0,
-          background: "rgba(11,61,46,0.78)",
-        }} />
+      <section className="relative text-white overflow-hidden" style={{
+        backgroundImage: "linear-gradient(rgba(11,61,46,0.78), rgba(11,61,46,0.78)), url(/images/spring-hero-bg.jpg)",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundColor: "#0B3D2E",
+      }}>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-gold font-bold uppercase tracking-wide text-sm mb-3">Same-Day Service · Richmond BC</p>
           <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white max-w-3xl leading-tight">
@@ -73,7 +68,7 @@ export default function SpringRepairPage() {
               Request a Quote
             </Link>
           </div>
-        </div>{/* end relative z-10 */}
+        </div>
       </section>
 
       {/* Safety Warning */}
