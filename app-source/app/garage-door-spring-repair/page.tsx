@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import SpringSymptoms from "@/components/SpringSymptoms";
 import { siteConfig } from "@/lib/site-config";
 import { IconPhone, IconCheck, IconAlert } from "@/components/Icons";
 
@@ -10,17 +11,6 @@ export const metadata: Metadata = {
     "Broken garage door spring in Richmond? DoorChamp provides same-day torsion and extension spring repair. Licensed, insured, and WCB compliant. Call (778) 800-0769.",
   alternates: { canonical: "/garage-door-spring-repair/" },
 };
-
-const symptoms = [
-  "Door suddenly refuses to open",
-  "Loud bang from the garage (spring snapped)",
-  "Door feels extremely heavy to lift manually",
-  "Visible gap in the torsion spring coil",
-  "Door opens 6 inches then stops",
-  "Cables hanging loose or off their drums",
-  "One side of door higher than the other",
-  "Opener straining and making grinding sounds",
-];
 
 
 export default function SpringRepairPage() {
@@ -68,21 +58,7 @@ export default function SpringRepairPage() {
       </section>
 
       {/* Symptoms */}
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-8">
-            Signs You Have a Broken Spring
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {symptoms.map((s) => (
-              <div key={s} className="flex items-start gap-3 rounded-card bg-white p-4 border border-steel/10">
-                <IconCheck className="w-4 h-4 text-navy mt-0.5 flex-shrink-0" />
-                <span className="text-sm font-medium text-navy-dark">{s}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <SpringSymptoms />
 
       {/* Flat-Rate Pricing */}
       <section className="relative bg-navy-dark overflow-hidden">
