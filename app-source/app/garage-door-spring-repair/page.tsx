@@ -85,13 +85,15 @@ export default function SpringRepairPage() {
       </section>
 
       {/* Flat-Rate Pricing */}
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+      <section className="relative bg-navy-dark overflow-hidden">
+        <img src="/images/spring-pricing-bg.png" alt="" aria-hidden="true" className="page-hero-bg-img" />
+        <div aria-hidden="true" className="absolute inset-0 bg-navy-dark/80" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
           <div className="mb-10 text-center max-w-2xl mx-auto">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-4">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-4">
               Flat-Rate Spring Repair. Pick the Option That Fits.
             </h2>
-            <p className="text-steel text-sm leading-relaxed">
+            <p className="text-white/70 text-sm leading-relaxed">
               No service-call fee. No after-hours surcharge. No weekend or statutory holiday markup.
               No upselling on the truck — we confirm your flat-rate price before we start, never after.
             </p>
