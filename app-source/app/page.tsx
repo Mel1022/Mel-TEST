@@ -35,7 +35,7 @@ export default function HomePage() {
 
         {/* Pre-composed image: green on left baked in, sharp photo on right */}
         <img
-          src="/images/hero-champ-v2.jpg"
+          src="/images/hero-champ-v4.jpg"
           alt="DoorChamp technician servicing a garage door — DoorChamp logo on uniform, branded truck and ladder visible"
           className="hero-bg-img"
         />
@@ -99,13 +99,25 @@ export default function HomePage() {
       <ProblemsSection />
 
       {/* SERVICES CAROUSEL */}
-      <section className="bg-white overflow-hidden">
-        <div className="py-16 sm:py-20">
+      <section className="relative overflow-hidden">
+        {/* Background image */}
+        <div aria-hidden="true" style={{
+          position: "absolute", inset: 0,
+          backgroundImage: "url(/images/services-bg.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center 30%",
+        }} />
+        {/* Dark overlay */}
+        <div aria-hidden="true" style={{
+          position: "absolute", inset: 0,
+          background: "rgba(11,61,46,0.74)",
+        }} />
+        <div className="relative z-10 py-16 sm:py-20">
           <div className="text-center max-w-2xl mx-auto mb-10 px-4 sm:px-6 lg:px-8">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white">
               Garage Door Services in Richmond &amp; Metro Vancouver
             </h2>
-            <p className="mt-3 text-steel">Residential, commercial, and strata — we do it all.</p>
+            <p className="mt-3 text-white/70">Residential, commercial, and strata — we do it all.</p>
           </div>
           <div className="px-4 sm:px-6 lg:px-8">
             <ServiceCarousel />
@@ -190,8 +202,32 @@ export default function HomePage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <section className="relative bg-white overflow-hidden">
+        {/* Decorative garage-part silhouettes */}
+        <div aria-hidden="true" className="absolute inset-0 pointer-events-none overflow-hidden select-none">
+          {[
+            { d: <><rect x="4" y="6" width="40" height="36" rx="2" stroke="#146B4D" strokeWidth="2"/><line x1="4" y1="18" x2="44" y2="18" stroke="#146B4D" strokeWidth="1.5"/><line x1="4" y1="30" x2="44" y2="30" stroke="#146B4D" strokeWidth="1.5"/><line x1="24" y1="6" x2="24" y2="42" stroke="#146B4D" strokeWidth="1.5"/></>, size: 96,  x: "1%",  y: "8%",  r: -7,  op: 0.045 },
+            { d: <><path d="M12 8h24M10 14h28M12 20h24M10 26h28M12 32h24M10 38h28" stroke="#146B4D" strokeWidth="2" strokeLinecap="round"/><rect x="8" y="6" width="32" height="36" rx="2" stroke="#146B4D" strokeWidth="1.5" fill="none"/></>, size: 64,  x: "14%", y: "70%", r: 10,  op: 0.05  },
+            { d: <><rect x="14" y="4" width="20" height="40" rx="5" stroke="#146B4D" strokeWidth="2"/><rect x="18" y="10" width="12" height="7" rx="1.5" stroke="#146B4D" strokeWidth="1.5"/><circle cx="22" cy="24" r="2.5" stroke="#146B4D" strokeWidth="1.5"/><circle cx="30" cy="24" r="2.5" stroke="#146B4D" strokeWidth="1.5"/><circle cx="22" cy="32" r="2.5" stroke="#146B4D" strokeWidth="1.5"/><circle cx="30" cy="32" r="2.5" stroke="#146B4D" strokeWidth="1.5"/></>, size: 54,  x: "33%", y: "6%",  r: 9,   op: 0.04  },
+            { d: <><line x1="6" y1="36" x2="42" y2="36" stroke="#146B4D" strokeWidth="2.5" strokeLinecap="round"/><line x1="6" y1="36" x2="6" y2="10" stroke="#146B4D" strokeWidth="2.5" strokeLinecap="round"/><path d="M6 10 Q6 6 10 6" stroke="#146B4D" strokeWidth="2" fill="none" strokeLinecap="round"/><circle cx="12" cy="30" r="3" stroke="#146B4D" strokeWidth="1.5"/><circle cx="20" cy="30" r="3" stroke="#146B4D" strokeWidth="1.5"/></>, size: 78,  x: "50%", y: "72%", r: -4,  op: 0.045 },
+            { d: <><circle cx="24" cy="24" r="14" stroke="#146B4D" strokeWidth="2"/><circle cx="24" cy="24" r="5" stroke="#146B4D" strokeWidth="2"/><path d="M24 10 Q34 10 36 20" stroke="#146B4D" strokeWidth="1.5" fill="none" strokeLinecap="round"/></>, size: 70,  x: "68%", y: "4%",  r: 15,  op: 0.05  },
+            { d: <><circle cx="24" cy="24" r="16" stroke="#146B4D" strokeWidth="2"/><circle cx="24" cy="24" r="5" stroke="#146B4D" strokeWidth="2"/><line x1="24" y1="8" x2="24" y2="19" stroke="#146B4D" strokeWidth="1.5"/><line x1="24" y1="29" x2="24" y2="40" stroke="#146B4D" strokeWidth="1.5"/><line x1="8" y1="24" x2="19" y2="24" stroke="#146B4D" strokeWidth="1.5"/><line x1="29" y1="24" x2="40" y2="24" stroke="#146B4D" strokeWidth="1.5"/></>, size: 66,  x: "84%", y: "48%", r: -11, op: 0.045 },
+            { d: <><rect x="6" y="4" width="14" height="40" rx="2" stroke="#146B4D" strokeWidth="2"/><rect x="20" y="4" width="22" height="18" rx="2" stroke="#146B4D" strokeWidth="2"/><circle cx="13" cy="14" r="3" stroke="#146B4D" strokeWidth="1.5"/><circle cx="13" cy="34" r="3" stroke="#146B4D" strokeWidth="1.5"/></>, size: 50,  x: "76%", y: "16%", r: -16, op: 0.04  },
+            { d: <><path d="M8 4 L8 40 L44 40" stroke="#146B4D" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none"/><circle cx="8" cy="12" r="2.5" stroke="#146B4D" strokeWidth="1.5"/><circle cx="8" cy="24" r="2.5" stroke="#146B4D" strokeWidth="1.5"/><circle cx="20" cy="40" r="2.5" stroke="#146B4D" strokeWidth="1.5"/><circle cx="34" cy="40" r="2.5" stroke="#146B4D" strokeWidth="1.5"/></>, size: 58,  x: "4%",  y: "48%", r: 8,   op: 0.04  },
+            { d: <><rect x="10" y="14" width="28" height="20" rx="3" stroke="#146B4D" strokeWidth="2"/><circle cx="22" cy="24" r="5" stroke="#146B4D" strokeWidth="2"/><circle cx="22" cy="24" r="2" stroke="#146B4D" strokeWidth="1.5"/><line x1="24" y1="44" x2="38" y2="44" stroke="#146B4D" strokeWidth="2" strokeLinecap="round"/><line x1="38" y1="34" x2="38" y2="44" stroke="#146B4D" strokeWidth="2" strokeLinecap="round"/></>, size: 48,  x: "43%", y: "54%", r: -8,  op: 0.04  },
+            { d: <><path d="M8 24 Q8 8 24 8 Q40 8 40 24 Q40 36 30 40" stroke="#146B4D" strokeWidth="2" fill="none" strokeLinecap="round"/><circle cx="30" cy="41" r="3" stroke="#146B4D" strokeWidth="1.5"/></>, size: 56,  x: "22%", y: "28%", r: 25,  op: 0.04  },
+            { d: <><rect x="2" y="20" width="44" height="8" rx="1.5" stroke="#146B4D" strokeWidth="2"/><line x1="10" y1="20" x2="6" y2="28" stroke="#146B4D" strokeWidth="1.5"/><line x1="20" y1="20" x2="16" y2="28" stroke="#146B4D" strokeWidth="1.5"/><line x1="30" y1="20" x2="26" y2="28" stroke="#146B4D" strokeWidth="1.5"/><line x1="40" y1="20" x2="36" y2="28" stroke="#146B4D" strokeWidth="1.5"/></>, size: 70,  x: "28%", y: "84%", r: -2,  op: 0.04  },
+            { d: <><rect x="4" y="6" width="40" height="36" rx="2" stroke="#146B4D" strokeWidth="2"/><line x1="4" y1="18" x2="44" y2="18" stroke="#146B4D" strokeWidth="1.5"/><line x1="4" y1="30" x2="44" y2="30" stroke="#146B4D" strokeWidth="1.5"/><line x1="24" y1="6" x2="24" y2="42" stroke="#146B4D" strokeWidth="1.5"/></>, size: 60,  x: "88%", y: "78%", r: 6,   op: 0.035 },
+            { d: <><circle cx="24" cy="24" r="16" stroke="#146B4D" strokeWidth="2"/><circle cx="24" cy="24" r="5" stroke="#146B4D" strokeWidth="2"/><line x1="24" y1="8" x2="24" y2="19" stroke="#146B4D" strokeWidth="1.5"/><line x1="24" y1="29" x2="24" y2="40" stroke="#146B4D" strokeWidth="1.5"/><line x1="8" y1="24" x2="19" y2="24" stroke="#146B4D" strokeWidth="1.5"/><line x1="29" y1="24" x2="40" y2="24" stroke="#146B4D" strokeWidth="1.5"/></>, size: 44,  x: "60%", y: "62%", r: 20,  op: 0.035 },
+            { d: <><path d="M12 8h24M10 14h28M12 20h24M10 26h28M12 32h24M10 38h28" stroke="#146B4D" strokeWidth="2" strokeLinecap="round"/><rect x="8" y="6" width="32" height="36" rx="2" stroke="#146B4D" strokeWidth="1.5" fill="none"/></>, size: 46,  x: "55%", y: "14%", r: -20, op: 0.038 },
+          ].map((p, i) => (
+            <svg key={i} width={p.size} height={p.size} viewBox="0 0 48 48" fill="none"
+              style={{ position: "absolute", left: p.x, top: p.y, opacity: p.op, transform: `rotate(${p.r}deg)` }}>
+              {p.d}
+            </svg>
+          ))}
+        </div>
+        <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <div className="text-center mb-10">
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
               Common Questions

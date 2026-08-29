@@ -16,6 +16,7 @@ const commercialLinks = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [commercialOpen, setCommercialOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 bg-white border-b border-[#e0ebe5]" style={{ boxShadow: "0 2px 12px rgba(11,61,46,0.08)" }}>
@@ -40,7 +41,7 @@ export default function Header() {
                 className="flex items-center gap-1 px-3.5 py-2 text-sm font-semibold text-[#1a3a2a] hover:text-[#146B4D] rounded transition-colors"
                 aria-expanded={servicesOpen}
               >
-                SERVICES <IconChevron className="w-3.5 h-3.5" />
+                RESIDENTIAL <IconChevron className="w-3.5 h-3.5" />
               </button>
               {servicesOpen && (
                 <div className="absolute top-full left-0 w-58 bg-white border border-[#d0e8dc] rounded-card shadow-cardHover py-2 z-50" style={{ minWidth: "220px" }}>
@@ -54,8 +55,25 @@ export default function Header() {
                       {item.fullLabel}
                     </Link>
                   ))}
-                  <div className="my-1 border-t border-[#d0e8dc]" />
-                  <p className="px-4 pt-1 pb-0.5 text-[10px] font-bold text-[#5A7068] uppercase tracking-widest">Commercial</p>
+                </div>
+              )}
+            </div>
+
+            {/* Commercial dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setCommercialOpen(true)}
+              onMouseLeave={() => setCommercialOpen(false)}
+            >
+              <button
+                type="button"
+                className="flex items-center gap-1 px-3.5 py-2 text-sm font-semibold text-[#1a3a2a] hover:text-[#146B4D] rounded transition-colors"
+                aria-expanded={commercialOpen}
+              >
+                COMMERCIAL <IconChevron className="w-3.5 h-3.5" />
+              </button>
+              {commercialOpen && (
+                <div className="absolute top-full left-0 bg-white border border-[#d0e8dc] rounded-card shadow-cardHover py-2 z-50" style={{ minWidth: "220px" }}>
                   {commercialLinks.map((item) => (
                     <Link
                       key={item.href}
@@ -68,10 +86,6 @@ export default function Header() {
                 </div>
               )}
             </div>
-
-            <Link href="/commercial/" className="px-3.5 py-2 text-sm font-semibold text-[#1a3a2a] hover:text-[#146B4D] rounded transition-colors uppercase">
-              Commercial
-            </Link>
             <Link href="/strata/" className="px-3.5 py-2 text-sm font-semibold text-[#1a3a2a] hover:text-[#146B4D] rounded transition-colors uppercase">
               Strata
             </Link>
