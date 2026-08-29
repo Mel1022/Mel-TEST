@@ -9,6 +9,7 @@ type PageHeroProps = {
   ctaLabel?: string;
   ctaHref?: string;
   safetyWarning?: string;
+  bgImage?: string;
 };
 
 export default function PageHero({
@@ -18,10 +19,17 @@ export default function PageHero({
   ctaLabel = "Get a Free Quote",
   ctaHref = "/request-a-quote/",
   safetyWarning,
+  bgImage,
 }: PageHeroProps) {
   return (
-    <section className="bg-navy-dark">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
+    <section className="service-hero-section bg-navy-dark">
+      {bgImage && (
+        <>
+          <img src={bgImage} alt="" aria-hidden="true" className="page-hero-bg-img" />
+          <div aria-hidden="true" className="page-hero-overlay" />
+        </>
+      )}
+      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
         {eyebrow && (
           <p className="text-gold font-bold uppercase tracking-wide text-sm mb-3">{eyebrow}</p>
         )}

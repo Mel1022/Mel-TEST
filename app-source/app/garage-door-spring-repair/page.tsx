@@ -41,8 +41,10 @@ export default function SpringRepairPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy-dark text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <section className="service-hero-section bg-navy-dark text-white">
+        <img src="/images/spring-hero-bg.jpg" alt="" aria-hidden="true" className="page-hero-bg-img" />
+        <div aria-hidden="true" className="page-hero-overlay" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-gold font-bold uppercase tracking-wide text-sm mb-3">Same-Day Service · Richmond BC</p>
           <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white max-w-3xl leading-tight">
             Garage Door Spring Repair &amp; Replacement
