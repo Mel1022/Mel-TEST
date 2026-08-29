@@ -12,5 +12,5 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ServiceDetailPage service={service} bgImage="/images/opener-hero-bg.jpg" />;
+  return <ServiceDetailPage service={service} bgImage="/images/opener-hero-bg-v2.jpg" />;
 }
