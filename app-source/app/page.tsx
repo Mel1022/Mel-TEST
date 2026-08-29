@@ -3,8 +3,11 @@ import Link from "next/link";
 import TrustBadges from "@/components/TrustBadges";
 import CTASection from "@/components/CTASection";
 import ServiceCarousel from "@/components/ServiceCarousel";
+import ProblemsSection from "@/components/ProblemsSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import WhyCallTheChamp from "@/components/WhyCallTheChamp";
 import FAQAccordion from "@/components/FAQAccordion";
-import { IconPhone, IconCheck, IconWrench, IconSpring, IconOpener, IconInstall, IconMaintenance } from "@/components/Icons";
+import { IconPhone } from "@/components/Icons";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -14,70 +17,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const services = [
-  {
-    icon: <IconWrench className="w-7 h-7" />,
-    title: "Garage Door Repair",
-    body: "Same-day repair for broken panels, cables, rollers, tracks, and more. We fix it fast, we fix it right.",
-    href: "/garage-door-repair/",
-  },
-  {
-    icon: <IconSpring className="w-7 h-7" />,
-    title: "Spring Repair & Replacement",
-    body: "Torsion and extension spring service done safely by a licensed technician. Never attempt springs DIY.",
-    href: "/garage-door-spring-repair/",
-  },
-  {
-    icon: <IconOpener className="w-7 h-7" />,
-    title: "Opener Service & Install",
-    body: "LiftMaster, Chamberlain, Genie, and all major brands. Repair, reprogram, or upgrade your opener.",
-    href: "/garage-door-openers/",
-  },
-  {
-    icon: <IconInstall className="w-7 h-7" />,
-    title: "New Door Installation",
-    body: "Steel, aluminum, wood composite — we supply and install quality doors with full warranty.",
-    href: "/garage-door-installation/",
-  },
-  {
-    icon: <IconMaintenance className="w-7 h-7" />,
-    title: "Maintenance & Tune-Up",
-    body: "Annual servicing extends door life by years. We lubricate, adjust, balance, and inspect every component.",
-    href: "/garage-door-maintenance/",
-  },
-  {
-    icon: <IconWrench className="w-7 h-7" />,
-    title: "Commercial & Strata",
-    body: "Industrial doors, loading docks, sliding gates, and full strata management programs.",
-    href: "/commercial/",
-  },
-];
-
-const problems = [
-  { title: "Door Won't Open or Close", body: "Could be a broken spring, dead opener, or sensor misalignment — we diagnose it on-site." },
-  { title: "Loud Grinding or Banging", body: "Worn rollers, loose hardware, or a spring under stress. Don't ignore loud noises." },
-  { title: "Door Off Its Track", body: "A derailed door is a safety hazard. Call immediately — don't try to force it back." },
-  { title: "Broken or Bent Spring", body: "Spring failure is the #1 reason doors stop working. Requires professional service." },
-  { title: "Opener Not Responding", body: "Dead batteries, lost programming, or a failed logic board. We handle all brands." },
-  { title: "Slow or Uneven Movement", body: "Could be worn cables, a balance issue, or aging rollers. Early service prevents failure." },
-  { title: "Door Reverses Before Closing", body: "Safety sensor misalignment or logic board issue. A quick fix that stops a frustrating cycle." },
-  { title: "Sagging or Damaged Panel", body: "Cosmetic damage or structural compromise — we assess whether repair or replacement is best." },
-];
-
-const whyDoorChamp = [
-  { title: "Same-Day Service", body: "We keep Richmond and Metro Vancouver covered 7 days a week with fast response times." },
-  { title: "Family-Owned Since 2007", body: "Nearly two decades serving the same community. Our reputation is everything to us." },
-  { title: "Licensed & Insured", body: "Fully licensed, $5M liability coverage, and WCB compliant for your complete protection." },
-  { title: "Two-Year Labour Warranty", body: "We stand behind our work. Every repair includes a full two-year labour warranty." },
-  { title: "Honest Recommendations", body: "We tell you what you need — not what costs the most. Transparent pricing, no surprises." },
-  { title: "Quality Parts Only", body: "We use manufacturer-grade parts suited to your specific door and opener model." },
-];
-
-const steps = [
-  { n: "1", title: "Call or Request a Quote", body: "Reach us at (778) 800-0769 or submit the online form. Tell us what's happening with your door." },
-  { n: "2", title: "Same-Day Technician Visit", body: "A licensed technician arrives at your Richmond property, inspects the full system, and explains what's wrong." },
-  { n: "3", title: "Repair Done Right", body: "We fix it with quality parts and back it with our two-year labour warranty. Job done." },
-];
 
 const faqs = [
   { q: "How quickly can you get to me in Richmond?", a: "We offer same-day service throughout Richmond and Metro Vancouver. In most cases we can reach you within a few hours of your call." },
@@ -157,36 +96,7 @@ export default function HomePage() {
 
       <TrustBadges />
 
-      {/* PROBLEMS SECTION */}
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
-              Is Your Garage Door Giving You Trouble?
-            </h2>
-            <p className="mt-3 text-steel">
-              Whatever it&apos;s doing, there&apos;s a reason — and we can fix it today.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {problems.map((p) => (
-              <div key={p.title} className="rounded-card bg-white border border-steel/10 p-6 shadow-card hover:shadow-cardHover transition-shadow">
-                <h3 className="font-heading font-bold text-navy-dark text-base mb-2">{p.title}</h3>
-                <p className="text-sm text-steel leading-relaxed">{p.body}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <a
-              href={siteConfig.phone.href}
-              className="inline-flex items-center gap-2 rounded-card bg-navy px-7 py-3.5 text-sm font-bold text-white hover:bg-navy-dark transition-colors"
-            >
-              <IconPhone className="w-4 h-4" />
-              Call for Same-Day Service
-            </a>
-          </div>
-        </div>
-      </section>
+      <ProblemsSection />
 
       {/* SERVICES CAROUSEL */}
       <section className="bg-white overflow-hidden">
@@ -253,49 +163,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
-              Getting Your Garage Door Fixed Is Simple.
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-6">
-            {steps.map((step) => (
-              <div key={step.n} className="rounded-card bg-surface border border-steel/10 p-7">
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-navy text-white font-heading font-extrabold text-lg">
-                  {step.n}
-                </span>
-                <h3 className="mt-5 font-heading font-bold text-lg text-navy-dark">{step.title}</h3>
-                <p className="mt-2 text-sm text-steel leading-relaxed">{step.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HowItWorksSection />
 
-      {/* WHY DOORCHAMP */}
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
-              Why Richmond Homeowners Choose DoorChamp
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {whyDoorChamp.map((item) => (
-              <div key={item.title} className="rounded-card bg-white p-6 shadow-card">
-                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-navy/10 text-navy mb-4">
-                  <IconCheck className="w-4 h-4" />
-                </span>
-                <h3 className="font-heading font-bold text-navy-dark text-base">{item.title}</h3>
-                <p className="mt-2 text-sm text-steel leading-relaxed">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <WhyCallTheChamp />
 
       {/* SERVICE AREAS CALLOUT */}
       <section className="bg-navy">

@@ -48,6 +48,75 @@ h1, h2, h3, h4, h5, h6 {
 .animate-fade-up-delay-2 { animation: fadeUp 0.6s 0.30s ease-out both; }
 .animate-fade-up-delay-3 { animation: fadeUp 0.6s 0.45s ease-out both; }
 
+/* ─── PROBLEMS SECTION — scroll-reveal & interactions ─── */
+
+/* Base: hidden until revealed */
+.prob-reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+
+/* Accent line under heading */
+.prob-accent-line {
+  transition: width 0.5s ease-out;
+}
+
+/* Problem card */
+.prob-card {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.prob-card:hover {
+  box-shadow: 0 16px 40px -14px rgba(11, 61, 46, 0.28);
+  border-color: rgba(20, 107, 77, 0.3);
+  transform: translateY(-4px);
+}
+
+/* Left accent bar — slides in on hover */
+.prob-accent-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #146B4D;
+  border-radius: 0 2px 2px 0;
+  transform: scaleY(0);
+  transform-origin: top center;
+  transition: transform 0.25s ease;
+}
+
+.prob-card:hover .prob-accent-bar,
+.prob-card:focus-visible .prob-accent-bar {
+  transform: scaleY(1);
+}
+
+/* Reduced motion — skip all animations */
+@media (prefers-reduced-motion: reduce) {
+  .prob-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .prob-accent-line {
+    transition: none !important;
+  }
+  .prob-card {
+    transition: box-shadow 0.15s ease, border-color 0.15s ease !important;
+    transform: none !important;
+  }
+  .prob-card:hover {
+    transform: none !important;
+  }
+}
+
 /* ─── SERVICE CAROUSEL ─── */
 .carousel-item {
   flex-shrink: 0;
@@ -119,6 +188,199 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-text {
   max-width: 40%;
+}
+
+/* ─── WHY CALL THE CHAMP SECTION ─── */
+
+.wtc-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+
+.wtc-accent-line {
+  transition: width 0.45s ease-out;
+}
+
+/* Primary card hover */
+.wtc-card-primary {
+  transition:
+    box-shadow 0.25s ease-out,
+    border-color 0.25s ease-out,
+    transform 0.25s ease-out;
+}
+
+.wtc-card-primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px -14px rgba(11, 61, 46, 0.26);
+  border-color: rgba(20, 107, 77, 0.28);
+}
+
+.wtc-card-primary:hover .wtc-icon-lg {
+  transform: scale(1.05);
+}
+
+.wtc-icon-lg {
+  transition: transform 0.25s ease-out;
+}
+
+/* Secondary card hover */
+.wtc-card-secondary {
+  transition:
+    box-shadow 0.25s ease-out,
+    border-color 0.25s ease-out,
+    transform 0.25s ease-out;
+}
+
+.wtc-card-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px -10px rgba(11, 61, 46, 0.18);
+  border-color: rgba(20, 107, 77, 0.22);
+  background-color: #ffffff;
+}
+
+.wtc-card-secondary:hover .wtc-icon-sm {
+  transform: scale(1.05);
+}
+
+.wtc-icon-sm {
+  transition: transform 0.25s ease-out;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .wtc-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .wtc-accent-line {
+    transition: none !important;
+  }
+  .wtc-card-primary,
+  .wtc-card-secondary {
+    transition: box-shadow 0.15s ease, border-color 0.15s ease !important;
+  }
+  .wtc-card-primary:hover,
+  .wtc-card-secondary:hover {
+    transform: none !important;
+  }
+  .wtc-icon-lg,
+  .wtc-icon-sm {
+    transition: none !important;
+    transform: none !important;
+  }
+  .wtc-card-primary:hover .wtc-icon-lg,
+  .wtc-card-secondary:hover .wtc-icon-sm {
+    transform: none !important;
+  }
+}
+
+/* ─── HOW IT WORKS SECTION ─── */
+
+/* Base reveal state */
+.hiw-reveal {
+  opacity: 0;
+  transform: translateY(22px) scale(0.97);
+  transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+
+/* Accent line under heading */
+.hiw-accent-line {
+  transition: width 0.45s ease-out;
+}
+
+/* Step card hover */
+.hiw-card {
+  transition:
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.hiw-card:hover {
+  box-shadow: 0 16px 40px -14px rgba(11, 61, 46, 0.22);
+  border-color: rgba(20, 107, 77, 0.25);
+  transform: translateY(-3px);
+}
+
+/* Horizontal connector line (desktop) */
+.hiw-line-h {
+  height: 2px;
+  background: linear-gradient(90deg, #146B4D 0%, #2E8B62 100%);
+  border-radius: 1px;
+  width: 0;
+  transition: width 0.6s ease-out;
+  display: block;
+}
+
+/* Arrow after horizontal line */
+.hiw-arrow-h {
+  color: #146B4D;
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  margin-left: 2px;
+}
+
+/* Vertical connector line (mobile) */
+.hiw-line-v {
+  width: 2px;
+  background: linear-gradient(180deg, #146B4D 0%, #2E8B62 100%);
+  border-radius: 1px;
+  height: 0;
+  transition: height 0.6s ease-out;
+  display: block;
+}
+
+/* Arrow after vertical line */
+.hiw-arrow-v {
+  color: #146B4D;
+  font-size: 1rem;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  margin-top: 2px;
+}
+
+/* Icon nudge on step card hover */
+.hiw-card:hover .hiw-icon {
+  transform: translateY(-2px);
+}
+
+/* Number badge */
+.hiw-number {
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Reduced motion — skip all HIW animations */
+@media (prefers-reduced-motion: reduce) {
+  .hiw-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hiw-accent-line {
+    transition: none !important;
+  }
+  .hiw-line-h, .hiw-line-v {
+    transition: none !important;
+  }
+  .hiw-arrow-h, .hiw-arrow-v {
+    opacity: 1 !important;
+    transition: none !important;
+  }
+  .hiw-card {
+    transition: box-shadow 0.15s ease, border-color 0.15s ease !important;
+    transform: none !important;
+  }
+  .hiw-card:hover {
+    transform: none !important;
+  }
+  .hiw-number {
+    transition: none !important;
+  }
 }
 
 /* Mobile: stack green content panel above, then photo below */
