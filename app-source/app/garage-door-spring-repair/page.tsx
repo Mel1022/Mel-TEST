@@ -202,7 +202,7 @@ export default function SpringRepairPage() {
       </section>
 
       {/* Why Professional */}
-      <section className="bg-navy-dark text-white">
+      <section className="bg-navy text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 grid lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-5">
