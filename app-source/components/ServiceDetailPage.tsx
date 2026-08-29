@@ -2,6 +2,7 @@ import Link from "next/link";
 import PageHero from "./PageHero";
 import CTASection from "./CTASection";
 import FAQAccordion from "./FAQAccordion";
+import HowItWorksSection from "./HowItWorksSection";
 import { IconCheck } from "./Icons";
 import type { Service } from "@/lib/services";
 
@@ -16,6 +17,8 @@ export default function ServiceDetailPage({ service, bgImage }: { service: Servi
         safetyWarning={service.safetyWarning}
         bgImage={bgImage}
       />
+
+      <HowItWorksSection />
 
       {/* Problem explanation */}
       <section className="bg-white">
