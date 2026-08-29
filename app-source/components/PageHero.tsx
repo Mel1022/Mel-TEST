@@ -22,7 +22,7 @@ export default function PageHero({
   bgImage,
 }: PageHeroProps) {
   return (
-    <section className="service-hero-section bg-navy-dark">
+    <section className="relative bg-navy-dark overflow-hidden">
       {bgImage && (
         <>
           <img src={bgImage} alt="" aria-hidden="true" className="page-hero-bg-img" />
