@@ -202,19 +202,19 @@ export default function SpringRepairPage() {
       </section>
 
       {/* Why Professional */}
-      <section className="bg-navy text-white">
+      <section className="bg-surface">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-5">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-5">
               Why Spring Repair Must Be Done by a Professional
             </h2>
-            <p className="text-white/75 leading-relaxed mb-4">
+            <p className="text-steel leading-relaxed mb-4">
               Garage door torsion springs are wound to hold hundreds of pounds of force. When one
               snaps, the energy releases instantaneously — that&apos;s the bang you hear.
               Attempting to wind, adjust, or replace springs without the correct tools and training
               is one of the most dangerous DIY tasks around the home.
             </p>
-            <p className="text-white/75 leading-relaxed">
+            <p className="text-steel leading-relaxed">
               Our licensed technicians use proper winding bars and safety cables to replace springs
               correctly, set the right tension for your door weight, and inspect the full system
               so the same failure doesn&apos;t happen again.
@@ -229,8 +229,8 @@ export default function SpringRepairPage() {
               "Two-year labour warranty on all spring work",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <IconCheck className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                <span className="text-white/85">{item}</span>
+                <IconCheck className="w-5 h-5 text-navy flex-shrink-0 mt-0.5" />
+                <span className="text-navy-dark">{item}</span>
               </li>
             ))}
           </ul>
@@ -240,6 +240,7 @@ export default function SpringRepairPage() {
       <CTASection
         heading="Broken Spring in Richmond? We Can Fix It Today."
         body="Call now for same-day spring replacement. Torsion, extension, and high-cycle springs — all makes and models."
+        tone="light"
       />
     </>
   );
