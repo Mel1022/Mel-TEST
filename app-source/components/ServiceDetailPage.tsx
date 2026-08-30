@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import PageHero from "./PageHero";
 import CTASection from "./CTASection";
@@ -6,7 +7,7 @@ import TechnicianChecks from "./TechnicianChecks";
 import { IconCheck } from "./Icons";
 import type { Service } from "@/lib/services";
 
-export default function ServiceDetailPage({ service, bgImage }: { service: Service; bgImage?: string }) {
+export default function ServiceDetailPage({ service, bgImage, pricingSection }: { service: Service; bgImage?: string; pricingSection?: React.ReactNode }) {
   return (
     <>
       <PageHero
@@ -60,6 +61,9 @@ export default function ServiceDetailPage({ service, bgImage }: { service: Servi
           </div>
         </div>
       </section>
+
+      {/* Optional pricing section (injected by specific pages) */}
+      {pricingSection}
 
       {/* What the technician checks */}
       <TechnicianChecks checks={service.checks} />
