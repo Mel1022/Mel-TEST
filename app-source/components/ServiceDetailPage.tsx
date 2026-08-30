@@ -65,8 +65,10 @@ export default function ServiceDetailPage({ service, bgImage }: { service: Servi
       <TechnicianChecks checks={service.checks} />
 
       {/* Why professional service matters */}
-      <section className="bg-navy">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 text-center">
+      <section className="relative overflow-hidden bg-navy-dark">
+        <img src="/images/why-pro-bg.png" alt="" aria-hidden="true" className="page-hero-bg-img" />
+        <div aria-hidden="true" className="page-hero-overlay" />
+        <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 text-center">
           <h3 className="font-heading font-bold text-xl text-white">
             Why Professional Service Matters
           </h3>
