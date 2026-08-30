@@ -10,7 +10,7 @@ export type Service = {
   problemHeading: string;
   problemBody: string[];
   symptoms: string[];
-  checks: string[];
+  checks: { label: string; detail: string }[];
   whyItMatters: string[];
   faqs: { q: string; a: string }[];
   ctaLabel: string;
@@ -43,12 +43,12 @@ export const services: Service[] = [
       "Visible gaps, bends, or damage",
     ],
     checks: [
-      "Springs and cable tension",
-      "Roller and track condition",
-      "Hinges and hardware",
-      "Door balance and alignment",
-      "Opener function and force settings",
-      "Safety sensors",
+      { label: "Springs and cable tension", detail: "We check whether springs are worn, mismatched, or approaching the end of their cycle life — and whether cables are fraying or slack." },
+      { label: "Roller and track condition", detail: "Worn rollers and bent or dirty tracks are a common source of noise and uneven movement. We assess both together." },
+      { label: "Hinges and hardware", detail: "Loose or cracked hinges affect how the door folds and can put stress on adjacent panels. We check every hinge and tighten or replace as needed." },
+      { label: "Door balance and alignment", detail: "An unbalanced door puts extra strain on the opener. We test lift force and adjust spring tension so the door holds position mid-travel." },
+      { label: "Opener function and force settings", detail: "We verify the opener's motor, limits, and auto-reverse force are set correctly — not just that it moves the door, but that it does so safely." },
+      { label: "Safety sensors", detail: "Photo-eye sensors must be aligned and unobstructed to prevent the door from closing on a person or vehicle. We clean, align, and test both." },
     ],
     whyItMatters: [
       "A misdiagnosed repair can leave the underlying issue in place.",
@@ -91,11 +91,11 @@ export const services: Service[] = [
       "The door opens unevenly or at an angle",
     ],
     checks: [
-      "Spring type (torsion or extension) and condition",
-      "Cable condition, since cables and springs work together",
-      "Door balance once new springs are installed",
-      "Safety cables and mounting hardware",
-      "Opener force settings after the repair",
+      { label: "Spring type and condition", detail: "We identify whether you have torsion or extension springs, check for visible breaks, measure wind count, and assess whether the spring matches the door's weight." },
+      { label: "Cable condition", detail: "Springs and cables work as a pair. We inspect cables for fraying, rust, or slack — a worn cable alongside a new spring is a failure waiting to happen." },
+      { label: "Door balance", detail: "After new springs are installed, we test how the door holds at mid-travel. A properly balanced door should stay in place without the opener holding it." },
+      { label: "Safety cables and mounting hardware", detail: "Extension springs require safety cables threaded through them. We verify these are in place and that all mounting brackets are secure." },
+      { label: "Opener force settings", detail: "New springs change how much force the opener needs to apply. We adjust the opener's up-force and down-force settings to match the new spring tension." },
     ],
     whyItMatters: [
       "Garage door springs are under significant mechanical tension.",
@@ -141,11 +141,11 @@ export const services: Service[] = [
       "Opener is outdated or parts are no longer available",
     ],
     checks: [
-      "Opener motor and drive system",
-      "Remote and keypad programming",
-      "Safety sensor alignment",
-      "Force and travel-limit settings",
-      "Whether the door itself is causing the opener to strain",
+      { label: "Opener motor and drive system", detail: "We inspect the motor, drive belt or chain, and carriage mechanism for wear, noise, or stalling — common signs of a unit that's nearing the end of its life." },
+      { label: "Remote and keypad programming", detail: "Remotes that stopped working are often a pairing or interference issue, not a hardware failure. We test and reprogram before recommending replacement." },
+      { label: "Safety sensor alignment", detail: "Photo-eye sensors must be aimed at each other and unobstructed. We clean the lenses, realign both units, and confirm the indicator lights show proper function." },
+      { label: "Force and travel-limit settings", detail: "Incorrect force or limit settings cause the door to reverse or stop short. We adjust both to make sure the door opens and closes fully without straining the motor." },
+      { label: "Door load on the opener", detail: "An opener straining against a heavy door often points to a spring or balance problem, not the opener itself. We check the door's mechanical load before recommending any opener work." },
     ],
     whyItMatters: [
       "An opener working against a heavy or unbalanced door can wear out faster.",
@@ -188,11 +188,11 @@ export const services: Service[] = [
       "Planning a renovation or new construction",
     ],
     checks: [
-      "Opening size and structural requirements",
-      "Insulation needs for your climate and garage use",
-      "Compatible opener and safety features",
-      "Material and style options",
-      "Proper sealing and weatherproofing at installation",
+      { label: "Opening size and structure", detail: "We measure the rough opening and assess headroom, side room, and structural conditions — all of which affect which door types and track configurations will fit correctly." },
+      { label: "Insulation requirements", detail: "If your garage is attached, temperature-controlled, or used as a workspace, insulation value (R-value) is a meaningful factor. We discuss options that match how you actually use the space." },
+      { label: "Opener compatibility", detail: "Not every opener works with every door. We check motor strength requirements, drive type, and smart-home compatibility before any installation begins." },
+      { label: "Material and style fit", detail: "Steel, aluminum, composite, and wood each have different maintenance demands and performance characteristics. We explain the practical differences without pushing a particular direction." },
+      { label: "Sealing and weatherproofing", detail: "We check and set bottom seals, side seals, and header weatherstripping at install so the door closes snugly against the elements from day one." },
     ],
     whyItMatters: [
       "Improper installation can affect how the door balances and operates long-term.",
@@ -235,12 +235,12 @@ export const services: Service[] = [
       "Preparing for a season of heavy use",
     ],
     checks: [
-      "Springs and cable condition",
-      "Rollers, hinges, and tracks",
-      "Lubrication of moving parts",
-      "Door balance",
-      "Opener settings and safety sensors",
-      "Weatherstripping and seals",
+      { label: "Springs and cable condition", detail: "We check spring cycle life remaining, look for coil separation or rust, and inspect cables for fraying or uneven tension on both sides." },
+      { label: "Rollers, hinges, and tracks", detail: "Worn nylon rollers, cracked hinges, and tracks that are out of plumb are early indicators of bigger problems. We assess all three together since they affect each other." },
+      { label: "Lubrication of moving parts", detail: "Springs, rollers, and hinges require the right lubricant — not general-purpose spray. We apply proper lubricant to the correct components to reduce wear and noise." },
+      { label: "Door balance", detail: "A balanced door should hold its position mid-travel without the opener. We test this and adjust spring tension if the door is pulling heavier on one side." },
+      { label: "Opener settings and safety sensors", detail: "Over time, opener force and limit settings can drift. We verify auto-reverse sensitivity, travel limits, and photo-eye sensor alignment during each maintenance visit." },
+      { label: "Weatherstripping and seals", detail: "Bottom seals and side seals protect the garage from drafts, water, and pests. We inspect them for cracking or compression loss and note anything that should be replaced." },
     ],
     whyItMatters: [
       "Routine maintenance can catch wear before it leads to a failure.",
@@ -284,12 +284,12 @@ export const services: Service[] = [
       "Broken or missing hardware",
     ],
     checks: [
-      "Roller type and wear",
-      "Cable condition and tension",
-      "Track alignment",
-      "Hinge condition",
-      "Weatherstripping and seals",
-      "General hardware condition",
+      { label: "Roller type and wear", detail: "We identify whether your rollers are nylon or steel, check for cracking or flat spots, and measure bearing play — worn rollers are one of the most common causes of noise and track binding." },
+      { label: "Cable condition and tension", detail: "Cables fray from the inside out, so visible fraying is already a late sign. We check both cables for wear, tension symmetry, and correct seating on the drums." },
+      { label: "Track alignment", detail: "Tracks that are out of plumb or have gaps at the mounting brackets put uneven stress on the rollers. We check both vertical and horizontal sections and adjust as needed." },
+      { label: "Hinge condition", detail: "Cracked or loose hinges let panels flex under load, which accelerates wear on adjacent components. We check every hinge point and tighten or replace where required." },
+      { label: "Weatherstripping and seals", detail: "Bottom seals and side seals prevent drafts, moisture, and pests. We check compression, look for cracks or gaps, and recommend replacements where sealing has failed." },
+      { label: "General hardware condition", detail: "Lag bolts, track brackets, and torsion bar bearings can loosen with vibration over time. We tighten hardware across the full system, not just the part that's visibly worn." },
     ],
     whyItMatters: [
       "Mismatched or low-quality parts can wear out faster or affect the door's balance.",
