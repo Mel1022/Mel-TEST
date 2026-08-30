@@ -2,6 +2,7 @@ import Link from "next/link";
 import PageHero from "./PageHero";
 import CTASection from "./CTASection";
 import FAQAccordion from "./FAQAccordion";
+import TechnicianChecks from "./TechnicianChecks";
 import { IconCheck } from "./Icons";
 import type { Service } from "@/lib/services";
 
@@ -61,26 +62,7 @@ export default function ServiceDetailPage({ service, bgImage }: { service: Servi
       </section>
 
       {/* What the technician checks */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-          <h3 className="font-heading font-bold text-xl text-navy text-center">
-            What the Technician Checks
-          </h3>
-          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {service.checks.map((check) => (
-              <div
-                key={check}
-                className="rounded-card bg-surface border border-steel/15 px-5 py-4 text-sm font-semibold text-navy flex items-center gap-3"
-              >
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-navy text-gold flex items-center justify-center">
-                  <IconCheck className="w-3.5 h-3.5" />
-                </span>
-                {check}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TechnicianChecks checks={service.checks} />
 
       {/* Why professional service matters */}
       <section className="bg-navy">
