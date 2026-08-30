@@ -68,18 +68,21 @@ export default function ServiceDetailPage({ service, bgImage }: { service: Servi
       <section className="relative overflow-hidden bg-navy-dark">
         <img src="/images/why-pro-bg.png" alt="" aria-hidden="true" className="page-hero-bg-img" />
         <div aria-hidden="true" className="page-hero-overlay" />
-        <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 text-center">
-          <h3 className="font-heading font-bold text-xl text-white">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
+          <h3 className="font-heading font-bold text-xl text-white text-center mb-8">
             Why Professional Service Matters
           </h3>
-          <ul className="mt-6 space-y-3 text-left inline-block">
+          <div className="flex flex-col sm:flex-row gap-4">
             {service.whyItMatters.map((line) => (
-              <li key={line} className="flex items-start gap-3 text-white/80">
+              <div
+                key={line}
+                className="flex-1 flex items-start gap-3 rounded-card bg-white/15 border border-white/25 backdrop-blur-sm px-6 py-5"
+              >
                 <IconCheck className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                <span>{line}</span>
-              </li>
+                <span className="text-sm text-white/85 leading-relaxed">{line}</span>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
