@@ -138,6 +138,7 @@ export default function Page() {
       service={service}
       bgImage="/images/installation-hero-bg.jpg"
       pricingSection={PricingSection}
+      hideWhyPro
     />
   );
 }
