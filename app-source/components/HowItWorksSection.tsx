@@ -90,12 +90,12 @@ export default function HowItWorksSection() {
         position: "absolute", inset: 0,
         background: "rgba(11,61,46,0.78)",
       }} />
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div className="relative z-10 w-full px-6 sm:px-10 lg:px-16 py-16 sm:py-24">
 
         {/* ── Heading ── */}
         <div
           className="text-center max-w-2xl mx-auto mb-14 hiw-reveal"
-          style={rev(0)}
+          style={{ ...rev(0), maxWidth: "44rem" }}
         >
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/60 mb-3">
             How It Works
@@ -123,7 +123,7 @@ export default function HowItWorksSection() {
 
               {/* Card */}
               <div
-                className="hiw-card hiw-reveal group rounded-card bg-white/10 border border-white/15 p-7 sm:flex-1 cursor-default backdrop-blur-sm"
+                className="hiw-card hiw-reveal group rounded-card bg-white/15 border border-white/25 p-7 sm:flex-1 cursor-default backdrop-blur-sm"
                 style={rev(STEP_DELAY[i])}
               >
                 {/* Step number */}
