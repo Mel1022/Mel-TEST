@@ -7,17 +7,19 @@ import TechnicianChecks from "./TechnicianChecks";
 import { IconCheck } from "./Icons";
 import type { Service } from "@/lib/services";
 
-export default function ServiceDetailPage({ service, bgImage, pricingSection, hideWhyPro }: { service: Service; bgImage?: string; pricingSection?: React.ReactNode; hideWhyPro?: boolean }) {
+export default function ServiceDetailPage({ service, bgImage, pricingSection, hideWhyPro, heroSection }: { service: Service; bgImage?: string; pricingSection?: React.ReactNode; hideWhyPro?: boolean; heroSection?: React.ReactNode }) {
   return (
     <>
-      <PageHero
-        eyebrow={service.shortName}
-        headline={service.heroHeadline}
-        support={service.heroSupport}
-        ctaLabel={service.ctaLabel}
-        safetyWarning={service.safetyWarning}
-        bgImage={bgImage}
-      />
+      {heroSection ?? (
+        <PageHero
+          eyebrow={service.shortName}
+          headline={service.heroHeadline}
+          support={service.heroSupport}
+          ctaLabel={service.ctaLabel}
+          safetyWarning={service.safetyWarning}
+          bgImage={bgImage}
+        />
+      )}
 
       {/* Problem explanation */}
       <section className="bg-white">
