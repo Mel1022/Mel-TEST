@@ -28,7 +28,7 @@ export default function ContactPage() {
         ctaLabel="Request a Quote"
         ctaHref="/request-a-quote/"
         bgImage="/images/team-cta.png"
-        bgPosition="center 30%"
+        bgPosition="center 50%"
       />
 
       <section className="bg-white">
