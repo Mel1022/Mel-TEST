@@ -27,6 +27,8 @@ export default function ContactPage() {
         support="Have a question, or just want to talk through what your door is doing? Reach out — or request a full quote if you're ready."
         ctaLabel="Request a Quote"
         ctaHref="/request-a-quote/"
+        bgImage="/images/team-cta.png"
+        bgPosition="center 30%"
       />
 
       <section className="bg-white">
