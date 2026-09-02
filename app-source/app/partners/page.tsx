@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import PartnerForm from "@/components/PartnerForm";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -62,28 +63,19 @@ export default function PartnersPage() {
             ))}
           </div>
 
-          <div className="mt-16 rounded-card bg-navy p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            <div>
-              <h2 className="font-heading font-bold text-white text-xl">Ready to get started?</h2>
-              <p className="mt-2 text-white/70 text-sm">
-                Reach out and we'll set up your partner account — usually within one business day.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
-              <Link
-                href="/contact/"
-                className="inline-flex items-center justify-center rounded-card bg-gold px-7 py-3.5 text-sm font-bold text-navy shadow-card hover:bg-gold-dark hover:text-white transition-colors whitespace-nowrap"
-              >
-                Contact Us
-              </Link>
-              <a
-                href={siteConfig.phone.href}
-                className="inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors whitespace-nowrap"
-              >
-                {siteConfig.phone.display}
-              </a>
-            </div>
+        </div>
+      </section>
+
+      <section id="apply" className="bg-surface">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16">
+          <div className="mb-8">
+            <p className="text-xs font-bold uppercase tracking-wide text-steel mb-2">Partner application</p>
+            <h2 className="font-heading font-extrabold text-2xl text-navy">Apply to join our network.</h2>
+            <p className="mt-3 text-steel leading-relaxed max-w-2xl">
+              Tell us about your business and what you can do. We review every application and reach out personally — most within 2–3 business days. There&apos;s no cost to apply, and the more detail you give us, the faster we can match you with work.
+            </p>
           </div>
+          <PartnerForm />
         </div>
       </section>
     </>
