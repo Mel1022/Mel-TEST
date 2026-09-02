@@ -3,7 +3,7 @@ import Link from "next/link";
 import ServiceDetailPage from "@/components/ServiceDetailPage";
 import { getServiceBySlug } from "@/lib/services";
 import { siteConfig } from "@/lib/site-config";
-import { IconPhone, IconCheck } from "@/components/Icons";
+import { IconPhone, IconCheck, IconDownload } from "@/components/Icons";
 
 const service = getServiceBySlug("garage-door-opener-repair-installation")!;
 
@@ -55,29 +55,29 @@ const MODELS = [
   {
     tag: "Best Value",
     name: "LiftMaster 2220L",
-    subtitle: "Chain-drive · ½ HP",
-    detail: "Detached & uninsulated garages",
+    subtitle: "Chain-drive · ½ HP · Detached & uninsulated garages",
     price: "$1,287",
     features: ["Chain drive", "Wi-Fi add-on available", "Lifetime motor warranty"],
-    featured: false,
+    image: "/images/opener.png",
+    brochure: "#",
   },
   {
     tag: "Most Popular",
     name: "LiftMaster 6580L",
-    subtitle: "Belt-drive · DC",
-    detail: "Bedroom-above garages — quiet, smart, secure",
+    subtitle: "Belt-drive · DC · Bedroom-above garages — quiet, smart, secure",
     price: "From $1,424",
     features: ["Belt drive — ultra quiet", "Built-in Wi-Fi", "Battery backup", "HD camera"],
-    featured: true,
+    image: "/images/opener.png",
+    brochure: "#",
   },
   {
     tag: "Premium · Ultra Quiet",
     name: "LiftMaster 98032",
-    subtitle: "Wall-mount jackshaft",
-    detail: "High-ceiling & storage-rack garages",
+    subtitle: "Wall-mount jackshaft · High-ceiling & storage-rack garages",
     price: "$1,914",
     features: ["Wall-mount — no ceiling unit", "Built-in Wi-Fi", "Battery backup", "Auto-deadbolt"],
-    featured: false,
+    image: "/images/opener.png",
+    brochure: "#",
   },
 ];
 
@@ -89,104 +89,89 @@ const BRANDS = [
 ];
 
 const OpenerModelsSection = (
-  <section className="relative bg-navy-dark overflow-hidden">
-    <img src="/images/opener-hero-bg.png" alt="" aria-hidden="true" className="page-hero-bg-img" />
-    <div aria-hidden="true" className="absolute inset-0 bg-navy-dark/88" />
-    <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+  <section className="bg-surface">
+    <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
 
       {/* Heading */}
-      <div className="mb-10 text-center max-w-2xl mx-auto">
-        <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-3">
+      <div className="mb-8">
+        <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">
           Pick the Right Opener. Installed.
         </h2>
-        <p className="text-white/70 text-sm leading-relaxed">
-          Three picks for most Richmond homes — all prices are all-in installed costs.
-          No hidden labour fees, no disposal charges. We confirm the price before work begins.
+        <p className="text-steel text-sm leading-relaxed">
+          All prices are all-in installed costs — no hidden labour fees, no disposal charges.
+          We confirm the price before work begins.
         </p>
       </div>
 
       {/* Model cards */}
-      <div className="grid sm:grid-cols-3 gap-6 items-stretch">
+      <div className="space-y-4">
         {MODELS.map((model) => (
-          <div
-            key={model.name}
-            className={`flex flex-col rounded-card p-7 relative ${
-              model.featured
-                ? "bg-navy-dark border border-navy-dark"
-                : "bg-white border border-steel/10"
-            }`}
-          >
-            {model.featured && (
-              <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold text-navy-dark text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full whitespace-nowrap">
-                Most Popular
-              </span>
-            )}
-            <p className={`text-xs font-bold uppercase tracking-widest mb-1 ${model.featured ? "text-white/50" : "text-steel"}`}>
-              {model.tag}
-            </p>
-            <h3 className={`font-heading font-extrabold text-xl mb-1 ${model.featured ? "text-white" : "text-navy-dark"}`}>
-              {model.name}
-            </h3>
-            <p className={`text-sm font-semibold mb-1 ${model.featured ? "text-gold" : "text-gold-dark"}`}>
-              {model.subtitle}
-            </p>
-            <p className={`text-xs mb-5 ${model.featured ? "text-white/50" : "text-steel/70"}`}>
-              {model.detail}
-            </p>
-            <div className={`text-3xl font-heading font-extrabold mb-6 ${model.featured ? "text-white" : "text-navy-dark"}`}>
-              {model.price} <span className={`text-xs font-normal ${model.featured ? "text-white/50" : "text-steel/70"}`}>installed</span>
+          <div key={model.name} className="flex gap-5 rounded-card bg-white border border-steel/15 p-5 shadow-card">
+            {/* Product image */}
+            <div className="flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden bg-surface flex items-center justify-center">
+              <img src={model.image} alt={model.name} className="w-full h-full object-contain p-1" />
             </div>
-            <ul className="space-y-3 flex-1">
-              {model.features.map((f) => (
-                <li key={f} className="flex items-start gap-2.5">
-                  <IconCheck className={`w-4 h-4 flex-shrink-0 mt-0.5 ${model.featured ? "text-gold" : "text-navy"}`} />
-                  <span className={`text-sm leading-snug ${model.featured ? "text-white/80" : "text-steel"}`}>{f}</span>
-                </li>
-              ))}
-            </ul>
-            <a
-              href={siteConfig.phone.href}
-              className={`mt-6 inline-flex items-center justify-center gap-2 rounded-card px-5 py-3 text-sm font-bold transition-colors ${
-                model.featured
-                  ? "bg-gold text-navy-dark hover:bg-gold-dark hover:text-white"
-                  : "border-2 border-navy-dark text-navy-dark hover:bg-navy-dark hover:text-white"
-              }`}
-            >
-              <IconPhone className="w-4 h-4" />
-              {siteConfig.phone.display}
-            </a>
+            {/* Content */}
+            <div className="flex-1 min-w-0">
+              <p className="text-xs font-bold uppercase tracking-widest text-gold-dark">{model.tag}</p>
+              <h3 className="font-heading font-bold text-xl text-navy-dark mt-0.5">{model.name}</h3>
+              <p className="text-sm text-steel mt-0.5">{model.subtitle}</p>
+              <p className="font-bold text-navy-dark mt-2">
+                {model.price} <span className="font-normal text-steel text-sm">installed</span>
+              </p>
+              <div className="flex flex-wrap gap-1.5 mt-3">
+                {model.features.map((f) => (
+                  <span key={f} className="text-xs font-semibold text-steel bg-surface border border-steel/20 rounded-full px-3 py-1">
+                    {f}
+                  </span>
+                ))}
+              </div>
+              <div className="flex items-center gap-1 mt-4 text-sm">
+                <a
+                  href={model.brochure}
+                  className="inline-flex items-center gap-1.5 text-steel hover:text-navy-dark transition-colors"
+                >
+                  <IconDownload className="w-3.5 h-3.5" />
+                  Brochure (PDF)
+                </a>
+                <span className="text-steel/40 mx-1">·</span>
+                <Link href="/request-a-quote/" className="font-semibold text-navy-dark hover:text-gold-dark transition-colors">
+                  Get a quote →
+                </Link>
+              </div>
+            </div>
           </div>
         ))}
       </div>
 
       {/* What's included */}
-      <div className="mt-12 grid lg:grid-cols-2 gap-10 items-start">
+      <div className="mt-10 grid sm:grid-cols-2 gap-8 pt-10 border-t border-steel/10">
         <div>
-          <h3 className="font-heading font-bold text-lg text-white mb-5">What&apos;s Included — Every Install</h3>
-          <ul className="space-y-3">
+          <h3 className="font-heading font-bold text-base text-navy-dark mb-4">What&apos;s Included — Every Install</h3>
+          <ul className="space-y-2.5">
             {INCLUDED.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <IconCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-white/80 leading-snug">{item}</span>
+              <li key={item} className="flex items-start gap-2.5">
+                <IconCheck className="w-4 h-4 text-gold-dark flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-steel leading-snug">{item}</span>
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <h3 className="font-heading font-bold text-lg text-white mb-5">Brands We Install &amp; Service</h3>
-          <div className="flex flex-wrap gap-2">
+          <h3 className="font-heading font-bold text-base text-navy-dark mb-4">Brands We Install &amp; Service</h3>
+          <div className="flex flex-wrap gap-1.5">
             {BRANDS.map((brand) => (
-              <span key={brand} className="text-xs font-semibold text-white/80 bg-white/10 border border-white/20 rounded-full px-3 py-1">
+              <span key={brand} className="text-xs font-semibold text-steel bg-surface border border-steel/20 rounded-full px-3 py-1">
                 {brand}
               </span>
             ))}
           </div>
-          <p className="mt-5 text-xs text-white/50 leading-relaxed">
-            Not sure which model fits your garage? Send us a photo of your existing opener and ceiling — we&apos;ll recommend the right unit.
+          <p className="mt-4 text-xs text-steel/70 leading-relaxed">
+            Not sure which model fits your garage? Send us a photo — we&apos;ll recommend the right unit.
           </p>
           <a
             href={siteConfig.phone.href}
-            className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gold hover:text-gold-dark transition-colors"
+            className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-navy-dark hover:text-gold-dark transition-colors"
           >
             <IconPhone className="w-4 h-4" />
             {siteConfig.phone.display}
@@ -194,7 +179,7 @@ const OpenerModelsSection = (
         </div>
       </div>
 
-      <p className="mt-8 text-center text-xs text-white/40 max-w-xl mx-auto">
+      <p className="mt-8 text-xs text-steel/50 leading-relaxed">
         Prices shown are for standard residential installations. Custom sizing, structural work, or additional accessories may affect the final price — confirmed in writing before work begins.
       </p>
     </div>

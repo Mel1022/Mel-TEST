@@ -127,6 +127,15 @@ export function IconClose({ className = "w-6 h-6" }: IconProps) {
   );
 }
 
+export function IconDownload({ className = "w-5 h-5" }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+      <path d="M12 3v13M7 11l5 5 5-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M4 20h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function iconForService(icon: string, className?: string) {
   switch (icon) {
     case "wrench":
