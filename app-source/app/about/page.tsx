@@ -33,8 +33,10 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy-dark text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <section className="relative bg-navy-dark text-white overflow-hidden">
+        <img src="/images/about-hero-bg.png" alt="" aria-hidden="true" className="page-hero-bg-img" />
+        <div aria-hidden="true" className="absolute inset-0" style={{ background: "rgba(11,61,46,0.78)" }} />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-gold font-bold uppercase tracking-wide text-sm mb-3">Richmond BC · Since 2007</p>
           <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white max-w-3xl leading-tight">
             About DoorChamp
