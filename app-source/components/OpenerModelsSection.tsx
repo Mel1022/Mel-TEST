@@ -25,6 +25,24 @@ const MODELS = [
     brochure: "/brochures/2220L_product_guide.pdf",
   },
   {
+    tag: "Most Popular",
+    name: "LiftMaster 6580L",
+    subtitle: "Belt-drive · DC · Bedroom-above garages — quiet, smart, secure",
+    price: "From $1,424",
+    features: ["Belt — quiet", "Wi-Fi", "Battery backup", "HD camera"],
+    image: "/images/6580L_1.png",
+    brochure: "/brochures/6580L_product_guide.pdf",
+  },
+  {
+    tag: "Premium · Ultra Quiet",
+    name: "LiftMaster 98032",
+    subtitle: "Wall-mount jackshaft · No motor on the ceiling · High-ceiling & storage-rack garages",
+    price: "$1,914",
+    features: ["Wall-mount", "Wi-Fi", "Battery backup", "Auto-deadbolt", "Ultra quiet"],
+    image: "/images/98032_1.jpg",
+    brochure: "/brochures/98032_product_guide.pdf",
+  },
+  {
     tag: "Heavy-Door Chain Drive",
     name: "LiftMaster 2420L",
     subtitle: "Chain-drive · ¾ HP · Heavy or oversized doors",
@@ -43,15 +61,6 @@ const MODELS = [
     brochure: "/brochures/4690L_product_guide.pdf",
   },
   {
-    tag: "Most Popular",
-    name: "LiftMaster 6580L",
-    subtitle: "Belt-drive · DC · Built-in camera · Battery backup",
-    price: "From $1,499",
-    features: ["Belt drive — ultra quiet", "Built-in Wi-Fi", "Battery backup", "HD camera"],
-    image: "/images/6580L_1.png",
-    brochure: "/brochures/6580L_product_guide.pdf",
-  },
-  {
     tag: "Premium Camera",
     name: "LiftMaster 6690L",
     subtitle: "Belt-drive · DC · Upgraded camera system · Battery backup",
@@ -68,15 +77,6 @@ const MODELS = [
     features: ["Wall-mount — no ceiling rail", "Built-in Wi-Fi", "Battery backup", "myQ compatible"],
     image: "/images/98022_1.jpg",
     brochure: "/brochures/98022_product_guide.pdf",
-  },
-  {
-    tag: "Premium · Ultra Quiet",
-    name: "LiftMaster 98032",
-    subtitle: "Jackshaft · DC · High-ceiling & storage-rack garages",
-    price: "$1,914",
-    features: ["Wall-mount — no ceiling unit", "Built-in Wi-Fi", "Battery backup", "Auto-deadbolt"],
-    image: "/images/98032_1.jpg",
-    brochure: "/brochures/98032_product_guide.pdf",
   },
 ];
 
