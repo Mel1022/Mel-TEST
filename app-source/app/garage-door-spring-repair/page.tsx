@@ -80,7 +80,8 @@ export default function SpringRepairPage() {
             <div className="flex flex-col rounded-card bg-white border border-steel/10 p-7">
               <p className="text-xs font-bold uppercase tracking-widest text-steel mb-1">The Quick Fix</p>
               <h3 className="font-heading font-extrabold text-xl text-navy-dark mb-1">Single Spring</h3>
-              <p className="text-sm text-gold font-semibold mb-5">Quick &amp; targeted</p>
+              <p className="font-bold text-navy-dark text-2xl mt-1">$714 <span className="text-sm font-normal text-steel">for 1 · Oil-tempered</span></p>
+              <p className="text-sm text-gold font-semibold mb-5 mt-1">Quick &amp; targeted</p>
               <ul className="space-y-3 flex-1">
                 {[
                   "One oil-tempered torsion spring replaced",
@@ -113,7 +114,8 @@ export default function SpringRepairPage() {
               </span>
               <p className="text-xs font-bold uppercase tracking-widest text-white/50 mb-1">The Honest Pair</p>
               <h3 className="font-heading font-extrabold text-xl text-white mb-1">Both Springs</h3>
-              <p className="text-sm text-gold font-semibold mb-5">Best value</p>
+              <p className="font-bold text-white text-2xl mt-1">$827 <span className="text-sm font-normal text-white/70">for 2 · Oil-tempered · Same day</span></p>
+              <p className="text-sm text-gold font-semibold mb-5 mt-1">Best value</p>
               <ul className="space-y-3 flex-1">
                 {[
                   "Both oil-tempered torsion springs replaced as a matched pair",
