@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServiceDetailPage from "@/components/ServiceDetailPage";
+import PriceReveal from "@/components/PriceReveal";
 import { getServiceBySlug } from "@/lib/services";
 import { siteConfig } from "@/lib/site-config";
 import { IconCheck, IconPhone } from "@/components/Icons";
@@ -134,11 +135,13 @@ const PricingSection = (
 
 export default function Page() {
   return (
-    <ServiceDetailPage
-      service={service}
-      bgImage="/images/installation-hero-bg.jpg"
-      pricingSection={PricingSection}
-      hideWhyPro
-    />
+    <>
+      <ServiceDetailPage
+        service={service}
+        bgImage="/images/installation-hero-bg.jpg"
+        hideWhyPro
+      />
+      <PriceReveal>{PricingSection}</PriceReveal>
+    </>
   );
 }
