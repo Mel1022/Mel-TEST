@@ -1,133 +1,73 @@
-"use client";
-
-import { useState } from "react";
-import { IconCheck, IconPhone } from "@/components/Icons";
-import { siteConfig } from "@/lib/site-config";
-
-const INCLUDED = [
-  "Removal & disposal of old door",
-  "Spring & track installation",
-  "Weather-stripping",
-  "Finish details & hardware",
-  "Two-year labour warranty",
-];
+import Link from "next/link";
 
 const TIERS = [
   {
-    tag: "Single Door",
-    title: "Single Insulated Steel",
-    subtitle: "Most Richmond homes",
-    detail: "8'×7' or 9'×7'",
-    price: "$3,621",
-    featured: false,
+    title: "Single insulated steel door",
+    subtitle: "Most Richmond homes · 8'×7' or 9'×7'",
+    price: "From $3,621",
   },
   {
-    tag: "Double Door",
-    title: "Double-Wide Insulated Steel",
-    subtitle: "Most attached garages",
-    detail: "16'×7'",
-    price: "$4,532",
-    featured: true,
+    title: "Double-wide insulated steel",
+    subtitle: "16'×7' · most attached garages",
+    price: "From $4,532",
   },
   {
-    tag: "Premium",
-    title: "Carriage-House / Composite",
-    subtitle: "Heritage homes & custom looks",
-    detail: "Custom sizing available",
-    price: "$7,241",
-    featured: false,
+    title: "Carriage-house / composite premium",
+    subtitle: "Heritage homes · custom looks",
+    price: "From $7,241",
   },
 ];
 
+const INCLUDED =
+  "Removal & disposal of old door · spring & track · weather-stripping · finish details · two-year labour warranty.";
+
 export default function InstallationPricing() {
-  const [showPrice, setShowPrice] = useState(false);
-
   return (
-    <section className="relative bg-navy-dark overflow-hidden">
-      <img src="/images/installation-hero-bg.jpg" alt="" aria-hidden="true" className="page-hero-bg-img" />
-      <div aria-hidden="true" className="absolute inset-0 bg-navy-dark/80" />
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+    <section className="bg-white">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+        <p className="text-xs font-bold uppercase tracking-widest text-gold-dark mb-3">Honest Pricing</p>
+        <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-8">
+          Three tiers&nbsp;&mdash;&nbsp;installed.
+        </h2>
 
-        {/* Heading + Price toggle */}
-        <div className="mb-10 text-center max-w-2xl mx-auto">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-3">
-            Honest Pricing. Three Tiers&nbsp;&mdash;&nbsp;Installed.
-          </h2>
-          <p className="text-white/70 text-sm leading-relaxed mb-6">
-            Every price below is the all-in installed cost — no hidden labour fees, no disposal charges,
-            no service-call markup. We confirm the price before any work begins.
-          </p>
-          <button
-            onClick={() => setShowPrice((v) => !v)}
-            className="inline-flex items-center gap-2 rounded-card bg-gold px-7 py-2.5 text-sm font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors"
-          >
-            {showPrice ? "Hide Price" : "Price"}
-          </button>
-        </div>
-
-        {/* Cards */}
-        <div className="grid sm:grid-cols-3 gap-6 items-stretch">
-          {TIERS.map((tier) => (
+        <div className="rounded-card border border-steel/15 overflow-hidden">
+          {TIERS.map((tier, i) => (
             <div
               key={tier.title}
-              className={`flex flex-col rounded-card p-7 relative ${
-                tier.featured
-                  ? "bg-navy-dark border border-navy-dark"
-                  : "bg-white border border-steel/10"
+              className={`flex items-center justify-between gap-6 px-6 py-5 ${
+                i < TIERS.length - 1 ? "border-b border-steel/10" : ""
               }`}
             >
-              {tier.featured && (
-                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold text-navy-dark text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full whitespace-nowrap">
-                  Most Popular
-                </span>
-              )}
-
-              <p className={`text-xs font-bold uppercase tracking-widest mb-1 ${tier.featured ? "text-white/50" : "text-steel"}`}>
-                {tier.tag}
-              </p>
-              <h3 className={`font-heading font-extrabold text-xl mb-1 ${tier.featured ? "text-white" : "text-navy-dark"}`}>
-                {tier.title}
-              </h3>
-              <p className={`text-sm font-semibold mb-1 ${tier.featured ? "text-gold" : "text-gold-dark"}`}>
-                {tier.subtitle}
-              </p>
-              <p className={`text-xs mb-5 ${tier.featured ? "text-white/50" : "text-steel/70"}`}>
-                {tier.detail}
-              </p>
-
-              <div className={`text-3xl font-heading font-extrabold mb-1 ${tier.featured ? "text-white" : "text-navy-dark"}`}>
-                {showPrice ? `From ${tier.price}` : "——"}
+              <div>
+                <p className="font-semibold text-navy-dark">{tier.title}</p>
+                <p className="text-sm text-steel mt-0.5">{tier.subtitle}</p>
               </div>
-              <p className={`text-xs mb-6 ${tier.featured ? "text-white/50" : "text-steel/70"}`}>installed</p>
-
-              <ul className="space-y-3 flex-1">
-                {INCLUDED.map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <IconCheck className={`w-4 h-4 flex-shrink-0 mt-0.5 ${tier.featured ? "text-gold" : "text-navy"}`} />
-                    <span className={`text-sm leading-snug ${tier.featured ? "text-white/80" : "text-steel"}`}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href={siteConfig.phone.href}
-                className={`mt-6 inline-flex items-center justify-center gap-2 rounded-card px-5 py-3 text-sm font-bold transition-colors ${
-                  tier.featured
-                    ? "bg-gold text-navy-dark hover:bg-gold-dark hover:text-white"
-                    : "border-2 border-navy-dark text-navy-dark hover:bg-navy-dark hover:text-white"
-                }`}
-              >
-                <IconPhone className="w-4 h-4" />
-                {siteConfig.phone.display}
-              </a>
+              <div className="text-right flex-shrink-0">
+                <p className="font-heading font-extrabold text-navy-dark text-lg">{tier.price}</p>
+                <p className="text-xs font-bold uppercase tracking-widest text-steel/60 mt-0.5">Installed</p>
+              </div>
             </div>
           ))}
+
+          {/* Included footer row */}
+          <div className="bg-surface px-6 py-4 border-t border-steel/10">
+            <p className="text-sm text-steel leading-relaxed">{INCLUDED}</p>
+          </div>
         </div>
 
-        <p className="mt-8 text-center text-xs text-white/45 max-w-xl mx-auto">
-          Prices shown are starting-from estimates for standard residential openings.
-          Structural work, non-standard sizes, or additional opener upgrades may affect the final price — confirmed in writing before work begins.
+        <p className="mt-5 text-xs text-steel/60 leading-relaxed">
+          Prices are starting-from estimates for standard residential openings. Structural work,
+          non-standard sizes, or opener upgrades may affect the final price — confirmed in writing before work begins.
         </p>
+
+        <div className="mt-6 flex gap-4">
+          <Link
+            href="/request-a-quote/"
+            className="inline-flex items-center justify-center rounded-card bg-gold px-7 py-3 text-sm font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors"
+          >
+            Get a quote
+          </Link>
+        </div>
       </div>
     </section>
   );
