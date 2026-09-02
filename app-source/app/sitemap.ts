@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/", priority: 1.0, changeFrequency: "weekly" as const },
     { path: "/garage-door-repair/", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/garage-door-spring-repair/", priority: 0.9, changeFrequency: "monthly" as const },
-    { path: "/garage-door-openers/", priority: 0.9, changeFrequency: "monthly" as const },
+    { path: "/garage-door-opener-repair-installation/", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/garage-door-installation/", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/garage-door-maintenance/", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/commercial/", priority: 0.8, changeFrequency: "monthly" as const },

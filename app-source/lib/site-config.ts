@@ -28,7 +28,7 @@ export const siteConfig = {
 export const residentialNav = [
   { label: "Repair", fullLabel: "Garage Door Repair", href: "/garage-door-repair/" },
   { label: "Springs", fullLabel: "Spring Repair & Replacement", href: "/garage-door-spring-repair/" },
-  { label: "Openers", fullLabel: "Opener Service & Install", href: "/garage-door-openers/" },
+  { label: "Openers", fullLabel: "Opener Service & Install", href: "/garage-door-opener-repair-installation/" },
   { label: "Installation", fullLabel: "New Door Installation", href: "/garage-door-installation/" },
   { label: "Maintenance", fullLabel: "Maintenance & Tune-Up", href: "/garage-door-maintenance/" },
 ];
@@ -36,7 +36,7 @@ export const residentialNav = [
 export const primaryNav = [
   { label: "Repair", fullLabel: "Garage Door Repair", href: "/garage-door-repair/" },
   { label: "Springs", fullLabel: "Spring Repair & Replacement", href: "/garage-door-spring-repair/" },
-  { label: "Openers", fullLabel: "Opener Service & Install", href: "/garage-door-openers/" },
+  { label: "Openers", fullLabel: "Opener Service & Install", href: "/garage-door-opener-repair-installation/" },
   { label: "Installation", fullLabel: "New Door Installation", href: "/garage-door-installation/" },
   { label: "Maintenance", fullLabel: "Maintenance & Tune-Up", href: "/garage-door-maintenance/" },
   { label: "Commercial", fullLabel: "Commercial Services", href: "/commercial/" },

@@ -26,7 +26,7 @@ const SERVICES = [
     icon: <IconOpener className="w-7 h-7" />,
     title: "Opener Service & Install",
     body: "LiftMaster, Chamberlain, Genie, and all major brands. Repair, reprogram, or upgrade your opener.",
-    href: "/garage-door-openers/",
+    href: "/garage-door-opener-repair-installation/",
   },
   {
     icon: <IconInstall className="w-7 h-7" />,
