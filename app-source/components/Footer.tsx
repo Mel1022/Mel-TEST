@@ -53,11 +53,7 @@ export default function Footer() {
               <li><Link href="/about/" className="hover:text-gold transition-colors">About DoorChamp</Link></li>
               <li><Link href="/faq/" className="hover:text-gold transition-colors">FAQ</Link></li>
               <li><Link href="/request-a-quote/" className="hover:text-gold transition-colors">Request a Quote</Link></li>
-              <li>
-                <Link href="/partners/" className="mt-2 inline-flex items-center justify-center rounded-card border border-white/30 px-4 py-2 text-sm font-bold text-white hover:border-gold hover:text-gold transition-colors">
-                  Become a Partner
-                </Link>
-              </li>
+              <li><Link href="/partners/" className="hover:text-gold transition-colors">Become a Partner</Link></li>
             </ul>
           </div>
 
