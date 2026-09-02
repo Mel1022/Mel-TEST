@@ -21,8 +21,8 @@ const MODELS = [
     subtitle: "Chain-drive · ½ HP · Detached & uninsulated garages",
     price: "$1,287",
     features: ["Chain drive", "Wi-Fi add-on available", "Lifetime motor warranty"],
-    image: "/images/opener.png",
-    brochure: "#",
+    image: "/images/2220L_1.png",
+    brochure: "/brochures/2220L_product_guide.pdf",
   },
   {
     tag: "Entry Belt-Drive",
