@@ -14,13 +14,11 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <>
-      <ServiceDetailPage
-        service={service}
-        bgImage="/images/installation-hero-bg.jpg"
-        hideWhyPro
-      />
-      <InstallationPricing />
-    </>
+    <ServiceDetailPage
+      service={service}
+      bgImage="/images/installation-hero-bg.jpg"
+      hideWhyPro
+      pricingSection={<InstallationPricing />}
+    />
   );
 }
