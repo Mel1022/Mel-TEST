@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 
 const DOORS = [
@@ -86,27 +86,33 @@ const DOORS = [
   },
 ];
 
+const CARD_WIDTH = 288;
+const GAP = 16;
+const STEP = CARD_WIDTH + GAP;
+
 export default function DoorCatalogueSection() {
-  const scrollRef = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(4);
+  const containerRef = useRef<HTMLDivElement>(null);
   const total = DOORS.length;
+  const maxIndex = total - visibleCount;
 
-  function scrollToIndex(index: number) {
-    if (!scrollRef.current) return;
-    const card = scrollRef.current.children[index] as HTMLElement;
-    if (card) {
-      card.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+  useEffect(() => {
+    function update() {
+      if (!containerRef.current) return;
+      const w = containerRef.current.offsetWidth;
+      setVisibleCount(Math.max(1, Math.floor((w + GAP) / STEP)));
     }
-    setCurrent(index);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  function goTo(index: number) {
+    setCurrent(Math.max(0, Math.min(maxIndex, index)));
   }
 
-  function handleScroll() {
-    if (!scrollRef.current) return;
-    const container = scrollRef.current;
-    const cardWidth = (container.children[0] as HTMLElement)?.offsetWidth + 16;
-    const index = Math.round(container.scrollLeft / cardWidth);
-    setCurrent(Math.min(index, total - 1));
-  }
+  const offset = current * STEP;
 
   return (
     <section className="bg-surface py-14 sm:py-16">
@@ -122,50 +128,62 @@ export default function DoorCatalogueSection() {
           Every door we install is hand-measured and matched to your home.
         </p>
 
-        {/* Carousel */}
-        <div
-          ref={scrollRef}
-          onScroll={handleScroll}
-          className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-2"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          {DOORS.map((door) => (
-            <div
-              key={door.name}
-              className="flex-shrink-0 w-64 sm:w-72 snap-start rounded-2xl bg-white border border-steel/10 overflow-hidden shadow-card"
-            >
-              <div className="bg-[#eaecf2] h-52 flex items-center justify-center p-4">
-                <img
-                  src={door.image}
-                  alt={door.name}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <div className="p-5">
-                <p className="text-xs font-bold uppercase tracking-widest text-gold-dark mb-1">{door.tag}</p>
-                <h3 className="font-heading font-bold text-lg text-navy-dark leading-tight mb-2">{door.name}</h3>
-                <p className="text-sm text-steel leading-snug mb-4">{door.description}</p>
-                {door.r && (
-                  <p className="text-xs font-semibold uppercase tracking-wide text-steel/60">
-                    {door.r} · {door.colors}
-                  </p>
-                )}
-                <Link
-                  href="/request-a-quote/"
-                  className="mt-4 inline-flex items-center text-sm font-bold text-navy-dark hover:text-gold-dark transition-colors"
+        {/* Carousel viewport */}
+        <div ref={containerRef} className="overflow-hidden">
+          <div
+            className="flex gap-4"
+            style={{
+              transform: `translateX(-${offset}px)`,
+              transition: "transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)",
+              width: `${total * STEP - GAP}px`,
+            }}
+          >
+            {DOORS.map((door, i) => {
+              const isActive = i >= current && i < current + visibleCount;
+              return (
+                <div
+                  key={door.name}
+                  style={{
+                    width: `${CARD_WIDTH}px`,
+                    flexShrink: 0,
+                    opacity: isActive ? 1 : 0.4,
+                    transform: isActive ? "scale(1)" : "scale(0.96)",
+                    transition: "opacity 0.45s ease, transform 0.45s ease",
+                  }}
+                  className="rounded-2xl bg-white border border-steel/10 overflow-hidden shadow-card"
                 >
-                  Get a quote →
-                </Link>
-              </div>
-            </div>
-          ))}
+                  <div className="bg-[#eaecf2] h-52 flex items-center justify-center p-4">
+                    <img
+                      src={door.image}
+                      alt={door.name}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <p className="text-xs font-bold uppercase tracking-widest text-gold-dark mb-1">{door.tag}</p>
+                    <h3 className="font-heading font-bold text-lg text-navy-dark leading-tight mb-2">{door.name}</h3>
+                    <p className="text-sm text-steel leading-snug mb-4">{door.description}</p>
+                    <p className="text-xs font-semibold uppercase tracking-wide text-steel/60">
+                      {door.r} · {door.colors}
+                    </p>
+                    <Link
+                      href="/request-a-quote/"
+                      className="mt-4 inline-flex items-center text-sm font-bold text-navy-dark hover:text-gold-dark transition-colors"
+                    >
+                      Get a quote →
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         {/* Navigation */}
         <div className="flex items-center gap-4 mt-6">
           <div className="flex gap-2">
             <button
-              onClick={() => scrollToIndex(Math.max(0, current - 1))}
+              onClick={() => goTo(current - 1)}
               disabled={current === 0}
               className="w-9 h-9 rounded-full border border-steel/30 flex items-center justify-center text-navy-dark hover:border-navy-dark disabled:opacity-30 transition-colors text-lg leading-none"
               aria-label="Previous"
@@ -173,8 +191,8 @@ export default function DoorCatalogueSection() {
               ‹
             </button>
             <button
-              onClick={() => scrollToIndex(Math.min(total - 1, current + 1))}
-              disabled={current === total - 1}
+              onClick={() => goTo(current + 1)}
+              disabled={current >= maxIndex}
               className="w-9 h-9 rounded-full border border-steel/30 flex items-center justify-center text-navy-dark hover:border-navy-dark disabled:opacity-30 transition-colors text-lg leading-none"
               aria-label="Next"
             >
@@ -182,14 +200,19 @@ export default function DoorCatalogueSection() {
             </button>
           </div>
 
-          <div className="flex-1 h-0.5 bg-steel/20 rounded-full">
+          <div className="flex-1 h-0.5 bg-steel/20 rounded-full overflow-hidden">
             <div
-              className="h-full bg-gold rounded-full transition-all duration-300"
-              style={{ width: `${((current + 1) / total) * 100}%` }}
+              className="h-full bg-gold rounded-full"
+              style={{
+                width: `${((current + visibleCount) / total) * 100}%`,
+                transition: "width 0.45s cubic-bezier(0.4, 0, 0.2, 1)",
+              }}
             />
           </div>
 
-          <span className="text-sm text-steel font-medium flex-shrink-0">{current + 1} / {total}</span>
+          <span className="text-sm text-steel font-medium flex-shrink-0">
+            {current + 1} / {total}
+          </span>
         </div>
 
       </div>
