@@ -131,15 +131,16 @@ export default function OpenerModelsSection() {
   const visible = expanded ? MODELS : MODELS.slice(0, VISIBLE_COUNT);
 
   return (
-    <section className="bg-surface">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+    <section className="relative overflow-hidden" style={{ backgroundImage: "url('/images/opener-pricing-bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
+      <div aria-hidden="true" className="absolute inset-0" style={{ background: "rgba(11,61,46,0.82)" }} />
+      <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
 
         {/* Heading */}
         <div className="mb-8">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-2">
             Pick the Right Opener. Installed.
           </h2>
-          <p className="text-steel text-sm leading-relaxed">
+          <p className="text-white/70 text-sm leading-relaxed">
             All prices are all-in installed costs — no hidden labour fees, no disposal charges.
             We confirm the price before work begins.
           </p>
@@ -164,42 +165,42 @@ export default function OpenerModelsSection() {
         )}
 
         {/* Helper text */}
-        <p className="mt-6 text-sm text-steel leading-relaxed">
+        <p className="mt-6 text-sm text-white/70 leading-relaxed">
           Not sure which fits your garage?{" "}
-          <a href={siteConfig.phone.href} className="text-navy-dark underline hover:text-gold-dark transition-colors">
+          <a href={siteConfig.phone.href} className="text-white underline hover:text-gold transition-colors">
             Send us
           </a>{" "}
           a photo of your existing opener and ceiling — we&apos;ll recommend the right model.{" "}
-          <Link href="/request-a-quote/" className="font-semibold text-navy-dark hover:text-gold-dark transition-colors">
+          <Link href="/request-a-quote/" className="font-semibold text-gold hover:text-gold-dark transition-colors">
             Get a quote →
           </Link>
         </p>
 
         {/* What's included + Brands */}
-        <div className="mt-10 grid sm:grid-cols-2 gap-8 pt-10 border-t border-steel/10">
+        <div className="mt-10 grid sm:grid-cols-2 gap-8 pt-10 border-t border-white/15">
           <div>
-            <h3 className="font-heading font-bold text-base text-navy-dark mb-4">What&apos;s Included — Every Install</h3>
+            <h3 className="font-heading font-bold text-base text-white mb-4">What&apos;s Included — Every Install</h3>
             <ul className="space-y-2.5">
               {INCLUDED.map((item) => (
                 <li key={item} className="flex items-start gap-2.5">
-                  <IconCheck className="w-4 h-4 text-gold-dark flex-shrink-0 mt-0.5" />
-                  <span className="text-sm text-steel leading-snug">{item}</span>
+                  <IconCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-white/80 leading-snug">{item}</span>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h3 className="font-heading font-bold text-base text-navy-dark mb-4">Brands We Install &amp; Service</h3>
+            <h3 className="font-heading font-bold text-base text-white mb-4">Brands We Install &amp; Service</h3>
             <div className="flex flex-wrap gap-1.5">
               {BRANDS.map((brand) => (
-                <span key={brand} className="text-xs font-semibold text-steel bg-surface border border-steel/20 rounded-full px-3 py-1">
+                <span key={brand} className="text-xs font-semibold text-white/80 bg-white/10 border border-white/20 rounded-full px-3 py-1">
                   {brand}
                 </span>
               ))}
             </div>
             <a
               href={siteConfig.phone.href}
-              className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-navy-dark hover:text-gold-dark transition-colors"
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-gold hover:text-gold-dark transition-colors"
             >
               <IconPhone className="w-4 h-4" />
               {siteConfig.phone.display}
@@ -207,7 +208,7 @@ export default function OpenerModelsSection() {
           </div>
         </div>
 
-        <p className="mt-8 text-xs text-steel/50 leading-relaxed">
+        <p className="mt-8 text-xs text-white/40 leading-relaxed">
           Prices shown are for standard residential installations. Custom sizing, structural work, or additional accessories may affect the final price — confirmed in writing before work begins.
         </p>
       </div>
