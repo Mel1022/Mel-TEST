@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const OpenerHero = (
   <section style={{ position: "relative", overflow: "hidden" }} className="bg-navy-dark text-white">
     <img
-      src="/images/opener-hero-bg.jpg"
+      src="/images/opener-hero-bg.png"
       alt=""
       aria-hidden="true"
       style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }}
@@ -96,7 +96,7 @@ const BRANDS = [
 
 const OpenerModelsSection = (
   <section className="relative bg-navy-dark overflow-hidden">
-    <img src="/images/opener-hero-bg.jpg" alt="" aria-hidden="true" className="page-hero-bg-img" />
+    <img src="/images/opener-hero-bg.png" alt="" aria-hidden="true" className="page-hero-bg-img" />
     <div aria-hidden="true" className="absolute inset-0 bg-navy-dark/88" />
     <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
 
