@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ServiceDetailPage from "@/components/ServiceDetailPage";
+import InstallationPricing from "@/components/InstallationPricing";
 import { getServiceBySlug } from "@/lib/services";
 
 const service = getServiceBySlug("garage-door-installation")!;
@@ -12,5 +13,14 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ServiceDetailPage service={service} />;
+  return (
+    <>
+      <ServiceDetailPage
+        service={service}
+        bgImage="/images/installation-hero-bg.jpg"
+        hideWhyPro
+      />
+      <InstallationPricing />
+    </>
+  );
 }

@@ -1,21 +1,25 @@
+import React from "react";
 import Link from "next/link";
 import PageHero from "./PageHero";
 import CTASection from "./CTASection";
 import FAQAccordion from "./FAQAccordion";
+import TechnicianChecks from "./TechnicianChecks";
 import { IconCheck } from "./Icons";
 import type { Service } from "@/lib/services";
 
-export default function ServiceDetailPage({ service, bgImage }: { service: Service; bgImage?: string }) {
+export default function ServiceDetailPage({ service, bgImage, pricingSection, hideWhyPro, heroSection }: { service: Service; bgImage?: string; pricingSection?: React.ReactNode; hideWhyPro?: boolean; heroSection?: React.ReactNode }) {
   return (
     <>
-      <PageHero
-        eyebrow={service.shortName}
-        headline={service.heroHeadline}
-        support={service.heroSupport}
-        ctaLabel={service.ctaLabel}
-        safetyWarning={service.safetyWarning}
-        bgImage={bgImage}
-      />
+      {heroSection ?? (
+        <PageHero
+          eyebrow={service.shortName}
+          headline={service.heroHeadline}
+          support={service.heroSupport}
+          ctaLabel={service.ctaLabel}
+          safetyWarning={service.safetyWarning}
+          bgImage={bgImage}
+        />
+      )}
 
       {/* Problem explanation */}
       <section className="bg-white">
@@ -60,44 +64,35 @@ export default function ServiceDetailPage({ service, bgImage }: { service: Servi
         </div>
       </section>
 
+      {/* Optional pricing section (injected by specific pages) */}
+      {pricingSection}
+
       {/* What the technician checks */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14">
-          <h3 className="font-heading font-bold text-xl text-navy text-center">
-            What the Technician Checks
-          </h3>
-          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {service.checks.map((check) => (
-              <div
-                key={check}
-                className="rounded-card bg-surface border border-steel/15 px-5 py-4 text-sm font-semibold text-navy flex items-center gap-3"
-              >
-                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-navy text-gold flex items-center justify-center">
-                  <IconCheck className="w-3.5 h-3.5" />
-                </span>
-                {check}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TechnicianChecks checks={service.checks} />
 
       {/* Why professional service matters */}
-      <section className="bg-navy">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-14 text-center">
-          <h3 className="font-heading font-bold text-xl text-white">
-            Why Professional Service Matters
-          </h3>
-          <ul className="mt-6 space-y-3 text-left inline-block">
-            {service.whyItMatters.map((line) => (
-              <li key={line} className="flex items-start gap-3 text-white/80">
-                <IconCheck className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                <span>{line}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+      {!hideWhyPro && (
+        <section className="relative overflow-hidden bg-navy-dark">
+          <img src="/images/why-pro-bg.png" alt="" aria-hidden="true" className="page-hero-bg-img" />
+          <div aria-hidden="true" className="page-hero-overlay" />
+          <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+            <h3 className="font-heading font-bold text-xl text-white text-center mb-8">
+              Why Professional Service Matters
+            </h3>
+            <div className="flex flex-col sm:flex-row gap-4">
+              {service.whyItMatters.map((line) => (
+                <div
+                  key={line}
+                  className="flex-1 flex items-start gap-3 rounded-card bg-white/15 border border-white/25 backdrop-blur-sm px-8 py-8"
+                >
+                  <IconCheck className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                  <span className="text-sm text-white/85 leading-relaxed">{line}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section className="bg-white">

@@ -10,6 +10,7 @@ type PageHeroProps = {
   ctaHref?: string;
   safetyWarning?: string;
   bgImage?: string;
+  bgPosition?: string;
 };
 
 export default function PageHero({
@@ -20,12 +21,19 @@ export default function PageHero({
   ctaHref = "/request-a-quote/",
   safetyWarning,
   bgImage,
+  bgPosition = "center",
 }: PageHeroProps) {
   return (
-    <section className="service-hero-section bg-navy-dark">
+    <section className="relative bg-navy-dark overflow-hidden">
       {bgImage && (
         <>
-          <img src={bgImage} alt="" aria-hidden="true" className="page-hero-bg-img" />
+          <img
+            src={bgImage}
+            alt=""
+            aria-hidden="true"
+            className="page-hero-bg-img"
+            style={{ objectPosition: bgPosition }}
+          />
           <div aria-hidden="true" className="page-hero-overlay" />
         </>
       )}

@@ -27,6 +27,8 @@ export default function ContactPage() {
         support="Have a question, or just want to talk through what your door is doing? Reach out — or request a full quote if you're ready."
         ctaLabel="Request a Quote"
         ctaHref="/request-a-quote/"
+        bgImage="/images/contact-hero.png"
+        bgPosition="center 50%"
       />
 
       <section className="bg-white">
@@ -82,6 +84,20 @@ export default function ContactPage() {
                 page. Not sure if we cover your location? Just ask.
               </p>
             </div>
+          </div>
+
+          <div className="mt-16 border-t border-steel/15 pt-12 text-center">
+            <p className="text-xs font-bold uppercase tracking-wide text-steel mb-3">Work With Us</p>
+            <h2 className="font-heading font-extrabold text-2xl text-navy">Become a Partner</h2>
+            <p className="mt-3 text-steel leading-relaxed max-w-xl mx-auto">
+              Are you a property manager, contractor, or business owner? Partner with DoorChamp for reliable garage door service your clients can count on.
+            </p>
+            <Link
+              href="/partners/"
+              className="mt-6 inline-flex items-center justify-center rounded-card bg-navy px-8 py-3.5 text-sm font-bold text-white shadow-card hover:bg-navy-dark transition-colors"
+            >
+              Become a Partner
+            </Link>
           </div>
         </div>
       </section>

@@ -123,7 +123,7 @@ export default function HowItWorksSection() {
 
               {/* Card */}
               <div
-                className="hiw-card hiw-reveal group rounded-card bg-white/10 border border-white/15 p-7 sm:flex-1 cursor-default backdrop-blur-sm"
+                className="hiw-card hiw-reveal group rounded-card bg-white/15 border border-white/25 p-7 sm:flex-1 cursor-default backdrop-blur-sm"
                 style={rev(STEP_DELAY[i])}
               >
                 {/* Step number */}

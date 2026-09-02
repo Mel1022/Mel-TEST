@@ -53,6 +53,7 @@ export default function Footer() {
               <li><Link href="/about/" className="hover:text-gold transition-colors">About DoorChamp</Link></li>
               <li><Link href="/faq/" className="hover:text-gold transition-colors">FAQ</Link></li>
               <li><Link href="/request-a-quote/" className="hover:text-gold transition-colors">Request a Quote</Link></li>
+              <li><Link href="/partners/" className="hover:text-gold transition-colors">Become a Partner</Link></li>
             </ul>
           </div>
 
@@ -74,12 +75,20 @@ export default function Footer() {
               <li className="text-white/50">{siteConfig.address.line}</li>
               <li className="text-white/50">Hours: {siteConfig.hours}</li>
             </ul>
-            <Link
-              href="/request-a-quote/"
-              className="mt-5 inline-flex items-center justify-center rounded-card bg-gold px-5 py-2.5 text-sm font-bold text-navy-dark hover:bg-gold-dark transition-colors"
-            >
-              Get a Free Quote
-            </Link>
+            <div className="mt-5 flex flex-col gap-2">
+              <Link
+                href="/request-a-quote/"
+                className="inline-flex items-center justify-center rounded-card bg-gold px-5 py-2.5 text-sm font-bold text-navy-dark hover:bg-gold-dark transition-colors"
+              >
+                Get a Free Quote
+              </Link>
+              <Link
+                href="/partners/"
+                className="inline-flex items-center justify-center rounded-card border border-white/30 px-5 py-2.5 text-sm font-bold text-white hover:border-gold hover:text-gold transition-colors"
+              >
+                Become a Partner
+              </Link>
+            </div>
           </div>
         </div>
 
