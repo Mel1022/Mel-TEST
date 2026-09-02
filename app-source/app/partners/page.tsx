@@ -39,6 +39,8 @@ export default function PartnersPage() {
         support="Property managers, contractors, and businesses — partner with us for dependable garage door service your clients can count on."
         ctaLabel="Contact Us to Get Started"
         ctaHref="/contact/"
+        bgImage="/images/VAN.png"
+        bgPosition="center center"
       />
 
       <section className="bg-white">
