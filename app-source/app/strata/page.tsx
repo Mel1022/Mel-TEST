@@ -87,11 +87,16 @@ export default function StrataPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy-dark text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <section
+        className="relative text-white overflow-hidden"
+        style={{ backgroundImage: "url('/images/hero-tech.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+      >
+        <div className="absolute inset-0 bg-navy-dark/80" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
           <p className="text-gold font-bold uppercase tracking-wide text-sm mb-3">Multi-Family & Strata · Richmond BC</p>
           <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white max-w-3xl leading-tight">
-            Strata garage door programs.
+            Strata garage door programs<br />
+            <span className="text-gold">by DoorChamp.</span>
           </h1>
           <p className="mt-5 text-white/75 text-lg max-w-2xl leading-relaxed">
             Quarterly, bi-annual, and annual maintenance for Richmond strata corporations. COIs same-day.{" "}
@@ -117,7 +122,7 @@ export default function StrataPage() {
             <span className="text-gold">disappear.</span>
           </h2>
           <p className="text-steel max-w-2xl leading-relaxed mb-8">
-            Strata management is balancing the Strata Property Act, the contingency reserve fund, and a council that meets once a month. The garage-door vendor on your roster should make your job easier, not harder. We&apos;re set up around how BC strata management companies actually work.
+            Strata management is balancing the Strata Property Act, the contingency reserve fund, and a council that meets once a month. The garage-door vendor on your roster should make your job easier, not harder. DoorChamp is set up around how BC strata management companies actually work.
           </p>
 
           {/* Credential pills */}
@@ -230,12 +235,12 @@ export default function StrataPage() {
       >
         <div className="absolute inset-0 bg-navy-dark/80" />
         <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-20 text-center">
-          <p className="text-gold font-bold uppercase tracking-widest text-xs mb-4">One Phone Call</p>
+          <p className="text-gold font-bold uppercase tracking-widest text-xs mb-4">Call the Champ</p>
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-white leading-tight mb-3">
             Same family. Same number.<br />Same Richmond crew.
           </h2>
           <p className="text-white/70 text-base mb-8">
-            Whether it&apos;s an emergency this morning or a project for next month.
+            DoorChamp — family-owned since 2007. Whether it&apos;s an emergency this morning or a strata program for next season.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
