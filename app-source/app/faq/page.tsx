@@ -77,7 +77,7 @@ export default function FAQPage() {
         }}
       >
         <div className="absolute inset-0 bg-navy-dark/70" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-28 sm:py-40">
           <h1 className="font-heading font-extrabold text-3xl sm:text-4xl text-white max-w-2xl leading-tight">
             Garage Door FAQ
           </h1>
