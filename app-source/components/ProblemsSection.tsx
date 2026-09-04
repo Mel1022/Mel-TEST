@@ -84,7 +84,7 @@ export default function ProblemsSection() {
               key={p.title}
               href={`/request-a-quote/?problem=${encodeURIComponent(p.formValue)}`}
               className="group relative rounded-card overflow-hidden shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy"
-              style={{ minHeight: 260 }}
+              style={{ minHeight: 340 }}
             >
               {/* Photo background */}
               <div
@@ -96,7 +96,7 @@ export default function ProblemsSection() {
               <div className="absolute inset-0 bg-navy-dark/60 group-hover:bg-navy-dark/50 transition-colors duration-300" aria-hidden="true" />
 
               {/* Content */}
-              <div className="relative z-10 flex flex-col h-full p-6" style={{ minHeight: 260 }}>
+              <div className="relative z-10 flex flex-col h-full p-6" style={{ minHeight: 340 }}>
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/15 text-white mb-4 flex-shrink-0">
                   {p.icon}
                 </span>
