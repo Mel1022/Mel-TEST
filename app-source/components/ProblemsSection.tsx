@@ -97,12 +97,6 @@ export default function ProblemsSection() {
 
               {/* Content */}
               <div className="relative z-10 flex flex-col h-full p-6" style={{ minHeight: 260 }}>
-                <div className="flex items-center gap-3 mb-4" aria-hidden="true">
-                  <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-white/50">
-                    {String(i + 1).padStart(2, "0")} / {String(PROBLEMS.length).padStart(2, "0")}
-                  </span>
-                  <span className="flex-1 h-px bg-white/20" />
-                </div>
                 <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/15 text-white mb-4 flex-shrink-0">
                   {p.icon}
                 </span>
