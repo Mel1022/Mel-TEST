@@ -68,8 +68,16 @@ const faqSections = [
 export default function FAQPage() {
   return (
     <>
-      <section className="bg-navy-dark text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+      <section
+        className="relative text-white"
+        style={{
+          backgroundImage: "url('/images/faq-hero-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-navy-dark/70" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
           <h1 className="font-heading font-extrabold text-3xl sm:text-4xl text-white max-w-2xl leading-tight">
             Garage Door FAQ
           </h1>
