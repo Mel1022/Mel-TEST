@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import PageHero from "@/components/PageHero";
 import { IconPhone } from "@/components/Icons";
 import { siteConfig } from "@/lib/site-config";
 
@@ -21,15 +20,40 @@ const infoCards = [
 export default function ContactPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Get in Touch"
-        headline="Talk to DoorChamp."
-        support="Have a question, or just want to talk through what your door is doing? Reach out — or request a full quote if you're ready."
-        ctaLabel="Request a Quote"
-        ctaHref="/request-a-quote/"
-        bgImage="/images/contact-hero.png"
-        bgPosition="center 50%"
-      />
+      <section
+        className="relative text-white overflow-hidden"
+        style={{
+          backgroundImage: "url('/images/contact-hero-bg.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-navy-dark/70" />
+        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center">
+          <p className="text-gold font-bold uppercase tracking-wide text-sm mb-3">Get in Touch</p>
+          <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight">
+            Talk to DoorChamp.
+          </h1>
+          <p className="mt-5 text-white/75 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
+            Have a question, or just want to talk through what your door is doing? Reach out — or request a full quote if you&apos;re ready.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/request-a-quote/"
+              className="inline-flex items-center justify-center rounded-card bg-gold px-7 py-3.5 text-sm font-bold text-navy-dark shadow-card hover:bg-gold-dark hover:text-white transition-colors w-full sm:w-auto"
+            >
+              Request a Quote
+            </Link>
+            <a
+              href={siteConfig.phone.href}
+              className="inline-flex items-center justify-center gap-2 rounded-card border-2 border-white/40 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors w-full sm:w-auto"
+            >
+              <IconPhone className="w-4 h-4" />
+              {siteConfig.phone.display}
+            </a>
+          </div>
+        </div>
+      </section>
 
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
