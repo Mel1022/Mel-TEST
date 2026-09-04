@@ -20,6 +20,7 @@ export default function RequestQuotePage() {
         support="Fill out the form below and DoorChamp will follow up to confirm the details and schedule a visit."
         ctaLabel="Jump to the Form"
         ctaHref="#quote-form"
+        bgImage="/images/quote-hero-bg.png"
       />
 
       <section id="quote-form" className="bg-surface">
