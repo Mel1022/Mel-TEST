@@ -247,10 +247,15 @@ export default function CommercialNewDoorsPage() {
             {/* Sectional doors */}
             <div>
               <p className="text-[10px] font-bold uppercase tracking-widest text-steel mb-4">Sectional Doors</p>
-              <div className="flex flex-wrap gap-3">
-                {["Door Craft", "Garaga", "Richards-Wilcox", "CHI"].map((b) => (
-                  <div key={b} className="flex items-center justify-center rounded-card border-2 border-navy-dark/15 bg-surface px-6 py-4 min-w-[140px]">
-                    <span className="font-heading font-extrabold text-navy-dark text-sm tracking-tight">{b}</span>
+              <div className="flex flex-wrap gap-4">
+                {[
+                  { src: "/images/logo-doorcraft.png", alt: "Door Craft" },
+                  { src: "/images/logo-garaga.png", alt: "Garaga" },
+                  { src: "/images/logo-richards-wilcox.png", alt: "Richards-Wilcox" },
+                  { src: "/images/logo-chi.png", alt: "CHI" },
+                ].map((logo) => (
+                  <div key={logo.alt} className="flex items-center justify-center rounded-card border border-steel/15 bg-white px-6 py-4" style={{ minWidth: 160, height: 80 }}>
+                    <img src={logo.src} alt={logo.alt} className="max-h-12 w-auto object-contain" />
                   </div>
                 ))}
               </div>
@@ -259,10 +264,13 @@ export default function CommercialNewDoorsPage() {
             {/* Specialty doors */}
             <div>
               <p className="text-[10px] font-bold uppercase tracking-widest text-steel mb-4">Specialty & High-Speed Doors</p>
-              <div className="flex flex-wrap gap-3">
-                {["Rytec", "Hörmann"].map((b) => (
-                  <div key={b} className="flex items-center justify-center rounded-card border-2 border-navy-dark/15 bg-surface px-6 py-4 min-w-[140px]">
-                    <span className="font-heading font-extrabold text-navy-dark text-sm tracking-tight">{b}</span>
+              <div className="flex flex-wrap gap-4">
+                {[
+                  { src: "/images/logo-rytec.png", alt: "Rytec" },
+                  { src: "/images/logo-hormann.png", alt: "Hörmann" },
+                ].map((logo) => (
+                  <div key={logo.alt} className="flex items-center justify-center rounded-card border border-steel/15 bg-white px-6 py-4" style={{ minWidth: 160, height: 80 }}>
+                    <img src={logo.src} alt={logo.alt} className="max-h-12 w-auto object-contain" />
                   </div>
                 ))}
               </div>
@@ -271,10 +279,13 @@ export default function CommercialNewDoorsPage() {
             {/* Operators */}
             <div>
               <p className="text-[10px] font-bold uppercase tracking-widest text-steel mb-4">Commercial Operators & Gate</p>
-              <div className="flex flex-wrap gap-3">
-                {["LiftMaster Commercial", "MySecurity"].map((b) => (
-                  <div key={b} className="flex items-center justify-center rounded-card border-2 border-navy-dark/15 bg-surface px-6 py-4 min-w-[140px]">
-                    <span className="font-heading font-extrabold text-navy-dark text-sm tracking-tight">{b}</span>
+              <div className="flex flex-wrap gap-4">
+                {[
+                  { src: "/images/logo-liftmaster.png", alt: "LiftMaster" },
+                  { src: "/images/logo-hysecurity.png", alt: "HySecurity" },
+                ].map((logo) => (
+                  <div key={logo.alt} className="flex items-center justify-center rounded-card border border-steel/15 bg-white px-6 py-4" style={{ minWidth: 160, height: 80 }}>
+                    <img src={logo.src} alt={logo.alt} className="max-h-12 w-auto object-contain" />
                   </div>
                 ))}
               </div>
