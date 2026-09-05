@@ -7,7 +7,7 @@ import { residentialNav, siteConfig } from "@/lib/site-config";
 import { IconMenu, IconClose, IconPhone, IconChevron } from "./Icons";
 
 const commercialLinks = [
-  { label: "Commercial Spring Repair", href: "/commercial/" },
+  { label: "Commercial Spring Repair", href: "/commercial-spring-repair/" },
   { label: "Commercial Openers", href: "/commercial/" },
   { label: "New Commercial Doors", href: "/commercial/" },
   { label: "Loading Docks", href: "/loading-docks/" },
