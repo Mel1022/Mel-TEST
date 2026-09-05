@@ -47,7 +47,7 @@ const PROBLEMS = [
     title: "Door Reverses Before Closing",
     body: "Safety sensor misalignment or logic board issue. A quick fix that stops a frustrating cycle.",
     formValue: "Garage Door Opener",
-    img: "/images/garage-door-reverses.jpg",
+    img: "/images/garage-door-broke-while-reversing-v0-tp7h0xjlsx1c1.jpg",
     icon: <ReverseIcon />,
   },
   {
