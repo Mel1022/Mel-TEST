@@ -7,10 +7,13 @@ import { residentialNav, siteConfig } from "@/lib/site-config";
 import { IconMenu, IconClose, IconPhone, IconChevron } from "./Icons";
 
 const commercialLinks = [
-  { label: "Commercial Doors", href: "/commercial/" },
+  { label: "Commercial Spring Repair", href: "/commercial/" },
+  { label: "Commercial Openers", href: "/commercial/" },
+  { label: "New Commercial Doors", href: "/commercial/" },
   { label: "Loading Docks", href: "/loading-docks/" },
+  { label: "Mandoors", href: "/commercial/" },
   { label: "Sliding Gates", href: "/sliding-gates/" },
-  { label: "Strata & Multi-Family", href: "/strata/" },
+  { label: "Warehouses", href: "/commercial/" },
 ];
 
 export default function Header() {
