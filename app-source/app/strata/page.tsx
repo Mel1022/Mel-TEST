@@ -177,10 +177,14 @@ export default function StrataPage() {
       </section>
 
       {/* Three Programs */}
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+      <section
+        className="relative"
+        style={{ backgroundImage: "url('/images/strata-programs-bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+      >
+        <div className="absolute inset-0 bg-navy-dark/75" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
           <p className="text-gold font-bold uppercase tracking-wide text-xs mb-3">Three Programs</p>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-10">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-10">
             Pick your cadence.
           </h2>
           <div className="grid sm:grid-cols-3 gap-6">
