@@ -74,13 +74,34 @@ const programs = [
 ];
 
 const managerBenefits = [
-  "$5M liability + WCB compliant — COIs same-day",
-  "One named technician per building",
-  "Strata-friendly invoicing (per-unit / per-building)",
-  "After-hours emergency line for stuck parkade gates",
-  "Two-year labour warranty as standard",
-  "Free on-site quote — a tech walks the property with you, no obligation",
-  "Photo & short-video report after every scheduled visit",
+  {
+    label: "$5M liability + WCB compliant — COIs same-day",
+    detail: "Certificate of Insurance emailed same-day in your preferred format. No chasing before AGM season.",
+  },
+  {
+    label: "One named technician per building",
+    detail: "The same face every visit — knows your property, your council preferences, and your building history.",
+  },
+  {
+    label: "Strata-friendly invoicing (per-unit / per-building)",
+    detail: "NET-30 standard, e-transfer or cheque, GST line-itemed, work-order number matching your system.",
+  },
+  {
+    label: "After-hours emergency line for stuck parkade gates",
+    detail: "24/7 dispatch from Richmond. Real technicians — not an answering service — for parkade gates, roll-ups, and fire-rated doors.",
+  },
+  {
+    label: "Two-year labour warranty as standard",
+    detail: "Every repair backed by a two-year labour warranty. Parts covered by manufacturer warranty on top of that.",
+  },
+  {
+    label: "Free on-site quote — walk the property with you",
+    detail: "We assess every door in person, not over the phone. Council-ready written quote included at no charge.",
+  },
+  {
+    label: "Photo & short-video report after every scheduled visit",
+    detail: "Sent to your inbox after every visit — condition rating, work performed, and next recommended service date.",
+  },
 ];
 
 export default function StrataPage() {
@@ -217,11 +238,16 @@ export default function StrataPage() {
           </h2>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {managerBenefits.map((item) => (
-              <li key={item} className="flex items-center gap-3 rounded-card bg-surface border border-steel/15 px-5 py-5 shadow-sm">
-                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-navy flex items-center justify-center text-gold">
-                  <IconCheck className="w-3.5 h-3.5" />
-                </span>
-                <span className="text-sm font-semibold text-navy">{item}</span>
+              <li key={item.label} className="group flex flex-col gap-3 rounded-card bg-surface border border-steel/15 px-5 py-5 shadow-sm hover:shadow-card hover:-translate-y-1 hover:border-navy/20 hover:bg-white transition-all duration-200 cursor-default">
+                <div className="flex items-center gap-3">
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-navy group-hover:bg-navy-dark text-gold flex items-center justify-center transition-colors duration-200">
+                    <IconCheck className="w-3.5 h-3.5" />
+                  </span>
+                  <span className="text-sm font-semibold text-navy">{item.label}</span>
+                </div>
+                <p className="text-sm text-steel leading-relaxed pl-10 max-h-0 overflow-hidden opacity-0 group-hover:max-h-20 group-hover:opacity-100 transition-all duration-300 ease-out">
+                  {item.detail}
+                </p>
               </li>
             ))}
           </ul>
