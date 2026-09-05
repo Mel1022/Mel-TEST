@@ -211,8 +211,8 @@ export default function StrataPage() {
       {/* What Property Managers Get */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <p className="text-gold font-bold uppercase tracking-wide text-xs mb-3">For Property Managers</p>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-8">
+          <p className="text-gold font-bold uppercase tracking-wide text-xs mb-3 text-center">For Property Managers</p>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-8 text-center">
             What you get.
           </h2>
           <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
