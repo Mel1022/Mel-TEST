@@ -215,7 +215,7 @@ export default function StrataPage() {
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-8">
             What you get.
           </h2>
-          <ul className="grid sm:grid-cols-2 gap-4 max-w-3xl">
+          <ul className="grid sm:grid-cols-2 gap-x-12 gap-y-5 max-w-4xl">
             {managerBenefits.map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <span className="flex-shrink-0 w-5 h-5 rounded-full bg-gold flex items-center justify-center mt-0.5">
