@@ -61,8 +61,10 @@ export default function SpringRepairPage() {
       <SpringSymptoms />
 
       {/* Flat-Rate Pricing */}
-      <section className="relative bg-navy-dark overflow-hidden">
-        <img src="/images/spring-pricing-bg.png" alt="" aria-hidden="true" className="page-hero-bg-img" />
+      <section
+        className="relative overflow-hidden"
+        style={{ backgroundImage: "url('/images/spring-pricing-section-bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+      >
         <div aria-hidden="true" className="absolute inset-0 bg-navy-dark/80" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
           <div className="mb-10 text-center max-w-2xl mx-auto">
