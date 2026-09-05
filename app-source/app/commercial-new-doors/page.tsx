@@ -177,7 +177,7 @@ export default function CommercialNewDoorsPage() {
         className="relative overflow-hidden"
         style={{ backgroundImage: "url('/images/commercial-door-types-bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
       >
-        <div className="absolute inset-0 bg-navy-dark/75" />
+        <div className="absolute inset-0 bg-navy-dark/50" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
           <p className="text-gold font-bold uppercase tracking-wide text-xs mb-4">Door Types</p>
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-10">
