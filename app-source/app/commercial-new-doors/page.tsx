@@ -173,20 +173,24 @@ export default function CommercialNewDoorsPage() {
       </section>
 
       {/* Door types detail */}
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+      <section
+        className="relative overflow-hidden"
+        style={{ backgroundImage: "url('/images/commercial-door-types-bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+      >
+        <div className="absolute inset-0 bg-navy-dark/75" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
           <p className="text-gold font-bold uppercase tracking-wide text-xs mb-4">Door Types</p>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-10">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-10">
             Commercial door types we install.
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {doorTypes.map((d, i) => (
               <div
                 key={d.title}
-                className={`rounded-card border border-steel/15 bg-white p-6${i === doorTypes.length - 1 && doorTypes.length % 3 === 2 ? " sm:col-span-2 lg:col-span-1 lg:col-start-2" : ""}`}
+                className={`rounded-card border border-white/10 bg-white/10 backdrop-blur-sm p-6${i === doorTypes.length - 1 && doorTypes.length % 3 === 2 ? " sm:col-span-2 lg:col-span-1 lg:col-start-2" : ""}`}
               >
-                <h3 className="font-heading font-bold text-navy-dark text-base mb-2">{d.title}</h3>
-                <p className="text-sm text-steel leading-relaxed">{d.body}</p>
+                <h3 className="font-heading font-bold text-white text-base mb-2">{d.title}</h3>
+                <p className="text-sm text-white/75 leading-relaxed">{d.body}</p>
               </div>
             ))}
           </div>
