@@ -179,8 +179,12 @@ export default function CommercialSpringRepairPage() {
       </section>
 
       {/* How Commercial Differs */}
-      <section className="bg-navy-dark">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+      <section
+        className="relative overflow-hidden"
+        style={{ backgroundImage: "url('/images/commercial-differs-bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+      >
+        <div className="absolute inset-0 bg-navy-dark/85" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
           <p className="text-gold font-bold uppercase tracking-wide text-xs mb-4">How Commercial Differs</p>
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-8">
             What&apos;s different about commercial spring repair.
