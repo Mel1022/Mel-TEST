@@ -197,7 +197,7 @@ function ModelCard({
   return (
     <div className="flex flex-col rounded-card border border-steel/15 bg-white overflow-hidden">
       <div className="relative bg-surface flex items-center justify-center px-6 py-8" style={{ minHeight: 200 }}>
-        <img src={img} alt={name} className="max-h-44 w-auto object-contain" />
+        <img src={img} alt={name} className="max-h-44 w-auto object-contain" style={{ mixBlendMode: "multiply" }} />
         <span className="absolute top-3 right-3 rounded text-[10px] font-bold uppercase tracking-widest bg-navy-dark text-white px-3 py-1">
           {tag}
         </span>
