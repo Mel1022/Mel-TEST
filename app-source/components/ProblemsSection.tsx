@@ -116,12 +116,20 @@ export default function ProblemsSection() {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-10">
+        <style>{`
+          @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(46,139,98,0.55); }
+            70% { box-shadow: 0 0 0 18px rgba(46,139,98,0); }
+            100% { box-shadow: 0 0 0 0 rgba(46,139,98,0); }
+          }
+          .cta-pulse { animation: pulse-ring 2s ease-out infinite; }
+        `}</style>
+        <div className="text-center mt-12">
           <a
             href="tel:+17788000769"
-            className="inline-flex items-center gap-2 rounded-card bg-navy px-7 py-3.5 text-sm font-bold text-white hover:bg-navy-dark hover:-translate-y-0.5 transition-all duration-200"
+            className="cta-pulse inline-flex items-center gap-3 rounded-card bg-[#2E8B62] px-10 py-5 text-base font-bold text-white hover:bg-[#146B4D] hover:-translate-y-1 transition-all duration-200"
           >
-            <IconPhone className="w-4 h-4" />
+            <IconPhone className="w-5 h-5 flex-shrink-0" />
             Call for Same-Day Service
           </a>
         </div>
