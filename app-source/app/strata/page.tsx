@@ -229,12 +229,8 @@ export default function StrataPage() {
       </section>
 
       {/* CTA */}
-      <section
-        className="relative text-white"
-        style={{ backgroundImage: "url('/images/hiw-bg.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
-      >
-        <div className="absolute inset-0 bg-navy-dark/80" />
-        <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <section className="bg-navy-dark text-white">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-20 text-center">
           <p className="text-gold font-bold uppercase tracking-widest text-xs mb-4">Call the Champ</p>
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-white leading-tight mb-3">
             Same family. Same number.<br />Same Richmond crew.
