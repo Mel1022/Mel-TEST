@@ -269,6 +269,24 @@ export default function CommercialOpenersPage() {
         </div>
       </section>
 
+      {/* Duty-cycle spec */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <p className="text-gold font-bold uppercase tracking-wide text-xs mb-4">Commercial Openers</p>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark max-w-3xl leading-tight mb-6">
+            Commercial-grade isn&apos;t a marketing claim. It&apos;s a duty-cycle specification.
+          </h2>
+          <div className="max-w-3xl space-y-4 text-steel leading-relaxed">
+            <p>
+              Most commercial garage door problems come back to the same root cause: an opener that was sized correctly for a residential door but not for the cycle count of a working commercial operation. A residential opener might be rated for <strong className="text-navy-dark">25 cycles a day</strong>. A commercial loading dock might run <strong className="text-navy-dark">200</strong>. The opener doesn&apos;t fail dramatically — it just wears out years before it should, and takes the gear, the chain, and sometimes the door itself with it.
+            </p>
+            <p>
+              We size operators to your actual operation. We ask the questions most installers don&apos;t: how many cycles a day, what&apos;s the door weight, what are the wind loads, what are your access integration requirements. Then we recommend an operator that&apos;s right — not just whatever&apos;s cheapest in the catalogue.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* LiftMaster Commercial */}
       <section className="bg-surface">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
@@ -299,24 +317,6 @@ export default function CommercialOpenersPage() {
             {manarasModels.map((m) => (
               <ModelCard key={m.name} {...m} />
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Duty-cycle spec */}
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <p className="text-gold font-bold uppercase tracking-wide text-xs mb-4">Commercial Openers</p>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark max-w-3xl leading-tight mb-6">
-            Commercial-grade isn&apos;t a marketing claim. It&apos;s a duty-cycle specification.
-          </h2>
-          <div className="max-w-3xl space-y-4 text-steel leading-relaxed">
-            <p>
-              Most commercial garage door problems come back to the same root cause: an opener that was sized correctly for a residential door but not for the cycle count of a working commercial operation. A residential opener might be rated for <strong className="text-navy-dark">25 cycles a day</strong>. A commercial loading dock might run <strong className="text-navy-dark">200</strong>. The opener doesn&apos;t fail dramatically — it just wears out years before it should, and takes the gear, the chain, and sometimes the door itself with it.
-            </p>
-            <p>
-              We size operators to your actual operation. We ask the questions most installers don&apos;t: how many cycles a day, what&apos;s the door weight, what are the wind loads, what are your access integration requirements. Then we recommend an operator that&apos;s right — not just whatever&apos;s cheapest in the catalogue.
-            </p>
           </div>
         </div>
       </section>
