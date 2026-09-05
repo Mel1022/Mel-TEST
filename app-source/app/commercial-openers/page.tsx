@@ -287,36 +287,41 @@ export default function CommercialOpenersPage() {
         </div>
       </section>
 
-      {/* LiftMaster Commercial */}
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-10">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
-              LiftMaster Commercial
-            </h2>
-            <p className="text-sm text-steel">Light-duty &amp; medium-duty · Smart facility access · Built-in Wi-Fi</p>
+      {/* LiftMaster + Manaras Commercial — shared background */}
+      <section
+        className="relative"
+        style={{ backgroundImage: "url('/images/commercial-openers-bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+      >
+        <div className="absolute inset-0 bg-navy-dark/70" />
+        <div className="relative z-10">
+          {/* LiftMaster */}
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 sm:pt-16 pb-12">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-10">
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white">
+                LiftMaster Commercial
+              </h2>
+              <p className="text-sm text-white/70">Light-duty &amp; medium-duty · Smart facility access · Built-in Wi-Fi</p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {liftmasterModels.map((m) => (
+                <ModelCard key={m.name} {...m} />
+              ))}
+            </div>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {liftmasterModels.map((m) => (
-              <ModelCard key={m.name} {...m} />
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Manaras-Opera Commercial */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-10">
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
-              Manaras-Opera Commercial
-            </h2>
-            <p className="text-sm text-steel">Heavy-duty &amp; Industrial · Patented Hoist-a-Matic® · 30+ years</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {manarasModels.map((m) => (
-              <ModelCard key={m.name} {...m} />
-            ))}
+          {/* Manaras-Opera */}
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-14 sm:pb-16">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 mb-10">
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white">
+                Manaras-Opera Commercial
+              </h2>
+              <p className="text-sm text-white/70">Heavy-duty &amp; Industrial · Patented Hoist-a-Matic® · 30+ years</p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {manarasModels.map((m) => (
+                <ModelCard key={m.name} {...m} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
