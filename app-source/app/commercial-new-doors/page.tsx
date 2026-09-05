@@ -235,61 +235,50 @@ export default function CommercialNewDoorsPage() {
         </div>
       </section>
 
-      {/* Brands */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+      {/* Brands carousel */}
+      <section className="bg-white py-14 sm:py-16 overflow-hidden">
+        <style>{`
+          @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+          }
+          .brand-marquee { animation: marquee 24s linear infinite; }
+          .brand-marquee:hover { animation-play-state: paused; }
+        `}</style>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-10">
           <p className="text-gold font-bold uppercase tracking-wide text-xs mb-4">Manufacturers</p>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-10">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
             Brands we install commercially.
           </h2>
-
-          <div className="space-y-8">
-            {/* Sectional doors */}
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-steel mb-4">Sectional Doors</p>
-              <div className="flex flex-wrap gap-4">
-                {[
-                  { src: "/images/logo-doorcraft.png", alt: "Door Craft" },
-                  { src: "/images/logo-garaga.png", alt: "Garaga" },
-                  { src: "/images/logo-richards-wilcox.png", alt: "Richards-Wilcox" },
-                  { src: "/images/logo-chi.png", alt: "CHI" },
-                ].map((logo) => (
-                  <div key={logo.alt} className="flex items-center justify-center rounded-card border border-steel/15 bg-white px-6 py-4" style={{ minWidth: 160, height: 80 }}>
-                    <img src={logo.src} alt={logo.alt} className="max-h-12 w-auto object-contain" />
-                  </div>
-                ))}
+        </div>
+        <div className="overflow-hidden">
+          <div className="brand-marquee flex gap-6" style={{ width: "max-content" }}>
+            {[
+              { src: "/images/logo-doorcraft.png", alt: "Door Craft" },
+              { src: "/images/logo-garaga.png", alt: "Garaga" },
+              { src: "/images/logo-richards-wilcox.png", alt: "Richards-Wilcox" },
+              { src: "/images/logo-chi.png", alt: "CHI" },
+              { src: "/images/logo-rytec.png", alt: "Rytec" },
+              { src: "/images/logo-hormann.png", alt: "Hörmann" },
+              { src: "/images/logo-liftmaster.png", alt: "LiftMaster" },
+              { src: "/images/logo-hysecurity.png", alt: "HySecurity" },
+              { src: "/images/logo-doorcraft.png", alt: "Door Craft 2" },
+              { src: "/images/logo-garaga.png", alt: "Garaga 2" },
+              { src: "/images/logo-richards-wilcox.png", alt: "Richards-Wilcox 2" },
+              { src: "/images/logo-chi.png", alt: "CHI 2" },
+              { src: "/images/logo-rytec.png", alt: "Rytec 2" },
+              { src: "/images/logo-hormann.png", alt: "Hörmann 2" },
+              { src: "/images/logo-liftmaster.png", alt: "LiftMaster 2" },
+              { src: "/images/logo-hysecurity.png", alt: "HySecurity 2" },
+            ].map((logo) => (
+              <div
+                key={logo.alt}
+                className="flex items-center justify-center flex-shrink-0 rounded-card border border-steel/15 bg-white px-8 py-4"
+                style={{ width: 180, height: 88 }}
+              >
+                <img src={logo.src} alt={logo.alt.replace(/ \d$/, "")} className="max-h-12 w-auto object-contain" />
               </div>
-            </div>
-
-            {/* Specialty doors */}
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-steel mb-4">Specialty & High-Speed Doors</p>
-              <div className="flex flex-wrap gap-4">
-                {[
-                  { src: "/images/logo-rytec.png", alt: "Rytec" },
-                  { src: "/images/logo-hormann.png", alt: "Hörmann" },
-                ].map((logo) => (
-                  <div key={logo.alt} className="flex items-center justify-center rounded-card border border-steel/15 bg-white px-6 py-4" style={{ minWidth: 160, height: 80 }}>
-                    <img src={logo.src} alt={logo.alt} className="max-h-12 w-auto object-contain" />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Operators */}
-            <div>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-steel mb-4">Commercial Operators & Gate</p>
-              <div className="flex flex-wrap gap-4">
-                {[
-                  { src: "/images/logo-liftmaster.png", alt: "LiftMaster" },
-                  { src: "/images/logo-hysecurity.png", alt: "HySecurity" },
-                ].map((logo) => (
-                  <div key={logo.alt} className="flex items-center justify-center rounded-card border border-steel/15 bg-white px-6 py-4" style={{ minWidth: 160, height: 80 }}>
-                    <img src={logo.src} alt={logo.alt} className="max-h-12 w-auto object-contain" />
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
