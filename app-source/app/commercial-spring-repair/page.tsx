@@ -22,7 +22,7 @@ const stockItems = [
 const applications = [
   {
     title: "Loading-dock sectional doors",
-    body: "Fast Richmond, Bridgeport, and the YVR-corridor warehouses. High-cycle, often heavy-gauge insulated doors.",
+    body: "East Richmond, Bridgeport, and the YVR-corridor warehouses. High-cycle, often heavy-gauge insulated doors.",
   },
   {
     title: "Automotive bay doors",
@@ -165,8 +165,11 @@ export default function CommercialSpringRepairPage() {
             Commercial spring applications we work on daily.
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {applications.map((app) => (
-              <div key={app.title} className="rounded-card border border-steel/15 bg-surface p-6">
+            {applications.map((app, i) => (
+              <div
+                key={app.title}
+                className={`rounded-card border border-steel/15 bg-surface p-6${i === applications.length - 1 && applications.length % 3 === 2 ? " sm:col-span-2 lg:col-span-1 lg:col-start-2" : ""}`}
+              >
                 <h3 className="font-heading font-bold text-navy-dark text-base mb-2">{app.title}</h3>
                 <p className="text-sm text-steel leading-relaxed">{app.body}</p>
               </div>
