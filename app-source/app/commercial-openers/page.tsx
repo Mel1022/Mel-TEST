@@ -16,6 +16,7 @@ const liftmasterModels = [
     tag: "LIGHT-DUTY SECTIONAL",
     model: "MODEL LJ8900W",
     name: "LiftMaster LJ8900W",
+    img: "/images/LJ8900W.png",
     desc: "Light-duty jackshaft for sectional commercial doors. Smart facility access built in.",
     features: [
       "Up to 10 cycles/hour · 25 cycles/day",
@@ -31,6 +32,7 @@ const liftmasterModels = [
     tag: "LIGHT-DUTY ROLLING",
     model: "MODEL LJ8950W",
     name: "LiftMaster LJ8950W",
+    img: "/images/LJ8950W.png",
     desc: "Light-duty wallmount for rolling steel doors and grilles. Self-storage and small warehouse standard.",
     features: [
       "Up to 10 cycles/hour · 25 cycles/day",
@@ -46,6 +48,7 @@ const liftmasterModels = [
     tag: "MEDIUM-DUTY",
     model: "MODEL MJ5011U",
     name: "LiftMaster MJ5011U",
+    img: "/images/MJ5011U.webp",
     desc: "Medium-duty jackshaft. The bread-and-butter of warehouse and retail commercial doors.",
     features: [
       "Up to 12 cycles/hour · 50 cycles/day",
@@ -64,6 +67,7 @@ const manarasModels = [
     tag: "MODERATE-LOAD",
     model: "MODEL OPERA-MJ",
     name: "Manaras Opera-MJ",
+    img: "/images/Opera-MJ.webp",
     desc: "Moderate-load jackshaft for standard, high, and vertical-lift sectional doors. Floor-mounted manual disconnect.",
     features: [
       "14 cycles/hour · 50 cycles/day",
@@ -79,6 +83,7 @@ const manarasModels = [
     tag: "HEAVY-DUTY",
     model: "MODEL OPERA-H",
     name: "Manaras Opera-H",
+    img: "/images/Opera-H.webp",
     desc: "Heavy-duty jackshaft with patented Hoist-a-Matic® self-engaging chain hoist. Workhorse of industrial bays.",
     features: [
       "25 cycles/hour · 100 cycles/day",
@@ -94,6 +99,7 @@ const manarasModels = [
     tag: "INDUSTRIAL",
     model: "MODEL OPERA-SH",
     name: "Manaras Opera-SH",
+    img: "/images/Opera-SH.png",
     desc: "Robust industrial belt-drive reduction operator. Bridges the gap between standard jackshaft and gear-head models.",
     features: [
       "25 cycles/hour · 100+ cycles/day",
@@ -183,14 +189,16 @@ function ModelCard({
   tag,
   model,
   name,
+  img,
   desc,
   features,
   link,
 }: (typeof liftmasterModels)[0]) {
   return (
     <div className="flex flex-col rounded-card border border-steel/15 bg-white overflow-hidden">
-      <div className="bg-surface flex items-center justify-end px-4 py-3">
-        <span className="rounded text-[10px] font-bold uppercase tracking-widest bg-navy-dark text-white px-3 py-1">
+      <div className="relative bg-surface flex items-center justify-center px-6 py-8" style={{ minHeight: 200 }}>
+        <img src={img} alt={name} className="max-h-44 w-auto object-contain" />
+        <span className="absolute top-3 right-3 rounded text-[10px] font-bold uppercase tracking-widest bg-navy-dark text-white px-3 py-1">
           {tag}
         </span>
       </div>
