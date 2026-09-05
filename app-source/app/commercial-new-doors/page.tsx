@@ -239,12 +239,47 @@ export default function CommercialNewDoorsPage() {
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
           <p className="text-gold font-bold uppercase tracking-wide text-xs mb-4">Manufacturers</p>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-6">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-10">
             Brands we install commercially.
           </h2>
-          <p className="text-steel leading-relaxed max-w-3xl">
-            For commercial applications we work primarily with <strong className="text-navy-dark">Door Craft Commercial, Garaga Commercial, Richards-Wilcox Commercial, and CHI Commercial</strong> for sectional doors. For specialty doors we install <strong className="text-navy-dark">Rytec and Hörmann</strong>. For commercial operators it&apos;s <strong className="text-navy-dark">LiftMaster Commercial</strong> almost across the board, with <strong className="text-navy-dark">MySecurity</strong> for gate operators.
-          </p>
+
+          <div className="space-y-8">
+            {/* Sectional doors */}
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-steel mb-4">Sectional Doors</p>
+              <div className="flex flex-wrap gap-3">
+                {["Door Craft", "Garaga", "Richards-Wilcox", "CHI"].map((b) => (
+                  <div key={b} className="flex items-center justify-center rounded-card border-2 border-navy-dark/15 bg-surface px-6 py-4 min-w-[140px]">
+                    <span className="font-heading font-extrabold text-navy-dark text-sm tracking-tight">{b}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Specialty doors */}
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-steel mb-4">Specialty & High-Speed Doors</p>
+              <div className="flex flex-wrap gap-3">
+                {["Rytec", "Hörmann"].map((b) => (
+                  <div key={b} className="flex items-center justify-center rounded-card border-2 border-navy-dark/15 bg-surface px-6 py-4 min-w-[140px]">
+                    <span className="font-heading font-extrabold text-navy-dark text-sm tracking-tight">{b}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Operators */}
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-steel mb-4">Commercial Operators & Gate</p>
+              <div className="flex flex-wrap gap-3">
+                {["LiftMaster Commercial", "MySecurity"].map((b) => (
+                  <div key={b} className="flex items-center justify-center rounded-card border-2 border-navy-dark/15 bg-surface px-6 py-4 min-w-[140px]">
+                    <span className="font-heading font-extrabold text-navy-dark text-sm tracking-tight">{b}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
