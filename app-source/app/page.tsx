@@ -45,30 +45,33 @@ export default function HomePage() {
           <div className="hero-text animate-fade-up">
 
             {/* Eyebrow */}
-            <div className="flex items-center gap-3 mb-5">
-              <p className="text-[#4CAF80] font-bold uppercase tracking-[0.18em] text-xs sm:text-sm">
+            <div className="flex items-center gap-3 mb-6">
+              <span className="w-5 h-px bg-[#4CAF80]" aria-hidden="true" />
+              <p className="text-[#4CAF80] font-bold uppercase tracking-[0.22em] text-xs">
                 Garage Door Service &amp; Repair
               </p>
-              <span className="flex-1 max-w-[60px] h-px bg-[#4CAF80]/60" aria-hidden="true" />
             </div>
 
-            {/* Headline — two-line hierarchy */}
-            <h1 className="font-heading font-extrabold leading-[1.05]">
-              <span className="block text-white" style={{ fontSize: "clamp(1.5rem, 2.4vw, 2.4rem)" }}>
-                When Your Garage Door Stops—
+            {/* Headline — three-line hierarchy with accent dash */}
+            <h1 className="font-heading font-extrabold">
+              <span className="block text-white/85" style={{ fontSize: "clamp(1.35rem, 2.2vw, 2.15rem)", letterSpacing: "-0.01em", lineHeight: "1.2" }}>
+                When Your Garage Door Stops
               </span>
-              <span className="block text-white" style={{ fontSize: "clamp(2.8rem, 4.6vw, 4.6rem)", lineHeight: "1.0" }}>
+              <span className="block text-[#4CAF80]" style={{ fontSize: "clamp(1.6rem, 2.6vw, 2.6rem)", lineHeight: "0.9", marginTop: "0.1em" }} aria-hidden="true">
+                —
+              </span>
+              <span className="block text-white" style={{ fontSize: "clamp(2.9rem, 4.8vw, 4.8rem)", lineHeight: "1.0", letterSpacing: "-0.03em", marginTop: "0.05em" }}>
                 We Show Up.
               </span>
             </h1>
 
             {/* Supporting copy */}
-            <p className="mt-5 text-white/80 text-base leading-relaxed animate-fade-up-delay-1">
+            <p className="mt-6 text-white/75 leading-relaxed animate-fade-up-delay-1" style={{ fontSize: "clamp(0.95rem, 1.1vw, 1.05rem)" }}>
               Fast, professional garage door service for Richmond homeowners and businesses.
             </p>
 
             {/* Brand statement */}
-            <p className="mt-4 text-[#4CAF80] font-bold uppercase tracking-[0.2em] text-sm animate-fade-up-delay-1">
+            <p className="mt-5 text-[#4CAF80] font-bold uppercase tracking-[0.25em] text-xs animate-fade-up-delay-1" style={{ borderBottom: "1px solid rgba(76,175,128,0.3)", paddingBottom: "1rem", display: "inline-block" }}>
               Call the Champ.
             </p>
 
