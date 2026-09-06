@@ -71,7 +71,7 @@ export default function HomePage() {
             </p>
 
             {/* Brand statement */}
-            <p className="mt-5 text-[#4CAF80] font-bold uppercase tracking-[0.25em] text-xs animate-fade-up-delay-1" style={{ borderBottom: "1px solid rgba(76,175,128,0.3)", paddingBottom: "1rem", display: "inline-block" }}>
+            <p className="mt-5 text-[#4CAF80] font-bold uppercase tracking-[0.22em] text-sm animate-fade-up-delay-1" style={{ borderBottom: "1px solid rgba(76,175,128,0.3)", paddingBottom: "1rem", display: "inline-block" }}>
               Call the Champ.
             </p>
 
