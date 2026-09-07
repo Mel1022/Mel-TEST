@@ -351,7 +351,7 @@ export default function SlidingGatesPage() {
       {/* HERO */}
       <section
         className="relative text-white overflow-hidden"
-        style={{ backgroundImage: "url('/images/sliding-gate-hero.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
+        style={{ backgroundImage: "url('/images/sliding-gate-hero.png')", backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="absolute inset-0 bg-navy-dark/82" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
