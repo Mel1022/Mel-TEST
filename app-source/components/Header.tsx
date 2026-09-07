@@ -13,7 +13,7 @@ const commercialLinks = [
   { label: "Loading Docks", href: "/loading-docks/" },
   { label: "Mandoors", href: "/mandoors/" },
   { label: "Sliding Gates", href: "/sliding-gates/" },
-  { label: "Warehouses", href: "/mandoors/" },
+  { label: "Warehouses", href: "/warehouses/" },
 ];
 
 export default function Header() {

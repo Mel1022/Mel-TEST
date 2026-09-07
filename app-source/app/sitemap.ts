@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/mandoors/", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/loading-docks/", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/sliding-gates/", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/warehouses/", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/strata/", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/service-areas/", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/about/", priority: 0.6, changeFrequency: "monthly" as const },
