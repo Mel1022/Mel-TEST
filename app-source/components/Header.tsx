@@ -11,6 +11,7 @@ const commercialLinks = [
   { label: "Commercial Openers", href: "/commercial-openers/" },
   { label: "New Commercial Doors", href: "/commercial-new-doors/" },
   { label: "Loading Docks", href: "/loading-docks/" },
+  { label: "Mandoors", href: "/mandoors/" },
   { label: "Sliding Gates", href: "/sliding-gates/" },
   { label: "Warehouses", href: "/mandoors/" },
 ];
