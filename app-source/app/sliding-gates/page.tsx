@@ -353,7 +353,7 @@ export default function SlidingGatesPage() {
         className="relative text-white overflow-hidden"
         style={{ backgroundImage: "url('/images/sliding-gate-hero.png')", backgroundSize: "cover", backgroundPosition: "center" }}
       >
-        <div className="absolute inset-0 bg-navy-dark/82" />
+        <div className="absolute inset-0 bg-green-900/80" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <span className="inline-block bg-red-600 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
             Gate Emergency · Richmond, BC
