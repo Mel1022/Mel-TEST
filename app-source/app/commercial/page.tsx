@@ -333,27 +333,6 @@ export default function CommercialPage() {
         </div>
       </section>
 
-      {/* WHAT WE SERVICE */}
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">Whatever you have — we service it</h2>
-          <p className="text-steel text-sm mb-8">
-            All major brands · Clopay · Wayne Dalton · DBCI · Raynor · Rytec · Rite-Hite · Albany · LiftMaster · Genie · Cookson · McKeon
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {equipmentCategories.map((s) => (
-              <div key={s.title} className="rounded-card bg-white border border-steel/10 p-6 shadow-card">
-                <h3 className="font-heading font-bold text-base text-navy-dark mb-1">{s.title}</h3>
-                <p className="text-sm text-steel leading-relaxed mb-3">{s.body}</p>
-                {s.href && (
-                  <Link href={s.href} className="text-xs font-bold text-gold hover:underline">Learn more →</Link>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* PRICING */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
