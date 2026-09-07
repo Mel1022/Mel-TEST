@@ -163,24 +163,28 @@ const bumpers = [
     model: "Laminated rubber bumper",
     body: "The most common bumper across Richmond commercial docks. Replace when compressed to less than 4\".",
     specs: ["6\" original projection", "10\" × 20\" face standard", "Laminated rubber construction", "Bolt or weld mount", "3–7 year service life", "$80–$140 each installed"],
+    img: "/images/loading-dock-bumper-laminated-6in.webp",
   },
   {
     tag: "Heavy Industrial 10\"",
     model: "Steel-faced laminated",
     body: "For Richmond facilities with constant heavy impact — cold storage, container terminals, heavy 3PL.",
     specs: ["10\" original projection", "Steel face plate over rubber laminations", "Best impact absorption", "5–10 year service life", "Higher upfront, longest life", "$140–$220 each installed"],
+    img: "/images/loading-dock-bumper-steel-faced-10in.webp",
   },
   {
     tag: "Molded Polyethylene",
     model: "Solid-core polyurethane",
     body: "Chemical-resistant solid bumpers for food-grade and wash-down environments. Won\'t absorb water or oils.",
     specs: ["Solid polyurethane construction", "Wash-down compatible", "Chemical / oil resistant", "FDA-compatible variants", "6–10 year service life", "Higher cost, easy cleaning"],
+    img: "/images/loading-dock-bumper-polyethylene.webp",
   },
   {
     tag: "Steel Spring-Mount",
     model: "Spring-mounted impact bumper",
     body: "Spring-mounted bumpers that absorb impact across the mounting bracket. Common on heavy-strike Richmond container facilities.",
     specs: ["Spring-bracket absorbs impact", "Replaceable bumper face", "Heavy-duty bracket mount", "Higher impact than fixed bumpers", "Replaceable wear elements", "For high-traffic + heavy trucks"],
+    img: "/images/loading-dock-bumper-spring-mount.webp",
   },
 ];
 
