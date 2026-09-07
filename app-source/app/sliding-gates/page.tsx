@@ -316,7 +316,7 @@ function ProductCard({
     <div className="rounded-card border border-steel/15 bg-white flex flex-col overflow-hidden shadow-card">
       <div className="relative h-44 flex items-center justify-center overflow-hidden">
         {img ? (
-          <img src={img} alt={title} className="w-full h-full object-cover" />
+          <img src={img} alt={title} className="w-full h-full object-contain p-4" />
         ) : (
           <span className="text-steel/30 text-sm text-center px-4">{title}</span>
         )}
