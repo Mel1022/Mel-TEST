@@ -5,20 +5,11 @@ import { IconPhone, IconCheck } from "@/components/Icons";
 import { Accordion } from "./Accordion";
 
 export const metadata: Metadata = {
-  title: "Commercial Garage Door Service in Richmond BC | DoorChamp",
+  title: "Mandoor Service Richmond BC — Closer, Hinge, Fire Label | DoorChamp",
   description:
-    "Commercial garage door repair, installation, and maintenance in Richmond BC. Sectional doors, high-speed doors, fire doors, loading docks, sliding gates. Call (778) 800-0769.",
+    "Commercial mandoor repair and installation in Richmond BC. Closers, hinges, seals, panic devices, fire-rated mandoors. ANSI A250.8 compliant. Same-day service. Call (778) 800-0769.",
   alternates: { canonical: "/commercial/" },
 };
-
-const equipmentCategories = [
-  { title: "Commercial Sectional Doors", body: "Heavy-duty steel sectional · full-view glass · insulated · hurricane-rated · non-insulated" },
-  { title: "High-Speed Roll-Up Doors", body: "Fabric high-speed · steel roll-up · clean-room rated · food-grade PVC" },
-  { title: "Fire-Rated Doors", body: "UL-listed fusible link · drop-close · annual testing & BC fire-code certification" },
-  { title: "Commercial Overhead Door Operators", body: "Heavy-duty 3/4 HP–3 HP operators · multi-car access systems · loop detectors" },
-  { title: "Loading Dock Equipment", body: "Dock levelers · dock seals · vehicle restraints · dock bumpers", href: "/loading-docks/" },
-  { title: "Sliding Security Gates", body: "Motorized slide gates · access control · strata parkade · perimeter fencing", href: "/sliding-gates/" },
-];
 
 const pricingItems = [
   { label: "Single-door repair (callout)", price: "$189 callout + parts", note: "Closer · hinge · latch · seal · panic device", img: "/images/icon-mandoor-callout-wrench.jpg" },
@@ -30,265 +21,71 @@ const pricingItems = [
   { label: "New 90-min fire-rated mandoor", price: "from $2,189 installed", note: "Fire frame · fire-rated closer · panic device · label inspection", img: "/images/icon-mandoor-firerated.jpg" },
 ];
 
-const sectionalDoors = [
-  {
-    tag: "Most Common Commercial",
-    brand: "Clopay (USA-leader)",
-    model: "Clopay 4300 / 5200 Series",
-    body: "Industry-standard steel sectional for Richmond warehouse and retail. Available non-insulated and R-12 to R-18 insulated.",
-    specs: ["24–26 gauge galvanized steel", "R-12 to R-18 insulated options", "Hot-dip galvanized tracks", "Heavy-duty torsion hardware", "Wind-load reinforcement available", "Factory-painted or primed"],
-    url: "https://www.clopay.com/",
-    img: "/images/commercial-door-sectional-clopay.webp",
-  },
-  {
-    tag: "Canadian-Made",
-    brand: "DBCI (Carrollton, TX / Canadian dist.)",
-    model: "DBCI 26-Gauge Commercial",
-    body: "Budget-friendly commercial sectional common in Richmond strata warehouse units and small industrial facilities.",
-    specs: ["26-gauge embossed steel", "Non-insulated & insulated options", "R-6 to R-10 insulated", "Flush or ribbed panel profiles", "Standard commercial track gauges", "Competitive pricing on volume"],
-    img: "/images/commercial-door-sectional-dbci.webp",
-  },
-  {
-    tag: "Full-View Glass",
-    brand: "Clopay / Wayne Dalton",
-    model: "Full-view aluminum glass door",
-    body: "Aluminum-frame full-view doors for showrooms, car dealerships, and retail fronts. Available in various anodized finishes.",
-    specs: ["Aluminum frame sections", "Single or double-pane glass", "Clear, frosted, or tinted glass", "Dark bronze / mill finish / black", "Interior natural light", "Custom widths up to 18'"],
-    img: "/images/commercial-door-full-view.webp",
-  },
-  {
-    tag: "Hurricane / High Wind",
-    brand: "Clopay / Wayne Dalton",
-    model: "Wind-load rated sectional",
-    body: "Required for facilities in storm-prone Metro Vancouver locations or where code requires wind-load certification.",
-    specs: ["90–120+ mph wind rating", "Wind-load bars standard", "Reinforced end stiles", "Heavy-duty strut packages", "Anchorage-engineered hardware", "Available with insulation"],
-    img: "/images/commercial-door-hurricane.webp",
-  },
-  {
-    tag: "Rolling Steel",
-    brand: "Cornell / Cookson / Wayne Dalton",
-    model: "Rolling steel service door",
-    body: "Counter-wound steel roll-up for service openings, interior partitions, and smaller commercial openings where headroom is limited.",
-    specs: ["22-gauge galvanized slats", "Interior or exterior service", "Manual push-up or operator driven", "Lock bar standard", "Compact coil, minimal headroom", "Powder-coat finish options"],
-    img: "/images/commercial-door-rolling-steel.webp",
-  },
-  {
-    tag: "High-Lift / Vertical Lift",
-    brand: "All major brands",
-    model: "High-lift & vertical-lift tracks",
-    body: "Custom track configurations for facilities with high ceilings and low header clearance. We design and install for any ceiling height.",
-    specs: ["High-lift from 12\" to 24\"", "Vertical-lift (door travels straight up)", "Custom torsion shaft sizing", "Cable drum engineering per size", "Works with any sectional panel", "Best for racking-full warehouses"],
-    img: "/images/commercial-door-vertical-lift.webp",
-  },
+const whatWeFix = [
+  { title: "Door closers", body: "LCN · Norton · Dorma · Sargent · Yale. Hydraulic adjustment, arm replacement, full closer swap. Speed and latch action set to ANSI A156.4." },
+  { title: "Hinges & pivot sets", body: "Continuous hinges, standard butt hinges, pivot sets. Worn pin replacement, full hinge replacement, frame repair after hinge pull-out." },
+  { title: "Latches & locksets", body: "Cylindrical, mortise, and exit-device latch bolts. Sticking latch, misaligned strike, broken cylinder or thumb-turn." },
+  { title: "Door seals & sweeps", body: "Bottom sweeps, perimeter seals, astragals, intumescent strips. Air infiltration, smoke sealing, and draft control on all door types." },
+  { title: "Panic devices & exit hardware", body: "Von Duprin · Detex · Yale · Sargent. Push-bar adjustment, dogging, latch retraction, full device replacement. ANSI A250.8 hardware on every truck." },
+  { title: "Fire labels & compliance", body: "Peeling, missing, or painted-over fire labels are a code violation. We replace them with UL-listed labels and document the repair in a written report." },
+  { title: "Door frames & closers", body: "Bent, twisted, or pulled-out frames repaired or replaced. We use steel frames with the correct fire rating for the assembly — no wood substitutions in rated openings." },
+  { title: "Access control & electric strikes", body: "Electric strikes, magnetic locks, door position switches, and REX sensors. Coordination with your access control system or simple standalone keyed hardware." },
 ];
 
-const highSpeedDoors = [
+const mandoorTech = [
   {
-    tag: "Most Common · High-Speed Fabric",
-    brand: "Rytec (USA-leader)",
-    model: "Rytec Spiral / Powerhouse",
-    body: "The dominant high-speed door brand in Richmond distribution and logistics. Auto-reset after impact on most models.",
-    specs: ["Up to 100\" per second open/close", "Auto-reset after impact (Spiral)", "Stainless or painted frame", "Photo-eye, loop, or radar activation", "30,000–1,000,000+ cycle rated", "Transparent window insert"],
-    url: "https://www.rytecdoors.com/",
-    img: "/images/commercial-door-high-speed-rytec.webp",
+    title: "What's a mandoor and why does it need service?",
+    summary: "Any walk-through door in a commercial building — back doors, stairwells, mechanical rooms, fire exits.",
+    body: "Every commercial building in Richmond has mandoors. Unlike an overhead door, a mandoor closes itself (via the door closer), latches automatically, and in rated assemblies must maintain a fire separation. That makes three things fail: the closer loses hydraulic fluid and stops pulling the door fully shut, the latch wears and stops engaging, and the door frame shifts so the door drags or won't seat.\n\nA mandoor wedged open with a block is a code violation, a fire hazard, and a security gap. We fix the root cause — not just the symptom.",
   },
   {
-    tag: "High-Speed Fabric",
-    brand: "Rite-Hite",
-    model: "Rite-Hite APEX High Speed",
-    body: "Common in Richmond cold-storage and food-grade facilities. High insulation value with fast cycle speed.",
-    specs: ["Up to 80\" per second", "R-17 insulated panel options", "Integrated dock sealing", "Auto-reset bottom bar", "Low-maintenance drive", "Top choice for cold storage"],
-    url: "https://www.ritehite.com/",
-    img: "/images/commercial-door-high-speed-ritehite.webp",
+    title: "ANSI A250.8 — what it means and why it matters",
+    summary: "The North American standard for steel door and frame construction. Non-compliant hardware can void your fire-rating.",
+    body: "ANSI A250.8 specifies the construction grade of steel doors and frames:\n• Level 1: light commercial (interior, low-cycle)\n• Level 2: heavy commercial (standard warehouses, offices)\n• Level 3: extra heavy duty (high-traffic stairwells, industrial)\n• Level 4: maximum duty (extreme impact environments)\n\nA non-ANSI-rated replacement door installed in a fire-rated opening voids the fire assembly. We carry ANSI A250.8 compliant hardware on every truck and specify the correct grade for the opening.",
   },
   {
-    tag: "High-Speed PVC / Wash-Down",
-    brand: "Albany / TNR",
-    model: "Albany RR2000 / TNR wash-down",
-    body: "PVC fabric high-speed doors rated for food-grade and wash-down environments. Stainless frame, no contamination risk.",
-    specs: ["Stainless steel frame", "PVC or fibreglass fabric", "IP65 rated motor", "Wash-down compatible guides", "Food-grade sealing", "NSF-approved versions"],
-    img: "/images/commercial-door-high-speed-pvc.webp",
+    title: "Fire-rated mandoors — what BC Fire Code requires",
+    summary: "Rated assemblies (door + frame + closer + hardware) must be UL-listed and maintained. Annual inspection is required.",
+    body: "A fire-rated mandoor is a complete assembly — the door leaf, frame, hinges, closer, latch, and seals all carry the rating together. Changing one component to a non-rated substitute can void the entire assembly's fire rating.\n\nBC Fire Code requires:\n• Annual inspection of all fire-rated door assemblies\n• Written documentation of inspection results\n• Repair of any deficiency before the next occupancy\n\nCommon violations we find on inspection: painted-over fire labels, non-rated replacement hardware, missing intumescent seals, wedged-open doors, and closers adjusted to hold the door open.",
   },
   {
-    tag: "High-Speed Steel",
-    brand: "Cookson / Cornell",
-    model: "High-speed steel roll-up",
-    body: "Steel-slat high-speed door for security-critical openings where fabric is not suitable. Slower than fabric but fully steel construction.",
-    specs: ["Steel slat construction", "30–40 inches/sec cycle", "No fabric to tear or replace", "Highest security rating", "Heavy-duty motor required", "Standard for secure access points"],
-    img: "/images/commercial-door-high-speed-steel.webp",
-  },
-];
-
-const fireDoors = [
-  {
-    tag: "UL-Listed · 3-Hour",
-    brand: "Cookson / McKeon",
-    model: "Cookson FSD / McKeon fire door",
-    body: "UL-listed fire doors required at rated wall penetrations in Richmond commercial and industrial buildings. Annual inspection is BC code.",
-    specs: ["UL 10B/10C listed", "3-hr, 1.5-hr, 45-min ratings", "Fusible link auto-drop", "Automatic closing device", "Annual BC Fire Code inspection", "Written compliance report"],
-    img: "/images/commercial-door-fire-cookson.webp",
+    title: "Why one visit covers all your mandoors",
+    summary: "Same crew, same truck, same invoice — bundled with your overhead door or dock PM visit.",
+    body: "Most Richmond facilities pay two separate service companies to look after their overhead doors and their mandoors. We handle both on the same visit.\n\nOne technician walks the property, inspects every mandoor and overhead door, documents all deficiencies, and returns a written proposal. Work is invoiced on a single ticket. Parts carried for both overhead doors and mandoors — closers, hinges, latches, panic devices, bottom seals, and fire-rated hardware.\n\nFor facilities with 4+ mandoors, per-door rates drop sharply on volume — see the pricing section above.",
   },
   {
-    tag: "Fire-Rated Rolling Steel",
-    brand: "Cornell / Wayne Dalton",
-    model: "Fire-rated service door",
-    body: "Fire-rated rolling steel for service openings in fire-wall assemblies. Motor-operated with smoke detector interlock.",
-    specs: ["UL-listed steel slats", "Smoke detector interlock", "Motor drops on power loss", "1.5-hr to 3-hr ratings", "Annual fusible link test", "Insurance-required in most facilities"],
-    img: "/images/commercial-door-fire-rated-steel.webp",
-  },
-];
-
-const operators = [
-  {
-    tag: "Heavy-Duty Commercial · Most Common",
-    brand: "LiftMaster (USA-leader)",
-    model: "LiftMaster MH and CSW Series",
-    body: "The most common commercial operator in Richmond. 3/4 HP to 2 HP, designed for high-cycle commercial use.",
-    specs: ["3/4 HP to 2 HP models", "myQ commercial connectivity", "Loop detector compatible", "Battery backup available", "Up to 100,000-cycle rated", "Multi-door controller options"],
-    url: "https://www.liftmaster.com/",
-    img: "/images/commercial-operator-liftmaster.webp",
-  },
-  {
-    tag: "Heavy-Duty Industrial",
-    brand: "Genie / Linear",
-    model: "Genie Commercial Pro / Linear MGD",
-    body: "Heavy-duty commercial operators for larger commercial doors 14'+ wide. Commonly specified on new Richmond industrial builds.",
-    specs: ["1–3 HP motor", "Jackshaft or trolley drive", "Soft-start/stop standard", "Coded access system ready", "Timer-to-close available", "Full-featured logic board"],
-    img: "/images/commercial-operator-genie.webp",
-  },
-  {
-    tag: "Jackshaft · Ceiling Space Saver",
-    brand: "LiftMaster / Chamberlain",
-    model: "LiftMaster 3800 / 8500W",
-    body: "Wall-mounted jackshaft operators for facilities with high-lift tracks or limited ceiling space above the door.",
-    specs: ["Wall-mounted beside door", "No overhead rail needed", "Works with high-lift tracks", "Ideal for warehouse racking", "DC motor, quiet operation", "Battery backup standard"],
-    img: "/images/commercial-operator-jackshaft.webp",
-  },
-];
-
-const doorTech = [
-  {
-    title: "Commercial Sectional Doors",
-    summary: "The standard commercial door in Richmond. Sections travel up tracks and stack horizontally under the ceiling.",
-    body: "Available in steel (most common), full-view aluminum/glass, and insulated versions. Track configurations include standard-lift, high-lift, and vertical-lift for ceiling constraints.\n\nPanel thickness: 1-3/8\" to 2\" standard\nInsulation: R-6 to R-18 (thicker panel = higher R-value)\nBest for: warehouses, retail bays, distribution centres, fleet garages\nBrands we service: Clopay, Wayne Dalton, DBCI, Raynor, Amarr, Overhead Door",
-  },
-  {
-    title: "High-Speed Roll-Up Doors",
-    summary: "Fabric or steel roll-up doors that open and close in 2–8 seconds. Required for high-cycle applications.",
-    body: "High-speed doors dramatically reduce energy loss on docks and cold-storage openings — a standard sectional door open for 10 seconds loses more energy than a high-speed door open for 2 seconds.\n\nCycle life: 500,000 to 1,000,000+ cycles\nOpen speed: 60–100 inches per second\nBest for: food-grade, cold storage, distribution, logistics hubs\nBrands we service: Rytec, Rite-Hite, Albany, TNR, Efaflex, ASI",
-  },
-  {
-    title: "Fire-Rated Doors",
-    summary: "UL-listed rolling steel doors required at fire wall penetrations. Drops automatically on fusible link failure or smoke detector signal.",
-    body: "BC Fire Code requires annual inspection and certification of all fire-rated doors. Our written inspection report satisfies insurance and fire marshal requirements.\n\nRatings: 3-hour, 1.5-hour, 45-minute\nActivation: fusible link (fails at 165°F) + smoke detector interlock\nBest for: fire walls, compartmentalization, insurance compliance\nBrands we service: Cookson, McKeon, Cornell, Wayne Dalton, Overhead Door",
-  },
-  {
-    title: "Commercial Door Operators",
-    summary: "Heavy-duty operators rated for 100,000+ cycles and designed for integration with access control, loop detectors, and building management systems.",
-    body: "Commercial operators are different from residential — higher torque, higher cycle rating, and built for integration with third-party access control. Jackshaft operators mount to the wall beside the door, freeing ceiling space in facilities with high-lift tracks or full racking.\n\nHP range: 3/4 HP to 3 HP standard; higher available\nBest for: all commercial applications — select HP and drive type based on door weight and cycle count\nBrands we service: LiftMaster, Genie, Linear, Chamberlain, Marantec, FAAC",
-  },
-  {
-    title: "Rolling Steel Service Doors",
-    summary: "Counter-wound steel slat doors for service openings, interior partitions, and counter shutters.",
-    body: "Different from sectional doors — slats coil above the opening rather than tracking back under the ceiling. Minimal headroom requirement. Available in motor-operated or manual push-up versions.\n\nBest for: service openings, interior partitions, security shutters, counter applications\nBrands we service: Cookson, Cornell, Wayne Dalton, Richards-Wilcox, Overhead Door",
-  },
-];
-
-const sealTech = [
-  {
-    title: "What does a preventive maintenance program include?",
-    summary: "Annual, bi-annual, or quarterly scheduled service visits with a written inspection report.",
-    body: "Our commercial PM program covers: spring tension check and adjustment, cable condition and drum inspection, roller and hinge inspection and lubrication, bottom seal replacement, track alignment and clearance check, operator force adjustment, safety reversal test, limit switch calibration, and a written inspection report.\n\nPM visit intervals:\n• Annual — light-cycle commercial facilities\n• Bi-annual — standard distribution (most Richmond warehouses)\n• Quarterly — 24/7 operations, high-speed doors, dock equipment",
-  },
-  {
-    title: "How often do commercial door springs need replacement?",
-    summary: "Commercial torsion springs are rated for 25,000–100,000+ cycles. A Richmond single-shift operation typically replaces springs every 3–7 years.",
-    body: "Cycle count is the biggest driver:\n• Standard commercial (25k-cycle spring): 3–5 years at 20 openings/day\n• High-cycle spring (50k–100k): 5–12 years depending on use\n• Oil-tempered vs. galvanized: galvanized last longer in BC's wet climate\n\nWe stock high-cycle springs and always recommend the next-grade spring on replacement to reduce future downtime.",
-  },
-  {
-    title: "Do you service commercial doors installed by another company?",
-    summary: "Yes. We service all major brands regardless of installer.",
-    body: "We service Clopay, Wayne Dalton, DBCI, Raynor, Amarr, Overhead Door, Rytec, Rite-Hite, Albany, TNR, and all other major brands. If you can give us a brand name and model number, we can almost always have common parts on the truck for the first visit.\n\nSpecialty parts for older or unusual doors: 3–7 business days.",
-  },
-  {
-    title: "What's included in a BC fire door inspection and certification?",
-    summary: "Annual inspection is required by BC Fire Code for all UL-listed fire doors.",
-    body: "Our fire door inspection includes:\n• Visual inspection of slats, bottom bar, guides, and seals\n• Fusible link function test and replacement if required\n• Automatic closing device operation test\n• Smoke detector interlock function (if connected)\n• Full travel test (drop test)\n• Written report and door tag\n• We provide the written report required for fire marshal and insurance compliance.",
-  },
-  {
-    title: "What's the typical response time for a commercial emergency?",
-    summary: "During business hours: 12–20 minutes from Richmond. After hours: within 60–90 minutes.",
-    body: "Our dispatch and truck is in Richmond. Business hours same-day response is standard. After-hours emergency calls are answered by an on-call technician — not a call centre. Most commercial emergency repairs are completed in the first visit because we stock the most common commercial parts on every truck:\n• Springs (commercial torsion)\n• Cables\n• Rollers (all gauge)\n• Bottom seals\n• Operator trolleys and drive components\n• Control boards for LiftMaster, Genie, Linear",
+    title: "What's included in the 21-point mandoor inspection?",
+    summary: "A full written inspection of every mandoor on the property — suitable for fire marshal and insurance documentation.",
+    body: "Our 21-point mandoor inspection covers:\n1. Door alignment and frame plumb/square check\n2. Closer speed (sweep, latch, and backcheck)\n3. Closer arm and bracket condition\n4. Latch bolt engagement and strike alignment\n5. Hinge pin wear and hinge plate condition\n6. Bottom sweep condition and seal contact\n7. Perimeter seal condition\n8. Intumescent strip integrity (rated doors)\n9. Fire label condition and legibility\n10. Door leaf face and edge condition\n11. Vision panel glazing and glazing bead (if present)\n12. Threshold condition\n13. Panic device latch retraction and dogging (if applicable)\n14. Electric strike or magnetic lock function (if present)\n15. Door position switch function (if present)\n16. Self-closing function (must close and latch from 5°)\n17. Frame anchor condition at head and jamb\n18. Smoke seal condition (where required)\n19. Undercut clearance check\n20. Key function test\n21. Written report with deficiency log and photo documentation",
   },
 ];
 
 const faqs = [
-  { q: "Can you service commercial doors installed by another company?", a: "Yes. We service all major brands regardless of who installed them — Clopay, Wayne Dalton, DBCI, Raynor, Amarr, Overhead Door, Rytec, Rite-Hite, Albany, TNR, and others. Bring us whatever you have." },
-  { q: "How do I know if my commercial door needs replacement vs. repair?", a: "Repair is viable when the frame, tracks, and panel sections are structurally intact. Replacement is the right call when sections are cracked or crushed beyond straightening, the frame is bent, or the door is undersized for current operation. On-site assessment required — we give you a written cost comparison before any work begins." },
-  { q: "Are your technicians WCB-covered for commercial sites?", a: "Yes. All DoorChamp technicians are WCB-compliant. We carry $5M liability insurance and can provide a Certificate of Insurance before any job. We've worked with most major property managers in Richmond." },
-  { q: "What's the BC code requirement for fire door inspections?", a: "BC Fire Code requires annual inspection of all fire-rated doors and closures. The inspection must be documented with a written report. Missing annual inspection records can void your insurance and result in fire marshal deficiency notices. We provide a written report and door tag that satisfies BC Fire Code documentation requirements." },
-  { q: "How fast can a new commercial sectional door be installed?", a: "Most standard commercial sectional doors are 3–5 business days from order confirmation. Non-standard sizes, glass doors, or custom colours add 2–4 weeks depending on the manufacturer. Emergency replacement on a damaged door can often be quoted and started within 24–48 hours for standard sizes." },
-  { q: "Can you service high-speed doors you didn't install?", a: "Yes. We service Rytec, Rite-Hite, Albany, TNR, Efaflex, ASI, and other major high-speed door brands. Common parts (bottom bars, photo-eyes, control boards, fabric panels) are stocked on the truck. Specialty parts: 3–7 business days." },
-  { q: "Do you offer maintenance programs for property managers?", a: "Yes. We provide scheduled PM programs for property managers and strata councils with multiple commercial units. Service records, digital reports, and dedicated contact for each property. Ask about our multi-door PM pricing." },
-  { q: "What happens if our commercial door is damaged by a vehicle impact?", a: "Call us for an emergency response. We'll straighten or replace damaged sections, reset tracks, and restore the door to operation as fast as possible. We can also provide the written report and photos required for insurance claims. If the frame is bent, we'll assess whether a full replacement is needed." },
-  { q: "Do you work with construction GCs on new commercial builds?", a: "Yes. We're available as a subcontractor for commercial and industrial door packages on new construction and major renovation projects in Richmond and Metro Vancouver. Contact us early — commercial doors need to be specified before rough framing so the opening size is correct." },
-  { q: "What commercial door operator brands do you install and service?", a: "We install and service LiftMaster (most common in Richmond), Genie, Linear, Chamberlain, Marantec, FAAC, and others. For access control integration, we work with Salto, HID, Kantech, and most major systems used in Metro Vancouver commercial facilities." },
+  { q: "What's a mandoor?", a: "A mandoor (man door) is any walk-through door in a commercial building — back doors, stairwell doors, mechanical room doors, fire exits, and interior corridor doors. Unlike a garage door, it closes itself via a door closer and latches automatically." },
+  { q: "Can you fix a mandoor on the same visit as my overhead door?", a: "Yes — that's the point. Same technician, same truck, same invoice. We carry mandoor parts (closers, hinges, latches, panic devices, seals, fire-rated hardware) alongside overhead door parts on every commercial truck." },
+  { q: "My door closer keeps losing adjustment. Why?", a: "Three causes: the valve seat is worn and leaking hydraulic fluid internally (replace the closer), the adjusting screws are vibrating loose (thread-lock and re-adjust), or the door is out of alignment causing the closer to work harder than it's designed for (fix the frame first, then adjust the closer)." },
+  { q: "What does ANSI A250.8 compliant mean?", a: "ANSI A250.8 is the North American standard for steel door and frame construction. It defines four grades by duty level (light, heavy, extra heavy, maximum duty). We specify and install the correct ANSI grade for the opening — important because a non-compliant door installed in a fire-rated assembly voids the fire rating." },
+  { q: "Is a fire-rated mandoor just a heavier door, or is it a complete assembly?", a: "It's a complete assembly — door leaf, frame, hinges, closer, latch, and seals all carry the rating together. Swapping one component (e.g. installing a non-rated closer) voids the entire assembly's fire rating. We replace fire-rated mandoor components with UL-listed equivalents only." },
+  { q: "What's the BC Fire Code requirement for fire-rated mandoor inspections?", a: "BC Fire Code requires annual inspection and documentation of all fire-rated door assemblies. The inspection must be documented with a written report. Missing records can result in fire marshal deficiency notices and insurance issues. We produce the written report on-site." },
+  { q: "Can you replace a fire label on a mandoor?", a: "Yes. A peeling, missing, or painted-over fire label is a code violation. We replace them with UL-listed labels and document the replacement in the inspection report." },
+  { q: "How long does a whole-building mandoor inspection take?", a: "Roughly 20–30 minutes per door for a thorough inspection plus report. A building with 10 mandoors typically takes 3–4 hours including documentation. We book it as a half-day or full-day visit depending on door count." },
+  { q: "Can you service mandoors in strata warehouse units?", a: "Yes. We work with strata councils, property managers, and individual unit owners. Mandoor maintenance in a strata warehouse is typically the unit owner's responsibility, but we can coordinate directly with the strata manager if needed." },
+  { q: "Do you carry panic device hardware on the truck?", a: "Yes. We carry Von Duprin, Detex, Yale, and Sargent panic devices and repair parts. Most panic device repairs — push-bar adjustment, dogging, latch retraction — are completed first visit." },
 ];
 
-const inspection = [
-  "Spring tension and winding check, cable condition and drum inspection",
-  "Roller wear, hinge pin condition, side seal contact",
-  "Bottom seal condition and contact profile",
-  "Track alignment, clearance, and level check",
-  "Panel section integrity and weatherstripping condition",
-  "Operator force adjustment and limit switch calibration",
-  "Safety reversal test and photo-eye alignment",
-  "Auto-close timer function (if equipped)",
-  "Manual release and emergency operation test",
-  "Full-travel run test (open + close, timed)",
-  "Written inspection report — suitable for insurance and fire marshal",
+const inspection21 = [
+  "Door closer speed (sweep, latch, backcheck) and arm condition",
+  "Latch bolt engagement, strike alignment, and bolt throw",
+  "Hinge pin wear and hinge plate condition",
+  "Bottom sweep seal contact and condition",
+  "Perimeter seal and intumescent strip integrity",
+  "Fire label condition and legibility",
+  "Self-closing function — must close and latch from 5°",
+  "Door alignment and frame plumb/square check",
+  "Panic device latch retraction and dogging (if present)",
+  "Electric strike / magnetic lock function (if present)",
+  "Written deficiency report with photo documentation",
 ];
-
-function ProductCard({ tag, brand, model, body, specs, url, img }: {
-  tag: string; brand?: string; model: string; body: string; specs: string[]; url?: string; img?: string;
-}) {
-  return (
-    <div className="rounded-card bg-white border border-steel/10 shadow-card flex flex-col overflow-hidden">
-      {img && (
-        <div className="relative">
-          <img src={img} alt={model} className="w-full h-48 object-cover" />
-          <span className="absolute top-3 right-3 bg-navy-dark/90 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded">{tag}</span>
-        </div>
-      )}
-      <div className="p-6 flex flex-col gap-4 flex-1">
-        <div>
-          {!img && <span className="text-xs font-bold uppercase tracking-wide text-gold">{tag}</span>}
-          {brand && <p className="text-xs text-gold font-bold uppercase tracking-wide mt-0.5">{brand}</p>}
-          <h3 className="font-heading font-bold text-base text-navy-dark mt-1">{model}</h3>
-          <p className="text-sm text-steel leading-relaxed mt-2 italic">{body}</p>
-        </div>
-        <ul className="space-y-1.5">
-          {specs.map((s) => (
-            <li key={s} className="flex items-start gap-2 text-sm text-steel">
-              <span className="text-gold mt-0.5 flex-shrink-0">✓</span>
-              {s}
-            </li>
-          ))}
-        </ul>
-        <div className="mt-auto flex flex-col gap-2 pt-2">
-          {url && (
-            <a href={url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs font-bold text-steel border border-steel/20 rounded px-3 py-2 hover:border-steel/50 transition-colors">
-              <span>⊞</span> View on {new URL(url).hostname.replace("www.", "")}
-            </a>
-          )}
-          <Link href="/request-a-quote/" className="inline-flex items-center justify-center rounded bg-gold px-4 py-2.5 text-sm font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors">
-            Get a Quote
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function CommercialPage() {
   return (
@@ -364,170 +161,100 @@ export default function CommercialPage() {
         </div>
       </section>
 
-      {/* COMMERCIAL SECTIONAL DOORS */}
-      <section
-        className="relative overflow-hidden"
-        style={{ backgroundImage: "url('/images/commercial-door-types-bg.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
-      >
-        <div className="absolute inset-0 bg-white/93" />
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <p className="text-gold font-bold uppercase tracking-wide text-sm mb-2">Commercial sectional doors we service & install</p>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">Clopay · Wayne Dalton · DBCI · Raynor · Amarr · Overhead Door</h2>
-          <p className="text-steel text-sm mb-8">
-            We carry common wear-item parts on the truck for every major brand: torsion springs, cables, rollers, bottom seals, hinges. Specialty parts ordered 3–7 business days.
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {sectionalDoors.map((d) => (
-              <ProductCard key={d.model} {...d} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* DOOR TYPES EXPLAINER */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">Sectional · High-Speed · Fire-Rated · Rolling Steel. We service all of them</h2>
-          <p className="text-steel text-sm mb-8 max-w-3xl">
-            Richmond commercial facilities use four main door types, each suited to a different application. Here's how they compare and when each is the right call.
-          </p>
-          <Accordion items={doorTech} />
-        </div>
-      </section>
-
-      {/* HIGH-SPEED DOORS */}
+      {/* WHAT WE FIX */}
       <section className="bg-surface">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <p className="text-gold font-bold uppercase tracking-wide text-sm mb-2">High-speed roll-up doors</p>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">Rytec · Rite-Hite · Albany · TNR · Efaflex · ASI</h2>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">Whatever's wrong with it — we fix it</h2>
           <p className="text-steel text-sm mb-8">
-            High-speed doors open 60–100 inches per second — dramatically reducing energy loss versus a sectional door left open. We service all major brands and stock common parts on every truck.
+            Parts on every truck — closers, hinges, latches, seals, panic devices, fire-rated hardware.<br />
+            All major hardware brands — LCN · Norton · Dorma · Von Duprin · Detex · Yale · Sargent · Schlage.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {highSpeedDoors.map((d) => (
-              <ProductCard key={d.model} {...d} />
+            {whatWeFix.map((s) => (
+              <div key={s.title} className="rounded-card bg-white border border-steel/10 p-6 shadow-card">
+                <h3 className="font-heading font-bold text-base text-navy-dark mb-2">{s.title}</h3>
+                <p className="text-sm text-steel leading-relaxed">{s.body}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FIRE-RATED DOORS */}
+      {/* MANDOOR TECH EXPLAINER */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <p className="text-gold font-bold uppercase tracking-wide text-sm mb-2">Fire-rated doors — BC Fire Code annual inspection required</p>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">UL-listed fire doors · Cookson · McKeon · Cornell · Wayne Dalton</h2>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">Everything you need to know about mandoor service</h2>
           <p className="text-steel text-sm mb-8 max-w-3xl">
-            BC Fire Code requires annual inspection and documentation of all fire-rated rolling steel doors. Our written report and door tag satisfy fire marshal and insurance requirements. We handle inspections, fusible link replacement, and any repairs required to bring a fire door back to compliance.
+            ANSI grades, fire ratings, inspection requirements, and why one visit should cover every door in your facility.
           </p>
-          <div className="grid sm:grid-cols-2 gap-5 max-w-3xl">
-            {fireDoors.map((d) => (
-              <ProductCard key={d.model} {...d} />
-            ))}
-          </div>
-
-          <div className="mt-10 rounded-card bg-navy-dark text-white p-8 max-w-3xl">
-            <h3 className="font-heading font-bold text-lg mb-3">What happens if you miss a fire door inspection?</h3>
-            <p className="text-white/75 text-sm leading-relaxed mb-3">
-              BC Fire Code Section 6.4.3 requires annual inspection and testing of all fire doors. Missing inspections can result in deficiency notices from the fire marshal, insurance voidance in the event of a fire, and potential liability exposure for the building owner.
-            </p>
-            <p className="text-white/75 text-sm leading-relaxed">
-              We carry the documentation forms and produce the written report on-site. Most fire door inspections take under an hour per door. Contact us to book annual inspections for your entire facility in one scheduled visit.
-            </p>
-          </div>
+          <Accordion items={mandoorTech} />
         </div>
       </section>
 
-      {/* COMMERCIAL OPERATORS */}
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <p className="text-gold font-bold uppercase tracking-wide text-sm mb-2">Commercial door operators & automation</p>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">LiftMaster · Genie · Linear · Chamberlain · Marantec · FAAC</h2>
-          <p className="text-steel text-sm mb-8">
-            Commercial operators run at 100,000-cycle ratings and integrate with loop detectors, access control, and building management systems. We install, service, and replace all major brands.
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {operators.map((o) => (
-              <ProductCard key={o.model} {...o} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PREVENTIVE MAINTENANCE EXPLAINER */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">Service programs · maintenance contracts · 24/7 emergency response</h2>
-          <p className="text-steel text-sm mb-8 max-w-3xl">
-            A failed commercial door doesn't just create inconvenience — it stops operations, creates security gaps, and may violate safety compliance. A PM program dramatically reduces emergency callouts and documents everything for insurance.
-          </p>
-          <Accordion items={sealTech} />
-        </div>
-      </section>
-
-      {/* WHY DOORCHAMP */}
+      {/* 21-POINT INSPECTION */}
       <section className="bg-navy-dark text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-5">
-              Why commercial properties choose DoorChamp
-            </h2>
-            <p className="text-white/75 leading-relaxed mb-4">
-              Richmond's warehouse and industrial district operates around the clock. We service commercial doors the same way — rapid response, written documentation, and service agreements that keep your facility running.
-            </p>
-            <p className="text-white/75 leading-relaxed">
-              Every technician carries common commercial parts — springs, cables, rollers, bottom seals, and control boards — so most repairs are done first visit.
-            </p>
-          </div>
-          <ul className="space-y-3">
-            {[
-              "12–20 min response within Richmond (business hours)",
-              "24/7 emergency line — on-call technician, not a call centre",
-              "WCB-compliant technicians on every commercial job",
-              "$5M liability coverage — COI available on request",
-              "Fire door inspection, testing & BC Fire Code documentation",
-              "Licensed & insured for all commercial and industrial work",
-              "Service agreements for property managers and strata councils",
-              "All major brands serviced — no proprietary lock-in",
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <IconCheck className="w-4 h-4 text-gold flex-shrink-0 mt-1" />
-                <span className="text-white/85 text-sm">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* 11-POINT INSPECTION */}
-      <section className="bg-surface">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">What gets checked on a commercial PM visit</h2>
-          <p className="text-steel text-sm mb-8 max-w-3xl">
-            Our commercial PM inspection covers all mechanical, safety, and operational systems. Every visit produces a written inspection report — suitable for insurance and fire marshal documentation.
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-2">What gets checked on every mandoor visit</h2>
+          <p className="text-white/70 text-sm mb-8 max-w-3xl">
+            Our 21-point mandoor inspection covers all mechanical, fire-rating, and operational items. Every visit produces a written report with a deficiency log and photos — suitable for fire marshal and insurance documentation.
           </p>
           <div className="grid sm:grid-cols-2 gap-3 mb-10">
-            {inspection.map((item) => (
+            {inspection21.map((item) => (
               <div key={item} className="flex items-start gap-3">
                 <IconCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                <span className="text-steel text-sm">{item}</span>
+                <span className="text-white/80 text-sm">{item}</span>
               </div>
             ))}
           </div>
           <div>
-            <p className="text-steel text-sm font-bold mb-3">Inspection intervals</p>
+            <p className="text-white/70 text-sm font-bold mb-3">Inspection intervals</p>
             <div className="flex flex-wrap gap-4 text-sm">
               {[
-                { freq: "Annual", desc: "once a year (light-cycle commercial)" },
-                { freq: "Bi-annual", desc: "every 6 months (standard distribution)" },
-                { freq: "Quarterly", desc: "every 3 months (24/7 high-cycle operations)" },
+                { freq: "Annual", desc: "once a year (light-traffic buildings)" },
+                { freq: "Bi-annual", desc: "every 6 months (standard commercial)" },
+                { freq: "Quarterly", desc: "every 3 months (high-traffic / fire-rated buildings)" },
               ].map(t => (
-                <div key={t.freq} className="rounded-card bg-white border border-steel/10 shadow-card px-4 py-3">
+                <div key={t.freq} className="rounded-card bg-white/10 px-4 py-3">
                   <span className="text-gold font-bold">{t.freq}</span>
-                  <span className="text-steel ml-2 text-sm">{t.desc}</span>
+                  <span className="text-white/60 ml-2">{t.desc}</span>
                 </div>
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* WHY DOORCHAMP */}
+      <section className="bg-surface">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-5">
+              Why Richmond buildings choose DoorChamp for mandoor service
+            </h2>
+            <p className="text-steel leading-relaxed mb-4">
+              A mandoor wedged open or failing to latch isn't just an inconvenience — it's a fire code violation, a security gap, and a liability. We fix the root cause on the first visit, document everything, and bundle it with your overhead door service so you deal with one company and one invoice.
+            </p>
+            <p className="text-steel leading-relaxed">
+              Every technician carries ANSI A250.8 compliant hardware, fire-rated components, and the full range of closer, hinge, latch, and panic device parts — so most repairs are done first visit.
+            </p>
+          </div>
+          <ul className="space-y-3">
+            {[
+              "Same-day Richmond response (business hours)",
+              "24/7 emergency line — on-call technician, not a call centre",
+              "ANSI A250.8 compliant hardware on every truck",
+              "UL-listed fire-rated components — no substitutions",
+              "Written inspection report for fire marshal and insurance",
+              "WCB-compliant technicians · $5M liability coverage",
+              "Bundled with overhead door PM — one invoice, one visit",
+              "Service agreements for property managers and strata councils",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-3">
+                <IconCheck className="w-4 h-4 text-gold flex-shrink-0 mt-1" />
+                <span className="text-steel text-sm">{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -542,15 +269,15 @@ export default function CommercialPage() {
       {/* CTA */}
       <section className="bg-navy-dark text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 text-center">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-3">Commercial door problem in Richmond? Call DoorChamp.</h2>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-3">Mandoor problem in Richmond? We fix it before the inspector finds it.</h2>
           <p className="text-white/70 text-base max-w-2xl mx-auto mb-8 leading-relaxed">
-            Same-day response for businesses. Emergency line answered by a technician. Request a quote or call for emergency response — we'll give you a written firm price on-site before any work starts.
+            Same-day service for businesses. ANSI A250.8 compliant hardware on every truck. Call for emergency response or request a written quote — firm price before any work starts.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={siteConfig.phone.href} className="inline-flex items-center justify-center gap-2 rounded-card bg-gold px-7 py-3.5 text-sm font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors">
               <IconPhone className="w-4 h-4" /> {siteConfig.phone.display}
             </a>
-            <Link href="/request-a-quote/" className="inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors">
+            <Link href="/request-a-quote/" className="inline-flex items-center justify-center rounded-card bg-green-600 text-white px-7 py-3.5 text-sm font-bold hover:bg-green-700 transition-colors">
               Request a Free Quote →
             </Link>
           </div>
