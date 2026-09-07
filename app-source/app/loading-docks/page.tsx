@@ -21,13 +21,13 @@ const equipmentCategories = [
 ];
 
 const pricingItems = [
-  { label: "Bumper replacement (each)", price: "$80–$180 installed", note: "Saves $4k–$12k in dock-face concrete repair" },
-  { label: "Edge-of-dock leveler (new)", price: "$2,400–$4,800 installed", note: "Low-cost retrofit · no pit construction needed · 20–30k lb cap" },
-  { label: "Dock leveler repair", price: "from $385 labour + parts", note: "First 90 min on-site · most repairs first-visit · parts on truck" },
-  { label: "New hydraulic pit leveler", price: "$9,500–$15,500 installed", note: "35,000 lb cap · standard 6\'×8\' deck · in existing pit" },
-  { label: "Vehicle restraint (hook) install", price: "$5,800–$8,400 installed", note: "Hook-style w/ traffic-signal interlock" },
-  { label: "Dock seal re-skin / replace", price: "$650–$3,800 per bay", note: "Pad covers · head curtain · full seal" },
-  { label: "Full dock walk & audit", price: "Free in Richmond", note: "Equipment inventory + written proposal in 48 hrs" },
+  { label: "Bumper replacement (each)", price: "$80–$180 installed", note: "Saves $4k–$12k in dock-face concrete repair", img: "/images/icon-dock-bumper.webp" },
+  { label: "Edge-of-dock leveler (new)", price: "$2,400–$4,800 installed", note: "Low-cost retrofit · no pit construction needed · 20–30k lb cap", img: "/images/icon-dock-edge.webp" },
+  { label: "Dock leveler repair", price: "from $385 labour + parts", note: "First 90 min on-site · most repairs first-visit · parts on truck", img: "/images/icon-dock-leveler-repair.webp" },
+  { label: "New hydraulic pit leveler", price: "$9,500–$15,500 installed", note: "35,000 lb cap · standard 6\'×8\' deck · in existing pit", img: "/images/icon-dock-leveler-new.webp" },
+  { label: "Vehicle restraint (hook) install", price: "$5,800–$8,400 installed", note: "Hook-style w/ traffic-signal interlock", img: "/images/icon-dock-restraint-hook.webp" },
+  { label: "Dock seal re-skin / replace", price: "$650–$3,800 per bay", note: "Pad covers · head curtain · full seal", img: "/images/icon-dock-seal.webp" },
+  { label: "Full dock walk & audit", price: "Free in Richmond", note: "Equipment inventory + written proposal in 48 hrs", img: "/images/icon-dock-audit.webp" },
 ];
 
 const levelers = [
@@ -338,25 +338,17 @@ export default function LoadingDocksPage() {
           <p className="text-steel text-sm mb-8">
             Dock equipment work is bundled into your warehouse maintenance contract — same crew, same visit, same warranty. Standalone callouts also available.
           </p>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-steel/15">
-                  <th className="text-left font-bold text-navy-dark py-3 pr-6">Service</th>
-                  <th className="text-left font-bold text-navy-dark py-3 pr-6">Price</th>
-                  <th className="text-left font-bold text-navy-dark py-3">Notes</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-steel/10">
-                {pricingItems.map((item) => (
-                  <tr key={item.label} className="hover:bg-surface transition-colors">
-                    <td className="py-3.5 pr-6 font-medium text-navy-dark">{item.label}</td>
-                    <td className="py-3.5 pr-6 text-gold font-bold whitespace-nowrap">{item.price}</td>
-                    <td className="py-3.5 text-steel">{item.note}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {pricingItems.map((item) => (
+              <div key={item.label} className="rounded-card border border-steel/15 bg-white p-5 flex flex-col">
+                <div className="flex items-start gap-3 mb-4">
+                  <img src={item.img} alt={item.label} className="w-16 h-16 object-cover rounded flex-shrink-0" />
+                  <span className="text-gold font-bold uppercase tracking-wide text-xs leading-snug mt-1">{item.label}</span>
+                </div>
+                <p className="font-heading font-extrabold text-navy-dark text-xl leading-tight mb-2">{item.price}</p>
+                <p className="text-xs text-steel leading-relaxed mt-auto">{item.note}</p>
+              </div>
+            ))}
           </div>
           <p className="text-xs text-steel mt-6">
             Prices for Richmond locations. Every project gets a written firm quote on-site before any work begins. 2-year labour warranty on all installs.
