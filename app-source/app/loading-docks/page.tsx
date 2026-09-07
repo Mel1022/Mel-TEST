@@ -304,7 +304,7 @@ export default function LoadingDocksPage() {
             <a href={siteConfig.phone.href} className="inline-flex items-center justify-center gap-2 rounded-card bg-gold px-7 py-3.5 text-sm font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors">
               <IconPhone className="w-4 h-4" /> Emergency: {siteConfig.phone.display}
             </a>
-            <a href={`sms:${siteConfig.phone.raw ?? "+17788000769"}`} className="inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors">
+            <a href="sms:+17788000769" className="inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors">
               💬 Or text the on-call tech
             </a>
           </div>
