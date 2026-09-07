@@ -21,71 +21,321 @@ const pricingItems = [
   { label: "New 90-min fire-rated mandoor", price: "from $2,189 installed", note: "Fire frame · fire-rated closer · panic device · label inspection", img: "/images/icon-mandoor-firerated.jpg" },
 ];
 
-const whatWeFix = [
-  { title: "Door closers", body: "LCN · Norton · Dorma · Sargent · Yale. Hydraulic adjustment, arm replacement, full closer swap. Speed and latch action set to ANSI A156.4." },
-  { title: "Hinges & pivot sets", body: "Continuous hinges, standard butt hinges, pivot sets. Worn pin replacement, full hinge replacement, frame repair after hinge pull-out." },
-  { title: "Latches & locksets", body: "Cylindrical, mortise, and exit-device latch bolts. Sticking latch, misaligned strike, broken cylinder or thumb-turn." },
-  { title: "Door seals & sweeps", body: "Bottom sweeps, perimeter seals, astragals, intumescent strips. Air infiltration, smoke sealing, and draft control on all door types." },
-  { title: "Panic devices & exit hardware", body: "Von Duprin · Detex · Yale · Sargent. Push-bar adjustment, dogging, latch retraction, full device replacement. ANSI A250.8 hardware on every truck." },
-  { title: "Fire labels & compliance", body: "Peeling, missing, or painted-over fire labels are a code violation. We replace them with UL-listed labels and document the repair in a written report." },
-  { title: "Door frames & closers", body: "Bent, twisted, or pulled-out frames repaired or replaced. We use steel frames with the correct fire rating for the assembly — no wood substitutions in rated openings." },
-  { title: "Access control & electric strikes", body: "Electric strikes, magnetic locks, door position switches, and REX sensors. Coordination with your access control system or simple standalone keyed hardware." },
+const hardwareFailures = [
+  {
+    num: "1",
+    title: "Door Closer Failure",
+    body: "The door is still fine — the closer above it isn't. Hydraulic fluid leaks internally, the valve seat wears, or the adjusting screws vibrate loose. The door stops pulling itself shut, the fire separation is broken, and you have a code violation the moment a fire marshal walks through.\n\nCommon brands we service: LCN · Norton · Dorma · Sargent · Stanley · Yale. Parts on every truck — most closer repairs are completed same visit.",
+  },
+  {
+    num: "2",
+    title: "Hinge Sag and Stripped Screws",
+    body: "A heavy steel mandoor on worn hinges drops at the latch end. The door drags on the frame, the latch won't engage, and the closer fights the misalignment until it fails too. Stripped screw holes in hollow metal frames are a separate but related problem — the screws spin but don't hold.\n\nWe replace worn hinge pins, fill stripped holes with anchoring epoxy, and reinstall with full-length hinge screws. Continuous hinge replacements and full hinge sets done on-site.",
+  },
+  {
+    num: "3",
+    title: "Panic Hardware (Exit Device) Failure",
+    body: "Push-bar panic devices take thousands of cycles a year. The latch retraction mechanism wears, the push bar sags, or the dogging cam fails. In a fire, a panic device that doesn't retract cleanly is a life-safety failure — and in a code inspection, a non-functioning exit device is an immediate deficiency.\n\nBrands we carry: Von Duprin · Detex · Yale · Sargent. Push-bar adjustment, dogging, latch retraction repair, and full device replacement — all done first visit.",
+  },
+  {
+    num: "4",
+    title: "Weather Seal Degradation",
+    body: "The bottom sweep wears through. The perimeter seal compresses and loses contact. On fire-rated doors, the intumescent strip that expands to seal smoke and flame becomes brittle and cracks. The result: draft, water infiltration, and a fire assembly that no longer works as rated.\n\nWe replace bottom sweeps, perimeter seals, door shoes, astragals, and intumescent strips. Only UL-listed intumescent seals on rated assemblies — no substitutions.",
+  },
+  {
+    num: "5",
+    title: "Frame Damage",
+    body: "A forklift clip, a door kicked open too hard, or years of settling can bend or pull a frame out of plumb. A twisted frame means the door can't close squarely — the closer fights the misalignment and fails early, the latch won't seat, and the fire separation is compromised.\n\nWe straighten bent frames, re-anchor pulled-out frames, and replace frames when damage is too severe. Steel replacement frames with the correct fire rating — no wood substitutions in rated openings.",
+  },
 ];
 
-const mandoorTech = [
+const closers = [
   {
-    title: "What's a mandoor and why does it need service?",
-    summary: "Any walk-through door in a commercial building — back doors, stairwells, mechanical rooms, fire exits.",
-    body: "Every commercial building in Richmond has mandoors. Unlike an overhead door, a mandoor closes itself (via the door closer), latches automatically, and in rated assemblies must maintain a fire separation. That makes three things fail: the closer loses hydraulic fluid and stops pulling the door fully shut, the latch wears and stops engaging, and the door frame shifts so the door drags or won't seat.\n\nA mandoor wedged open with a block is a code violation, a fire hazard, and a security gap. We fix the root cause — not just the symptom.",
+    badge: "HEAVY-DUTY SURFACE",
+    brandModel: "LCN 4040XP",
+    title: "LCN 4040XP / 4030 Series",
+    desc: "The North American workhorse. The single most common closer on Richmond commercial mandoors.",
+    features: ["Cast iron body", "Adjustable spring sizes 1–6", "ANSI A156.4 Grade 1", "Hold-open arm option", "Backcheck + delayed action", "10-yr warranty"],
+    viewUrl: "https://www.lcnclosers.com",
+    viewLabel: "View on LCN (Allegion)",
   },
   {
-    title: "ANSI A250.8 — what it means and why it matters",
-    summary: "The North American standard for steel door and frame construction. Non-compliant hardware can void your fire-rating.",
-    body: "ANSI A250.8 specifies the construction grade of steel doors and frames:\n• Level 1: light commercial (interior, low-cycle)\n• Level 2: heavy commercial (standard warehouses, offices)\n• Level 3: extra heavy duty (high-traffic stairwells, industrial)\n• Level 4: maximum duty (extreme impact environments)\n\nA non-ANSI-rated replacement door installed in a fire-rated opening voids the fire assembly. We carry ANSI A250.8 compliant hardware on every truck and specify the correct grade for the opening.",
+    badge: "HEAVY-DUTY SURFACE",
+    brandModel: "NORTON 8501/8500",
+    title: "Norton 8501 / 8500 Series",
+    desc: "Premium grade-1 closer. Common in Richmond institutional and high-cycle commercial.",
+    features: ["Tri-style: regular/parallel/top-jamb", "Sizes 1–6 spring", "Adjustable hydraulic backcheck", "ANSI A156.4 Grade 1", "Stainless arm available", "Fire-rated compatible"],
+    viewUrl: "https://www.nortondoorcontrols.com",
+    viewLabel: "View on Norton (ASSA ABLOY)",
   },
   {
-    title: "Fire-rated mandoors — what BC Fire Code requires",
-    summary: "Rated assemblies (door + frame + closer + hardware) must be UL-listed and maintained. Annual inspection is required.",
-    body: "A fire-rated mandoor is a complete assembly — the door leaf, frame, hinges, closer, latch, and seals all carry the rating together. Changing one component to a non-rated substitute can void the entire assembly's fire rating.\n\nBC Fire Code requires:\n• Annual inspection of all fire-rated door assemblies\n• Written documentation of inspection results\n• Repair of any deficiency before the next occupancy\n\nCommon violations we find on inspection: painted-over fire labels, non-rated replacement hardware, missing intumescent seals, wedged-open doors, and closers adjusted to hold the door open.",
+    badge: "INDUSTRIAL CONCEALED",
+    brandModel: "DORMA TS83",
+    title: "DormaKaba TS83",
+    desc: "German-engineered. Common on Richmond European-influenced commercial buildings and high-end strata.",
+    features: ["Adjustable EN 2–6 force", "Built-in hold-open option", "Slim transom design", "Fire-rated UL 10C", "10-yr warranty", "Surface or transom mount"],
+    viewUrl: "https://www.dormakaba.com",
+    viewLabel: "View on DormaKaba.com",
   },
   {
-    title: "Why one visit covers all your mandoors",
-    summary: "Same crew, same truck, same invoice — bundled with your overhead door or dock PM visit.",
-    body: "Most Richmond facilities pay two separate service companies to look after their overhead doors and their mandoors. We handle both on the same visit.\n\nOne technician walks the property, inspects every mandoor and overhead door, documents all deficiencies, and returns a written proposal. Work is invoiced on a single ticket. Parts carried for both overhead doors and mandoors — closers, hinges, latches, panic devices, bottom seals, and fire-rated hardware.\n\nFor facilities with 4+ mandoors, per-door rates drop sharply on volume — see the pricing section above.",
+    badge: "GRADE-1 SURFACE",
+    brandModel: "SARGENT 281 / 351",
+    title: "Sargent 281 / 351 Series",
+    desc: "Robust commercial closer. Common on Richmond warehouse personnel entries — built to take abuse.",
+    features: ["ANSI A156.4 Grade 1", "Sizes 1–6", "Adjustable backcheck + delayed action", "Hold-open optional", "Stainless arm available", "10-yr warranty"],
+    viewUrl: "https://www.sargentlock.com",
+    viewLabel: "View on SargentLock.com",
   },
   {
-    title: "What's included in the 21-point mandoor inspection?",
-    summary: "A full written inspection of every mandoor on the property — suitable for fire marshal and insurance documentation.",
-    body: "Our 21-point mandoor inspection covers:\n1. Door alignment and frame plumb/square check\n2. Closer speed (sweep, latch, and backcheck)\n3. Closer arm and bracket condition\n4. Latch bolt engagement and strike alignment\n5. Hinge pin wear and hinge plate condition\n6. Bottom sweep condition and seal contact\n7. Perimeter seal condition\n8. Intumescent strip integrity (rated doors)\n9. Fire label condition and legibility\n10. Door leaf face and edge condition\n11. Vision panel glazing and glazing bead (if present)\n12. Threshold condition\n13. Panic device latch retraction and dogging (if applicable)\n14. Electric strike or magnetic lock function (if present)\n15. Door position switch function (if present)\n16. Self-closing function (must close and latch from 5°)\n17. Frame anchor condition at head and jamb\n18. Smoke seal condition (where required)\n19. Undercut clearance check\n20. Key function test\n21. Written report with deficiency log and photo documentation",
+    badge: "ELECTROMAGNETIC HOLD-OPEN",
+    brandModel: "LCN SEM 7800",
+    title: "LCN SEM Smoke-Activated Hold-Open",
+    desc: "The right way to legally prop a fire-rated door open — auto-releases on alarm. Replaces the wedge.",
+    features: ["Magnetic hold-open arm", "Releases on fire alarm signal", "Code-compliant prop-open", "Wired to fire panel", "UL listed", "Required for legal hold-open"],
+    viewUrl: "https://www.lcnclosers.com",
+    viewLabel: "View on LCN (Allegion)",
   },
+  {
+    badge: "PNEUMATIC INDUSTRIAL",
+    brandModel: "SARGENT 1330",
+    title: "Sargent 1330 Pneumatic Closer",
+    desc: "Specialty closer for high-cycle warehouse use. Pneumatic operation, longer life under heavy use.",
+    features: ["Pneumatic operation", "Heaviest-duty available", "Cold-weather compatible", "10-yr warranty", "For >500 cycles/day", "Often replaces failed hydraulic units"],
+    viewUrl: "https://www.sargentlock.com",
+    viewLabel: "View on SargentLock.com",
+  },
+];
+
+const panicDevices = [
+  {
+    badge: "INDUSTRY STANDARD RIM",
+    brandModel: "VON DUPRIN 99",
+    title: "Von Duprin 99 Rim Exit Device",
+    desc: "The standard panic bar across North American commercial — used where the building owner wants 50-year hardware.",
+    features: ["ANSI A156.3 Grade 1", "Fire-rated UL 10C", "Rim, mortise, surface vertical rod, concealed vertical rod options", "ADA push-pad design", "Stainless or anodized finish"],
+    viewUrl: "https://www.vonduprin.com",
+    viewLabel: "View on Von Duprin (Allegion)",
+  },
+  {
+    badge: "HEAVY COMMERCIAL RIM",
+    brandModel: "SARGENT 80 SERIES",
+    title: "Sargent 80 Series Exit Device",
+    desc: "Grade-1 panic device with electrified options. Common in Richmond high-security and access-controlled commercial.",
+    features: ["ANSI A156.3 Grade 1", "Fire-rated variants", "Electrified rim / mortise options", "Request-to-exit signalling", "10-yr warranty", "Direct retrofit for Von Duprin 99"],
+    viewUrl: "https://www.sargentlock.com",
+    viewLabel: "View on SargentLock.com",
+  },
+  {
+    badge: "CONCEALED VERTICAL ROD",
+    brandModel: "YALE 7000 / FALCON 25",
+    title: "Yale 7000 / Falcon 25 CVR",
+    desc: "Concealed vertical-rod variant — used where aesthetics matter on Richmond commercial entries.",
+    features: ["Rods hidden inside door", "Top + bottom latching", "Fire-rated 3-hr", "Wider door applications", "Higher cost, cleaner look", "Pairs available"],
+    viewUrl: "https://www.assaabloydss.com",
+    viewLabel: "View on Yale (ASSA ABLOY)",
+  },
+  {
+    badge: "INDUSTRIAL TOUCH-BAR",
+    brandModel: "DETEX ADVANTEX / V40 SERIES",
+    title: "Detex V40 / Advantex",
+    desc: "Industrial-grade alarm and night-latch exit devices. Common at Richmond warehouse delayed-egress and back-of-house.",
+    features: ["Audible/visual alarm options", "Delayed-egress models", "Cellular-tested rugged build", "Battery backup variants", "Tamper-resistant", "Ideal for night-security applications"],
+    viewUrl: "https://www.detex.com",
+    viewLabel: "View on Detex.com",
+  },
+];
+
+const locks = [
+  {
+    badge: "GRADE-1 MORTISE",
+    brandModel: "SCHLAGE L9000",
+    title: "Schlage L9000 Mortise Lock",
+    desc: "The premium mortise lockset for Richmond commercial — used where the building owner wants 50-year hardware.",
+    features: ["ANSI A156.13 Grade 1", "Replaceable stainless faceplate", "Cylinder-controlled trim", "Modular function changes", "Lifetime mechanical warranty", "Best-in-class corrosion resistance"],
+    viewUrl: "https://www.schlage.com",
+    viewLabel: "View on Schlage (Allegion)",
+  },
+  {
+    badge: "GRADE-1 CYLINDRICAL",
+    brandModel: "SCHLAGE AL SERIES",
+    title: "Schlage AL Series Cylindrical Lock",
+    desc: "Grade-1 cylindrical lock for commercial mandoors that don't need mortise. Standard Richmond commercial spec.",
+    features: ["ANSI A156.2 Grade 1", "2-3/4\" backset standard", "Anti-tamper trim", "Stainless construction", "ADA-compliant levers", "Easy retrofit"],
+    viewUrl: "https://www.schlage.com",
+    viewLabel: "View on Schlage (Allegion)",
+  },
+  {
+    badge: "HEAVY-DUTY MORTISE",
+    brandModel: "SARGENT 8200",
+    title: "Sargent 8200 Mortise Lockset",
+    desc: "Commercial mortise alternative to Schlage L9000. Common on Richmond institutional and government buildings.",
+    features: ["ANSI A156.13 Grade 1", "Construction master keying", "Anti-friction latch bolt", "Architectural finishes", "Lifetime warranty", "Cross-references to Yale 8800"],
+    viewUrl: "https://www.sargentlock.com",
+    viewLabel: "View on SargentLock.com",
+  },
+  {
+    badge: "ELECTRIFIED MORTISE",
+    brandModel: "SCHLAGE L9000 EL/EU",
+    title: "Schlage L9000 Electrified Mortise",
+    desc: "Electric-strike or electrified-trim mortise for access-controlled Richmond commercial doors.",
+    features: ["Fail-safe (EL) or fail-secure (EU)", "12V or 24V DC", "Request-to-exit signal", "Door position switch optional", "Integrates with card-reader access", "ADA compliant"],
+    viewUrl: "https://www.schlage.com",
+    viewLabel: "View on Schlage (Allegion)",
+  },
+];
+
+const hinges = [
+  {
+    badge: "HEAVY-DUTY BALL-BEARING",
+    brandModel: "HAGER BB1199 / BB1191",
+    title: "Hager BB1199 / BB1191",
+    desc: "The most common ball-bearing hinge on Richmond hollow-metal mandoors. 4½\"×4½\" standard.",
+    features: ["4½\"×4½\" standard · 5\"×4½\" heavy", "Ball-bearing for high cycle", "Stainless-clad option", "NRP (non-removable pin) available", "Stainless steel option", "Lifetime warranty"],
+    viewUrl: "https://www.hagerco.com",
+    viewLabel: "View on Hager.com",
+  },
+  {
+    badge: "CONTINUOUS & BARREL",
+    brandModel: "STANLEY BBRC / ASSA ABLOY CHK",
+    title: "Continuous hinge — gear or pin-and-barrel",
+    desc: "Continuous hinges for high-cycle Richmond warehouse and facility entries. Eliminates hinge point-load failures.",
+    features: ["Full door-edge support", "Ideal for high-cycle doors", "Aluminum or steel frame-friendly", "Aluminum or steel, multiple finishes", "NRP (non-removable pin) options", "Single hinge — simpler alignment"],
+    viewUrl: "https://www.stanleysecurity.com",
+    viewLabel: "View on Stanley (ASSA ABLOY CHK)",
+  },
+  {
+    badge: "SPRING HINGE",
+    brandModel: "BOMMER SPRING HINGE",
+    title: "Bommer Spring Hinge",
+    desc: "Self-closing spring hinge for Richmond mandoors that must self-close but don't justify a door closer.",
+    features: ["Built-in spring release", "No surface closer needed", "Fire-code suitable", "Tension adjustable", "Lower cost than closer equipment", "Stainless 4\"×4\" · 4½\"×4½\""],
+    viewUrl: "https://www.bommer.com",
+    viewLabel: "View on Bommer.com",
+  },
+  {
+    badge: "STAINLESS HEAVY-CYCLE",
+    brandModel: "STANLEY HEAVY-CYCLE SERIES",
+    title: "Stanley heavy-cycle hinges",
+    desc: "Stainless steel hinges for Richmond food-grade, wash-down, and coastal environments.",
+    features: ["304 or 316 stainless construction", "Continuous-service", "Ball-bearing pin", "Coastal environment approved", "Greater thickness standard", "Specify stainless for food/wash-down"],
+    viewUrl: "https://www.hagerco.com",
+    viewLabel: "View on Hager.com",
+  },
+];
+
+const hollowMetalDoors = [
+  {
+    badge: "STANDARD HOLLOW METAL",
+    brandModel: "CURRIES 707 / STEELCRAFT 1. SERIES",
+    title: "Curries 707 / Steelcraft 1. Series",
+    desc: "The broad and wide Richmond door. Most available Richmond door — where the building owner wants 30-70 sizes.",
+    features: ["20 to 70 sizes", "ANSI A250.8 Level 2 standard", "Embossment for stile options", "A variety of core options", "5–10 business-day lead", "Available from ASSA ABLOY"],
+    viewUrl: "https://www.assaabloydss.com",
+    viewLabel: "View on ASSA ABLOY (catalogue)",
+  },
+  {
+    badge: "FIRE-RATED HOLLOW METAL",
+    brandModel: "STEELCRAFT L-SERIES FIRE-RATED",
+    title: "Steelcraft L-Series Fire-Rated",
+    desc: "UL-listed fire-rated hollow metal. Multiple fire ratings from LCN Allegion rated frames. Richmond standard.",
+    features: ["20, 45, 60, 90-min fire ratings", "17 or 18 closers top and sides", "Pin-replaceable, lockable steel", "Embossment to lower size tolerance", "Various core options", "For fire-rated openings only"],
+    viewUrl: "https://www.assaabloydss.com",
+    viewLabel: "View on Steelcraft (catalogue)",
+  },
+  {
+    badge: "HEAVY-DUTY INDUSTRIAL",
+    brandModel: "DCI / PEMKO 16-GAUGE INDUSTRIAL",
+    title: "DCI / Pemko 16-gauge industrial",
+    desc: "Heavy-gauge hollow metal for Richmond warehouse/commercial entries that take forklift and cart abuse.",
+    features: ["16-ga steel minimum", "Max-cycle option", "Flush/raised panel options", "Dimensional frame drop", "Maximum-grade reinforcement", "Available to maximum gauge dimension"],
+    viewUrl: "https://www.assaabloydss.com",
+    viewLabel: "View on Steelcraft (catalogue)",
+  },
+  {
+    badge: "ARCHITECTURAL FINISHES",
+    brandModel: "ARCHITECTURAL-FINISH MANDOORS",
+    title: "Architectural-finish mandoors",
+    desc: "Factory-finished stainless or rough-coat mandoor for Richmond commercial strata that have the tools.",
+    features: ["Factory-finish stain", "Texture options available", "Custom sizes standard", "Standard A250.8 base", "Field + paint available", "ASA + ANSI colours available (SPEC)"],
+    viewUrl: "https://www.assaabloydss.com",
+    viewLabel: "View on ASSA ABLOY (catalogue)",
+  },
+];
+
+const fireRatings = [
+  { min: "20 min", use: "Interior non-rated corridor openings. NFPA 80 minimum for doors that aren't part of a fire-rated wall assembly. Common in offices and retail." },
+  { min: "45 min", use: "1¾-hour assemblies at interior partitions, mechanical rooms, and low-risk service corridors. Often specified by architects in mixed-use buildings." },
+  { min: "60 min", use: "Standard warehouse and light-industrial fire separations. Required at occupancy boundaries in most BC industrial buildings." },
+  { min: "90 min", use: "The most common rating in Richmond commercial buildings. Required at 2-hour-rated separations — between floors, between tenants, and at exit corridor walls." },
+  { min: "180 min", use: "Stairwell enclosures and high-rise buildings. 3-hour-rated assemblies at exit stairs and vertical shafts. Full panic hardware required by BC Fire Code." },
+];
+
+const specLanguage = [
+  "ANSI A250.8 Level 2 (heavy commercial) minimum — 16-gauge cold-rolled steel door face",
+  "Steel frame, 16-gauge welded construction with full-height anchors at head and jambs",
+  "Door thickness: 1¾\" (45mm) standard commercial — 1⅜\" for interior non-rated applications only",
+  "Fire rating: 20 / 45 / 60 / 90-min UL-listed assembly (door + frame + closer + hardware must all carry the rating)",
+  "Door closer: ANSI A156.4 Grade 1 — surface-mounted or concealed overhead",
+  "Lockset: ANSI A156.13 mortise, or ANSI A156.2 cylindrical — Grade 1 commercial minimum",
+  "Panic device: UL listed · ANSI A156.3 · must be listed for the fire rating of the opening",
+  "Hinges: NRP (non-removable pin) security hinges on outswing exterior and stairwell doors",
+  "Brands: Allegion (LCN, Schlage, Von Duprin) · ASSA ABLOY (Yale, Norton, Sargent) · Stanley Security",
 ];
 
 const faqs = [
-  { q: "What's a mandoor?", a: "A mandoor (man door) is any walk-through door in a commercial building — back doors, stairwell doors, mechanical room doors, fire exits, and interior corridor doors. Unlike a garage door, it closes itself via a door closer and latches automatically." },
-  { q: "Can you fix a mandoor on the same visit as my overhead door?", a: "Yes — that's the point. Same technician, same truck, same invoice. We carry mandoor parts (closers, hinges, latches, panic devices, seals, fire-rated hardware) alongside overhead door parts on every commercial truck." },
-  { q: "My door closer keeps losing adjustment. Why?", a: "Three causes: the valve seat is worn and leaking hydraulic fluid internally (replace the closer), the adjusting screws are vibrating loose (thread-lock and re-adjust), or the door is out of alignment causing the closer to work harder than it's designed for (fix the frame first, then adjust the closer)." },
-  { q: "What does ANSI A250.8 compliant mean?", a: "ANSI A250.8 is the North American standard for steel door and frame construction. It defines four grades by duty level (light, heavy, extra heavy, maximum duty). We specify and install the correct ANSI grade for the opening — important because a non-compliant door installed in a fire-rated assembly voids the fire rating." },
-  { q: "Is a fire-rated mandoor just a heavier door, or is it a complete assembly?", a: "It's a complete assembly — door leaf, frame, hinges, closer, latch, and seals all carry the rating together. Swapping one component (e.g. installing a non-rated closer) voids the entire assembly's fire rating. We replace fire-rated mandoor components with UL-listed equivalents only." },
-  { q: "What's the BC Fire Code requirement for fire-rated mandoor inspections?", a: "BC Fire Code requires annual inspection and documentation of all fire-rated door assemblies. The inspection must be documented with a written report. Missing records can result in fire marshal deficiency notices and insurance issues. We produce the written report on-site." },
-  { q: "Can you replace a fire label on a mandoor?", a: "Yes. A peeling, missing, or painted-over fire label is a code violation. We replace them with UL-listed labels and document the replacement in the inspection report." },
-  { q: "How long does a whole-building mandoor inspection take?", a: "Roughly 20–30 minutes per door for a thorough inspection plus report. A building with 10 mandoors typically takes 3–4 hours including documentation. We book it as a half-day or full-day visit depending on door count." },
-  { q: "Can you service mandoors in strata warehouse units?", a: "Yes. We work with strata councils, property managers, and individual unit owners. Mandoor maintenance in a strata warehouse is typically the unit owner's responsibility, but we can coordinate directly with the strata manager if needed." },
-  { q: "Do you carry panic device hardware on the truck?", a: "Yes. We carry Von Duprin, Detex, Yale, and Sargent panic devices and repair parts. Most panic device repairs — push-bar adjustment, dogging, latch retraction — are completed first visit." },
+  { q: "What's the difference between a mandoor and a regular pedestrian door?", a: "A mandoor (man door) is a commercial-grade walk-through door in a steel frame with a commercial door closer, commercial latch, and — in rated openings — fire-rated hardware throughout. A residential door uses lighter construction, residential-grade hardware, and is not suitable for commercial occupancy under BC Building Code." },
+  { q: "Can a fire-rated door be propped open?", a: "Only with a code-compliant electromagnetic hold-open device (like the LCN SEM) that automatically releases when the fire alarm activates. A wedge, brick, or tied-open door closer violates BC Fire Code and voids the fire assembly. We install and wire code-compliant hold-opens." },
+  { q: "What's the typical lifespan of a commercial mandoor closer?", a: "10–15 years under normal commercial use. High-cycle doors (>200 opens/day) may need replacement at 5–8 years. Pneumatic closers typically outlast hydraulic units under heavy use. We stock the most common units on every truck — closer replacement is a 30-minute job." },
+  { q: "Can you fix my building's mandoors to match?", a: "Yes. We can source matching hardware finishes (satin stainless, dark bronze, black) across closer, latch, hinge, and panic device for a consistent look. Finish matching is common in strata buildings and high-end commercial renovations." },
+  { q: "What's the difference between hollow metal and aluminium entrance doors?", a: "Hollow metal doors (steel) are used for fire-rated, security, and service applications — warehouses, stairwells, mechanical rooms. Aluminium entrance doors are used for storefront and lobby entries where aesthetics matter more than fire rating. We service hollow metal; aluminium entrance doors are a different trade." },
+  { q: "Can you supply doors in custom sizes?", a: "Yes. Standard sizes (32\"×80\", 36\"×80\", 36\"×84\") are typically 5–10 business days. Custom widths and heights are 3–6 weeks from Curries, Steelcraft, or DCI. We'll quote firm lead times and price before you commit." },
+  { q: "How do I know if my building's mandoors are fire-rated?", a: "Look for a fire label stamped or riveted to the top rail or hinge edge of the door. It shows the UL listing, the fire rating in minutes, and the manufacturer. If the label is missing, painted over, or illegible, that's a code violation — call us for a replacement." },
+  { q: "Do you handle electrified hardware — magnetic locks, electric strikes, access control?", a: "Yes. We supply and install electric strikes, magnetic locks, request-to-exit sensors, and door position switches. For complex access control systems (multi-reader, software-managed), we coordinate with your IT or access control integrator — we handle the door hardware side." },
+  { q: "How quickly can a new fire-rated mandoor be installed?", a: "Standard fire-rated sizes (36\"×80\", 90-min rated) from stock: 1–3 business days from order to installation. Custom sizes: 3–6 weeks lead time. We'll remove the old door and frame, install the new assembly, set and test all hardware, and produce the written fire-label inspection report same day." },
+  { q: "Can a strata corporation contract mandoor service alongside garage door service?", a: "Yes — that's the most common arrangement for Richmond strata warehouse complexes. One facility contract covers overhead doors, dock equipment, and mandoors for the entire property. Single invoice, single visit schedule, single point of contact. Contact us for a property walk-through and quote." },
 ];
 
-const inspection21 = [
-  "Door closer speed (sweep, latch, backcheck) and arm condition",
-  "Latch bolt engagement, strike alignment, and bolt throw",
-  "Hinge pin wear and hinge plate condition",
-  "Bottom sweep seal contact and condition",
-  "Perimeter seal and intumescent strip integrity",
-  "Fire label condition and legibility",
-  "Self-closing function — must close and latch from 5°",
-  "Door alignment and frame plumb/square check",
-  "Panic device latch retraction and dogging (if present)",
-  "Electric strike / magnetic lock function (if present)",
-  "Written deficiency report with photo documentation",
-];
+function ProductCard({ badge, brandModel, title, desc, features, viewUrl, viewLabel }: {
+  badge: string;
+  brandModel: string;
+  title: string;
+  desc: string;
+  features: string[];
+  viewUrl?: string;
+  viewLabel?: string;
+}) {
+  return (
+    <div className="rounded-card border border-steel/15 bg-white flex flex-col overflow-hidden shadow-card">
+      <div className="relative bg-steel/5 h-44 flex items-center justify-center">
+        <span className="text-steel/30 text-sm text-center px-4">{title}</span>
+        <span className="absolute top-3 right-3 bg-navy-dark text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">
+          {badge}
+        </span>
+      </div>
+      <div className="p-5 flex flex-col flex-1">
+        <p className="text-gold font-bold uppercase tracking-wide text-xs mb-1">{brandModel}</p>
+        <h3 className="font-heading font-bold text-navy-dark text-base mb-2 leading-snug">{title}</h3>
+        <p className="text-xs text-steel italic mb-3 leading-relaxed">{desc}</p>
+        <ul className="space-y-1 mb-4 flex-1">
+          {features.map((f) => (
+            <li key={f} className="flex items-start gap-2 text-xs text-steel">
+              <IconCheck className="w-3.5 h-3.5 text-gold flex-shrink-0 mt-0.5" />
+              <span>{f}</span>
+            </li>
+          ))}
+        </ul>
+        {viewUrl && (
+          <a href={viewUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-steel/60 hover:text-steel mb-3 flex items-center gap-1">
+            <span>↗</span> {viewLabel}
+          </a>
+        )}
+        <Link href="/request-a-quote/" className="block text-center bg-gold text-navy-dark font-bold text-sm py-2.5 rounded-card hover:bg-gold-dark hover:text-white transition-colors">
+          Get a Quote
+        </Link>
+      </div>
+    </div>
+  );
+}
 
 export default function CommercialPage() {
   return (
@@ -137,7 +387,7 @@ export default function CommercialPage() {
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">Pricing at a glance — Building-level mandoor service</h2>
             <Link href="/request-a-quote/" className="hidden sm:inline-flex items-center text-sm font-bold text-gold hover:underline whitespace-nowrap">Get a written quote →</Link>
           </div>
-          <p className="text-gold text-sm mb-8 max-w-3xl leading-relaxed">
+          <p className="text-steel text-sm mb-8 max-w-3xl leading-relaxed">
             The smart structure for any Richmond building with multiple mandoors: a single visit covers every door on the property, with per-door rates that drop sharply with volume.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -145,14 +395,14 @@ export default function CommercialPage() {
               <div key={item.label} className="rounded-card border border-steel/15 bg-white p-5 flex flex-col">
                 <div className="flex items-start gap-3 mb-4">
                   <img src={item.img} alt={item.label} className="w-16 h-16 object-cover rounded flex-shrink-0" />
-                  <span className="text-gold font-bold uppercase tracking-wide text-xs leading-snug mt-1">{item.label}</span>
+                  <span className="text-navy-dark font-bold uppercase tracking-wide text-xs leading-snug mt-1">{item.label}</span>
                 </div>
                 <p className="font-heading font-extrabold text-navy-dark text-xl leading-tight mb-2">{item.price}</p>
                 <p className="text-xs text-steel leading-relaxed mt-auto">{item.note}</p>
               </div>
             ))}
           </div>
-          <p className="text-xs text-gold mt-6 leading-relaxed">
+          <p className="text-xs text-steel mt-6 leading-relaxed">
             Bundled with overhead door / dock equipment / sliding gate maintenance under a single facility contract. Volume rates apply at 4+ doors on a coordinated visit. 2-year labour warranty on every job.
           </p>
           <div className="mt-4 sm:hidden">
@@ -161,100 +411,266 @@ export default function CommercialPage() {
         </div>
       </section>
 
-      {/* WHAT WE FIX */}
+      {/* TERMINOLOGY */}
       <section className="bg-surface">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">Whatever's wrong with it — we fix it</h2>
-          <p className="text-steel text-sm mb-8">
-            Parts on every truck — closers, hinges, latches, seals, panic devices, fire-rated hardware.<br />
-            All major hardware brands — LCN · Norton · Dorma · Von Duprin · Detex · Yale · Sargent · Schlage.
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {whatWeFix.map((s) => (
-              <div key={s.title} className="rounded-card bg-white border border-steel/10 p-6 shadow-card">
-                <h3 className="font-heading font-bold text-base text-navy-dark mb-2">{s.title}</h3>
-                <p className="text-sm text-steel leading-relaxed">{s.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* MANDOOR TECH EXPLAINER */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">Everything you need to know about mandoor service</h2>
-          <p className="text-steel text-sm mb-8 max-w-3xl">
-            ANSI grades, fire ratings, inspection requirements, and why one visit should cover every door in your facility.
-          </p>
-          <Accordion items={mandoorTech} />
-        </div>
-      </section>
-
-      {/* 21-POINT INSPECTION */}
-      <section className="bg-navy-dark text-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-2">What gets checked on every mandoor visit</h2>
-          <p className="text-white/70 text-sm mb-8 max-w-3xl">
-            Our 21-point mandoor inspection covers all mechanical, fire-rating, and operational items. Every visit produces a written report with a deficiency log and photos — suitable for fire marshal and insurance documentation.
-          </p>
-          <div className="grid sm:grid-cols-2 gap-3 mb-10">
-            {inspection21.map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <IconCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                <span className="text-white/80 text-sm">{item}</span>
-              </div>
-            ))}
-          </div>
-          <div>
-            <p className="text-white/70 text-sm font-bold mb-3">Inspection intervals</p>
-            <div className="flex flex-wrap gap-4 text-sm">
-              {[
-                { freq: "Annual", desc: "once a year (light-traffic buildings)" },
-                { freq: "Bi-annual", desc: "every 6 months (standard commercial)" },
-                { freq: "Quarterly", desc: "every 3 months (high-traffic / fire-rated buildings)" },
-              ].map(t => (
-                <div key={t.freq} className="rounded-card bg-white/10 px-4 py-3">
-                  <span className="text-gold font-bold">{t.freq}</span>
-                  <span className="text-white/60 ml-2">{t.desc}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* WHY DOORCHAMP */}
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 grid lg:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="max-w-3xl">
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-5">
-              Why Richmond buildings choose DoorChamp for mandoor service
+              Mandoor, man door, personnel door, pedestrian door — same door, different names
             </h2>
             <p className="text-steel leading-relaxed mb-4">
-              A mandoor wedged open or failing to latch isn't just an inconvenience — it's a fire code violation, a security gap, and a liability. We fix the root cause on the first visit, document everything, and bundle it with your overhead door service so you deal with one company and one invoice.
+              Whatever your building manager calls it, it's the same thing: a walk-through steel door in a commercial building. Back doors, stairwell doors, mechanical room doors, fire exits, interior corridor doors — every one of them is a mandoor. The name changes by industry and region; the hardware problems are identical.
+            </p>
+            <p className="text-steel leading-relaxed mb-4">
+              In Richmond warehouses and industrial buildings, "mandoor" is the most common term. Property managers often say "personnel door." Architects specify "hollow metal door" or "HM door." General contractors write "steel door assembly." Fire marshals inspect "fire-rated door assemblies." We service them all.
             </p>
             <p className="text-steel leading-relaxed">
-              Every technician carries ANSI A250.8 compliant hardware, fire-rated components, and the full range of closer, hinge, latch, and panic device parts — so most repairs are done first visit.
+              A mandoor in a commercial building is not a residential door. It's a 16-gauge or heavier steel leaf in a welded steel frame, with a commercial-grade door closer, a multi-point latch, and — in rated applications — fire-rated hardware throughout. Residential hardware is not compliant and will fail inspection.
             </p>
           </div>
-          <ul className="space-y-3">
-            {[
-              "Same-day Richmond response (business hours)",
-              "24/7 emergency line — on-call technician, not a call centre",
-              "ANSI A250.8 compliant hardware on every truck",
-              "UL-listed fire-rated components — no substitutions",
-              "Written inspection report for fire marshal and insurance",
-              "WCB-compliant technicians · $5M liability coverage",
-              "Bundled with overhead door PM — one invoice, one visit",
-              "Service agreements for property managers and strata councils",
-            ].map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <IconCheck className="w-4 h-4 text-gold flex-shrink-0 mt-1" />
-                <span className="text-steel text-sm">{item}</span>
-              </li>
+        </div>
+      </section>
+
+      {/* HARDWARE FAILURES */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">
+            It's almost never the door itself — it's the hardware
+          </h2>
+          <p className="text-steel text-sm mb-10 max-w-3xl">
+            A steel mandoor lasts 30–50 years. The hardware on it — closer, hinges, latch, seals — lasts 5–15 years under commercial use. These are the five failures we fix most often in Richmond buildings.
+          </p>
+          <div className="space-y-8">
+            {hardwareFailures.map((item) => (
+              <div key={item.num} className="flex gap-6">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-navy-dark flex items-center justify-center">
+                  <span className="text-gold font-bold text-sm">{item.num}</span>
+                </div>
+                <div className="flex-1 pb-8 border-b border-steel/10 last:border-0 last:pb-0">
+                  <h3 className="font-heading font-bold text-lg text-navy-dark mb-3">{item.title}</h3>
+                  <p className="text-steel text-sm leading-relaxed whitespace-pre-line">{item.body}</p>
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* DOOR CLOSERS */}
+      <section className="bg-surface">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <p className="text-steel text-xs uppercase tracking-widest mb-3">Door closers — the single most-replaced mandoor part</p>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-3">
+            LCN · Norton · Dorma · Sargent · Yale · Falcon.<br className="hidden sm:block" />
+            Hydraulic, pneumatic, electromagnetic hold-open.
+          </h2>
+          <p className="text-steel text-sm mb-10 max-w-3xl leading-relaxed">
+            A failed closer on a fire-rated mandoor is an instant code violation — the door is no longer self-closing. Closer replacement is a 30-minute job. We stock the most common units on every truck.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {closers.map((c) => <ProductCard key={c.title} {...c} />)}
+          </div>
+        </div>
+      </section>
+
+      {/* PANIC / EXIT HARDWARE */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <p className="text-steel text-xs uppercase tracking-widest mb-3">Panic / exit hardware</p>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-3">
+            Von Duprin · Sargent · Yale · Detex · Falcon.<br className="hidden sm:block" />
+            Rim, mortise, vertical-rod, electrified.
+          </h2>
+          <p className="text-steel text-sm mb-10 max-w-3xl leading-relaxed">
+            A panic bar that won't retract from the inside is a code violation that gets buildings shut down on inspection. We service every major brand and stock the most common rim devices on the truck.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {panicDevices.map((p) => <ProductCard key={p.title} {...p} />)}
+          </div>
+        </div>
+      </section>
+
+      {/* LOCKS */}
+      <section className="bg-surface">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <p className="text-steel text-xs uppercase tracking-widest mb-3">Locks, mortise &amp; cylindrical</p>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-3">
+            Schlage · Sargent · Yale · Corbin Russwin.<br className="hidden sm:block" />
+            Mechanical and electrified options.
+          </h2>
+          <p className="text-steel text-sm mb-10 max-w-3xl leading-relaxed">
+            We supply and re-key every major brand. For high-security applications (restricted keyways, master-key schedules) we partner with a Richmond commercial locksmith for cylinder work.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {locks.map((l) => <ProductCard key={l.title} {...l} />)}
+          </div>
+        </div>
+      </section>
+
+      {/* HINGES */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <p className="text-steel text-xs uppercase tracking-widest mb-3">Hinges</p>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-3">
+            Standard ball-bearing · Continuous · Spring · Stainless.<br className="hidden sm:block" />
+            Pin types: standard, non-removable, hospital tip.
+          </h2>
+          <p className="text-steel text-sm mb-10 max-w-3xl leading-relaxed">
+            Hinge sag and stripped frame screws are the second most common mandoor failure in Richmond. We fit hinges and install anchor epoxy the same visit.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {hinges.map((h) => <ProductCard key={h.title} {...h} />)}
+          </div>
+        </div>
+      </section>
+
+      {/* NEW DOORS */}
+      <section className="bg-surface">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <p className="text-steel text-xs uppercase tracking-widest mb-3">Follow ANSI doors &amp; frames on supply</p>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-3">
+            Curries · Steelcraft · DCI · Pemko · Republic · Mesker.<br className="hidden sm:block" />
+            ANSI A250.8 SDI Level 2 standard.
+          </h2>
+          <p className="text-steel text-sm mb-10 max-w-3xl leading-relaxed">
+            All doors supplied with matching hollow metal frames, 16-gauge minimum. Fire-rated doors include label inspection and fire-label compliance installation.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {hollowMetalDoors.map((d) => <ProductCard key={d.title} {...d} />)}
+          </div>
+        </div>
+      </section>
+
+      {/* FIRE RATINGS */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">
+            30, 45, 60, 90, or 180 minutes — your building tells you which
+          </h2>
+          <p className="text-steel text-sm mb-10 max-w-3xl leading-relaxed">
+            Fire-rated mandoors are assemblies, not just doors. The rating (stamped on the fire label) tells you how long the assembly must contain fire and smoke. BC Building Code and BC Fire Code specify which rating is required at each type of opening.
+          </p>
+          <div className="space-y-4 max-w-3xl">
+            {fireRatings.map((r) => (
+              <div key={r.min} className="flex gap-5 p-5 rounded-card bg-surface border border-steel/10">
+                <div className="flex-shrink-0">
+                  <span className="inline-block bg-navy-dark text-gold font-bold text-sm px-3 py-1.5 rounded">{r.min}</span>
+                </div>
+                <p className="text-steel text-sm leading-relaxed">{r.use}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 p-5 rounded-card bg-surface border border-steel/10 max-w-3xl">
+            <p className="text-sm text-steel leading-relaxed">
+              <span className="font-bold text-navy-dark">BC Fire Code requirement:</span>{" "}
+              Annual inspection and written documentation of all fire-rated door assemblies. A peeling, missing, or painted-over fire label is an immediate deficiency. A closer adjusted to hold the door open voids the assembly's fire rating. We produce the written inspection report on-site.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SPEC LANGUAGE */}
+      <section className="bg-surface">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-4">
+                Spec language facility managers and GCs use
+              </h2>
+              <p className="text-steel text-sm leading-relaxed mb-6">
+                When you're specifying a mandoor replacement or writing a maintenance scope, here's the language that ensures you get commercial-grade hardware — not residential product installed in a commercial opening.
+              </p>
+              <p className="text-steel text-sm leading-relaxed">
+                We supply and install to these specs on every new door and replacement job. If your RFP or lease agreement specifies a standard, we'll match it and document compliance in writing.
+              </p>
+            </div>
+            <ul className="space-y-3">
+              {specLanguage.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <IconCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                  <span className="text-steel text-sm leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ECONOMICS OF ONE TRUCK */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <div className="max-w-3xl">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-5">
+              The economics of one truck for both doors
+            </h2>
+            <p className="text-steel leading-relaxed mb-5">
+              Most Richmond commercial buildings pay two separate service companies — one for overhead doors and dock equipment, one for mandoors. The overhead door company won't touch the mandoor closer. The locksmith won't touch the overhead door spring. You get two callout fees, two invoices, two scheduling windows, and two sets of markup on parts.
+            </p>
+            <p className="text-steel leading-relaxed mb-6">
+              We handle both on the same truck. One technician walks the property, inspects every door, and returns a single written proposal. Parts for overhead doors, dock equipment, and mandoors are on the same vehicle. Work is invoiced on a single ticket.
+            </p>
+            <p className="font-bold text-navy-dark text-sm mb-4">When we use the same truck for both:</p>
+            <ul className="space-y-2 mb-6">
+              {[
+                "One callout fee covers the entire property — overhead and mandoors",
+                "Per-door PM rates drop sharply when mandoors are bundled with the overhead door visit",
+                "Parts markup is consistent across all door types on the same job",
+                "One point of contact for scheduling, invoicing, and warranty claims",
+                "Written report covers all door types — one document for your records",
+                "Facility contract covers overhead doors + dock equipment + mandoors under one agreement",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <IconCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                  <span className="text-steel text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="text-steel text-sm leading-relaxed">
+              For a facility with 4 overhead doors and 8 mandoors, bundling the PM visit typically saves $300–$600 per year versus two separate service companies — before parts discounts.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SAME CONTRACT */}
+      <section className="bg-surface">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <div>
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-5">
+                Same contract as your overhead doors
+              </h2>
+              <p className="text-steel leading-relaxed mb-4">
+                If you already have a DoorChamp service agreement for your overhead doors or dock equipment, mandoors are added to the same contract — same visit schedule, same rate structure, same invoice.
+              </p>
+              <p className="text-steel leading-relaxed mb-4">
+                For property managers and strata councils managing multiple buildings, we set up a master agreement that covers all units and all door types. One renewal, one point of contact, one annual report for your records.
+              </p>
+              <p className="text-steel leading-relaxed">
+                A 20-point inspection is required on every mandoor at sign-up — so we know the condition of every door before we set the contract rate. No surprises on deferred maintenance.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <p className="font-bold text-navy-dark text-sm">What's in every facility contract:</p>
+              <ul className="space-y-3">
+                {[
+                  "Scheduled PM visits — annual, bi-annual, or quarterly depending on door count and traffic",
+                  "21-point mandoor inspection on every door at every visit",
+                  "Written deficiency report after each visit — suitable for fire marshal documentation",
+                  "10–25% parts discount on all hardware installed under the contract",
+                  "Priority scheduling — contract customers jump the queue on same-day calls",
+                  "Single invoice covering all door types — overhead, dock, mandoor, sliding gate",
+                  "2-year labour warranty on all work performed under the agreement",
+                  "Renewal reminder 60 days before contract end — no auto-renewals without confirmation",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <IconCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                    <span className="text-steel text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -269,16 +685,16 @@ export default function CommercialPage() {
       {/* CTA */}
       <section className="bg-navy-dark text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 text-center">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-3">Mandoor problem in Richmond? We fix it before the inspector finds it.</h2>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-3">Mandoor service + overhead door service. One truck, one warranty.</h2>
           <p className="text-white/70 text-base max-w-2xl mx-auto mb-8 leading-relaxed">
-            Same-day service for businesses. ANSI A250.8 compliant hardware on every truck. Call for emergency response or request a written quote — firm price before any work starts.
+            Send us your building address and a rough door count — overhead doors, mandoors, gates, dock equipment. We'll quote everything under a single facility contract — or by-the-call for one-off repairs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={siteConfig.phone.href} className="inline-flex items-center justify-center gap-2 rounded-card bg-gold px-7 py-3.5 text-sm font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors">
               <IconPhone className="w-4 h-4" /> {siteConfig.phone.display}
             </a>
             <Link href="/request-a-quote/" className="inline-flex items-center justify-center rounded-card bg-green-600 text-white px-7 py-3.5 text-sm font-bold hover:bg-green-700 transition-colors">
-              Request a Free Quote →
+              Request a Quote →
             </Link>
           </div>
         </div>
