@@ -129,6 +129,7 @@ const restraints = [
     model: "Rite-Hite Dok-Lok",
     body: "The most common vehicle restraint on Richmond commercial docks. Engages the trailer\'s ICC bar automatically.",
     specs: ["Auto-engages on trailer arrival", "Red/green signal light system", "Manual override w/ key", "Standard option in new builds", "ANSI MH30.3 listed", "5-yr structural warranty"],
+    img: "/images/loading-dock-restraint-rite-hite-doklok.webp",
   },
   {
     tag: "Hook Restraint (Canadian)",
@@ -136,6 +137,7 @@ const restraints = [
     model: "Blue Giant StrongArm",
     body: "Canadian-made hook restraint. Common retrofit option on Bridgeport and Mitchell Island warehouses.",
     specs: ["Made in Brampton, Ontario", "Auto-engagement", "Driver-side traffic signal", "Optional inside dock lights", "Lower-priced alternative to Dok-Lok", "Service support in BC"],
+    img: "/images/loading-dock-restraint-blue-giant-strongarm.webp",
   },
   {
     tag: "Hook + Light + Communication",
@@ -143,6 +145,7 @@ const restraints = [
     model: "Kelley TrueCheck Restraint System",
     body: "Integrated restraint + light + intercom system. The standard for high-volume Richmond 3PL facilities.",
     specs: ["Integrated communication system", "Inside + outside light coordination", "PLC controller", "Trailer creep detection", "ANSI MH30.3 compliant", "5-yr warranty"],
+    img: "/images/loading-dock-restraint-kelley-truecheck.webp",
   },
   {
     tag: "Wheel Chock",
@@ -150,6 +153,7 @@ const restraints = [
     model: "Engineered wheel chocks",
     body: "Manual wheel chocks. Used as a backup to a primary restraint. Required on every dock without an automated restraint.",
     specs: ["Heavy-duty rubber or polyethylene", "Reflective high-vis colour", "Steel-reinforced models", "OSHA / WCB minimum", "Cheapest restraint option", "Operator-dependent"],
+    img: "/images/loading-dock-restraint-wheel-chock.webp",
   },
 ];
 
