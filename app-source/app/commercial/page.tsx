@@ -56,6 +56,7 @@ const closers = [
     title: "LCN 4040XP / 4030 Series",
     desc: "The North American workhorse. The single most common closer on Richmond commercial mandoors.",
     features: ["Cast iron body", "Adjustable spring sizes 1–6", "ANSI A156.4 Grade 1", "Hold-open arm option", "Backcheck + delayed action", "10-yr warranty"],
+    img: "/images/mandoor-closer-lcn-4040xp.webp",
     viewUrl: "https://www.lcnclosers.com",
     viewLabel: "View on LCN (Allegion)",
   },
@@ -65,6 +66,7 @@ const closers = [
     title: "Norton 8501 / 8500 Series",
     desc: "Premium grade-1 closer. Common in Richmond institutional and high-cycle commercial.",
     features: ["Tri-style: regular/parallel/top-jamb", "Sizes 1–6 spring", "Adjustable hydraulic backcheck", "ANSI A156.4 Grade 1", "Stainless arm available", "Fire-rated compatible"],
+    img: "/images/mandoor-closer-norton-8501.webp",
     viewUrl: "https://www.nortondoorcontrols.com",
     viewLabel: "View on Norton (ASSA ABLOY)",
   },
@@ -74,6 +76,7 @@ const closers = [
     title: "DormaKaba TS83",
     desc: "German-engineered. Common on Richmond European-influenced commercial buildings and high-end strata.",
     features: ["Adjustable EN 2–6 force", "Built-in hold-open option", "Slim transom design", "Fire-rated UL 10C", "10-yr warranty", "Surface or transom mount"],
+    img: "/images/mandoor-closer-dorma-ts83.webp",
     viewUrl: "https://www.dormakaba.com",
     viewLabel: "View on DormaKaba.com",
   },
@@ -83,6 +86,7 @@ const closers = [
     title: "Sargent 281 / 351 Series",
     desc: "Robust commercial closer. Common on Richmond warehouse personnel entries — built to take abuse.",
     features: ["ANSI A156.4 Grade 1", "Sizes 1–6", "Adjustable backcheck + delayed action", "Hold-open optional", "Stainless arm available", "10-yr warranty"],
+    img: "/images/mandoor-closer-sargent-281.webp",
     viewUrl: "https://www.sargentlock.com",
     viewLabel: "View on SargentLock.com",
   },
@@ -92,6 +96,7 @@ const closers = [
     title: "LCN SEM Smoke-Activated Hold-Open",
     desc: "The right way to legally prop a fire-rated door open — auto-releases on alarm. Replaces the wedge.",
     features: ["Magnetic hold-open arm", "Releases on fire alarm signal", "Code-compliant prop-open", "Wired to fire panel", "UL listed", "Required for legal hold-open"],
+    img: "/images/mandoor-closer-lcn-sem-magnetic.webp",
     viewUrl: "https://www.lcnclosers.com",
     viewLabel: "View on LCN (Allegion)",
   },
@@ -101,6 +106,7 @@ const closers = [
     title: "Sargent 1330 Pneumatic Closer",
     desc: "Specialty closer for high-cycle warehouse use. Pneumatic operation, longer life under heavy use.",
     features: ["Pneumatic operation", "Heaviest-duty available", "Cold-weather compatible", "10-yr warranty", "For >500 cycles/day", "Often replaces failed hydraulic units"],
+    img: "/images/mandoor-closer-sargent-1330-pneumatic.webp",
     viewUrl: "https://www.sargentlock.com",
     viewLabel: "View on SargentLock.com",
   },
@@ -295,19 +301,24 @@ const faqs = [
   { q: "Can a strata corporation contract mandoor service alongside garage door service?", a: "Yes — that's the most common arrangement for Richmond strata warehouse complexes. One facility contract covers overhead doors, dock equipment, and mandoors for the entire property. Single invoice, single visit schedule, single point of contact. Contact us for a property walk-through and quote." },
 ];
 
-function ProductCard({ badge, brandModel, title, desc, features, viewUrl, viewLabel }: {
+function ProductCard({ badge, brandModel, title, desc, features, img, viewUrl, viewLabel }: {
   badge: string;
   brandModel: string;
   title: string;
   desc: string;
   features: string[];
+  img?: string;
   viewUrl?: string;
   viewLabel?: string;
 }) {
   return (
     <div className="rounded-card border border-steel/15 bg-white flex flex-col overflow-hidden shadow-card">
       <div className="relative bg-steel/5 h-44 flex items-center justify-center">
-        <span className="text-steel/30 text-sm text-center px-4">{title}</span>
+        {img ? (
+          <img src={img} alt={title} className="w-full h-full object-contain p-4" />
+        ) : (
+          <span className="text-steel/30 text-sm text-center px-4">{title}</span>
+        )}
         <span className="absolute top-3 right-3 bg-navy-dark text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded">
           {badge}
         </span>
