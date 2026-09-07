@@ -374,12 +374,12 @@ export default function CommercialPage() {
       >
         <div className="absolute inset-0 bg-navy-dark/78" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <span className="inline-block bg-green-800/30 border border-green-700/60 text-green-600 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
+          <span className="inline-block bg-white/15 border border-white/40 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
             Mandoor Service · Richmond, BC
           </span>
           <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white max-w-3xl leading-tight">
             Closer leaking, fire label peeling, door wedged open?{" "}
-            <span className="text-green-600">We fix it before the inspector finds it.</span>
+            <span className="text-gold">We fix it before the inspector finds it.</span>
           </h1>
           <p className="mt-5 text-white/75 text-base max-w-2xl leading-relaxed">
             Every commercial building in Richmond has mandoors — back doors, fire exits, mechanical rooms.
