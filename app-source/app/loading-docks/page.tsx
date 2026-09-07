@@ -416,7 +416,7 @@ export default function LoadingDocksPage() {
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {seals.map((s) => (
-              <ProductCard key={s.model} tag={s.tag} model={s.model} brand={s.brand} body={s.body} specs={s.specs} />
+              <ProductCard key={s.model} {...s} />
             ))}
           </div>
         </div>
@@ -443,7 +443,7 @@ export default function LoadingDocksPage() {
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {restraints.map((r) => (
-              <ProductCard key={r.model} tag={r.tag} model={r.model} brand={r.brand} body={r.body} specs={r.specs} />
+              <ProductCard key={r.model} {...r} />
             ))}
           </div>
 
@@ -470,7 +470,7 @@ export default function LoadingDocksPage() {
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {bumpers.map((b) => (
-              <ProductCard key={b.model} tag={b.tag} model={b.model} body={b.body} specs={b.specs} />
+              <ProductCard key={b.model} {...b} />
             ))}
           </div>
 
