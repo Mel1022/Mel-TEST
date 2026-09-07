@@ -21,12 +21,13 @@ const equipmentCategories = [
 ];
 
 const pricingItems = [
-  { label: "Emergency callout (business hrs)", price: "from $285 service call", note: "Most repairs completed first visit · parts on truck", img: "/images/icon-commercial-emergency.webp" },
-  { label: "Commercial torsion spring (per spring)", price: "$380–$680 installed", note: "Heavy-duty springs rated 100,000+ cycles · 2-yr warranty", img: "/images/icon-commercial-spring.webp" },
-  { label: "New commercial sectional door", price: "$3,200–$12,000 installed", note: "Standard steel 10×10 to 14×14 · insulated or non-insulated", img: "/images/icon-commercial-door.webp" },
-  { label: "High-speed door service call", price: "from $385 labour + parts", note: "Bottom bar · fabric · controller · photoeye repairs", img: "/images/icon-commercial-highspeed.webp" },
-  { label: "Fire door annual inspection", price: "$185–$320 per door", note: "BC Fire Code compliant · written report · tag & cert", img: "/images/icon-commercial-firedoor.webp" },
-  { label: "Preventive maintenance program", price: "Custom per facility", note: "Monthly · quarterly · annual visit programs available", img: "/images/icon-commercial-pm.webp" },
+  { label: "Single-door repair (callout)", price: "$189 callout + parts", note: "Closer · hinge · latch · seal · panic device", img: "/images/icon-mandoor-callout-wrench.jpg" },
+  { label: "Whole-building inspection", price: "$489 flat (up to 10 doors)", note: "Every mandoor on the property · written report · code-violation log", img: "/images/icon-mandoor-building-inspection.jpg" },
+  { label: "3–9 doors · Annual contract", price: "from $79/door/year", note: "One scheduled visit · 21-pt inspection · 10% off parts", img: "/images/icon-mandoor-annual-calendar.jpg" },
+  { label: "10–20 doors · Bi-annual contract", price: "from $69/door/visit", note: "2 visits/year · code-compliance audit · 15% off parts", img: "/images/icon-mandoor-biannual.jpg" },
+  { label: "21+ doors · Enterprise contract", price: "from $59/door/visit", note: "Quarterly visits · asset register · 25% off parts", img: "/images/icon-mandoor-enterprise.jpg" },
+  { label: "New 36\"×80\" non-rated mandoor", price: "from $1,489 installed", note: "Standard frame · closer · weather seal · basic lever lock", img: "/images/icon-mandoor-new-standard.jpg" },
+  { label: "New 90-min fire-rated mandoor", price: "from $2,189 installed", note: "Fire frame · fire-rated closer · panic device · label inspection", img: "/images/icon-mandoor-firerated.jpg" },
 ];
 
 const sectionalDoors = [
@@ -356,11 +357,14 @@ export default function CommercialPage() {
       {/* PRICING */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-2">Pricing at a glance — Richmond commercial doors</h2>
-          <p className="text-steel text-sm mb-8">
-            Commercial door work can be bundled into your PM contract — same crew, same visit, same warranty. Standalone callouts also available.
+          <div className="flex items-start justify-between gap-4 mb-3">
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">Pricing at a glance — Building-level mandoor service</h2>
+            <Link href="/request-a-quote/" className="hidden sm:inline-flex items-center text-sm font-bold text-gold hover:underline whitespace-nowrap">Get a written quote →</Link>
+          </div>
+          <p className="text-gold text-sm mb-8 max-w-3xl leading-relaxed">
+            The smart structure for any Richmond building with multiple mandoors: a single visit covers every door on the property, with per-door rates that drop sharply with volume.
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {pricingItems.map((item) => (
               <div key={item.label} className="rounded-card border border-steel/15 bg-white p-5 flex flex-col">
                 <div className="flex items-start gap-3 mb-4">
@@ -372,13 +376,11 @@ export default function CommercialPage() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-steel mt-6">
-            Prices for Richmond locations. Every project gets a written firm quote on-site before any work begins. 2-year labour warranty on all installs.
+          <p className="text-xs text-gold mt-6 leading-relaxed">
+            Bundled with overhead door / dock equipment / sliding gate maintenance under a single facility contract. Volume rates apply at 4+ doors on a coordinated visit. 2-year labour warranty on every job.
           </p>
-          <div className="mt-6">
-            <Link href="/request-a-quote/" className="inline-flex items-center justify-center gap-2 rounded-card bg-gold px-6 py-3 text-sm font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors">
-              Get a written quote →
-            </Link>
+          <div className="mt-4 sm:hidden">
+            <Link href="/request-a-quote/" className="inline-flex items-center text-sm font-bold text-gold hover:underline">Get a written quote →</Link>
           </div>
         </div>
       </section>
