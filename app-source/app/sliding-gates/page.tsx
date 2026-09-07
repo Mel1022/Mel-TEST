@@ -355,30 +355,34 @@ export default function SlidingGatesPage() {
       >
         <div className="absolute inset-0 bg-navy-dark/82" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <span className="inline-block bg-white/15 border border-white/40 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
+          <span className="inline-block bg-red-600 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
             Gate Emergency · Richmond, BC
           </span>
           <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white max-w-3xl leading-tight">
-            Gate stuck or won't move?{" "}
-            <span className="text-gold">We respond same-day.</span>
+            Gate stuck or won't move?<br />
+            <span className="text-gold">We're 12 minutes away.</span>
           </h1>
           <p className="mt-5 text-white/75 text-base max-w-2xl leading-relaxed">
-            A perimeter open means the property is wide open and you can't lock up at end of day.
+            Perimeter open means the property is wide open and you can't lock up at end of day.
             We respond same-day, every brand — LiftMaster, FAAC, HySecurity, DoorKing, Nice, DEA, Linear, Came. Parts on the truck.
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+          <div className="mt-8 flex flex-col gap-3 max-w-lg">
             <a
               href={siteConfig.phone.href}
-              className="inline-flex items-center justify-center gap-2 rounded-card bg-gold px-7 py-3.5 text-sm font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors"
+              className="flex items-center gap-4 rounded-card bg-red-600 px-7 py-4 hover:bg-red-700 transition-colors"
             >
-              <IconPhone className="w-4 h-4" /> {siteConfig.phone.display}
+              <IconPhone className="w-5 h-5 text-white flex-shrink-0" />
+              <div>
+                <p className="text-white/80 text-[10px] font-bold uppercase tracking-widest leading-none mb-1">Call now · Same-day Richmond</p>
+                <p className="text-white font-heading font-extrabold text-2xl leading-none">{siteConfig.phone.display}</p>
+              </div>
             </a>
-            <Link
-              href="/request-a-quote/"
-              className="inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors"
+            <a
+              href={siteConfig.phone.href}
+              className="flex items-center justify-center gap-2 rounded-card border border-white/30 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors"
             >
-              Request a Quote
-            </Link>
+              <span className="text-base">💬</span> Text us · same response
+            </a>
           </div>
           <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
             {["12–20 min response", "Every brand serviced", "UL 325-2018 compliant", "WCB + $5M insured"].map((t) => (
@@ -394,8 +398,7 @@ export default function SlidingGatesPage() {
       <div className="bg-navy-dark/5 border-y border-steel/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 text-center">
           <p className="text-steel text-sm leading-relaxed">
-            <span className="font-bold text-navy-dark">Call now</span> — we dispatch the moment you hang up.
-            Gate operators, photo eyes, edge sensors, loop detectors — we'll get the gate moving and the perimeter secured.
+            <span className="font-bold text-navy-dark">Call now</span> — we dispatch from our Richmond yard the moment you hang up. Gate operators, photo eyes, edge sensors, loop detectors — we'll get the gate moving and the perimeter secured.
           </p>
         </div>
       </div>
