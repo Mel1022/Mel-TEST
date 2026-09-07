@@ -94,6 +94,7 @@ const seals = [
     model: "Rite-Hite Eclipse Foam Seal",
     body: "Tightest compression seal for Richmond cold-storage and temperature-sensitive product. Reduces air infiltration to near-zero.",
     specs: ["Three-pad construction", "Best for cold storage", "High-density EPDM foam", "Custom-cut per trailer height", "5–7 year service life", "Lowest energy loss"],
+    img: "/images/loading-dock-seal-rite-hite-eclipse.webp",
   },
   {
     tag: "Inflatable Seal",
@@ -101,6 +102,7 @@ const seals = [
     model: "Rite-Hite Phantom Inflatable",
     body: "Inflates after trailer is in position for the tightest possible seal. Best for energy-sensitive Richmond facilities.",
     specs: ["Fixed pad + inflating bladder", "Best-in-class air-tightness", "Auto-inflation on dock signal", "Highest energy-recovery payback", "Higher maintenance than foam", "Best for cold + pharma"],
+    img: "/images/loading-dock-seal-rite-hite-phantom.webp",
   },
   {
     tag: "Soft-Sided Shelter",
@@ -108,6 +110,7 @@ const seals = [
     model: "Kelley Frommelt · Blue Giant SilverStar",
     body: "Side and head curtains that flex against the trailer. Full trailer-width access — best for mixed-fleet Richmond ops.",
     specs: ["Side + head curtain construction", "Full trailer access preserved", "Multi-trailer-height compatible", "Cordura or vinyl skin", "Lower air-tightness than foam", "Standard 3PL choice"],
+    img: "/images/loading-dock-shelter-blue-giant.webp",
   },
   {
     tag: "Head-Curtain Add-on",
@@ -115,6 +118,7 @@ const seals = [
     model: "Universal head & corner pads",
     body: "Closes the residual air gap at the top of the trailer. Often retrofitted onto existing seals.",
     specs: ["Solves top-corner air leak", "Spring-loaded canopy options", "Retrofits to any seal", "Cordura or hypalon construction", "Sizes 8\'–10\' trailer roof", "Most cost-effective seal upgrade"],
+    img: "/images/loading-dock-head-curtain.webp",
   },
 ];
 
