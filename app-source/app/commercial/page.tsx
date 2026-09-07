@@ -300,32 +300,33 @@ export default function CommercialPage() {
         <div className="absolute inset-0 bg-navy-dark/78" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <span className="inline-block bg-gold/20 border border-gold/40 text-gold text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
-            Commercial Door Service · Richmond, BC
+            Mandoor Service · Richmond, BC
           </span>
           <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white max-w-3xl leading-tight">
-            Door jammed, spring snapped,<br className="hidden sm:block" /> panel crushed?{" "}
-            <span className="text-gold">We fix it before your next shift starts.</span>
+            Closer leaking, fire label peeling, door wedged open?{" "}
+            <span className="text-gold">We fix it before the inspector finds it.</span>
           </h1>
           <p className="mt-5 text-white/75 text-base max-w-2xl leading-relaxed">
-            Every Richmond warehouse, distribution centre, and commercial building has overhead doors that have to work.
-            DoorChamp is 12–20 minutes from your bay — parts on the truck, all major brands, same-day on business hours calls.
+            Every commercial building in Richmond has mandoors — back doors, fire exits, mechanical rooms.
+            We service them on the same visit as your overhead doors. Same crew, same warranty, same invoice.
+            ANSI A250.8 compliant hardware on every truck.
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-3 max-w-xl">
-            <a href={siteConfig.phone.href} className="flex-1 inline-flex items-center justify-center gap-3 rounded-card bg-gold px-6 py-4 font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors">
+          <div className="mt-8 flex flex-col gap-3 max-w-xl">
+            <a href={siteConfig.phone.href} className="w-full inline-flex items-center gap-4 rounded-card bg-gold px-6 py-4 font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors">
               <IconPhone className="w-5 h-5 flex-shrink-0" />
               <span className="flex flex-col items-start leading-tight">
                 <span className="text-xs font-bold uppercase tracking-wide opacity-70">Call · Same-day Richmond</span>
                 <span className="text-lg">{siteConfig.phone.display}</span>
               </span>
             </a>
-            <Link href="/request-a-quote/" className="flex-1 inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-6 py-4 text-sm font-bold hover:border-white transition-colors">
+            <Link href="/request-a-quote/" className="w-full inline-flex items-center justify-center rounded-card bg-navy-dark/70 border border-white/20 text-white px-6 py-4 text-sm font-bold hover:bg-navy-dark transition-colors">
               Request a quote →
             </Link>
           </div>
-          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/65">
+          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/65">
             <span>✓ Same-day Richmond</span>
-            <span>✓ Fire-rated door work</span>
-            <span>✓ All major brands serviced</span>
+            <span>✓ Fire-rated work</span>
+            <span>✓ ANSI A250.8 compliant</span>
             <span>✓ WCB + $5M insured</span>
           </div>
         </div>
