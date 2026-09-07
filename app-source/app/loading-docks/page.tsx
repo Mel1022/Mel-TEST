@@ -38,6 +38,7 @@ const levelers = [
     body: "Push-button hydraulic levelers. The industry standard for Richmond high-cycle distribution.",
     specs: ["35,000–80,000 lb cap", "Velocity fuses (anti-free-fall)", "Auto-return to stored position", "Dialogue safety system", "Optional weather-seal package", "Best lifetime value"],
     url: "https://www.ritehite.com/",
+    img: "/images/loading-dock-leveler-rite-hite-hydraulic.webp",
   },
   {
     tag: "Canadian-made Hydraulic",
@@ -46,6 +47,7 @@ const levelers = [
     body: "Canadian-made hydraulic leveler. Common across Richmond facilities that prefer domestic supply chain.",
     specs: ["Made in Brampton, Ontario", "35,000–60,000 lb cap", "Velocity fuse safety", "Service-friendly modular design", "Standard 6\'×8\' deck", "Optional pit-bracket retrofit"],
     url: "https://www.bluegiant.com/",
+    img: "/images/loading-dock-leveler-blue-giant.webp",
   },
   {
     tag: "Air-Powered Leveler",
@@ -54,6 +56,7 @@ const levelers = [
     body: "Air-bag-actuated leveler. No hydraulic fluid means no contamination risk — preferred for food-grade Richmond facilities.",
     specs: ["35,000–45,000 lb cap", "Push-button activation", "Maintenance-free air bag", "Wash-down compatible", "Lower upfront vs hydraulic", "Watch for stump-out on light trailers"],
     url: "https://www.poweramp.com/",
+    img: "/images/loading-dock-leveler-air-powered.webp",
   },
   {
     tag: "Mechanical Pull-Chain",
@@ -62,6 +65,7 @@ const levelers = [
     body: "Spring-counterbalanced mechanical levelers. Lowest upfront cost; highest 10-year service cost. We service legacy units across Richmond.",
     specs: ["35,000–45,000 lb cap", "Pull-chain activation", "Operator walks deck down", "Standard 6\'×8\' deck", "Best for low-cycle docks", "Often converted to hydraulic in renos"],
     url: "https://www.kelleyusa.com/",
+    img: "/images/loading-dock-leveler-mechanical.webp",
   },
   {
     tag: "Canadian Engineered",
@@ -70,6 +74,7 @@ const levelers = [
     body: "Canadian-made hydraulic and edge-of-dock levelers. Engineered in Guelph, Ontario.",
     specs: ["Made in Guelph, Canada", "35,000–60,000 lb cap", "Standard and edge-of-dock", "Cold-storage variants", "10-yr structural warranty", "Service support in BC"],
     url: "https://www.pentalift.com/",
+    img: "/images/loading-dock-leveler-pentalift.webp",
   },
   {
     tag: "Edge-of-Dock",
@@ -78,6 +83,7 @@ const levelers = [
     body: "Edge-mount levelers for facilities without recessed pits. Lowest-cost option for Richmond retrofits.",
     specs: ["20,000–30,000 lb cap", "Working range ±3\" (max ±5\")", "Bolt-on dock-face install", "No pit construction needed", "Manual or hydraulic", "Best for low-volume bays"],
     url: "https://www.mcguirecorporation.com/",
+    img: "/images/loading-dock-leveler-edge-of-dock.webp",
   },
 ];
 
@@ -249,34 +255,42 @@ const inspection21 = [
   "Full WorkSafeBC-compliant written report",
 ];
 
-function ProductCard({ tag, brand, model, body, specs, url }: {
-  tag: string; brand?: string; model: string; body: string; specs: string[]; url?: string;
+function ProductCard({ tag, brand, model, body, specs, url, img }: {
+  tag: string; brand?: string; model: string; body: string; specs: string[]; url?: string; img?: string;
 }) {
   return (
-    <div className="rounded-card bg-white border border-steel/10 p-6 shadow-card flex flex-col gap-4">
-      <div>
-        <span className="text-xs font-bold uppercase tracking-wide text-gold">{tag}</span>
-        {brand && <p className="text-xs text-steel mt-0.5">{brand}</p>}
-        <h3 className="font-heading font-bold text-base text-navy-dark mt-1">{model}</h3>
-        <p className="text-sm text-steel leading-relaxed mt-2">{body}</p>
-      </div>
-      <ul className="space-y-1.5">
-        {specs.map((s) => (
-          <li key={s} className="flex items-start gap-2 text-sm text-steel">
-            <span className="text-gold mt-0.5 flex-shrink-0">✓</span>
-            {s}
-          </li>
-        ))}
-      </ul>
-      <div className="mt-auto flex flex-wrap gap-2">
-        {url && (
-          <a href={url} target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-steel hover:text-navy-dark underline underline-offset-2">
-            Manufacturer →
-          </a>
-        )}
-        <Link href="/request-a-quote/" className="text-xs font-bold text-gold hover:text-gold-dark">
-          Get a Quote →
-        </Link>
+    <div className="rounded-card bg-white border border-steel/10 shadow-card flex flex-col overflow-hidden">
+      {img && (
+        <div className="relative">
+          <img src={img} alt={model} className="w-full h-48 object-cover" />
+          <span className="absolute top-3 right-3 bg-navy-dark/90 text-white text-xs font-bold uppercase tracking-wide px-2.5 py-1 rounded">{tag}</span>
+        </div>
+      )}
+      <div className="p-6 flex flex-col gap-4 flex-1">
+        <div>
+          {!img && <span className="text-xs font-bold uppercase tracking-wide text-gold">{tag}</span>}
+          {brand && <p className="text-xs text-gold font-bold uppercase tracking-wide mt-0.5">{brand}</p>}
+          <h3 className="font-heading font-bold text-base text-navy-dark mt-1">{model}</h3>
+          <p className="text-sm text-steel leading-relaxed mt-2 italic">{body}</p>
+        </div>
+        <ul className="space-y-1.5">
+          {specs.map((s) => (
+            <li key={s} className="flex items-start gap-2 text-sm text-steel">
+              <span className="text-gold mt-0.5 flex-shrink-0">✓</span>
+              {s}
+            </li>
+          ))}
+        </ul>
+        <div className="mt-auto flex flex-col gap-2 pt-2">
+          {url && (
+            <a href={url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs font-bold text-steel border border-steel/20 rounded px-3 py-2 hover:border-steel/50 transition-colors">
+              <span>⊞</span> View on {new URL(url).hostname.replace("www.", "")}
+            </a>
+          )}
+          <Link href="/request-a-quote/" className="inline-flex items-center justify-center rounded bg-gold px-4 py-2.5 text-sm font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors">
+            Get a Quote
+          </Link>
+        </div>
       </div>
     </div>
   );
