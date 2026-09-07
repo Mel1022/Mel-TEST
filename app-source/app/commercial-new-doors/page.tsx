@@ -114,7 +114,7 @@ export default function CommercialNewDoorsPage() {
       {/* Hero */}
       <section
         className="relative text-white overflow-hidden"
-        style={{ backgroundImage: "url('/images/commercial-hero-bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+        style={{ backgroundImage: "url('/images/commercial-new-doors-bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
       >
         <div className="absolute inset-0 bg-navy-dark/80" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
