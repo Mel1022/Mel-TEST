@@ -311,15 +311,15 @@ export default function CommercialPage() {
             We service them on the same visit as your overhead doors. Same crew, same warranty, same invoice.
             ANSI A250.8 compliant hardware on every truck.
           </p>
-          <div className="mt-8 flex flex-col gap-3 max-w-xl">
-            <a href={siteConfig.phone.href} className="w-full inline-flex items-center gap-4 rounded-card bg-gold px-6 py-4 font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors">
-              <IconPhone className="w-5 h-5 flex-shrink-0" />
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href={siteConfig.phone.href} className="inline-flex items-center gap-3 rounded-card bg-gold px-6 py-3.5 font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors">
+              <IconPhone className="w-4 h-4 flex-shrink-0" />
               <span className="flex flex-col items-start leading-tight">
                 <span className="text-xs font-bold uppercase tracking-wide opacity-70">Call · Same-day Richmond</span>
-                <span className="text-lg">{siteConfig.phone.display}</span>
+                <span className="text-base">{siteConfig.phone.display}</span>
               </span>
             </a>
-            <Link href="/request-a-quote/" className="w-full inline-flex items-center justify-center rounded-card bg-navy-dark/70 border border-white/20 text-white px-6 py-4 text-sm font-bold hover:bg-navy-dark transition-colors">
+            <Link href="/request-a-quote/" className="inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors">
               Request a quote →
             </Link>
           </div>
