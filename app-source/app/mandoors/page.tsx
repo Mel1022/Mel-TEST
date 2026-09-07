@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Mandoor Service Richmond BC — Closer, Hinge, Fire Label | DoorChamp",
   description:
     "Commercial mandoor repair and installation in Richmond BC. Closers, hinges, seals, panic devices, fire-rated mandoors. ANSI A250.8 compliant. Same-day service. Call (778) 800-0769.",
-  alternates: { canonical: "/commercial/" },
+  alternates: { canonical: "/mandoors/" },
 };
 
 const pricingItems = [

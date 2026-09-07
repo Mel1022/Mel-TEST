@@ -39,7 +39,7 @@ export const primaryNav = [
   { label: "Openers", fullLabel: "Opener Service & Install", href: "/garage-door-opener-repair-installation/" },
   { label: "Installation", fullLabel: "New Door Installation", href: "/garage-door-installation/" },
   { label: "Maintenance", fullLabel: "Maintenance & Tune-Up", href: "/garage-door-maintenance/" },
-  { label: "Commercial", fullLabel: "Commercial Services", href: "/commercial/" },
+  { label: "Commercial", fullLabel: "Commercial Services", href: "/mandoors/" },
   { label: "Strata", fullLabel: "Strata & Multi-Family", href: "/strata/" },
   { label: "Service Areas", fullLabel: "Service Areas", href: "/service-areas/" },
   { label: "About", fullLabel: "About DoorChamp", href: "/about/" },

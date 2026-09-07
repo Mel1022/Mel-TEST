@@ -45,7 +45,7 @@ export default function Footer() {
               Commercial &amp; More
             </h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/commercial/" className="hover:text-gold transition-colors">Commercial Doors</Link></li>
+              <li><Link href="/mandoors/" className="hover:text-gold transition-colors">Commercial Doors</Link></li>
               <li><Link href="/loading-docks/" className="hover:text-gold transition-colors">Loading Docks</Link></li>
               <li><Link href="/sliding-gates/" className="hover:text-gold transition-colors">Sliding Gates</Link></li>
               <li><Link href="/strata/" className="hover:text-gold transition-colors">Strata & Multi-Family</Link></li>

@@ -44,7 +44,7 @@ const SERVICES = [
     icon: <IconWrench className="w-7 h-7" />,
     title: "Commercial & Strata",
     body: "Industrial doors, loading docks, sliding gates, and full strata management programs.",
-    href: "/commercial/",
+    href: "/mandoors/",
   },
 ];
 
