@@ -26,7 +26,7 @@ export default function LocalBusinessSchema() {
     },
     areaServed: [
       "Richmond", "Vancouver", "Burnaby", "Delta", "Surrey",
-      "New Westminster", "Coquitlam", "Port Coquitlam", "Ladner", "Tsawwassen",
+      "New Westminster", "Coquitlam", "Port Coquitlam", "Ladner", "Tsawwassen", "North Vancouver",
     ],
     openingHoursSpecification: [
       {

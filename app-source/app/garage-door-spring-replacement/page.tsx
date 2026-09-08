@@ -7,7 +7,7 @@ const service = getServiceBySlug("garage-door-spring-replacement")!;
 export const metadata: Metadata = {
   title: "Garage Door Spring Replacement",
   description:
-    "Broken garage door spring? DoorChamp safely diagnoses and replaces torsion and extension springs with the correct type and tension for your door.",
+    "Garage door spring replacement in Richmond, Vancouver, Burnaby, New Westminster & Metro Vancouver. DoorChamp safely replaces torsion and extension springs. Same-day. Licensed & insured.",
   alternates: { canonical: "/garage-door-spring-replacement/" },
 };
 

@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { siteConfig } from "@/lib/site-config";
 import { IconPhone, IconCheck } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Commercial Garage Door Openers Richmond BC | DoorChamp",
   description:
-    "LiftMaster and Manaras-Opera commercial operators for warehouses, loading docks, and parkades. Sized to your duty cycle. Same-day service in Richmond BC.",
+    "Commercial garage door openers in Richmond, Burnaby, Surrey, Delta, Vancouver & Metro Vancouver. LiftMaster and Manaras-Opera operators sized to your duty cycle. Same-day. Call (778) 800-0769.",
   alternates: { canonical: "/commercial-openers/" },
 };
 
@@ -399,6 +400,8 @@ export default function CommercialOpenersPage() {
           <FAQAccordion faqs={faqs} />
         </div>
       </section>
+
+      <ServiceAreaSection service="Commercial Garage Door Openers" />
 
       {/* CTA */}
       <section className="bg-navy-dark">

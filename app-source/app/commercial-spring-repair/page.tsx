@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { siteConfig } from "@/lib/site-config";
 import { IconPhone, IconCheck } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Commercial Spring Repair Richmond BC | DoorChamp",
   description:
-    "High-cycle torsion springs for warehouse, roll-up, and sectional doors. Same-day commercial spring repair in Richmond BC. Licensed, insured, WCB compliant.",
+    "Commercial spring repair in Richmond, Burnaby, Surrey, Delta, Coquitlam & Metro Vancouver. High-cycle torsion springs for warehouse, roll-up, and sectional doors. Same-day. WCB compliant.",
   alternates: { canonical: "/commercial-spring-repair/" },
 };
 
@@ -253,6 +254,8 @@ export default function CommercialSpringRepairPage() {
           <FAQAccordion faqs={faqs} />
         </div>
       </section>
+
+      <ServiceAreaSection service="Commercial Spring Repair" />
 
       {/* CTA */}
       <section className="bg-navy-dark">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { siteConfig } from "@/lib/site-config";
 import { IconPhone, IconCheck } from "@/components/Icons";
 import { Accordion } from "./Accordion";
@@ -7,7 +8,7 @@ import { Accordion } from "./Accordion";
 export const metadata: Metadata = {
   title: "Loading Dock Service & Repair in Richmond BC | DoorChamp",
   description:
-    "Loading dock leveler, seal, restraint, and bumper repair in Richmond BC. DoorChamp provides commercial loading dock maintenance and 24/7 emergency response. Call (778) 800-0769.",
+    "Loading dock repair & maintenance in Richmond, Surrey, Delta, Burnaby, Coquitlam & Metro Vancouver. Dock levelers, seals, restraints, bumpers. 24/7 emergency response. Call (778) 800-0769.",
   alternates: { canonical: "/loading-docks/" },
 };
 
@@ -588,6 +589,8 @@ export default function LoadingDocksPage() {
           <Accordion items={faqs.map(f => ({ title: f.q, summary: "", body: f.a }))} />
         </div>
       </section>
+
+      <ServiceAreaSection service="Loading Dock Service & Repair" />
 
       {/* FREE DOCK WALK CTA */}
       <section className="bg-navy-dark text-white">

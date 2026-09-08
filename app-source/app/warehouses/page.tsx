@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { siteConfig } from "@/lib/site-config";
 import { IconPhone, IconCheck, IconWrench, IconAlert, IconInstall, IconParts } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Warehouse & Loading Dock Service Richmond BC | DoorChamp",
   description:
-    "Commercial dock levelers, overhead doors, torsion springs, vehicle restraints — complete warehouse door service in Richmond BC. Same-day dock emergency. All brands. Call (778) 800-0769.",
+    "Warehouse door & loading dock service in Richmond, Surrey, Delta, Burnaby, Coquitlam & Metro Vancouver. Dock levelers, overhead doors, springs, vehicle restraints. Same-day. Call (778) 800-0769.",
   alternates: { canonical: "/warehouses/" },
 };
 
@@ -599,6 +600,8 @@ export default function WarehousesPage() {
           </div>
         </div>
       </section>
+
+      <ServiceAreaSection service="Warehouse & Loading Dock Service" />
 
       {/* CTA */}
       <section className="bg-navy-dark text-white">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { siteConfig } from "@/lib/site-config";
 import { IconPhone, IconCheck, IconWrench, IconInstall, IconMaintenance, IconAlert, IconOpener, IconParts } from "@/components/Icons";
 import { Accordion } from "./Accordion";
@@ -8,7 +9,7 @@ import { Accordion } from "./Accordion";
 export const metadata: Metadata = {
   title: "Sliding Gate Repair & Installation Richmond BC | DoorChamp",
   description:
-    "Same-day sliding gate repair in Richmond BC. LiftMaster, FAAC, HySecurity, DoorKing, Nice, DEA, Linear, Came. UL 325-2018 compliant. DoorChamp — (778) 800-0769.",
+    "Sliding gate repair & installation in Richmond, Vancouver, Burnaby, Surrey, Coquitlam & Metro Vancouver. LiftMaster, FAAC, HySecurity. UL 325-2018 compliant. Call (778) 800-0769.",
   alternates: { canonical: "/sliding-gates/" },
 };
 
@@ -727,6 +728,8 @@ export default function SlidingGatesPage() {
           </div>
         </div>
       </section>
+
+      <ServiceAreaSection service="Sliding Gate Repair & Installation" />
 
       <CTASection
         heading="Audit your gate. Know exactly where you stand."

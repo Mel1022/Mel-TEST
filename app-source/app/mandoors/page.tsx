@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { siteConfig } from "@/lib/site-config";
 import { IconPhone, IconCheck } from "@/components/Icons";
 import { Accordion } from "./Accordion";
@@ -7,7 +8,7 @@ import { Accordion } from "./Accordion";
 export const metadata: Metadata = {
   title: "Mandoor Service Richmond BC — Closer, Hinge, Fire Label | DoorChamp",
   description:
-    "Commercial mandoor repair and installation in Richmond BC. Closers, hinges, seals, panic devices, fire-rated mandoors. ANSI A250.8 compliant. Same-day service. Call (778) 800-0769.",
+    "Commercial mandoor repair & installation in Richmond, Burnaby, Vancouver, Surrey & Metro Vancouver. Closers, hinges, fire-rated doors, panic devices. ANSI A250.8 compliant. Call (778) 800-0769.",
   alternates: { canonical: "/mandoors/" },
 };
 
@@ -708,6 +709,8 @@ export default function CommercialPage() {
           <Accordion items={faqs.map(f => ({ title: f.q, summary: "", body: f.a }))} />
         </div>
       </section>
+
+      <ServiceAreaSection service="Commercial Mandoor Service" />
 
       {/* CTA */}
       <section className="bg-navy-dark text-white">

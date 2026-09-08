@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { siteConfig } from "@/lib/site-config";
 import { IconPhone, IconCheck } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Strata Garage Door Programs | DoorChamp Richmond BC",
   description:
-    "Quarterly, bi-annual, and annual garage door maintenance for Richmond strata corporations. COIs same-day. Free on-site quote — we walk every door with you before you sign.",
+    "Strata garage door maintenance programs in Richmond, Burnaby, Vancouver, North Vancouver, Coquitlam & Metro Vancouver. COIs same-day. Free on-site quote. WCB compliant.",
   alternates: { canonical: "/strata/" },
 };
 
@@ -257,6 +258,8 @@ export default function StrataPage() {
           </ul>
         </div>
       </section>
+
+      <ServiceAreaSection service="Strata Garage Door Service" />
 
       {/* CTA */}
       <section className="bg-navy-dark text-white">

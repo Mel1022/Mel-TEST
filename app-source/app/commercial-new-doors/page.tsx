@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FAQAccordion from "@/components/FAQAccordion";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { siteConfig } from "@/lib/site-config";
 import { IconPhone, IconCheck } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "New Commercial Doors Richmond BC | DoorChamp",
   description:
-    "Insulated sectional, full-view aluminum, and roll-up steel doors for warehouses, loading docks, and commercial facilities. Free Richmond site visit. Licensed, insured, WCB compliant.",
+    "New commercial doors in Richmond, Burnaby, Surrey, Delta, Vancouver & Metro Vancouver. Insulated sectional, full-view aluminum, and roll-up steel doors for warehouses and facilities. WCB compliant.",
   alternates: { canonical: "/commercial-new-doors/" },
 };
 
@@ -340,6 +341,8 @@ export default function CommercialNewDoorsPage() {
           <FAQAccordion faqs={faqs} />
         </div>
       </section>
+
+      <ServiceAreaSection service="Commercial New Doors" />
 
       {/* CTA */}
       <section className="bg-navy-dark">

@@ -11,7 +11,7 @@ const service = getServiceBySlug("garage-door-opener-repair-installation")!;
 export const metadata: Metadata = {
   title: "Garage Door Opener Repair & Installation",
   description:
-    "Garage door opener not responding or straining? DoorChamp repairs and installs garage door openers, remotes, keypads, and safety sensors.",
+    "Garage door opener repair & installation in Richmond, Vancouver, Burnaby, Surrey & Metro Vancouver. DoorChamp repairs and installs openers, remotes, keypads, and safety sensors. Same-day.",
   alternates: { canonical: "/garage-door-opener-repair-installation/" },
 };
 

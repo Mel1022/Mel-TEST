@@ -4,6 +4,7 @@ import PageHero from "./PageHero";
 import CTASection from "./CTASection";
 import FAQAccordion from "./FAQAccordion";
 import TechnicianChecks from "./TechnicianChecks";
+import ServiceAreaSection from "./ServiceAreaSection";
 import { IconCheck } from "./Icons";
 import type { Service } from "@/lib/services";
 
@@ -114,6 +115,8 @@ export default function ServiceDetailPage({ service, bgImage, pricingSection, hi
           </p>
         </div>
       </section>
+
+      <ServiceAreaSection service={service.name} />
 
       <CTASection
         heading={`Ready to Get Your Door ${service.slug === "garage-door-installation" ? "Installed" : "Fixed"}?`}

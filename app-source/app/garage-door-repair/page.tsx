@@ -9,7 +9,7 @@ const service = getServiceBySlug("garage-door-repair")!;
 export const metadata: Metadata = {
   title: "Garage Door Repair",
   description:
-    "Professional garage door repair for doors that won't open, won't close, or are off track. DoorChamp diagnoses the real problem before recommending a fix.",
+    "Same-day garage door repair in Richmond, Burnaby, Vancouver, Surrey & Metro Vancouver. DoorChamp diagnoses the real problem before recommending a fix. Licensed, insured, WCB compliant.",
   alternates: { canonical: "/garage-door-repair/" },
 };
 

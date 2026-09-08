@@ -10,7 +10,7 @@ const service = getServiceBySlug("garage-door-maintenance")!;
 export const metadata: Metadata = {
   title: "Garage Door Maintenance",
   description:
-    "Routine garage door maintenance from DoorChamp catches worn parts early, keeping your door quieter, smoother, and more reliable.",
+    "Garage door maintenance in Richmond, Vancouver, Burnaby, Coquitlam & Metro Vancouver. DoorChamp catches worn parts early — keeping your door quieter, smoother, and more reliable.",
   alternates: { canonical: "/garage-door-maintenance/" },
 };
 

@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 import { siteConfig } from "@/lib/site-config";
 import { IconPhone, IconCheck } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Commercial Garage Door Service in Richmond BC | DoorChamp",
   description:
-    "Commercial garage door repair, installation, and maintenance in Richmond BC. Sectional doors, high-speed doors, fire doors, loading docks, sliding gates. Call (778) 800-0769.",
+    "Commercial garage door repair & installation in Richmond, Burnaby, Surrey, Delta, Vancouver & Metro Vancouver. Sectional, high-speed, fire doors, loading docks. Call (778) 800-0769.",
   alternates: { canonical: "/commercial/" },
 };
 
@@ -178,6 +179,8 @@ export default function CommercialPage() {
           </ul>
         </div>
       </section>
+
+      <ServiceAreaSection service="Commercial Garage Door Service" />
 
       <CTASection
         heading="Commercial Door Problem in Richmond? Call DoorChamp."

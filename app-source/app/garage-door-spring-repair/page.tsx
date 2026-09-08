@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
+import ServiceAreaSection from "@/components/ServiceAreaSection";
 import SpringSymptoms from "@/components/SpringSymptoms";
 import { siteConfig } from "@/lib/site-config";
 import { IconPhone, IconCheck, IconAlert } from "@/components/Icons";
@@ -8,7 +9,7 @@ import { IconPhone, IconCheck, IconAlert } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "Garage Door Spring Repair & Replacement in Richmond BC",
   description:
-    "Broken garage door spring in Richmond? DoorChamp provides same-day torsion and extension spring repair. Licensed, insured, and WCB compliant. Call (778) 800-0769.",
+    "Broken garage door spring? Same-day torsion & extension spring repair in Richmond, Vancouver, Burnaby, Surrey, Delta & Metro Vancouver. Licensed, insured, WCB compliant. Call (778) 800-0769.",
   alternates: { canonical: "/garage-door-spring-repair/" },
 };
 
@@ -233,6 +234,8 @@ export default function SpringRepairPage() {
           </ul>
         </div>
       </section>
+
+      <ServiceAreaSection service="Garage Door Spring Repair" />
 
       <CTASection
         heading="Broken Spring in Richmond? We Can Fix It Today."
