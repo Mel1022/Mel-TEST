@@ -85,6 +85,68 @@ export default function CommercialPage() {
         </div>
       </section>
 
+      {/* ── Manufacturer brand scroll ── */}
+      <section className="bg-white overflow-hidden py-12 sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-8 text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.22em] text-gold mb-2">Manufacturers</p>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
+            Brands we install commercially.
+          </h2>
+        </div>
+        <style>{`
+          @keyframes brand-scroll {
+            0%   { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .brand-track {
+            display: flex;
+            width: max-content;
+            animation: brand-scroll 28s linear infinite;
+          }
+          .brand-track:hover { animation-play-state: paused; }
+        `}</style>
+        <div className="relative" aria-label="Commercial door brand partners">
+          <div className="brand-track">
+            {[
+              { name: "Hormann",        bg: "#F5A800", color: "#003366", style: { fontWeight: 900, letterSpacing: "0.04em" } },
+              { name: "Steelcraft",     bg: "#CC1A1A", color: "#ffffff", style: { fontWeight: 700 } },
+              { name: "Garaga",         bg: "#C8102E", color: "#ffffff", style: { fontWeight: 800, letterSpacing: "0.06em" } },
+              { name: "Clopay",         bg: "#1A1A2E", color: "#ffffff", style: { fontWeight: 700 } },
+              { name: "Amarr",          bg: "#003087", color: "#ffffff", style: { fontWeight: 800, letterSpacing: "0.05em" } },
+              { name: "Richards Wilcox",bg: "#f5f5f5", color: "#222",   style: { fontWeight: 600, fontSize: "0.8rem" } },
+              { name: "C.H.I.",         bg: "#222",    color: "#ffffff", style: { fontWeight: 900, letterSpacing: "0.08em" } },
+              { name: "Rytec",          bg: "#003366", color: "#ffffff", style: { fontWeight: 800, letterSpacing: "0.04em" } },
+              { name: "LiftMaster",     bg: "#C8102E", color: "#ffffff", style: { fontWeight: 700 } },
+              { name: "Doorcraft",      bg: "#111",    color: "#ffffff", style: { fontWeight: 700 } },
+              // duplicate set for seamless loop
+              { name: "Hormann",        bg: "#F5A800", color: "#003366", style: { fontWeight: 900, letterSpacing: "0.04em" } },
+              { name: "Steelcraft",     bg: "#CC1A1A", color: "#ffffff", style: { fontWeight: 700 } },
+              { name: "Garaga",         bg: "#C8102E", color: "#ffffff", style: { fontWeight: 800, letterSpacing: "0.06em" } },
+              { name: "Clopay",         bg: "#1A1A2E", color: "#ffffff", style: { fontWeight: 700 } },
+              { name: "Amarr",          bg: "#003087", color: "#ffffff", style: { fontWeight: 800, letterSpacing: "0.05em" } },
+              { name: "Richards Wilcox",bg: "#f5f5f5", color: "#222",   style: { fontWeight: 600, fontSize: "0.8rem" } },
+              { name: "C.H.I.",         bg: "#222",    color: "#ffffff", style: { fontWeight: 900, letterSpacing: "0.08em" } },
+              { name: "Rytec",          bg: "#003366", color: "#ffffff", style: { fontWeight: 800, letterSpacing: "0.04em" } },
+              { name: "LiftMaster",     bg: "#C8102E", color: "#ffffff", style: { fontWeight: 700 } },
+              { name: "Doorcraft",      bg: "#111",    color: "#ffffff", style: { fontWeight: 700 } },
+            ].map((brand, i) => (
+              <div
+                key={i}
+                className="mx-3 flex-shrink-0 flex items-center justify-center rounded-xl border border-steel/10 shadow-sm px-6 py-4"
+                style={{ minWidth: 140, height: 72, background: brand.bg }}
+              >
+                <span
+                  className="text-sm uppercase tracking-wide"
+                  style={{ color: brand.color, ...brand.style }}
+                >
+                  {brand.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-navy-dark text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 grid lg:grid-cols-2 gap-12 items-center">
           <div>
