@@ -317,7 +317,7 @@ export default function LoadingDocksPage() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <p className="text-gold font-bold uppercase tracking-wide text-sm mb-3">Commercial · Richmond BC</p>
           <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white max-w-3xl leading-tight">
-            Dock down?<br />We&apos;re 12–20 min from your bay.
+            Dock down?<br />Need Us Fast? We&apos;ll Be There Within 1 Hour
           </h1>
           <p className="mt-4 text-white/75 text-lg max-w-2xl leading-relaxed">
             DoorChamp dispatch · 24/7 emergency line · Every major brand of dock equipment serviced.
