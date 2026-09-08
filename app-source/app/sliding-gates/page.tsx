@@ -376,10 +376,30 @@ export default function SlidingGatesPage() {
             Perimeter open means the property is wide open and you can't lock up at end of day.
             We respond same-day, every brand — LiftMaster, FAAC, HySecurity, DoorKing, Nice, DEA, Linear, Came. Parts on the truck.
           </p>
+          <style>{`
+            @keyframes emergency-pulse {
+              0%   { box-shadow: 0 0 0 0 rgba(220,38,38,0.9), 0 0 12px 2px rgba(220,38,38,0.5); }
+              50%  { box-shadow: 0 0 0 20px rgba(220,38,38,0.15), 0 0 24px 6px rgba(220,38,38,0.3); }
+              100% { box-shadow: 0 0 0 28px rgba(220,38,38,0), 0 0 0 0 rgba(220,38,38,0); }
+            }
+            @keyframes emergency-shake {
+              0%, 100% { transform: translateX(0); }
+              20%       { transform: translateX(-3px); }
+              40%       { transform: translateX(3px); }
+              60%       { transform: translateX(-2px); }
+              80%       { transform: translateX(2px); }
+            }
+            .emergency-btn {
+              animation: emergency-pulse 1.5s ease-out infinite;
+            }
+            .emergency-btn:hover {
+              animation: emergency-shake 0.4s ease-in-out, emergency-pulse 1.5s ease-out infinite 0.4s;
+            }
+          `}</style>
           <div className="mt-8 flex flex-col gap-3 max-w-lg">
             <a
               href={siteConfig.phone.href}
-              className="flex items-center gap-4 rounded-card bg-red-600 px-7 py-4 hover:bg-red-700 transition-colors"
+              className="emergency-btn flex items-center gap-4 rounded-card bg-red-600 px-7 py-4 hover:bg-red-700 transition-colors"
             >
               <IconPhone className="w-5 h-5 text-white flex-shrink-0" />
               <div>
