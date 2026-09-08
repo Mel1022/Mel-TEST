@@ -394,7 +394,7 @@ export default function CommercialPage() {
                 <span className="text-base">{siteConfig.phone.display}</span>
               </span>
             </a>
-            <Link href="/request-a-quote/" className="inline-flex items-center justify-center rounded-card bg-green-600 text-white px-7 py-3.5 text-sm font-bold hover:bg-green-700 transition-colors">
+            <Link href="/request-a-quote/" className="inline-flex items-center justify-center rounded-card border-2 border-white/50 text-white px-7 py-3.5 text-sm font-bold hover:border-white hover:bg-white/10 transition-colors">
               Request a quote →
             </Link>
           </div>
