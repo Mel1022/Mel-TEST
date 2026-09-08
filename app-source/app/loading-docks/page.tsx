@@ -397,7 +397,7 @@ export default function LoadingDocksPage() {
             ))}
           </div>
           <p className="text-xs text-steel mt-6">
-            Prices for Richmond locations. Every project gets a written firm quote on-site before any work begins. 2-year labour warranty on all installs.
+            Prices for Richmond locations. Every project gets a written firm quote on-site before any work begins. 1-year labour warranty on all installs.
           </p>
           <div className="mt-6">
             <Link href="/request-a-quote/" className="inline-flex items-center justify-center gap-2 rounded-card bg-gold px-6 py-3 text-sm font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors">

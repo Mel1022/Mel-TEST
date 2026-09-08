@@ -430,7 +430,7 @@ export default function CommercialPage() {
             ))}
           </div>
           <p className="text-xs text-steel mt-6 leading-relaxed">
-            Bundled with overhead door / dock equipment / sliding gate maintenance under a single facility contract. Volume rates apply at 4+ doors on a coordinated visit. 2-year labour warranty on every job.
+            Bundled with overhead door / dock equipment / sliding gate maintenance under a single facility contract. Volume rates apply at 4+ doors on a coordinated visit. 1-year labour warranty on every job.
           </p>
           <div className="mt-4 sm:hidden">
             <Link href="/request-a-quote/" className="inline-flex items-center text-sm font-bold text-gold hover:underline">Get a written quote →</Link>
@@ -687,7 +687,7 @@ export default function CommercialPage() {
                   "10–25% parts discount on all hardware installed under the contract",
                   "Priority scheduling — contract customers jump the queue on same-day calls",
                   "Single invoice covering all door types — overhead, dock, mandoor, sliding gate",
-                  "2-year labour warranty on all work performed under the agreement",
+                  "1-year labour warranty on all work performed under the agreement",
                   "Renewal reminder 60 days before contract end — no auto-renewals without confirmation",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">

@@ -324,7 +324,7 @@ export default function WarehousesPage() {
               </div>
             ))}
           </div>
-          <p className="text-xs text-steel mt-4">All pricing assumes Richmond locations. Multi-site portfolios get fleet pricing. 2-year labour warranty standard on every contract. WCB-compliant documentation every visit.</p>
+          <p className="text-xs text-steel mt-4">All pricing assumes Richmond locations. Multi-site portfolios get fleet pricing. 1-year labour warranty standard on every contract. WCB-compliant documentation every visit.</p>
         </div>
       </section>
 

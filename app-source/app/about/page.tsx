@@ -71,7 +71,7 @@ export default function AboutPage() {
             </p>
             <p className="text-steel leading-relaxed">
               We&apos;re based at {siteConfig.address.line}. Every job we take on is backed by
-              our two-year labour warranty, $5M liability coverage, and the knowledge that
+              our one-year labour warranty, $5M liability coverage, and the knowledge that
               our customers can call us back if anything isn&apos;t right.
             </p>
           </div>

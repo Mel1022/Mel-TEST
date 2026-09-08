@@ -92,7 +92,7 @@ const managerBenefits = [
   },
   {
     label: "Two-year labour warranty as standard",
-    detail: "Every repair backed by a two-year labour warranty. Parts covered by manufacturer warranty on top of that.",
+    detail: "Every repair backed by a one-year labour warranty. Parts covered by manufacturer warranty on top of that.",
   },
   {
     label: "Free on-site quote — walk the property with you",

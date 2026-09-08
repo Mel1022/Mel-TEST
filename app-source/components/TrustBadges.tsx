@@ -46,7 +46,7 @@ const badges = [
     ),
   },
   {
-    label: "TWO-YEAR\nLABOUR WARRANTY",
+    label: "ONE-YEAR\nLABOUR WARRANTY",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="w-7 h-7" aria-hidden="true">
         <circle cx="12" cy="8" r="6" stroke="currentColor" strokeWidth="1.6"/>

@@ -31,7 +31,7 @@ export default function TermsOfServicePage() {
 
           <section>
             <h2 className="font-heading font-bold text-xl text-navy-dark mb-3">3. Labour Warranty</h2>
-            <p>DoorChamp provides a two-year labour warranty on all repair work. This warranty covers defects
+            <p>DoorChamp provides a one-year labour warranty on all repair work. This warranty covers defects
             in workmanship. It does not cover damage caused by misuse, accident, force, or normal wear and
             tear beyond the repaired components. Parts carry the manufacturer&apos;s warranty.</p>
           </section>

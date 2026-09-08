@@ -51,7 +51,7 @@ const faqSections = [
     title: "Costs & Warranty",
     faqs: [
       { q: "How much does a spring replacement cost?", a: "Spring replacement cost depends on the number and type of springs, and door size. We provide a clear quote before any work begins. Call (778) 800-0769 for current pricing." },
-      { q: "Do you offer a warranty?", a: "Yes — every repair includes a two-year labour warranty. Parts are also covered by the manufacturer's warranty." },
+      { q: "Do you offer a warranty?", a: "Yes — every repair includes a one-year labour warranty. Parts are also covered by the manufacturer's warranty." },
       { q: "Do you take credit cards?", a: "Please call us to confirm current accepted payment methods." },
     ],
   },

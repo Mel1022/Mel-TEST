@@ -24,7 +24,7 @@ const faqs = [
   { q: "How much does a garage door repair cost?", a: "Costs vary by what's needed — a spring replacement is different from a panel repair. We provide a clear quote before any work begins, with no surprises." },
   { q: "Do you service commercial garage doors?", a: "Absolutely. We handle commercial sectional doors, high-speed doors, loading docks, sliding gates, and full strata maintenance programs." },
   { q: "What brands of openers do you service?", a: "We work on all major brands including LiftMaster, Chamberlain, Genie, Craftsman, Marantec, and more." },
-  { q: "Do you offer a warranty?", a: "Yes — every repair includes a two-year labour warranty. Parts are also covered by manufacturer warranty." },
+  { q: "Do you offer a warranty?", a: "Yes — every repair includes a one-year labour warranty. Parts are also covered by manufacturer warranty." },
 ];
 
 export default function HomePage() {

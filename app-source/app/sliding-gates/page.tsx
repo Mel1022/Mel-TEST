@@ -291,7 +291,7 @@ const faqs = [
   },
   {
     title: "What's the warranty on gate work?",
-    body: "2-year labour warranty on all installations. Parts carry the manufacturer warranty (LiftMaster: 1–3 years depending on component; HySecurity: 3 years). Compliance audits: we'll return once at no charge if a device fails within 90 days of inspection.",
+    body: "1-year labour warranty on all installations. Parts carry the manufacturer warranty (LiftMaster: 1–3 years depending on component; HySecurity: 3 years). Compliance audits: we'll return once at no charge if a device fails within 90 days of inspection.",
   },
 ];
 
@@ -461,7 +461,7 @@ export default function SlidingGatesPage() {
             ))}
           </div>
           <p className="text-steel/60 text-xs mt-6">
-            All work documented for council, insurer, or AHJ on request. 2-year labour warranty. WCB + $5M liability insured.
+            All work documented for council, insurer, or AHJ on request. 1-year labour warranty. WCB + $5M liability insured.
             We retrofit older installations to current UL 325-2018 standard.
           </p>
         </div>
