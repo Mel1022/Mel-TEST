@@ -88,7 +88,15 @@ export default function Footer() {
               >
                 Become a Partner
               </Link>
-              <PricingReveal />
+              <div className="flex gap-2">
+                <PricingReveal />
+                <Link
+                  href="/privacy-policy/"
+                  className="flex-1 inline-flex items-center justify-center rounded-card border border-white/15 px-3 py-2.5 text-sm font-bold text-white/40 hover:border-white/30 hover:text-white/60 transition-colors whitespace-nowrap"
+                >
+                  Privacy Policy
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -99,21 +107,6 @@ export default function Footer() {
             <Link href="/privacy-policy/" className="hover:text-white/70 transition-colors">Privacy Policy</Link>
             <Link href="/terms-of-service/" className="hover:text-white/70 transition-colors">Terms of Service</Link>
           </div>
-        </div>
-      </div>
-
-      {/* Privacy bar */}
-      <div className="border-t border-white/10 bg-navy-dark/95">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-white/50 text-xs text-center sm:text-left">
-            We collect only what&apos;s needed to quote and complete your job — no selling, no marketing lists.
-          </p>
-          <Link
-            href="/privacy-policy/"
-            className="flex-shrink-0 inline-flex items-center justify-center rounded-card border border-white/30 text-white/70 px-5 py-2 text-xs font-bold hover:border-white hover:text-white transition-colors"
-          >
-            View Privacy Policy
-          </Link>
         </div>
       </div>
     </footer>
