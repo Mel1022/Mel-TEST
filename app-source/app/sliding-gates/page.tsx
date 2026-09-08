@@ -371,7 +371,7 @@ export default function SlidingGatesPage() {
           </span>
           <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white max-w-3xl leading-tight">
             Gate stuck or won't move?<br />
-            <span className="text-gold">We're 12 minutes away.</span>
+            <span className="text-gold">Fast Service. Within 1 Hour.</span>
           </h1>
           <p className="mt-5 text-white/75 text-base max-w-2xl leading-relaxed">
             Perimeter open means the property is wide open and you can't lock up at end of day.
@@ -416,7 +416,7 @@ export default function SlidingGatesPage() {
             </a>
           </div>
           <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
-            {["12–20 min response", "Every brand serviced", "UL 325-2018 compliant", "WCB + $5M insured"].map((t) => (
+            {["Within 1 hour business hrs", "Every brand serviced", "UL 325-2018 compliant", "WCB + $5M insured"].map((t) => (
               <span key={t} className="flex items-center gap-1.5 text-white/70 text-xs">
                 <IconCheck className="w-3.5 h-3.5 text-gold flex-shrink-0" /> {t}
               </span>
