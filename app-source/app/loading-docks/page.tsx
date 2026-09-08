@@ -327,8 +327,16 @@ export default function LoadingDocksPage() {
             <span className="flex items-center gap-1.5"><span className="text-gold">✓</span> 24/7 after-hours</span>
             <span className="flex items-center gap-1.5"><span className="text-gold">✓</span> Parts on every truck</span>
           </div>
+          <style>{`
+            @keyframes emergency-pulse {
+              0%   { box-shadow: 0 0 0 0 rgba(220,38,38,0.7); }
+              70%  { box-shadow: 0 0 0 16px rgba(220,38,38,0); }
+              100% { box-shadow: 0 0 0 0 rgba(220,38,38,0); }
+            }
+            .emergency-btn { animation: emergency-pulse 1.8s ease-out infinite; }
+          `}</style>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <a href={siteConfig.phone.href} className="inline-flex items-center justify-center gap-2 rounded-card bg-gold px-7 py-3.5 text-sm font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors">
+            <a href={siteConfig.phone.href} className="emergency-btn inline-flex items-center justify-center gap-2 rounded-card bg-red-600 px-7 py-3.5 text-sm font-bold text-white hover:bg-red-700 hover:-translate-y-0.5 transition-all duration-200">
               <IconPhone className="w-4 h-4" /> Emergency: {siteConfig.phone.display}
             </a>
             <a href="sms:+17788000769" className="inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors">
