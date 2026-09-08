@@ -83,9 +83,9 @@ export default function HomePage() {
             {/* CTA buttons */}
             <style>{`
               @keyframes hero-cta-pulse {
-                0%   { box-shadow: 0 0 0 0 rgba(46,139,98,0.8), 0 0 10px 2px rgba(46,139,98,0.4); }
-                50%  { box-shadow: 0 0 0 14px rgba(46,139,98,0.1), 0 0 20px 5px rgba(46,139,98,0.2); }
-                100% { box-shadow: 0 0 0 22px rgba(46,139,98,0), 0 0 0 0 rgba(46,139,98,0); }
+                0%   { box-shadow: 0 0 0 0 rgba(212,166,42,0.9), 0 0 10px 2px rgba(212,166,42,0.5); }
+                50%  { box-shadow: 0 0 0 14px rgba(212,166,42,0.15), 0 0 20px 5px rgba(212,166,42,0.25); }
+                100% { box-shadow: 0 0 0 22px rgba(212,166,42,0), 0 0 0 0 rgba(212,166,42,0); }
               }
               .hero-cta-pulse { animation: hero-cta-pulse 2s ease-out infinite; }
             `}</style>
@@ -98,7 +98,7 @@ export default function HomePage() {
               </Link>
               <a
                 href="tel:+17788000769"
-                className="hero-cta-pulse inline-flex items-center justify-center gap-2 rounded-card bg-[#2E8B62] px-7 py-4 text-sm font-bold text-white hover:bg-[#1a7a58] transition-colors"
+                className="hero-cta-pulse inline-flex items-center justify-center gap-2 rounded-card bg-gold px-7 py-4 text-sm font-bold text-navy-dark hover:bg-gold-dark transition-colors"
               >
                 <IconPhone className="w-4 h-4" />
                 Call for Same-Day Service
