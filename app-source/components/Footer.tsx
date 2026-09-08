@@ -54,7 +54,6 @@ export default function Footer() {
               <li><Link href="/about/" className="hover:text-gold transition-colors">About DoorChamp</Link></li>
               <li><Link href="/faq/" className="hover:text-gold transition-colors">FAQ</Link></li>
               <li><Link href="/request-a-quote/" className="hover:text-gold transition-colors">Request a Quote</Link></li>
-              <li><Link href="/partners/" className="hover:text-gold transition-colors">Become a Partner</Link></li>
             </ul>
           </div>
 
