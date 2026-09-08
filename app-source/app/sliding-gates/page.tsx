@@ -396,7 +396,7 @@ export default function SlidingGatesPage() {
               animation: emergency-shake 0.4s ease-in-out, emergency-pulse 1.5s ease-out infinite 0.4s;
             }
           `}</style>
-          <div className="mt-8 flex flex-col gap-3 max-w-lg">
+          <div className="mt-8 flex flex-col items-start gap-3 max-w-lg">
             <a
               href={siteConfig.phone.href}
               className="emergency-btn inline-flex items-center gap-4 rounded-card bg-red-600 px-7 py-4 hover:bg-red-700 transition-colors"
