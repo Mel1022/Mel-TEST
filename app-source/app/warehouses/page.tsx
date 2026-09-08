@@ -211,7 +211,7 @@ const failures = [
 ];
 
 const faqs = [
-  { q: "How fast do you respond to an emergency dock door failure in Richmond?", a: "We dispatch from our Richmond yard — typical response is 12–20 minutes to any Richmond warehouse address. The Bridgeport, Crestwood, Mitchell Island, and No. 5 Road industrial corridors are all within 12 minutes from our yard in normal traffic. We don't route through a call centre." },
+  { q: "How fast do you respond to an emergency dock door failure in Richmond?", a: "We dispatch from our Richmond yard — our goal is to be on-site within 1 hour during business hours. The Bridgeport, Crestwood, Mitchell Island, and No. 5 Road industrial corridors are all close to our yard. We don't route through a call centre." },
   { q: "Do you stock high-cycle commercial torsion springs?", a: "Yes. We carry 25,000-, 50,000-, and 100,000-cycle commercial torsion springs in 2\", 2-1/4\", 2-5/8\", and 3-3/4\" ID on every commercial truck. A 10,000-cycle residential spring on a busy Richmond dock fails inside one year — we never install residential springs on commercial doors." },
   { q: "Can you rebuild a door after a forklift strike, or does it have to be replaced?", a: "Most forklift strikes on Richmond docks are repairable — we re-section the bottom rail, straighten the vertical track, and replace the damaged panel in a single visit. Full door replacement is only necessary when the top section or spring tube is compromised. We'll tell you honestly which it is before we start." },
   { q: "What WorkSafeBC documentation do you provide?", a: "Every PM visit produces a written per-door condition report in PDF format, emailed to the facility manager. The report documents spring condition, cable and drum wear, opener force test results, and any code or WorkSafeBC issues found. Reports are held on file and can be produced for your insurer if an incident occurs." },
@@ -239,7 +239,7 @@ export default function WarehousesPage() {
             <span className="text-gold">Trucks waiting, money bleeding.</span>
           </h1>
           <p className="mt-5 text-white/75 text-base max-w-2xl leading-relaxed">
-            We dispatch from our Richmond yard in 12–20 minutes during business hours. Every brand — LiftMaster, Manaras, Richards-Wilcox, Steel-Craft, Hörmann, Wayne Dalton, CornellCookson. Springs, cables, openers — first-visit fix is the norm.
+            Fast service — within 1 hour during business hours. Every brand — LiftMaster, Manaras, Richards-Wilcox, Steel-Craft, Hörmann, Wayne Dalton, CornellCookson. Springs, cables, openers — first-visit fix is the norm.
           </p>
           <style>{`
             @keyframes emergency-pulse {
@@ -312,7 +312,7 @@ export default function WarehousesPage() {
               { label: "ANNUAL PROGRAM", price: "$345/door/visit", note: "1 visit/year · 21-pt inspection · same-day priority · during business hours", highlight: false },
               { label: "BI-ANNUAL PROGRAM", price: "$310/door/visit", note: "2 visits/year ($155/door) · 15% off parts · same-day priority response", highlight: false },
               { label: "QUARTERLY ENTERPRISE", price: "$290/door/visit", note: "4 visits/year · $1,160/door/year · 30-min SLA · 24/7 emergency response", highlight: true },
-              { label: "EMERGENCY CALLOUT (NON-CONTRACT)", price: "from $585 + parts", note: "12–20 min response from our Richmond yard · contract clients pay $0 on emergency calls", highlight: false },
+              { label: "EMERGENCY CALLOUT (NON-CONTRACT)", price: "from $585 + parts", note: "Within 1 hour business hrs · contract clients pay $0 on emergency calls", highlight: false },
             ].map((p) => (
               <div key={p.label} className={`rounded-card p-5 border ${p.highlight ? "bg-navy-dark text-white border-navy-dark" : "bg-white border-steel/10"}`}>
                 <p className={`text-[10px] font-bold uppercase tracking-widest mb-2 ${p.highlight ? "text-gold" : "text-gold"}`}>{p.label}</p>
@@ -346,7 +346,7 @@ export default function WarehousesPage() {
               { icon: "📋", title: "Asset register on first PM visit", body: "Every door tagged with brand, model, serial, install year, spring cycle count, opener type — in CSV / Maximo / Limble / MaintainX / Hippo / FMX-compatible format." },
               { icon: "📊", title: "MTBF and PM-vs-reactive reporting", body: "Per door, per quarter — defensible numbers for budget reviews and SLA conversations with leadership." },
               { icon: "📄", title: "Work-order integration", body: "We accept your WO numbering, reference it on invoices, return signed completion docs in your AP format." },
-              { icon: "⚡", title: "30-min on-site SLA", body: "For Quarterly Enterprise contract clients, 24/7 including statutory holidays — 12–20 min typical from our Richmond yard to any Richmond industrial address." },
+              { icon: "⚡", title: "30-min on-site SLA", body: "For Quarterly Enterprise contract clients, 24/7 including statutory holidays — within 1 hour from dispatch to any Richmond industrial address." },
               { icon: "🔒", title: "WorkSafeBC-compliant per-door condition reports", body: "Emailed as PDFs after every visit — held on file for your insurer if an incident occurs." },
               { icon: "🏢", title: "Multi-site portfolios", body: "Fleet pricing, consolidated monthly invoicing, one phone number for any door at any site." },
             ].map((item) => (
@@ -425,7 +425,7 @@ export default function WarehousesPage() {
               Richmond's industrial corridors — Bridgeport, Crestwood, Mitchell Island, No. 5 Road, and the Sea Island business parks — have one of the highest concentrations of third-party logistics, food processing, and distribution warehousing in the Lower Mainland. We have been running these corridors for years.
             </p>
             <p>
-              A vendor based in Surrey, Coquitlam, or Burnaby is 45–60 minutes from your door in normal traffic. In the worst cases — a Bridgeport or Knight Street crossing — it's longer. Our yard is inside Richmond. <strong className="text-navy-dark">12–20 minutes from any Richmond industrial address.</strong> That's not a marketing number — it's a drive time.
+              A vendor based in Surrey, Coquitlam, or Burnaby is 45–60 minutes from your door in normal traffic. In the worst cases — a Bridgeport or Knight Street crossing — it's longer. Our yard is inside Richmond. <strong className="text-navy-dark">We aim to be on-site within 1 hour of your call.</strong> Fast service that gets your operation moving again.
             </p>
             <p>
               On an emergency callout, the variance that matters is <strong className="text-navy-dark">time-to-repair</strong>, not hourly rate. See: address the only variable that matters.
