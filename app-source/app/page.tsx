@@ -90,10 +90,10 @@ export default function HomePage() {
               </Link>
               <a
                 href="tel:+17788000769"
-                className="inline-flex items-center justify-center gap-2 rounded-card border-2 border-white/40 text-white px-7 py-4 text-sm font-bold hover:border-white hover:bg-white/10 transition-colors uppercase tracking-wide"
+                className="inline-flex items-center justify-center gap-2 rounded-card bg-[#2E8B62] px-7 py-4 text-sm font-bold text-white hover:bg-[#1a7a58] transition-colors"
               >
                 <IconPhone className="w-4 h-4" />
-                Call Now
+                Call for Same-Day Service
               </a>
             </div>
 
