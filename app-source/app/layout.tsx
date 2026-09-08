@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import EmergencyBanner from "@/components/EmergencyBanner";
 import StickyCallBar from "@/components/StickyCallBar";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import PricingReveal from "@/components/PricingReveal";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <StickyCallBar />
+        <PricingReveal />
       </body>
     </html>
   );
