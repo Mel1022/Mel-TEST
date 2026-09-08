@@ -41,6 +41,28 @@ export default function SpringRepairPage() {
               Request a Quote
             </Link>
           </div>
+          {/* Emergency CTA */}
+          <style>{`
+            @keyframes emergency-pulse {
+              0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.7); }
+              50% { box-shadow: 0 0 0 10px rgba(220,38,38,0); }
+            }
+            .emergency-btn {
+              animation: emergency-pulse 1.6s ease-in-out infinite;
+            }
+          `}</style>
+          <div className="mt-5">
+            <a
+              href={siteConfig.phone.href}
+              className="emergency-btn inline-flex items-center gap-3 rounded-card bg-red-600 hover:bg-red-700 px-7 py-3.5 text-sm font-bold text-white transition-colors"
+            >
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-white" />
+              </span>
+              EMERGENCY? Call Now — Same-Day Spring Repair
+            </a>
+          </div>
         </div>
       </section>
 
