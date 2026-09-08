@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import EmergencyBanner from "@/components/EmergencyBanner";
 import StickyCallBar from "@/components/StickyCallBar";
-import PrivacyBar from "@/components/PrivacyBar";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 import { siteConfig } from "@/lib/site-config";
 
@@ -45,7 +44,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main>{children}</main>
         <Footer />
-        <PrivacyBar />
         <StickyCallBar />
       </body>
     </html>
