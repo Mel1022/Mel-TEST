@@ -1,6 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
-  <rect width="200" height="80" fill="#fff"/>
-  <text x="100" y="44" font-family="Arial, sans-serif" font-weight="700" font-size="32" fill="#1A3A6B" text-anchor="middle" letter-spacing="2">CLOPAY</text>
-  <line x1="20" y1="54" x2="180" y2="54" stroke="#1A3A6B" stroke-width="2"/>
-  <text x="100" y="68" font-family="Arial, sans-serif" font-weight="400" font-size="9" fill="#666" text-anchor="middle" letter-spacing="2">BUILDING PRODUCTS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 80" width="220" height="80">
+  <!-- Gold/yellow background -->
+  <rect width="220" height="80" fill="#E8A020" rx="4"/>
+  <!-- Simple house/building icon -->
+  <g transform="translate(18, 18)">
+    <!-- House roof -->
+    <polygon points="22,0 44,18 0,18" fill="#fff" opacity="0.9"/>
+    <!-- House body -->
+    <rect x="4" y="18" width="36" height="22" fill="#fff" opacity="0.9"/>
+    <!-- Door -->
+    <rect x="16" y="28" width="10" height="12" fill="#E8A020"/>
+  </g>
+  <!-- Clopay text in white -->
+  <text
+    x="130" y="50"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="900"
+    font-size="28"
+    fill="#fff"
+    text-anchor="middle"
+    letter-spacing="0.5"
+  >Clopay</text>
 </svg>
