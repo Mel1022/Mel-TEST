@@ -8,7 +8,7 @@ const INCLUDED = [
   "Spring & track installation",
   "Weather-stripping",
   "Finish details & hardware",
-  "Two-year labour warranty",
+  "One-year labour warranty",
 ];
 
 const TIERS = [

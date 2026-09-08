@@ -15,7 +15,7 @@ const values = [
   { title: "Honest Assessment", body: "We tell you what you need — not what costs the most. Repairs that make sense for your situation." },
   { title: "Skilled Technicians", body: "Our team is trained, licensed, and WCB compliant. We take the craft seriously." },
   { title: "Quality Parts", body: "We use parts suited to your specific door and opener model — not the cheapest option." },
-  { title: "Real Warranty", body: "Two-year labour warranty, backed by people who answer the phone in Richmond." },
+  { title: "Real Warranty", body: "One-year labour warranty, backed by people who answer the phone in Richmond." },
   { title: "Transparent Pricing", body: "Clear quotes before any work starts. No surprise charges, no bait-and-switch." },
   { title: "Community Roots", body: "We've served the same Richmond community since 2007. Our reputation is everything." },
 ];
@@ -25,7 +25,7 @@ const credentials = [
   "$5M general liability coverage",
   "WCB compliant on every job",
   "Family-owned since 2007",
-  "Two-year labour warranty on all work",
+  "One-year labour warranty on all work",
   "Residential & commercial certified",
 ];
 

@@ -89,7 +89,7 @@ export default function SpringRepairPage() {
                   "One oil-tempered torsion spring replaced",
                   "Standard 10,000-cycle spring",
                   "Tested & safety-checked before we leave",
-                  "Two-year labour warranty",
+                  "One-year labour warranty",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
                     <IconCheck className="w-4 h-4 text-navy flex-shrink-0 mt-0.5" />
@@ -126,7 +126,7 @@ export default function SpringRepairPage() {
                   "Free hinge & track lubrication",
                   "Free door balancing & tune-up",
                   "Tested & safety-checked before we leave",
-                  "Two-year labour warranty",
+                  "One-year labour warranty",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
                     <IconCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
@@ -158,7 +158,7 @@ export default function SpringRepairPage() {
                   "Free full preventive-maintenance service on the entire door",
                   "Free silicone quiet rollers (10-pack)",
                   "Free wireless keypad installed",
-                  "Two-year labour warranty",
+                  "One-year labour warranty",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
                     <IconCheck className="w-4 h-4 text-navy flex-shrink-0 mt-0.5" />
@@ -206,7 +206,7 @@ export default function SpringRepairPage() {
               "Proper tension calibration — not just replaced, but tuned",
               "Safety cable installation to contain a future break",
               "Full system inspection: cables, drums, bearings",
-              "Two-year labour warranty on all spring work",
+              "One-year labour warranty on all spring work",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <IconCheck className="w-5 h-5 text-navy flex-shrink-0 mt-0.5" />

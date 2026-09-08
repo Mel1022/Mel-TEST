@@ -11,7 +11,7 @@ const INCLUDED = [
   "Two remotes + keypad + smart Wi-Fi setup",
   "Safety sensors aligned and tested",
   "Door balance checked — opener won't fight a bad spring",
-  "Two-year labour warranty",
+  "One-year labour warranty",
 ];
 
 const MODELS = [

@@ -179,7 +179,7 @@ export default function HomePage() {
             {[
               { stat: "2007", label: "Founded in Richmond" },
               { stat: "$5M", label: "Liability Coverage" },
-              { stat: "2 Year", label: "Labour Warranty" },
+              { stat: "1 Year", label: "Labour Warranty" },
               { stat: "WCB", label: "Compliant & Insured" },
             ].map((item) => (
               <div key={item.label} className="rounded-card bg-white/8 border border-white/10 p-6 text-center">

@@ -91,7 +91,7 @@ const managerBenefits = [
     detail: "24/7 dispatch from Richmond. Real technicians — not an answering service — for parkade gates, roll-ups, and fire-rated doors.",
   },
   {
-    label: "Two-year labour warranty as standard",
+    label: "One-year labour warranty as standard",
     detail: "Every repair backed by a one-year labour warranty. Parts covered by manufacturer warranty on top of that.",
   },
   {

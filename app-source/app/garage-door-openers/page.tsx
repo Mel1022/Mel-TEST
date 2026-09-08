@@ -97,7 +97,7 @@ export default function OpenersPage() {
               "Battery backup for power outages",
               "Smart home & MyQ compatible installs",
               "Rolling code security for all remotes",
-              "Two-year labour warranty on all work",
+              "One-year labour warranty on all work",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <IconCheck className="w-4 h-4 text-gold flex-shrink-0 mt-1" />
