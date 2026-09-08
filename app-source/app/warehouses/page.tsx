@@ -184,21 +184,21 @@ const springs = [
     title: "25K-cycle commercial torsion springs",
     desc: "The workhorse spring for Richmond warehouse docks cycling 50–150 times/day. A standard 10,000-cycle residential spring fails inside one year on a busy dock. The 25K is the minimum we install.",
     features: ["Oil-tempered steel", "2\", 2-1/4\", 2-5/8\" ID", "IPPC-90 corrosion coating available", "Engineered to door weight", "Pairs typically 5–7 year service life", "On every truck"],
-    img: "/images/garage-door-spring.jpg",
+    img: "/images/warehouse-spring-25k-cycle.webp",
   },
   {
     badge: "HIGH-CYCLE INDUSTRIAL · 50,000-CYCLE TORSION",
     title: "50K-cycle high-cycle torsion springs",
     desc: "For Richmond distribution centres cycling 200–600 times/day. The standard upgrade on contract clients. Heavier wire gauge, larger IDs, marine-grade coating.",
     features: ["Oil-tempered, heavier wire gauge", "Larger ID options 2-5/8\", 3-3/4\"", "Marine-grade coating", "Engineered with safety factor", "Typically 8–10 year life", "Custom-built per door spec"],
-    img: "/images/garage-door-spring.jpg",
+    img: "/images/warehouse-spring-50k-cycle.webp",
   },
   {
     badge: "PREMIUM HIGH-CYCLE · 100,000-CYCLE TORSION",
     title: "100K-cycle premium torsion springs",
     desc: "Highest-cycle spring on the BC market. Used on 24/7 Richmond cross-docking and cold-storage operations. Marine + IPPC-90 dual coating. Largest wire gauge available.",
     features: ["Largest wire gauge available", "3-3/4\" ID typical", "Marine + IPPC-90 dual coating", "Engineered with 20% safety margin", "10–15 year service life realistic", "Per-door custom build"],
-    img: "/images/garage-door-spring.jpg",
+    img: "/images/warehouse-spring-100k-cycle.webp",
   },
 ];
 
