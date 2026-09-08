@@ -347,7 +347,7 @@ export default function LoadingDocksPage() {
               animation: emergency-shake 0.4s ease-in-out, emergency-pulse 1.5s ease-out infinite 0.4s;
             }
           `}</style>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+          <div className="mt-8 flex flex-col items-start gap-4">
             <a href={siteConfig.phone.href} className="emergency-btn inline-flex items-center justify-center gap-2 rounded-card bg-red-600 px-7 py-3.5 text-sm font-bold text-white hover:bg-red-700 transition-colors duration-200">
               <IconPhone className="w-4 h-4" /> Emergency: {siteConfig.phone.display}
             </a>
