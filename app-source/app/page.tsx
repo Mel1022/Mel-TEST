@@ -45,11 +45,19 @@ export default function HomePage() {
           <div className="hero-text animate-fade-up">
 
             {/* Eyebrow */}
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-3">
               <span className="w-5 h-px bg-[#4CAF80]" aria-hidden="true" />
               <p className="text-[#4CAF80] font-bold uppercase tracking-[0.22em] text-xs">
                 Garage Door Service &amp; Repair
               </p>
+            </div>
+
+            {/* Location */}
+            <div className="flex items-center gap-2 mb-6">
+              <svg className="w-3 h-3 text-white/40 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+              </svg>
+              <p className="text-white/40 text-xs tracking-wide">Richmond &amp; Metro Vancouver, BC</p>
             </div>
 
             {/* Headline — three-line hierarchy with accent dash */}
