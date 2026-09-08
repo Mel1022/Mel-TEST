@@ -87,9 +87,9 @@ export default function InstallationPricing() {
               </p>
 
               <div className={`text-3xl font-heading font-extrabold mb-1 ${tier.featured ? "text-white" : "text-navy-dark"}`}>
-                From <span className="price-val">{tier.price}</span>
+                <span className="price-val">From {tier.price}</span>
               </div>
-              <p className={`text-xs mb-6 ${tier.featured ? "text-white/50" : "text-steel/70"}`}>installed</p>
+              <p className={`text-xs mb-6 ${tier.featured ? "text-white/50" : "text-steel/70"}`}><span className="price-val">installed</span></p>
 
               <ul className="space-y-3 flex-1">
                 {INCLUDED.map((item) => (

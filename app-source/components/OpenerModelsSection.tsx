@@ -101,7 +101,7 @@ function ModelCard({ model }: { model: typeof MODELS[0] }) {
         <h3 className="font-heading font-bold text-xl text-navy-dark mt-0.5">{model.name}</h3>
         <p className="text-sm text-steel mt-0.5">{model.subtitle}</p>
         <p className="font-bold text-navy-dark mt-2">
-          <span className="price-val">{model.price}</span> <span className="font-normal text-steel text-sm">installed</span>
+          <span className="price-val">{model.price} <span className="font-normal text-steel text-sm">installed</span></span>
         </p>
         <div className="flex flex-wrap gap-1.5 mt-3">
           {model.features.map((f) => (
