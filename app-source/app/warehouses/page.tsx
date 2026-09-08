@@ -240,8 +240,24 @@ export default function WarehousesPage() {
           <p className="mt-5 text-white/75 text-base max-w-2xl leading-relaxed">
             We dispatch from our Richmond yard in 12–20 minutes during business hours. Every brand — LiftMaster, Manaras, Richards-Wilcox, Steel-Craft, Hörmann, Wayne Dalton, CornellCookson. Springs, cables, openers — first-visit fix is the norm.
           </p>
-          <div className="mt-8 flex flex-col gap-3 max-w-lg">
-            <a href={siteConfig.phone.href} className="flex items-center gap-4 rounded-card bg-red-600 px-7 py-4 hover:bg-red-700 transition-colors">
+          <style>{`
+            @keyframes emergency-pulse {
+              0%   { box-shadow: 0 0 0 0 rgba(220,38,38,0.9), 0 0 12px 2px rgba(220,38,38,0.5); }
+              50%  { box-shadow: 0 0 0 20px rgba(220,38,38,0.15), 0 0 24px 6px rgba(220,38,38,0.3); }
+              100% { box-shadow: 0 0 0 28px rgba(220,38,38,0), 0 0 0 0 rgba(220,38,38,0); }
+            }
+            @keyframes emergency-shake {
+              0%, 100% { transform: translateX(0); }
+              20%       { transform: translateX(-3px); }
+              40%       { transform: translateX(3px); }
+              60%       { transform: translateX(-2px); }
+              80%       { transform: translateX(2px); }
+            }
+            .emergency-btn { animation: emergency-pulse 1.5s ease-out infinite; }
+            .emergency-btn:hover { animation: emergency-shake 0.4s ease-in-out, emergency-pulse 1.5s ease-out infinite 0.4s; }
+          `}</style>
+          <div className="mt-8 flex flex-col items-start gap-3">
+            <a href={siteConfig.phone.href} className="emergency-btn flex items-center gap-4 rounded-card bg-red-600 px-7 py-4 hover:bg-red-700 transition-colors">
               <IconPhone className="w-5 h-5 text-white flex-shrink-0" />
               <div>
                 <p className="text-white/80 text-[10px] font-bold uppercase tracking-widest leading-none mb-1">Call now · Same-day Richmond</p>
