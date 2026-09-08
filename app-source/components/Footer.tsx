@@ -89,13 +89,15 @@ export default function Footer() {
               >
                 Become a Partner
               </Link>
-              <PricingReveal />
-              <Link
-                href="/privacy-policy/"
-                className="inline-flex items-center justify-center rounded-card border border-white/30 px-5 py-2.5 text-sm font-bold text-white hover:border-gold hover:text-gold transition-colors"
-              >
-                View Privacy Policy
-              </Link>
+              <div className="flex gap-2">
+                <PricingReveal />
+                <Link
+                  href="/privacy-policy/"
+                  className="flex-1 inline-flex items-center justify-center rounded-card border border-white/15 px-3 py-2.5 text-sm font-bold text-white/40 hover:border-white/30 hover:text-white/60 transition-colors whitespace-nowrap"
+                >
+                  Privacy Policy
+                </Link>
+              </div>
             </div>
           </div>
         </div>
