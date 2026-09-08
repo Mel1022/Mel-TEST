@@ -44,9 +44,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <EmergencyBanner />
         <Header />
         <main>{children}</main>
+        <PricingReveal />
         <Footer />
         <StickyCallBar />
-        <PricingReveal />
       </body>
     </html>
   );
