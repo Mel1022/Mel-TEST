@@ -205,9 +205,9 @@ export default function StrataPage() {
                 </h3>
                 <div className="flex items-baseline gap-1 mb-1">
                   <span className={`font-heading font-extrabold text-3xl ${p.highlight ? "text-white" : "text-navy-dark"}`}><span className="price-val">{p.price}</span></span>
-                  <span className={`text-xs ${p.highlight ? "text-white/60" : "text-steel"}`}>{p.perVisit}</span>
+                  <span className={`text-xs ${p.highlight ? "text-white/60" : "text-steel"}`}><span className="price-val">{p.perVisit}</span></span>
                 </div>
-                <p className={`text-xs mb-4 ${p.highlight ? "text-white/50" : "text-steel/70"}`}>{p.perYear}</p>
+                <p className={`text-xs mb-4 ${p.highlight ? "text-white/50" : "text-steel/70"}`}><span className="price-val">{p.perYear}</span></p>
                 <Link
                   href="/request-a-quote/"
                   className={`self-start mb-5 inline-flex items-center gap-1 rounded-card px-5 py-2.5 text-xs font-bold transition-colors ${
