@@ -259,16 +259,22 @@ export default function CommercialNewDoorsPage() {
         <div className="overflow-hidden">
           <div className="brand-marquee flex gap-6" style={{ width: "max-content" }}>
             {[
+              { src: "/images/logo-steelcraft.svg", alt: "Steelcraft" },
               { src: "/images/logo-doorcraft.png", alt: "Door Craft" },
               { src: "/images/logo-garaga.png", alt: "Garaga" },
+              { src: "/images/logo-clopay.svg", alt: "Clopay" },
+              { src: "/images/logo-amarr.svg", alt: "Amarr" },
               { src: "/images/logo-richards-wilcox.png", alt: "Richards-Wilcox" },
               { src: "/images/logo-chi.png", alt: "CHI" },
               { src: "/images/logo-rytec.png", alt: "Rytec" },
               { src: "/images/logo-hormann.png", alt: "Hörmann" },
               { src: "/images/logo-liftmaster.png", alt: "LiftMaster" },
               { src: "/images/logo-hysecurity.png", alt: "HySecurity" },
+              { src: "/images/logo-steelcraft.svg", alt: "Steelcraft 2" },
               { src: "/images/logo-doorcraft.png", alt: "Door Craft 2" },
               { src: "/images/logo-garaga.png", alt: "Garaga 2" },
+              { src: "/images/logo-clopay.svg", alt: "Clopay 2" },
+              { src: "/images/logo-amarr.svg", alt: "Amarr 2" },
               { src: "/images/logo-richards-wilcox.png", alt: "Richards-Wilcox 2" },
               { src: "/images/logo-chi.png", alt: "CHI 2" },
               { src: "/images/logo-rytec.png", alt: "Rytec 2" },
