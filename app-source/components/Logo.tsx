@@ -12,7 +12,6 @@ export default function Logo({ variant = "dark", className = "" }: LogoProps) {
         style={{
           height: "48px",
           width: "auto",
-          filter: variant === "light" ? "brightness(0) invert(1)" : "none",
         }}
       />
     </span>
