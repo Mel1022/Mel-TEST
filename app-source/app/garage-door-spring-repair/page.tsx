@@ -29,18 +29,6 @@ export default function SpringRepairPage() {
             A broken spring is the #1 reason garage doors stop working. DoorChamp provides same-day
             torsion and extension spring service throughout Richmond and Metro Vancouver.
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <a
-              href={siteConfig.phone.href}
-              className="inline-flex items-center justify-center gap-2 rounded-card bg-gold px-7 py-3.5 text-sm font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors"
-            >
-              <IconPhone className="w-4 h-4" />
-              {siteConfig.phone.display}
-            </a>
-            <Link href="/request-a-quote/" className="inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors">
-              Request a Quote
-            </Link>
-          </div>
           {/* Emergency CTA */}
           <style>{`
             @keyframes emergency-pulse {
