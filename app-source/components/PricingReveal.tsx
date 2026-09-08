@@ -16,9 +16,9 @@ export default function PricingReveal() {
   return (
     <button
       onClick={() => setVisible((v) => !v)}
-      className="w-full py-2.5 bg-[#0d2318] text-white/40 hover:text-white/70 text-[11px] font-medium tracking-widest uppercase transition-colors text-center"
+      className="inline-flex items-center justify-center rounded-card border border-white/15 px-5 py-2.5 text-sm font-bold text-white/40 hover:border-white/30 hover:text-white/60 transition-colors w-full"
     >
-      {visible ? "— Hide Prices —" : "— Pricing —"}
+      {visible ? "Hide Prices" : "Pricing"}
     </button>
   );
 }

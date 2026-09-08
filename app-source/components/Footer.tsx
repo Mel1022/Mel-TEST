@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { siteConfig, residentialNav } from "@/lib/site-config";
+import PricingReveal from "./PricingReveal";
 
 export default function Footer() {
   return (
@@ -88,6 +89,7 @@ export default function Footer() {
               >
                 Become a Partner
               </Link>
+              <PricingReveal />
             </div>
           </div>
         </div>
