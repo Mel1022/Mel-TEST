@@ -89,7 +89,7 @@ const operators = [
     title: "Manaras Opera-H Series",
     desc: "Quebec-built jackshaft operator. Common on Richmond cold-storage and food-grade docks where reliability comes first. Direct retrofit for LiftMaster jackshaft positions.",
     features: ["Made in Beauceville, Quebec", "Continuous-duty industrial spec", "Compact footprint", "Easy chain conversion for Hoist-n-Matic", "Service-friendly modular design", "Canadian climate rated"],
-    img: "/images/Opera-H.webp",
+    img: "/images/Opera-SH.png",
     viewUrl: "https://www.manaras.com",
     viewLabel: "View on Manaras.com",
   },
