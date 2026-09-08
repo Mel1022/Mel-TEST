@@ -87,7 +87,7 @@ export default function InstallationPricing() {
               </p>
 
               <div className={`text-3xl font-heading font-extrabold mb-1 ${tier.featured ? "text-white" : "text-navy-dark"}`}>
-                From {tier.price}
+                From <span className="price-val">{tier.price}</span>
               </div>
               <p className={`text-xs mb-6 ${tier.featured ? "text-white/50" : "text-steel/70"}`}>installed</p>
 
