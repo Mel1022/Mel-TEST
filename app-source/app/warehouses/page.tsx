@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
-import { IconPhone, IconCheck, IconWrench, IconAlert, IconMaintenance, IconParts, IconInstall } from "@/components/Icons";
+import { IconPhone, IconCheck, IconWrench, IconAlert, IconInstall, IconParts } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Warehouse & Loading Dock Service Richmond BC | DoorChamp",
   description:
-    "Dock levelers, restraints, seals, overhead doors — complete warehouse door service in Richmond BC. Same-day dock emergency response. All brands. Call (778) 800-0769.",
+    "Commercial dock levelers, overhead doors, torsion springs, vehicle restraints — complete warehouse door service in Richmond BC. Same-day dock emergency. All brands. Call (778) 800-0769.",
   alternates: { canonical: "/warehouses/" },
 };
 
-function ProductCard({ badge, title, desc, features, img, cta }: {
-  badge?: string; title: string; desc: string; features?: string[]; img?: string; cta?: string;
+function ProductCard({ badge, brandModel, title, desc, features, img, viewUrl, viewLabel, cta }: {
+  badge?: string; brandModel?: string; title: string; desc: string;
+  features?: string[]; img?: string; viewUrl?: string; viewLabel?: string; cta?: string;
 }) {
   return (
     <div className="rounded-card border border-steel/10 bg-white overflow-hidden flex flex-col shadow-card">
-      <div className="relative h-44 flex items-center justify-center overflow-hidden">
+      <div className="relative h-44 flex items-center justify-center overflow-hidden bg-white">
         {img ? (
           <img src={img} alt={title} className="w-full h-full object-contain p-4" />
         ) : (
@@ -23,7 +24,8 @@ function ProductCard({ badge, title, desc, features, img, cta }: {
         )}
       </div>
       <div className="p-5 flex flex-col flex-1">
-        {badge && <span className="text-[10px] font-bold uppercase tracking-widest text-gold mb-1">{badge}</span>}
+        {badge && <span className="text-[10px] font-bold uppercase tracking-widest text-gold mb-0.5">{badge}</span>}
+        {brandModel && <span className="text-[10px] text-steel uppercase tracking-widest mb-1">{brandModel}</span>}
         <h3 className="font-heading font-bold text-navy-dark text-sm mb-2">{title}</h3>
         <p className="text-xs text-steel leading-relaxed mb-3 flex-1">{desc}</p>
         {features && (
@@ -35,10 +37,14 @@ function ProductCard({ badge, title, desc, features, img, cta }: {
             ))}
           </ul>
         )}
-        <a
-          href={siteConfig.phone.href}
-          className="mt-auto w-full text-center rounded-card bg-gold text-navy-dark text-xs font-bold py-2.5 px-4 hover:bg-gold-dark transition-colors"
-        >
+        {viewUrl && (
+          <a href={viewUrl} target="_blank" rel="noopener noreferrer"
+            className="text-xs text-steel underline mb-2 hover:text-navy-dark transition-colors">
+            {viewLabel}
+          </a>
+        )}
+        <a href={siteConfig.phone.href}
+          className="mt-auto w-full text-center rounded-card bg-gold text-navy-dark text-xs font-bold py-2.5 px-4 hover:bg-gold-dark transition-colors">
           {cta ?? "Get a Quote"}
         </a>
       </div>
@@ -46,195 +52,172 @@ function ProductCard({ badge, title, desc, features, img, cta }: {
   );
 }
 
-const levelers = [
+const operators = [
   {
-    badge: "HYDRAULIC LEVELER",
-    title: "Rite-Hite Hydraulic Dock Leveler",
-    desc: "Push-button operation. The standard for Richmond high-cycle warehouse docks. Smooth lip extension, auto-return, full maintenance access from the dock floor.",
-    features: ["Push-button hydraulic operation", "Full-range lip extension", "Aluminum construction option", "Rated to 50,000 lb capacity", "Low-maintenance hydraulic cylinder", "Rite-Hite parts on truck"],
-    img: "/images/loading-dock-leveler-rite-hite-hydraulic.webp",
+    badge: "HEAVY-DUTY JACKSHAFT",
+    brandModel: "LIFTMASTER H SERIES",
+    title: "LiftMaster H500UL / H800UL",
+    desc: "Heavy-duty industrial jackshaft. The workhorse on Richmond distribution docks. Mounts beside the door — maximizes ceiling clearance for dock operations.",
+    features: ["1 HP / 1-½ HP motors", "Continuous duty industrial cycles", "Up to 50 cycles/hr", "Built-in monitored entrapment", "UL 325 commercial compliant", "Battery backup option"],
+    img: "/images/LJ8900W.png",
+    viewUrl: "https://www.liftmaster.com",
+    viewLabel: "View on LiftMaster.com",
   },
   {
-    badge: "HYDRAULIC LEVELER",
-    title: "Blue Giant Hydraulic Leveler",
-    desc: "Heavy-duty hydraulic leveler for Richmond industrial docks with high truck volume. Proven in strata warehouse complexes and busy distribution yards.",
-    features: ["12,000–20,000 lb capacity", "Powered lip extension", "Recessed pit design", "Auto-return to stored position", "Blue Giant service parts stocked", "High-cycle industrial rating"],
-    img: "/images/loading-dock-leveler-blue-giant.webp",
+    badge: "MEDIUM-DUTY TROLLEY",
+    brandModel: "LIFTMASTER T SERIES",
+    title: "LiftMaster T500UL / T750UL",
+    desc: "Medium-duty commercial trolley operator. Standard for Richmond warehouses with sectional doors and rail-mount geometry. The most common retrofit on strata warehouse units.",
+    features: ["½ HP and ¾ HP options", "Rail-driven trolley", "Up to 25 cycles/hr", "Wall console + 3-button + radio receiver", "UL 325 compliant", "Standard for retrofit installs"],
+    img: "/images/LJ8950W.png",
+    viewUrl: "https://www.liftmaster.com",
+    viewLabel: "View on LiftMaster.com",
   },
   {
-    badge: "MECHANICAL LEVELER",
-    title: "Mechanical Dock Leveler",
-    desc: "Pull-chain walk-on operation. The most common leveler in Richmond strata warehouse units — simple, durable, and low-cost to maintain.",
-    features: ["Manual pull-chain operation", "Walk-on lip activation", "No power required", "Lower installed cost", "Easy field adjustment", "All brands serviced"],
-    img: "/images/loading-dock-leveler-mechanical.webp",
+    badge: "INDUSTRIAL HOIST",
+    brandModel: "LIFTMASTER MH SERIES",
+    title: "LiftMaster MH500UL",
+    desc: "Medium-duty hoist. Common on Richmond warehouse high-cycle doors where ceiling clearance is tight. Three-phase available for industrial service panels.",
+    features: ["½ HP, 3-phase available", "Hoist-style mounting", "Up to 25 cycles/hr", "Monitored entrapment ready", "Auxiliary brake assembly", "Three-phase 208/230/460/575V"],
+    img: "/images/MJ5011U.webp",
+    viewUrl: "https://www.liftmaster.com",
+    viewLabel: "View on LiftMaster.com",
   },
   {
-    badge: "EDGE-OF-DOCK LEVELER",
-    title: "Edge-of-Dock Leveler",
-    desc: "Bolt-on leveler for docks without a pit. Handles grade differences up to 5\". The fast, affordable fix for Richmond warehouse units not originally built with a pit leveler.",
-    features: ["No pit required", "Installs on existing dock face", "Spring-return lip", "Up to 5\" grade compensation", "Suitable for medium-cycle use", "Same-day installation available"],
-    img: "/images/loading-dock-leveler-edge-of-dock.webp",
+    badge: "CANADIAN HEAVY INDUSTRIAL",
+    brandModel: "MANARAS OPERA-H SERIES",
+    title: "Manaras Opera-H Series",
+    desc: "Quebec-built jackshaft operator. Common on Richmond cold-storage and food-grade docks where reliability comes first. Direct retrofit for LiftMaster jackshaft positions.",
+    features: ["Made in Beauceville, Quebec", "Continuous-duty industrial spec", "Compact footprint", "Easy chain conversion for Hoist-n-Matic", "Service-friendly modular design", "Canadian climate rated"],
+    img: "/images/Opera-H.webp",
+    viewUrl: "https://www.manaras.com",
+    viewLabel: "View on Manaras.com",
   },
   {
-    badge: "AIR-POWERED LEVELER",
-    title: "Air-Powered Dock Leveler",
-    desc: "Inflatable bag lifts the platform — no hydraulic fluid, no cylinder failure, no oil leak into the pit. Preferred for food-grade Richmond warehouse environments.",
-    features: ["No hydraulic fluid or cylinders", "Single push-button control", "Clean room / food-grade suitable", "Lower maintenance cost", "Safe under-leveler work access", "Blue Giant and Pentalift options"],
-    img: "/images/loading-dock-leveler-air-powered.webp",
+    badge: "CANADIAN MEDIUM JACKSHAFT",
+    brandModel: "MANARAS OPERA-MJ SERIES",
+    title: "Manaras Opera-MJ Series",
+    desc: "Medium-jackshaft Canadian-made operator. Direct retrofit for many LiftMaster installations across Richmond. Soft start, soft stop, standard wall control compatible.",
+    features: ["Up to 25 cycles/hr", "Compact design", "Standard wall control compatible", "Auxiliary brake", "Soft start, soft stop", "Manaras parts stocked on truck"],
+    img: "/images/Opera-MJ.webp",
+    viewUrl: "https://www.manaras.com",
+    viewLabel: "View on Manaras.com",
   },
   {
-    badge: "PORTABLE / PENTALIFT",
-    title: "Pentalift Portable Dock Leveler",
-    desc: "Free-standing portable platform for Richmond dock positions without a permanent leveler. Also used for temporary dock setups and cross-dock operations.",
-    features: ["No pit or permanent installation", "Hydraulic or manual options", "Relocatable between positions", "Grade range up to 12\"", "Pentalift parts available", "Fast lead time from stock"],
-    img: "/images/loading-dock-leveler-pentalift.webp",
-  },
-];
-
-const restraints = [
-  {
-    badge: "WHEEL RESTRAINT · POWERED",
-    title: "Rite-Hite DOK-LOK Restraint",
-    desc: "The best-selling powered vehicle restraint in North America. Automatically locks onto the truck's rear impact guard the moment the driver backs in. Interlock with the dock leveler — leveler will not operate until the truck is secured.",
-    features: ["Automatic RIG hook engagement", "Interlock with leveler and door", "Traffic light signals inside and outside", "Rated to 400,000 lb restraint force", "Works in wet and icy conditions", "Most common Richmond warehouse spec"],
-    img: "/images/loading-dock-restraint-rite-hite-doklok.webp",
-  },
-  {
-    badge: "WHEEL RESTRAINT · POWERED",
-    title: "Blue Giant StrongArm Restraint",
-    desc: "Heavy-duty RIG-engaging restraint for high-cycle Richmond distribution docks. Color-coded traffic light communication keeps drivers and dock workers in sync.",
-    features: ["Powered RIG engagement", "LED traffic light system", "High-cycle duty rating", "Stainless steel option for wash-down", "Blue Giant parts stocked", "Interlock with Blue Giant levelers"],
-    img: "/images/loading-dock-restraint-blue-giant-strongarm.webp",
-  },
-  {
-    badge: "WHEEL RESTRAINT · POWERED",
-    title: "Kelley TrueCheck Restraint",
-    desc: "Wheel-engaging restraint for trailers without a standard RIG. Kelley's approach locks the trailer tire directly — works on trailers the hook-style restraints miss.",
-    features: ["Wheel-chocking mechanism", "Works on non-RIG trailers", "Electric or hydraulic drive", "Traffic signal communication", "Low-profile housing", "Kelley parts on truck"],
-    img: "/images/loading-dock-restraint-kelley-truecheck.webp",
-  },
-  {
-    badge: "MANUAL RESTRAINT",
-    title: "Wheel Chock Restraint System",
-    desc: "Manual wheel chock with ICC bar for Richmond docks that need a low-cost compliance solution. Chain-and-chock systems with storage bracket meet WorkSafeBC requirements at every dock position.",
-    features: ["Manual chock and chain", "ICC bar compatibility", "WorkSafeBC compliant setup", "Low installed cost", "No electrical required", "Suitable for low-cycle docks"],
-    img: "/images/loading-dock-restraint-wheel-chock.webp",
+    badge: "HIGH-SPEED / ROLL-UP",
+    brandModel: "RYTEC SPIRAL · ALBANY RAPIDROLL",
+    title: "Rytec Spiral · Albany RapidRoll",
+    desc: "High-speed rolling doors for Richmond cross-docking and 3PL facilities. We service, supply parts, and recommission — opening speeds up to 90 in/sec for high-cycle dock operations.",
+    features: ["Opening speeds 40–90 in/sec", "Up to 600+ cycles/day capacity", "Self-repairing soft edge", "Mounted pulleys available", "Door-in-door available", "Wash-down and cold-storage variants"],
+    img: "/images/logo-rytec.png",
+    viewUrl: "https://www.rytecdoors.com",
+    viewLabel: "View on Rytec.com",
   },
 ];
 
-const seals = [
+const commercialDoors = [
   {
-    badge: "DOCK SEAL · FOAM",
-    title: "Rite-Hite Eclipse Dock Seal",
-    desc: "Compression foam seal for tight, energy-efficient closure against most trailer bodies. The most common dock seal on Richmond strata warehouse units — simple, low-maintenance, and long-lasting.",
-    features: ["Foam compression design", "Tight trailer contact", "High energy efficiency rating", "Vinyl-laminated wear surface", "Compatible with all trailer heights", "Easy field replacement"],
-    img: "/images/loading-dock-seal-rite-hite-eclipse.webp",
+    badge: "INSULATED SECTIONAL",
+    brandModel: "RICHARDS-WILCOX · STEEL-CRAFT",
+    title: "Richards-Wilcox Thermomax · Steel-Craft TherMax",
+    desc: "Insulated commercial sectional doors. Steel-Craft is built in Alberta, Richards-Wilcox in Ontario — Canadian-made for Canadian climate. R-12 to R-18 polyurethane core.",
+    features: ["R-12 to R-18 polyurethane core", "24 or 25 ga steel skin", "Sizes to 24'×24'+", "Wind-load rated for coastal BC", "Galvanized hardware throughout", "Available with vision lights"],
+    img: "/images/logo-richards-wilcox.png",
+    viewUrl: "https://www.richardswilcox.com",
+    viewLabel: "View on RichardsWilcox.com",
   },
   {
-    badge: "DOCK SEAL · INFLATABLE",
-    title: "Rite-Hite Phantom Inflatable Seal",
-    desc: "Inflatable bladder seals around the trailer regardless of trailer width, height, or body irregularities. Best performance for Richmond cold-storage and food-grade docks.",
-    features: ["Inflatable bladder design", "Works on any trailer size", "Superior energy efficiency", "No wear from trailer contact", "Cold storage rated", "Powered inflation system"],
-    img: "/images/loading-dock-seal-rite-hite-phantom.webp",
+    badge: "CANADIAN HEAVY COMMERCIAL",
+    brandModel: "GARAGA GR-SERIES",
+    title: "Garaga GR-Series Commercial",
+    desc: "Quebec-made commercial sectional doors. Premium thermal break, factory-finished, and the most warranty-friendly install across BC. Lifetime delamination warranty.",
+    features: ["Made in Quebec, Canada", "Up to R-16.4 effective", "Thermal-break construction", "Industrial-grade hardware", "Custom colours from factory", "Lifetime delamination warranty"],
+    img: "/images/logo-garaga.png",
+    viewUrl: "https://www.garaga.com",
+    viewLabel: "View on Garaga.com",
   },
   {
-    badge: "DOCK SHELTER",
-    title: "Blue Giant Dock Shelter",
-    desc: "Brush-curtain shelter for Richmond docks that receive multiple trailer sizes. The shelter accommodates more variation than a seal — preferred where trailer heights vary widely.",
-    features: ["Adjustable brush-curtain sides", "Works across trailer height range", "Maintains seal without compression", "Head curtain included", "Heavy-duty frame construction", "Blue Giant parts stocked"],
-    img: "/images/loading-dock-shelter-blue-giant.webp",
+    badge: "HEAVY-DUTY INDUSTRIAL",
+    brandModel: "HÖRMANN INDUSTRIAL",
+    title: "Hörmann SPU F42",
+    desc: "German-engineered heavy industrial sectional. Used in Richmond's high-end cold-storage and food-grade facilities. 42 mm thick insulated panels, U-value 0.51 W/m²K.",
+    features: ["42 mm thick insulated panels", "U-value 0.51 W/m²K", "Up to 8000 mm × 7000 mm", "ThermoFrame thermal break", "Optional all-glass sections", "Engineered for high-cycle"],
+    img: "/images/logo-hormann.png",
+    viewUrl: "https://www.hormann.ca",
+    viewLabel: "View on Hormann.ca",
   },
   {
-    badge: "HEAD CURTAIN",
-    title: "Dock Head Curtain",
-    desc: "Overhead curtain that seals the gap above the trailer roof at the dock face. Used standalone on low-clearance Richmond docks or paired with side seals for full perimeter closure.",
-    features: ["Fills gap above trailer roof", "Compatible with any seal type", "Vinyl or brush material options", "Low-clearance dock solution", "Easy installation", "Full perimeter seal when combined"],
-    img: "/images/loading-dock-head-curtain.webp",
+    badge: "ROLLING STEEL",
+    brandModel: "COOKSON · CORNELLCOOKSON",
+    title: "CornellCookson SD Series",
+    desc: "Rolling steel service doors. The go-to for Richmond self-storage, parkades, and tight-headroom warehouse openings. Coiling steel slat construction to 30'×30'+.",
+    features: ["Coiling steel slat construction", "Sizes to 30'×30'+", "Fire-rated variants", "Wind-load options to 80+ mph", "Insulated coiling available", "Powder-coat finish"],
+    img: "/images/logo-chi.png",
+    viewUrl: "https://www.cornellcookson.com",
+    viewLabel: "View on CornellCookson.com",
+  },
+  {
+    badge: "FIRE-RATED ROLLING",
+    brandModel: "CORNELLCOOKSON FIREGARD",
+    title: "CornellCookson FireGard 600",
+    desc: "Fire-rated coiling doors. Required between specific occupancies in Richmond warehouses — food/industrial separation, fire-wall openings. UL listed, 3-hour and 4-hour assemblies.",
+    features: ["UL listed fire ratings", "3-hour and 4-hour assemblies", "Auto-close on alarm", "Smoke-rated variants", "Time-delay close 30s/60s/90s", "Fail-safe gravity close"],
+    img: "/images/logo-chi.png",
+    viewUrl: "https://www.cornellcookson.com",
+    viewLabel: "View on CornellCookson.com",
+  },
+  {
+    badge: "DRIFT / BREAK-AWAY",
+    brandModel: "WAYNE DALTON THERMOMARK",
+    title: "Wayne Dalton ThermoMark 575",
+    desc: "Break-away bottom section. Designed for Richmond facilities where forklift strikes are part of the operating reality. Replace the bottom panel — not the whole door.",
+    features: ["Replaceable bottom panel only", "Reduces full-door damage cost", "R-17.5 insulated", "Aluminum frame option", "Standard 24-gauge skin", "Sizes to 30'"],
+    img: "/images/logo-liftmaster.png",
+    viewUrl: "https://www.wayndalton.com",
+    viewLabel: "View on WayneDalton.com",
   },
 ];
 
-const bumpers = [
+const springs = [
   {
-    badge: "LAMINATED BUMPER",
-    title: "6\" Laminated Rubber Bumper",
-    desc: "The standard dock bumper for Richmond warehouse units. Absorbs trailer impact and protects the dock face. Bolts directly to the concrete dock face.",
-    features: ["6\" projection from dock face", "Laminated rubber construction", "High-impact resistance", "Direct bolt-on installation", "Available in 10\", 12\" heights", "Most common Richmond spec"],
-    img: "/images/loading-dock-bumper-laminated-6in.webp",
+    badge: "STANDARD COMMERCIAL · 25,000-CYCLE TORSION",
+    title: "25K-cycle commercial torsion springs",
+    desc: "The workhorse spring for Richmond warehouse docks cycling 50–150 times/day. A standard 10,000-cycle residential spring fails inside one year on a busy dock. The 25K is the minimum we install.",
+    features: ["Oil-tempered steel", "2\", 2-1/4\", 2-5/8\" ID", "IPPC-90 corrosion coating available", "Engineered to door weight", "Pairs typically 5–7 year service life", "On every truck"],
+    img: "/images/garage-door-spring.jpg",
   },
   {
-    badge: "POLYETHYLENE BUMPER",
-    title: "Polyethylene Dock Bumper",
-    desc: "UHMW polyethylene face resists oils, solvents, and chemicals — preferred for Richmond food-processing and chemical warehouse docks where rubber contamination is a concern.",
-    features: ["UHMW polyethylene face", "Chemical and oil resistant", "No rubber transfer to trailers", "Food-grade compatible", "Easy clean surface", "Longer service life than rubber"],
-    img: "/images/loading-dock-bumper-polyethylene.webp",
+    badge: "HIGH-CYCLE INDUSTRIAL · 50,000-CYCLE TORSION",
+    title: "50K-cycle high-cycle torsion springs",
+    desc: "For Richmond distribution centres cycling 200–600 times/day. The standard upgrade on contract clients. Heavier wire gauge, larger IDs, marine-grade coating.",
+    features: ["Oil-tempered, heavier wire gauge", "Larger ID options 2-5/8\", 3-3/4\"", "Marine-grade coating", "Engineered with safety factor", "Typically 8–10 year life", "Custom-built per door spec"],
+    img: "/images/garage-door-spring.jpg",
   },
   {
-    badge: "SPRING-MOUNT BUMPER",
-    title: "Spring-Mount Dock Bumper",
-    desc: "Spring-mounted bumper absorbs impact and returns to position — protects both the dock face and the trailer. Used at Richmond docks with high daily truck cycles.",
-    features: ["Spring return mechanism", "Reduced impact force on structure", "High-cycle rated", "Steel spring assembly", "Bolt-on installation", "Available in multiple projections"],
-    img: "/images/loading-dock-bumper-spring-mount.webp",
-  },
-  {
-    badge: "STEEL-FACED BUMPER",
-    title: "10\" Steel-Faced Bumper",
-    desc: "Heavy-duty steel-faced bumper for Richmond industrial docks with large trucks and high-impact use. The 10\" projection handles significant grade differences between dock and trailer floor.",
-    features: ["10\" projection from dock face", "Steel face plate", "High-load rated", "Welded construction", "Suitable for semi-trailer use", "Long service life"],
-    img: "/images/loading-dock-bumper-steel-faced-10in.webp",
+    badge: "PREMIUM HIGH-CYCLE · 100,000-CYCLE TORSION",
+    title: "100K-cycle premium torsion springs",
+    desc: "Highest-cycle spring on the BC market. Used on 24/7 Richmond cross-docking and cold-storage operations. Marine + IPPC-90 dual coating. Largest wire gauge available.",
+    features: ["Largest wire gauge available", "3-3/4\" ID typical", "Marine + IPPC-90 dual coating", "Engineered with 20% safety margin", "10–15 year service life realistic", "Per-door custom build"],
+    img: "/images/garage-door-spring.jpg",
   },
 ];
 
 const failures = [
-  { n: "1", title: "Hydraulic Leveler Won't Rise or Extend Lip", body: "Oil leak from the cylinder or pump, solenoid failure, or a stuck check valve. The leveler platform rises but the lip won't extend, or the whole unit won't come up. Most hydraulic leveler failures are a single component — pump, valve, or seal kit. Parts are on the truck for Rite-Hite, Blue Giant, and Kelley levelers. Most repairs are same visit." },
-  { n: "2", title: "Mechanical Leveler Lip Won't Latch or Drops", body: "Lip hinge wear, keeper rod failure, or pull-chain mechanism binding. The lip comes out but won't hold position, or falls mid-loading. This stops the dock completely. Mechanical leveler components are simple — keeper, lip, hinge, walk-on leg. We carry rebuild kits for the most common Richmond brands." },
-  { n: "3", title: "Vehicle Restraint Won't Engage or Release", body: "Powered restraints fail at the motor, the limit switch, or the RIG hook itself — bent from a truck strike, worn, or jammed with debris. The dock is locked: WorkSafeBC requires a secured restraint before leveler operation. We clear, repair, or replace the hook assembly and interlock wiring same visit for Rite-Hite DOK-LOK and Blue Giant StrongArm." },
-  { n: "4", title: "Dock Seal Torn or Missing — Heat and Rain Into the Dock", body: "Compression seals fail at the corners first — foam compresses permanently, vinyl tears, and the dock header pulls away from the building. Result: rain, wind, and cold into the building. Torn or collapsed seals are a replacement job, not a repair. We stock Eclipse and similar foam seal assemblies for same-visit installation on standard Richmond dock openings." },
-];
-
-const pmItems = [
-  "Leveler platform lift force and hold test",
-  "Hydraulic fluid level and leak check",
-  "Lip latch and keeper condition",
-  "Walk-on leg and hinge wear",
-  "Pump motor and solenoid function",
-  "Vehicle restraint hook travel and limit switch",
-  "Restraint–leveler interlock test",
-  "Traffic light signal function — inside and outside",
-  "Dock seal compression and tear inspection",
-  "Seal corner bracket and fastener check",
-  "Bumper anchor bolt torque check",
-  "Overhead door balance and spring tension",
-  "Door track alignment and roller wear",
-  "Weather seal condition — bottom and sides",
-  "Dock light function if present",
-  "Pit drain clear — no debris or standing water",
-  "Control panel label legibility",
-  "WorkSafeBC signage present and legible",
-  "Written report per dock position",
-  "Code-violation log with photos",
-  "Parts estimate for any deferred repair",
-];
-
-const contracts = [
-  { doors: "1–4 dock positions", freq: "Annual", rate: "from $249/position/year", note: "One PM visit · written report · 10% off parts" },
-  { doors: "5–9 dock positions", freq: "Annual", rate: "from $199/position/year", note: "One PM visit · code-violation log · 12% off parts" },
-  { doors: "10–19 dock positions", freq: "Bi-annual", rate: "from $179/position/visit", note: "2 visits/year · asset register · 15% off parts" },
-  { doors: "20+ dock positions", freq: "Quarterly", rate: "from $149/position/visit", note: "4 visits/year · priority dispatch · 20% off parts" },
-];
-
-const brands = [
-  "Rite-Hite", "Blue Giant", "Pentalift", "Kelley", "Serco", "Assa Abloy", "Nordock", "McGuire",
-  "Poweramp", "Dok-Mor", "Frommelt", "Entrematic", "Amarr", "Clopay", "Wayne Dalton", "Raynor",
+  { n: "1", title: "High-Cycle Torsion Spring Failure", body: "The number one dock door failure — they cycle 50, 100, sometimes 400 times on a busy Richmond dock. A standard 10,000-cycle spring on a dock fails inside one year. We carry 25,000-, 50,000-, and 100,000-cycle springs in 2\", 2-5/8\" and 3-3/4\" diameters on the commercial service truck. Single-coil replacement or the full pair — first-visit fix is the norm." },
+  { n: "2", title: "Forklift Strike Damage", body: "A 5,000-lb counterbalance forklift at 8 km/h delivers about 5,000 N of energy into the bottom panel. The result is a cracked bottom rail, bent vertical track, and a damaged curtain that crumples faster every subsequent cycle. Most forklift strikes on Richmond docks are repairable — we re-section, straighten the track, and replace the bottom panel in a single service visit. Wayne Dalton ThermoMark break-away bottom sections are the long-term fix." },
+  { n: "3", title: "Cable & Drum Failure from Coastal Air", body: "Richmond's salt-air environment generates 7–9 times more cable corrosion than inland locations. The cable corrodes from the inside out — facility managers first notice when the cable jumps the drum and the door closes non-level, jamming the track. We carry stainless-grade and marine-coated cable on the trucks for any door that's had this failure once." },
+  { n: "4", title: "Commercial Opener Failure", body: "LiftMaster and Manaras commercial jackshaft and trolley operators eventually reach end of lifespan — or lose a logic board, limit switch, or gear assembly before that. We carry LiftMaster H-series and T-series boards and Manaras Opera replacement assemblies on the trucks. Most warehouse opener swaps are first-visit fixes." },
 ];
 
 const faqs = [
-  { q: "How fast can you respond to a dock emergency in Richmond?", a: "We dispatch from our Richmond yard — typical response is 12–20 minutes in the Richmond industrial and warehouse area. For strata warehouse complexes on No. 5 Road, Bridgeport, and the Crestwood/Riverside corridors, we are almost always the first call and the first truck on site." },
-  { q: "Can you service our dock levelers if you didn't install them?", a: "Yes. We service and repair any brand of dock leveler, restraint, seal, or shelter regardless of who installed it. We carry parts for Rite-Hite, Blue Giant, Kelley, Pentalift, Nordock, and McGuire. If we need a specialty part, we can usually source it within 24 hours from our Richmond supplier network." },
-  { q: "Do you handle the overhead doors at the dock positions too?", a: "Yes — both on the same truck. Overhead door spring replacement, cable and drum, track alignment, and commercial operator service are all in scope. One callout fee covers the dock leveler and the overhead door at the same position. We don't hand off between trades." },
-  { q: "What does a dock leveler PM actually cost?", a: "A single-position annual PM is $249 including the 21-point inspection and written report. At 5+ positions the rate drops to $199/position/year. At 10+ positions, bi-annual PM at $179/position/visit is typically less than one emergency callout per year — it prevents the callouts." },
-  { q: "Is a dock vehicle restraint required in BC?", a: "WorkSafeBC OHS Regulation 4.112 requires that trailers be immobilized before dock leveler operation. A powered restraint is the most reliable compliance method. Wheel chocks are acceptable at lower-cycle docks but require a written procedure and consistent employee practice. We can advise on the right compliance approach for your dock volume and trailer mix." },
-  { q: "Can you quote all the docks at our facility at once?", a: "Yes — send us your building address and dock count and we'll do a no-cost walk-through. We return a written proposal covering all dock positions: current condition, any code or WorkSafeBC issues, and a PM contract rate. Most Richmond warehouse walk-throughs take 30–45 minutes for a 10-position facility." },
-  { q: "What's the warranty on dock leveler repair work?", a: "One year on parts and labour for repair work. New leveler and restraint installations carry manufacturer warranty plus our 1-year installation guarantee. If a repaired component fails within the warranty period, we return same-day at no charge." },
+  { q: "How fast do you respond to an emergency dock door failure in Richmond?", a: "We dispatch from our Richmond yard — typical response is 12–20 minutes to any Richmond warehouse address. The Bridgeport, Crestwood, Mitchell Island, and No. 5 Road industrial corridors are all within 12 minutes from our yard in normal traffic. We don't route through a call centre." },
+  { q: "Do you stock high-cycle commercial torsion springs?", a: "Yes. We carry 25,000-, 50,000-, and 100,000-cycle commercial torsion springs in 2\", 2-1/4\", 2-5/8\", and 3-3/4\" ID on every commercial truck. A 10,000-cycle residential spring on a busy Richmond dock fails inside one year — we never install residential springs on commercial doors." },
+  { q: "Can you rebuild a door after a forklift strike, or does it have to be replaced?", a: "Most forklift strikes on Richmond docks are repairable — we re-section the bottom rail, straighten the vertical track, and replace the damaged panel in a single visit. Full door replacement is only necessary when the top section or spring tube is compromised. We'll tell you honestly which it is before we start." },
+  { q: "What WorkSafeBC documentation do you provide?", a: "Every PM visit produces a written per-door condition report in PDF format, emailed to the facility manager. The report documents spring condition, cable and drum wear, opener force test results, and any code or WorkSafeBC issues found. Reports are held on file and can be produced for your insurer if an incident occurs." },
+  { q: "Can you service a warehouse door that another company installed?", a: "Yes. We service every commercial overhead door brand in BC regardless of who installed it. We carry parts for LiftMaster, Manaras, Richards-Wilcox, Steel-Craft, Hörmann, Wayne Dalton, Garaga, and CornellCookson. If we need a specialty part, we source it within 24 hours from our Richmond supplier network." },
+  { q: "Do you carry parts on the truck or order them in?", a: "Parts on the truck. Commercial torsion springs in every major ID and cycle rating, cable and drum assemblies, LiftMaster and Manaras logic boards and limit switches, dock leveler seal kits and solenoid valves, vehicle restraint hook assemblies — all on the commercial service truck. First-visit fix is the norm." },
+  { q: "Do you also service the dock equipment — levelers, seals, restraints?", a: "Yes — everything on the same truck and the same callout fee. Dock leveler hydraulic repair, vehicle restraint replacement, dock seal installation, bumper replacement — the same technician who fixes the overhead door also handles the dock equipment. One invoice, one visit." },
+  { q: "Why should we hire a Richmond-only vendor when Surrey and Burnaby companies bid lower?", a: "A vendor based in Surrey or Burnaby is 45–60 minutes from your door in normal Bridgeport or Knight Street traffic. We're 12 minutes from any Richmond industrial address. On an emergency callout, the variance that matters is time-to-repair, not hourly rate. On a PM contract, we combine overhead doors and dock equipment on one visit — you pay one callout, not two." },
 ];
 
 export default function WarehousesPage() {
@@ -248,14 +231,14 @@ export default function WarehousesPage() {
         <div className="absolute inset-0 bg-navy-dark/80" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
           <span className="inline-block bg-red-600 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
-            Dock Emergency · Richmond, BC
+            Dock Door Emergency · Richmond, BC
           </span>
           <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white max-w-3xl leading-tight">
             Dock door down?<br />
             <span className="text-gold">Trucks waiting, money bleeding.</span>
           </h1>
           <p className="mt-5 text-white/75 text-base max-w-2xl leading-relaxed">
-            A dock position that's down stops inbound and outbound. We respond same-day from our Richmond yard — dock levelers, vehicle restraints, overhead doors, seals. Every brand. Parts on the truck. Most dock repairs are completed same visit.
+            We dispatch from our Richmond yard in 12–20 minutes during business hours. Every brand — LiftMaster, Manaras, Richards-Wilcox, Steel-Craft, Hörmann, Wayne Dalton, CornellCookson. Springs, cables, openers — first-visit fix is the norm.
           </p>
           <div className="mt-8 flex flex-col gap-3 max-w-lg">
             <a href={siteConfig.phone.href} className="flex items-center gap-4 rounded-card bg-red-600 px-7 py-4 hover:bg-red-700 transition-colors">
@@ -276,7 +259,7 @@ export default function WarehousesPage() {
       <div className="bg-navy-dark/5 border-y border-steel/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
-            {["12–20 min dock emergency response", "All brands serviced", "Levelers + restraints + overhead doors on one truck", "WCB + $5M insured"].map((b) => (
+            {["12–20 min response", "Every brand serviced", "Parts on every truck", "30-min contract SLA"].map((b) => (
               <span key={b} className="flex items-center gap-1.5 text-xs text-steel font-semibold">
                 <IconCheck className="w-3.5 h-3.5 text-gold flex-shrink-0" /> {b}
               </span>
@@ -285,111 +268,169 @@ export default function WarehousesPage() {
         </div>
       </div>
 
-      {/* VALUE PROP */}
-      <section className="bg-white">
+      {/* DISPATCH STRIP */}
+      <div className="bg-white border-b border-steel/10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 text-center">
+          <p className="text-steel text-sm leading-relaxed">
+            <span className="font-bold text-navy-dark">Call now</span> — we dispatch the moment you hang up. Forklift strike, snapped spring, fried board — we have the parts on the truck and the technicians on call.
+          </p>
+        </div>
+      </div>
+
+      {/* PRICING AT A GLANCE */}
+      <section className="bg-surface">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <div className="max-w-3xl">
-            <p className="text-steel text-xs uppercase tracking-widest mb-3">Why it matters</p>
-            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-5">
-              A dock position that's down for two hours doesn't cost $500. It costs the shift.
-            </h2>
-            <p className="text-steel text-sm leading-relaxed mb-5">
-              Every Richmond warehouse manager knows the math: one dock position down means inbound freight queued in the yard, outbound trucks waiting, and a ripple into the next shift. The emergency callout fee is not the cost — the lost dock time is.
-            </p>
-            <p className="text-steel text-sm leading-relaxed mb-6">
-              We price the repair, not the crisis. Flat callout rate, parts billed at cost-plus, labour billed by the job — not the hour. Most dock leveler and restraint repairs are completed in one visit. If we can't finish same visit, we leave the dock position safely operational and return with the part.
-            </p>
-            <div className="grid sm:grid-cols-3 gap-4">
-              {[
-                { label: "Callout + diagnosis", price: "$189", note: "Flat rate, no hourly" },
-                { label: "Hydraulic leveler repair", price: "from $289", note: "Seal kit, valve, or pump — most common repairs" },
-                { label: "Vehicle restraint repair", price: "from $349", note: "Hook, motor, limit switch, or interlock" },
-              ].map((p) => (
-                <div key={p.label} className="rounded-card bg-surface border border-steel/10 p-5 text-center">
-                  <p className="font-heading font-extrabold text-navy-dark text-xl mb-0.5">{p.price}</p>
-                  <p className="font-bold text-navy-dark text-sm mb-1">{p.label}</p>
-                  <p className="text-xs text-steel">{p.note}</p>
-                </div>
-              ))}
+          <div className="flex items-baseline justify-between mb-2 flex-wrap gap-3">
+            <div>
+              <p className="text-steel text-xs uppercase tracking-widest mb-1">Pricing at a glance</p>
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark">
+                Richmond warehouse contracts.
+              </h2>
             </div>
+            <Link href="/request-a-quote/" className="text-gold text-sm font-bold hover:underline whitespace-nowrap">
+              Get a written quote →
+            </Link>
           </div>
+          <p className="text-steel text-sm mb-8 max-w-2xl leading-relaxed">
+            Maintenance contracts are how Richmond facility managers cut emergency callouts by ~75%. All rates are for Richmond locations, on coordinated visits.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { label: "ANNUAL PROGRAM", price: "$345/door/visit", note: "1 visit/year · 21-pt inspection · same-day priority · during business hours", highlight: false },
+              { label: "BI-ANNUAL PROGRAM", price: "$310/door/visit", note: "2 visits/year ($155/door) · 15% off parts · same-day priority response", highlight: false },
+              { label: "QUARTERLY ENTERPRISE", price: "$290/door/visit", note: "4 visits/year · $1,160/door/year · 30-min SLA · 24/7 emergency response", highlight: true },
+              { label: "EMERGENCY CALLOUT (NON-CONTRACT)", price: "from $585 + parts", note: "12–20 min response from our Richmond yard · contract clients pay $0 on emergency calls", highlight: false },
+            ].map((p) => (
+              <div key={p.label} className={`rounded-card p-5 border ${p.highlight ? "bg-navy-dark text-white border-navy-dark" : "bg-white border-steel/10"}`}>
+                <p className={`text-[10px] font-bold uppercase tracking-widest mb-2 ${p.highlight ? "text-gold" : "text-gold"}`}>{p.label}</p>
+                <p className={`font-heading font-extrabold text-xl mb-2 ${p.highlight ? "text-white" : "text-navy-dark"}`}>{p.price}</p>
+                <p className={`text-xs leading-relaxed ${p.highlight ? "text-white/70" : "text-steel"}`}>{p.note}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-steel mt-4">All pricing assumes Richmond locations. Multi-site portfolios get fleet pricing. 2-year labour warranty standard on every contract. WCB-compliant documentation every visit.</p>
         </div>
       </section>
 
-      {/* DOCK LEVELERS */}
-      <section className="bg-surface">
+      {/* BUILT FOR FACILITY MANAGERS */}
+      <section className="bg-navy-dark text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <p className="text-steel text-xs uppercase tracking-widest mb-3">Levelers we service &amp; install</p>
+          <p className="text-gold text-xs font-bold uppercase tracking-widest mb-4">Built for facility &amp; operations managers</p>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-3 max-w-3xl">
+            A dock door offline for two hours doesn't cost $300. It cascades through pick, pack, dispatch, and OT.{" "}
+            <span className="text-gold">We price the cascade out.</span>
+          </h2>
+          <p className="text-white/70 text-sm mb-6 max-w-2xl leading-relaxed">
+            If your KPIs are uptime, MTBF, and preventive-vs-reactive ratio, your vendor list should be short and your asset register should be clean. We integrate with the way modern facility managers actually run — CMMS work-order import, multi-site asset tagging, MTBF reporting per door, and a 30-minute SLA on contract clients in any Richmond industrial corridor.
+          </p>
+          <div className="flex flex-wrap gap-2 mb-8">
+            {["CMMS-compatible asset register", "Per-door MTBF tracking", "WCS Part 14 documentation", "Multi-site fleet pricing", "30-min priority SLA"].map((b) => (
+              <span key={b} className="text-[10px] font-bold uppercase tracking-widest border border-white/20 text-white/80 px-3 py-1.5 rounded-full">{b}</span>
+            ))}
+          </div>
+          <div className="space-y-4 max-w-3xl mb-8">
+            {[
+              { icon: "📋", title: "Asset register on first PM visit", body: "Every door tagged with brand, model, serial, install year, spring cycle count, opener type — in CSV / Maximo / Limble / MaintainX / Hippo / FMX-compatible format." },
+              { icon: "📊", title: "MTBF and PM-vs-reactive reporting", body: "Per door, per quarter — defensible numbers for budget reviews and SLA conversations with leadership." },
+              { icon: "📄", title: "Work-order integration", body: "We accept your WO numbering, reference it on invoices, return signed completion docs in your AP format." },
+              { icon: "⚡", title: "30-min on-site SLA", body: "For Quarterly Enterprise contract clients, 24/7 including statutory holidays — 12–20 min typical from our Richmond yard to any Richmond industrial address." },
+              { icon: "🔒", title: "WorkSafeBC-compliant per-door condition reports", body: "Emailed as PDFs after every visit — held on file for your insurer if an incident occurs." },
+              { icon: "🏢", title: "Multi-site portfolios", body: "Fleet pricing, consolidated monthly invoicing, one phone number for any door at any site." },
+            ].map((item) => (
+              <div key={item.title} className="flex gap-4">
+                <span className="text-xl flex-shrink-0 mt-0.5">{item.icon}</span>
+                <div>
+                  <p className="font-bold text-white text-sm mb-0.5">{item.title}</p>
+                  <p className="text-white/60 text-xs leading-relaxed">{item.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <Link href="/request-a-quote/" className="inline-flex items-center gap-1 text-gold text-sm font-bold hover:underline">
+            Request a site walk + custom savings projection →
+          </Link>
+        </div>
+      </section>
+
+      {/* WAREHOUSE OPENERS */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <p className="text-steel text-xs uppercase tracking-widest mb-3">Warehouse openers we service &amp; install</p>
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-3">
-            Hydraulic · Mechanical · Air-powered · Edge-of-dock. All types. All brands.
+            LiftMaster commercial, Manaras (Canadian-made), and high-speed roll-up specialists.
           </h2>
           <p className="text-steel text-sm mb-10 max-w-3xl leading-relaxed">
-            Richmond warehouses run every leveler type depending on build year, dock volume, and tenant mix. We service and install all of them — and carry parts for the most common brands on every truck.
+            Every commercial operator we deploy is UL 325 compliant with monitored entrapment protection. We service every model below — and most we don't list. Parts on the truck. First-visit fixes are the norm.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {levelers.map((l) => <ProductCard key={l.title} {...l} />)}
+            {operators.map((o) => <ProductCard key={o.title} {...o} />)}
           </div>
         </div>
       </section>
 
-      {/* VEHICLE RESTRAINTS */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <p className="text-steel text-xs uppercase tracking-widest mb-3">Vehicle restraints</p>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-3">
-            Rite-Hite · Blue Giant · Kelley · Manual. WorkSafeBC compliant.
-          </h2>
-          <p className="text-steel text-sm mb-10 max-w-3xl leading-relaxed">
-            WorkSafeBC OHS Regulation 4.112 requires trailer immobilization before dock leveler operation. A failed restraint locks the dock. We repair and replace all powered and manual restraint systems — hook, motor, limit switch, interlock wiring, and traffic light signals.
-          </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {restraints.map((r) => <ProductCard key={r.title} {...r} />)}
-          </div>
-        </div>
-      </section>
-
-      {/* SEALS & SHELTERS */}
+      {/* COMMERCIAL DOORS */}
       <section className="bg-surface">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <p className="text-steel text-xs uppercase tracking-widest mb-3">Dock seals &amp; shelters</p>
+          <p className="text-steel text-xs uppercase tracking-widest mb-3">Commercial doors we supply &amp; install</p>
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-3">
-            Foam · Inflatable · Shelter · Head curtain. Energy and weather protection.
+            Richards-Wilcox, Garaga, Steel-Craft (Canadian) · Hörmann, Wayne Dalton, CornellCookson · every brand on Richmond's industrial corridors.
           </h2>
           <p className="text-steel text-sm mb-10 max-w-3xl leading-relaxed">
-            A torn dock seal lets rain, wind, and cold into the building on every open-position shift. We stock Eclipse-style foam seals for same-day replacement on standard Richmond dock openings.
+            We service every commercial overhead door brand on Richmond docks regardless of who installed it. Below are the brands we most often supply for new installs and full panel rebuilds.
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {seals.map((s) => <ProductCard key={s.title} {...s} />)}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {commercialDoors.map((d) => <ProductCard key={d.title} {...d} />)}
           </div>
         </div>
       </section>
 
-      {/* BUMPERS */}
+      {/* HIGH-CYCLE SPRINGS */}
       <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <p className="text-steel text-xs uppercase tracking-widest mb-3">Dock bumpers</p>
+          <p className="text-steel text-xs uppercase tracking-widest mb-3">High-cycle springs on every truck</p>
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-3">
-            Laminated rubber · Polyethylene · Spring-mount · Steel-faced.
+            25,000 · 50,000 · 100,000-cycle torsion springs in 2&quot;, 2-1/4&quot;, 2-5/8&quot;, and 3-3/4&quot; ID.
           </h2>
           <p className="text-steel text-sm mb-10 max-w-3xl leading-relaxed">
-            Missing or damaged bumpers let trucks impact the dock face directly — cracking concrete and damaging trailer bodies. We supply and install all bumper types and anchor configurations for Richmond warehouse docks.
+            A standard 10,000-cycle residential spring on a busy Richmond dock fails inside one year. We carry the right cycle rating on the truck — first-visit fix is the norm.
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {bumpers.map((b) => <ProductCard key={b.title} {...b} />)}
+          <div className="grid sm:grid-cols-3 gap-5">
+            {springs.map((s) => <ProductCard key={s.title} {...s} />)}
           </div>
         </div>
       </section>
 
-      {/* FAILURES */}
+      {/* RICHMOND LOCAL ADVANTAGE */}
       <section className="bg-surface">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <p className="text-steel text-xs uppercase tracking-widest mb-3">Most common dock failures</p>
+          <p className="text-steel text-xs uppercase tracking-widest mb-3">Richmond drives. We run on Richmond.</p>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-5 max-w-3xl">
+            We run on Richmond.
+          </h2>
+          <div className="max-w-3xl space-y-4 text-sm text-steel leading-relaxed">
+            <p>
+              Richmond's industrial corridors — Bridgeport, Crestwood, Mitchell Island, No. 5 Road, and the Sea Island business parks — have one of the highest concentrations of third-party logistics, food processing, and distribution warehousing in the Lower Mainland. We have been running these corridors for years.
+            </p>
+            <p>
+              A vendor based in Surrey, Coquitlam, or Burnaby is 45–60 minutes from your door in normal traffic. In the worst cases — a Bridgeport or Knight Street crossing — it's longer. Our yard is inside Richmond. <strong className="text-navy-dark">12–20 minutes from any Richmond industrial address.</strong> That's not a marketing number — it's a drive time.
+            </p>
+            <p>
+              On an emergency callout, the variance that matters is <strong className="text-navy-dark">time-to-repair</strong>, not hourly rate. See: address the only variable that matters.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FOUR FAILURES */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <p className="text-steel text-xs uppercase tracking-widest mb-3">Most common warehouse door failures</p>
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-10">
             Four failures we drive to every week in Richmond.
           </h2>
           <div className="space-y-4 max-w-3xl">
             {failures.map((f) => (
-              <div key={f.n} className="flex gap-5 rounded-card bg-white border border-steel/10 p-5">
+              <div key={f.n} className="flex gap-5 rounded-card bg-surface border border-steel/10 p-5">
                 <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gold/10 text-gold font-heading font-extrabold text-sm flex items-center justify-center">
                   {f.n}
                 </span>
@@ -403,121 +444,138 @@ export default function WarehousesPage() {
         </div>
       </section>
 
-      {/* PM CONTRACTS */}
-      <section className="bg-white">
+      {/* THREE CONTRACT TIERS */}
+      <section className="bg-surface">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
           <p className="text-steel text-xs uppercase tracking-widest mb-3">Preventive maintenance</p>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-3">
-            Three commitments. Same 21-point checklist. Different visit frequency.
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-5">
+            Three contract tiers. Same 21-point checklist. Different visit frequency.
           </h2>
           <p className="text-steel text-sm mb-8 max-w-2xl leading-relaxed">
-            Every PM visit covers the full 21-point checklist below — leveler, restraint, seal, bumper, overhead door, and WorkSafeBC signage — at every dock position. The only difference between tiers is how often we visit and the parts discount.
+            A reactive relationship with a warehouse facility manager fails both parties when the same failure damages door number three. Emergency calls are a signal, not a service model. Below are the three tiers we offer Richmond facilities — one PM visit to quarterly enterprise.
           </p>
+          <div className="space-y-5 max-w-3xl">
+            {[
+              {
+                tier: "Tier 1 – Annual", price: "from $345/door/year",
+                body: "One visit per door · 21-pt inspection per door · lubrication, balance tracking, opener origin test · written condition report · 10% discount on parts & repairs · same-day priority response during business hours.",
+              },
+              {
+                tier: "Tier 2 – Bi-Annual", price: "from $310/door/visit",
+                body: "Two scheduled visits per year (every 6 months) · same 21-point inspection per door · spring & opener measurement · dock & leveler inspection · 15% discount on parts & repairs · 45-min priority SLA during business hours.",
+              },
+              {
+                tier: "Tier 3 – Quarterly Enterprise", price: "from $290/door/visit",
+                body: "Four scheduled visits per year · same 21-point inspection per door · annual failure projection on every door · MTBF/condition reporting · 20% discount on parts & repairs · 30-min emergency SLA 24/7 · quarterly review meeting with operations. Multi-site portfolios get fleet pricing across the combined contract.",
+              },
+            ].map((t) => (
+              <div key={t.tier} className="rounded-card bg-white border border-steel/10 p-6">
+                <div className="flex items-baseline justify-between gap-4 mb-2 flex-wrap">
+                  <p className="font-heading font-extrabold text-navy-dark">{t.tier}</p>
+                  <p className="font-heading font-bold text-gold text-sm">{t.price}</p>
+                </div>
+                <p className="text-sm text-steel leading-relaxed">{t.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-            {contracts.map((c) => (
-              <div key={c.doors} className="rounded-card bg-surface border border-steel/10 p-5">
-                <p className="text-xs font-bold text-gold uppercase tracking-widest mb-1">{c.freq}</p>
-                <p className="font-heading font-bold text-navy-dark text-sm mb-2">{c.doors}</p>
-                <p className="font-heading font-extrabold text-navy-dark text-lg mb-1">{c.rate}</p>
-                <p className="text-xs text-steel leading-relaxed">{c.note}</p>
+      {/* 18-DOOR COST COMPARISON */}
+      <section className="bg-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <p className="text-steel text-xs uppercase tracking-widest mb-3">Contract vs. break-fix</p>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-5">
+            What an 18-door facility actually pays under contract vs. break-fix.
+          </h2>
+          <div className="max-w-3xl overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-navy-dark text-white">
+                  <th className="text-left px-4 py-3 font-heading font-bold rounded-tl-card">Cost Driver</th>
+                  <th className="text-center px-4 py-3 font-heading font-bold">Break-Fix Only</th>
+                  <th className="text-center px-4 py-3 font-heading font-bold text-gold rounded-tr-card">Bi-Annual Contract</th>
+                  <th className="text-center px-4 py-3 font-heading font-bold text-gold">Annual Savings</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-steel/10">
+                {[
+                  ["Emergency call-outs (avg)", "$3,600", "$0 (priority year)", "$3,600"],
+                  ["Spring & cable replacements", "$5,580", "$4,900 (15% off)", "$670"],
+                  ["Downtime (1-hr, 5 hrs)", "$21,250", "$3,040 (1-2 hrs insured)", "$18,400"],
+                  ["Maintenance contract fee", "$0", "$3,552 (18 × 2 visits × $310)", "—"],
+                  ["Total annual cost", "$30,430", "$11,492", "$18,938 saved"],
+                ].map(([label, col1, col2, col3], i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-surface"}>
+                    <td className={`px-4 py-3 text-xs ${i === 4 ? "font-extrabold text-navy-dark" : "font-semibold text-navy-dark"}`}>{label}</td>
+                    <td className={`px-4 py-3 text-center text-xs ${i === 4 ? "font-bold text-navy-dark" : "text-steel"}`}>{col1}</td>
+                    <td className={`px-4 py-3 text-center text-xs bg-gold/5 ${i === 4 ? "font-bold text-navy-dark" : "text-steel"}`}>{col2}</td>
+                    <td className={`px-4 py-3 text-center text-xs ${i === 4 ? "font-extrabold text-gold" : "text-steel"}`}>{col3}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-steel mt-4 max-w-2xl leading-relaxed">Sample figures for a typical 18-door Richmond facility. Your numbers will vary — ask for a custom savings projection based on your facility's door count, age, and shipping volume.</p>
+        </div>
+      </section>
+
+      {/* EVERY BRAND */}
+      <section className="bg-surface">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
+          <p className="text-steel text-xs uppercase tracking-widest mb-3">Brand coverage</p>
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-5">
+            Every brand of commercial overhead door installed in Richmond — all on the stock.
+          </h2>
+          <p className="text-steel text-sm mb-6 max-w-3xl leading-relaxed">
+            We service every commercial overhead door brand in BC regardless of who installed it — Richards-Wilcox, Steel-Craft, Hörmann, Wayne Dalton, Garaga, CornellCookson, Clopay Commercial, Northwest Door, Dominion, Entrematic. LiftMaster commercial. Manaras Optio. Rytec and Albany high-speed.
+          </p>
+          <div className="max-w-3xl grid sm:grid-cols-2 gap-2 mb-8">
+            {[
+              "Commercial and industrial overhead door repair (insulated and non-insulated)",
+              "Rolling steel doors and coiling grilles",
+              "High-cycle commercial torsion springs for 2\", 2-1/4\", 2-5/8\", 3-3/4\" ID",
+              "Jackshaft cables, commercial springs, cable carriers",
+              "Dock doors with break-away bottom section",
+              "LiftMaster commercial logic boards and limit switches",
+              "Manaras Opera gear assemblies",
+              "Bottom storage seals, pan seals, weather stripping",
+              "Track and slat replacement before warranty 60-day commercial",
+              "Fire-rated assembly inspection and label replacement",
+            ].map((item) => (
+              <div key={item} className="flex items-start gap-2.5 text-xs text-steel">
+                <IconCheck className="w-3.5 h-3.5 text-gold flex-shrink-0 mt-0.5" /> {item}
               </div>
             ))}
           </div>
 
-          <div className="max-w-3xl">
-            <p className="font-heading font-bold text-navy-dark mb-4">What the 21-point checklist covers at every dock position:</p>
-            <div className="grid sm:grid-cols-2 gap-2">
-              {pmItems.map((item) => (
-                <div key={item} className="flex items-start gap-2.5 text-xs text-steel">
-                  <IconCheck className="w-3.5 h-3.5 text-gold flex-shrink-0 mt-0.5" /> {item}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CONTRACT vs INVOICE */}
-      <section className="bg-surface">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <p className="text-steel text-xs uppercase tracking-widest mb-3">Contract vs. invoice</p>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-5">
-            What an 8-position facility actually pays — contract vs. call-in.
-          </h2>
-          <div className="max-w-3xl">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border-collapse">
-                <thead>
-                  <tr className="bg-navy-dark text-white">
-                    <th className="text-left px-4 py-3 font-heading font-bold rounded-tl-card"></th>
-                    <th className="text-center px-4 py-3 font-heading font-bold">Call-in (no contract)</th>
-                    <th className="text-center px-4 py-3 font-heading font-bold text-gold rounded-tr-card">PM Contract (8 positions)</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-steel/10">
-                  {[
-                    ["Annual PM visits", "0", "2 × full 21-point inspection"],
-                    ["Emergency callouts (typical)", "3–5 per year", "0–1 per year"],
-                    ["Average callout cost", "$189 + parts", "$189 + parts (if needed)"],
-                    ["Parts cost", "List price", "15% below list"],
-                    ["Written inspection report", "No", "Yes — every visit"],
-                    ["Code-violation log", "No", "Yes — every visit"],
-                    ["Priority dispatch", "Standard queue", "Priority response"],
-                    ["Estimated annual spend", "$1,800–$3,200", "from $1,432"],
-                  ].map(([label, col1, col2], i) => (
-                    <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-surface"}>
-                      <td className="px-4 py-3 font-semibold text-navy-dark text-xs">{label}</td>
-                      <td className="px-4 py-3 text-center text-steel text-xs">{col1}</td>
-                      <td className="px-4 py-3 text-center text-navy-dark font-bold text-xs bg-gold/5">{col2}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="text-xs text-steel mt-4 leading-relaxed">Based on an 8-position Richmond warehouse with a mix of hydraulic and mechanical levelers. Actual spend varies by dock age and cycle volume.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* BRANDS */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <p className="text-steel text-xs uppercase tracking-widest mb-3">Brand coverage</p>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-5">
-            Every brand of commercial dock equipment in Richmond — all on the stock.
-          </h2>
-          <div className="flex flex-wrap gap-2 max-w-3xl mb-8">
-            {brands.map((b) => (
-              <span key={b} className="bg-surface border border-steel/10 text-steel text-xs font-semibold px-3 py-1.5 rounded-full">{b}</span>
+          <p className="text-steel text-xs uppercase tracking-widest mb-3 mt-8">Every kind of Richmond warehouse — we&apos;ve been on the dock</p>
+          <div className="flex flex-wrap gap-2 max-w-3xl">
+            {[
+              "3PL & cross-docking — Mitchell Island, Bridgeport corridor",
+              "Distribution centres — East Cambie, Crestwood, Marine Drive",
+              "Cold storage & food grade — Bridgeport food district",
+              "Self-storage & lite service — Bridgeport Road, Sea Island",
+              "Manufacturing & light industrial — Crestwood, Riverside Business Park",
+              "Marine & seafood processing — Steveston channel, Mitchell Island Fraser frontage",
+              "Aviation-related industrial — Sea Island, YVR adjacent",
+            ].map((item) => (
+              <span key={item} className="bg-white border border-steel/10 text-steel text-xs px-3 py-1.5 rounded-full">{item}</span>
             ))}
-          </div>
-          <div className="max-w-3xl p-5 rounded-card bg-surface border border-steel/10">
-            <p className="font-heading font-bold text-navy-dark mb-3 text-sm">Parts we stock on every truck:</p>
-            <div className="flex flex-wrap gap-2">
-              {[
-                "Hydraulic leveler seal kits", "Pump motors and solenoid valves", "Lip hinge and keeper assemblies",
-                "Walk-on legs and pull-chain hardware", "DOK-LOK hook assemblies", "Limit switches and interlock relays",
-                "Traffic light signal boards", "Compression foam seal panels", "Bumper anchor hardware",
-                "Dock leveler control panels", "Spring return assemblies", "Cylinder repair kits",
-              ].map((p) => (
-                <span key={p} className="bg-white border border-steel/10 text-steel text-xs px-3 py-1 rounded-full">{p}</span>
-              ))}
-            </div>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="bg-surface">
+      <section className="bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
           <p className="text-steel text-xs uppercase tracking-widest mb-3">FAQ</p>
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-8">
-            Frequently asked questions on warehouse docks.
+            Frequently asked questions.
           </h2>
           <div className="max-w-3xl space-y-4">
             {faqs.map((f) => (
-              <div key={f.q} className="rounded-card bg-white border border-steel/10 p-5">
+              <div key={f.q} className="rounded-card bg-surface border border-steel/10 p-5">
                 <p className="font-heading font-bold text-navy-dark mb-2 text-sm">{f.q}</p>
                 <p className="text-sm text-steel leading-relaxed">{f.a}</p>
               </div>
@@ -530,10 +588,10 @@ export default function WarehousesPage() {
       <section className="bg-navy-dark text-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 text-center">
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl mb-3">
-            Free site walk. Written proposal in 48 hours.
+            Free site walk. We write your proposal in 48 hours.
           </h2>
           <p className="text-white/70 text-sm mb-8 max-w-xl mx-auto leading-relaxed">
-            Send us your building address and dock count — levelers, restraints, overhead doors, mandoors. We walk the property, document every position, and return a written proposal under a single facility contract or by-the-call for one-off repairs.
+            Give us your address, and we'll do a free on-site walk, inventory every door, identify the high-risk units, and return a written maintenance proposal sized to your facility. No obligation, no-sale pitch.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -547,7 +605,7 @@ export default function WarehousesPage() {
               href="/request-a-quote/"
               className="inline-flex items-center justify-center rounded-card border border-white/30 text-white px-8 py-4 font-bold hover:border-white transition-colors"
             >
-              Request a facility quote
+              Request Quote →
             </Link>
           </div>
         </div>
