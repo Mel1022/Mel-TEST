@@ -13,7 +13,7 @@ export default function Logo({ variant = "dark", className = "" }: LogoProps) {
       <img
         src={src}
         alt="DoorChamp Garage Services"
-        style={{ height: "48px", width: "auto" }}
+        style={{ height: "64px", width: "auto" }}
       />
     </span>
   );
