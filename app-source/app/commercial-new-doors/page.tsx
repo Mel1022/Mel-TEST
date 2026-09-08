@@ -198,22 +198,27 @@ export default function CommercialNewDoorsPage() {
       </section>
 
       {/* What's included */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-          <p className="text-gold font-bold uppercase tracking-wide text-xs mb-4">What&apos;s Included</p>
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-navy-dark mb-8">
-            What&apos;s included in a commercial installation.
-          </h2>
-          <ul className="space-y-3 max-w-3xl">
+      <section className="bg-navy-dark">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+          <div className="mb-10">
+            <p className="text-gold font-bold uppercase tracking-widest text-xs mb-3">What&apos;s Included</p>
+            <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white">
+              What&apos;s included in a commercial installation.
+            </h2>
+            <p className="mt-3 text-white/60 text-sm max-w-xl leading-relaxed">
+              Every line item below is included in your quoted price — no surprises, no add-ons after the fact.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-3">
             {included.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <span className="flex-shrink-0 w-5 h-5 rounded-full bg-gold flex items-center justify-center mt-0.5">
-                  <IconCheck className="w-3 h-3 text-navy-dark" />
+              <div key={item} className="flex items-start gap-4 rounded-card bg-white/8 border border-white/10 px-6 py-5 hover:bg-white/12 hover:border-white/20 transition-colors">
+                <span className="flex-shrink-0 w-7 h-7 rounded-full bg-gold flex items-center justify-center mt-0.5">
+                  <IconCheck className="w-3.5 h-3.5 text-navy-dark" />
                 </span>
-                <span className="text-sm text-steel leading-relaxed">{item}</span>
-              </li>
+                <span className="text-sm text-white/80 leading-relaxed">{item}</span>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
