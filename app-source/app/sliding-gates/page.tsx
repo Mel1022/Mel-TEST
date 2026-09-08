@@ -404,7 +404,6 @@ export default function SlidingGatesPage() {
             >
               <IconPhone className="w-5 h-5 text-white flex-shrink-0" />
               <div>
-                <p className="text-white/80 text-[10px] font-bold uppercase tracking-widest leading-none mb-1">Call now · Same-day Richmond</p>
                 <p className="text-white font-heading font-extrabold text-2xl leading-none">{siteConfig.phone.display}</p>
               </div>
             </a>
