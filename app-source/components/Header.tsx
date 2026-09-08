@@ -107,12 +107,31 @@ export default function Header() {
           </nav>
 
           {/* Right CTAs */}
+          <style>{`
+            @keyframes nav-cta-pulse {
+              0%   { box-shadow: 0 0 0 0 rgba(20,107,77,0.6), 0 0 6px 1px rgba(20,107,77,0.3); }
+              50%  { box-shadow: 0 0 0 10px rgba(20,107,77,0.1), 0 0 14px 4px rgba(20,107,77,0.15); }
+              100% { box-shadow: 0 0 0 16px rgba(20,107,77,0), 0 0 0 0 rgba(20,107,77,0); }
+            }
+            @keyframes phone-ring {
+              0%, 60%, 100% { transform: rotate(0deg); }
+              65%  { transform: rotate(-15deg); }
+              70%  { transform: rotate(15deg); }
+              75%  { transform: rotate(-12deg); }
+              80%  { transform: rotate(12deg); }
+              85%  { transform: rotate(-6deg); }
+              90%  { transform: rotate(6deg); }
+              95%  { transform: rotate(0deg); }
+            }
+            .nav-cta-pulse { animation: nav-cta-pulse 2s ease-out infinite; }
+            .phone-ring { animation: phone-ring 3s ease-in-out infinite; transform-origin: center; display: inline-block; }
+          `}</style>
           <div className="hidden xl:flex items-center gap-3">
             <a
               href={siteConfig.phone.href}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded border-2 border-[#146B4D] text-[#146B4D] text-sm font-bold hover:bg-[#EBF7F1] transition-colors whitespace-nowrap"
+              className="nav-cta-pulse inline-flex items-center gap-2 px-4 py-2.5 rounded border-2 border-[#146B4D] text-[#146B4D] text-sm font-bold hover:bg-[#EBF7F1] transition-colors whitespace-nowrap"
             >
-              <IconPhone className="w-4 h-4" />
+              <span className="phone-ring"><IconPhone className="w-4 h-4" /></span>
               {siteConfig.phone.display}
             </a>
             <Link
