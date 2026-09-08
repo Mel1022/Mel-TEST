@@ -65,10 +65,7 @@ export default function HomePage() {
               <span className="block text-white/85" style={{ fontSize: "clamp(1.35rem, 2.2vw, 2.15rem)", letterSpacing: "-0.01em", lineHeight: "1.2" }}>
                 When Your Garage Door Stops
               </span>
-              <span className="block text-[#4CAF80]" style={{ fontSize: "clamp(1.6rem, 2.6vw, 2.6rem)", lineHeight: "0.9", marginTop: "0.1em" }} aria-hidden="true">
-                —
-              </span>
-              <span className="block text-white" style={{ fontSize: "clamp(2.9rem, 4.8vw, 4.8rem)", lineHeight: "1.0", letterSpacing: "-0.03em", marginTop: "0.05em" }}>
+<span className="block text-white" style={{ fontSize: "clamp(2.9rem, 4.8vw, 4.8rem)", lineHeight: "1.0", letterSpacing: "-0.03em", marginTop: "0.05em" }}>
                 We Show Up.
               </span>
             </h1>
