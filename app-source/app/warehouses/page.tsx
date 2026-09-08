@@ -303,7 +303,7 @@ export default function WarehousesPage() {
             ].map((p) => (
               <div key={p.label} className={`rounded-card p-5 border ${p.highlight ? "bg-navy-dark text-white border-navy-dark" : "bg-white border-steel/10"}`}>
                 <p className={`text-[10px] font-bold uppercase tracking-widest mb-2 ${p.highlight ? "text-gold" : "text-gold"}`}>{p.label}</p>
-                <p className={`font-heading font-extrabold text-xl mb-2 ${p.highlight ? "text-white" : "text-navy-dark"}`}>{p.price}</p>
+                <p className={`font-heading font-extrabold text-xl mb-2 ${p.highlight ? "text-white" : "text-navy-dark"}`}><span className="price-val">{p.price}</span></p>
                 <p className={`text-xs leading-relaxed ${p.highlight ? "text-white/70" : "text-steel"}`}>{p.note}</p>
               </div>
             ))}
@@ -472,7 +472,7 @@ export default function WarehousesPage() {
               <div key={t.tier} className="rounded-card bg-white border border-steel/10 p-6">
                 <div className="flex items-baseline justify-between gap-4 mb-2 flex-wrap">
                   <p className="font-heading font-extrabold text-navy-dark">{t.tier}</p>
-                  <p className="font-heading font-bold text-gold text-sm">{t.price}</p>
+                  <p className="font-heading font-bold text-gold text-sm"><span className="price-val">{t.price}</span></p>
                 </div>
                 <p className="text-sm text-steel leading-relaxed">{t.body}</p>
               </div>

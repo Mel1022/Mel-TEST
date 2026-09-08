@@ -391,7 +391,7 @@ export default function LoadingDocksPage() {
                   <img src={item.img} alt={item.label} className="w-16 h-16 object-cover rounded flex-shrink-0" />
                   <span className="text-gold font-bold uppercase tracking-wide text-xs leading-snug mt-1">{item.label}</span>
                 </div>
-                <p className="font-heading font-extrabold text-navy-dark text-xl leading-tight mb-2">{item.price}</p>
+                <p className="font-heading font-extrabold text-navy-dark text-xl leading-tight mb-2"><span className="price-val">{item.price}</span></p>
                 <p className="text-xs text-steel leading-relaxed mt-auto">{item.note}</p>
               </div>
             ))}

@@ -436,3 +436,15 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 100%;
   }
 }
+
+/* Pricing reveal toggle */
+.price-val {
+  filter: blur(6px);
+  user-select: none;
+  transition: filter 0.25s ease;
+  display: inline-block;
+}
+html.prices-on .price-val {
+  filter: none;
+  user-select: auto;
+}

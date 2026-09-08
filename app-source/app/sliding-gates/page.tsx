@@ -455,7 +455,7 @@ export default function SlidingGatesPage() {
               <div key={item.label} className="rounded-card border border-steel/10 bg-surface p-6 shadow-card">
                 <div className="text-gold mb-3">{item.icon}</div>
                 <p className="text-gold font-bold uppercase tracking-wide text-[10px] mb-1">{item.label}</p>
-                <p className="font-heading font-extrabold text-navy-dark text-xl mb-2 leading-tight">{item.price}</p>
+                <p className="font-heading font-extrabold text-navy-dark text-xl mb-2 leading-tight"><span className="price-val">{item.price}</span></p>
                 <p className="text-steel text-xs leading-relaxed">{item.note}</p>
               </div>
             ))}
