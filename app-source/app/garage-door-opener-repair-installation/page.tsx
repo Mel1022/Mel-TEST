@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 const OpenerHero = (
-  <section style={{ position: "relative", overflow: "hidden", backgroundImage: "url('/images/opener-hero-bg.png')", backgroundSize: "contain", backgroundRepeat: "no-repeat", backgroundPosition: "center center" }} className="bg-navy-dark text-white">
+  <section style={{ position: "relative", overflow: "hidden", backgroundImage: "url('/images/opener-hero-bg.png')", backgroundSize: "cover", backgroundPosition: "70% center" }} className="bg-navy-dark text-white">
     <div aria-hidden="true" style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, background: "rgba(11,61,46,0.75)" }} />
     <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
       <p className="text-gold font-bold uppercase tracking-wide text-sm mb-3">Same-Day Service · Richmond BC</p>
