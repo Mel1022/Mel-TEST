@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { siteConfig, residentialNav } from "@/lib/site-config";
+import PricingReveal from "./PricingReveal";
 
 export default function Footer() {
   return (
@@ -88,6 +89,7 @@ export default function Footer() {
               >
                 Become a Partner
               </Link>
+              <PricingReveal />
               <Link
                 href="/privacy-policy/"
                 className="inline-flex items-center justify-center rounded-card border border-white/30 px-5 py-2.5 text-sm font-bold text-white hover:border-gold hover:text-gold transition-colors"
