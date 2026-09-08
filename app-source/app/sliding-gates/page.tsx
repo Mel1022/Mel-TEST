@@ -399,7 +399,7 @@ export default function SlidingGatesPage() {
           <div className="mt-8 flex flex-col gap-3 max-w-lg">
             <a
               href={siteConfig.phone.href}
-              className="emergency-btn flex items-center gap-4 rounded-card bg-red-600 px-7 py-4 hover:bg-red-700 transition-colors"
+              className="emergency-btn inline-flex items-center gap-4 rounded-card bg-red-600 px-7 py-4 hover:bg-red-700 transition-colors"
             >
               <IconPhone className="w-5 h-5 text-white flex-shrink-0" />
               <div>
