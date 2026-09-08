@@ -257,13 +257,9 @@ export default function WarehousesPage() {
             .emergency-btn { animation: emergency-pulse 1.5s ease-out infinite; }
             .emergency-btn:hover { animation: emergency-shake 0.4s ease-in-out, emergency-pulse 1.5s ease-out infinite 0.4s; }
           `}</style>
-          <div className="mt-8 flex flex-col items-start gap-3">
-            <a href={siteConfig.phone.href} className="emergency-btn flex items-center gap-4 rounded-card bg-red-600 px-7 py-4 hover:bg-red-700 transition-colors">
-              <IconPhone className="w-5 h-5 text-white flex-shrink-0" />
-              <div>
-                <p className="text-white/80 text-[10px] font-bold uppercase tracking-widest leading-none mb-1">Call now · Same-day Richmond</p>
-                <p className="text-white font-heading font-extrabold text-2xl leading-none">{siteConfig.phone.display}</p>
-              </div>
+          <div className="mt-8 flex flex-col items-start gap-4">
+            <a href={siteConfig.phone.href} className="emergency-btn inline-flex items-center justify-center gap-2 rounded-card bg-red-600 px-7 py-3.5 text-sm font-bold text-white hover:bg-red-700 transition-colors duration-200">
+              <IconPhone className="w-4 h-4" /> {siteConfig.phone.display}
             </a>
             <a href={siteConfig.phone.href} className="flex items-center justify-center gap-2 rounded-card border border-white/30 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors">
               <span className="text-base">💬</span> Text us · same response
@@ -276,7 +272,7 @@ export default function WarehousesPage() {
       <div className="bg-navy-dark/5 border-y border-steel/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
-            {["12–20 min response", "Every brand serviced", "Parts on every truck", "30-min contract SLA"].map((b) => (
+            {["Within 1 hour business hrs", "Every brand serviced", "Parts on every truck", "30-min contract SLA"].map((b) => (
               <span key={b} className="flex items-center gap-1.5 text-xs text-steel font-semibold">
                 <IconCheck className="w-3.5 h-3.5 text-gold flex-shrink-0" /> {b}
               </span>
