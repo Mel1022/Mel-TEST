@@ -44,23 +44,30 @@ export default function SpringRepairPage() {
           {/* Emergency CTA */}
           <style>{`
             @keyframes emergency-pulse {
-              0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.7); }
-              50% { box-shadow: 0 0 0 10px rgba(220,38,38,0); }
+              0%   { box-shadow: 0 0 0 0 rgba(220,38,38,0.9), 0 0 12px 2px rgba(220,38,38,0.5); }
+              50%  { box-shadow: 0 0 0 20px rgba(220,38,38,0.15), 0 0 24px 6px rgba(220,38,38,0.3); }
+              100% { box-shadow: 0 0 0 28px rgba(220,38,38,0), 0 0 0 0 rgba(220,38,38,0); }
+            }
+            @keyframes emergency-shake {
+              0%, 100% { transform: translateX(0); }
+              20%       { transform: translateX(-3px); }
+              40%       { transform: translateX(3px); }
+              60%       { transform: translateX(-2px); }
+              80%       { transform: translateX(2px); }
             }
             .emergency-btn {
-              animation: emergency-pulse 1.6s ease-in-out infinite;
+              animation: emergency-pulse 1.5s ease-out infinite;
+            }
+            .emergency-btn:hover {
+              animation: emergency-shake 0.4s ease-in-out, emergency-pulse 1.5s ease-out infinite 0.4s;
             }
           `}</style>
-          <div className="mt-5">
-            <a
-              href={siteConfig.phone.href}
-              className="emergency-btn inline-flex items-center gap-3 rounded-card bg-red-600 hover:bg-red-700 px-7 py-3.5 text-sm font-bold text-white transition-colors"
-            >
-              <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75" />
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-white" />
-              </span>
-              EMERGENCY? Call Now — Same-Day Spring Repair
+          <div className="mt-8 flex flex-col items-start gap-4">
+            <a href={siteConfig.phone.href} className="emergency-btn inline-flex items-center justify-center gap-2 rounded-card bg-red-600 px-7 py-3.5 text-sm font-bold text-white hover:bg-red-700 transition-colors duration-200">
+              <IconPhone className="w-4 h-4" /> Emergency: {siteConfig.phone.display}
+            </a>
+            <a href="sms:+17788000769" className="inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors">
+              💬 Or text the on-call tech
             </a>
           </div>
         </div>
