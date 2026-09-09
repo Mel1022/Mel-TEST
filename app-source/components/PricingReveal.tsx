@@ -31,7 +31,7 @@ export default function PricingReveal() {
       onClick={() => setVisible((v) => !v)}
       className="flex-1 inline-flex items-center justify-center rounded-card border border-white/15 px-5 py-2.5 text-sm font-bold text-white/40 hover:border-white/30 hover:text-white/60 transition-colors"
     >
-      {visible ? "Hide Prices" : "Show Prices"}
+      Pricing
     </button>
   );
 }
