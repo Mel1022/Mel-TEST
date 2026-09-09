@@ -71,7 +71,7 @@ const PROBLEMS = [
 ];
 
 export default function ProblemsSection() {
-  const [showPrices, setShowPrices] = useState(true);
+  const [showPrices, setShowPrices] = useState(false);
 
   useEffect(() => {
     const el = document.documentElement;

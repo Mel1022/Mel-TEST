@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 export default function PricingReveal() {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (visible) {
