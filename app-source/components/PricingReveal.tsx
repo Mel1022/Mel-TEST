@@ -5,12 +5,25 @@ import { useState, useEffect } from "react";
 export default function PricingReveal() {
   const [visible, setVisible] = useState(false);
 
+  // Restore saved preference on mount
+  useEffect(() => {
+    try {
+      if (localStorage.getItem("doorchamp-prices") === "on") {
+        setVisible(true);
+      }
+    } catch {}
+  }, []);
+
+  // Apply class + persist whenever visible changes
   useEffect(() => {
     if (visible) {
       document.documentElement.classList.add("prices-on");
     } else {
       document.documentElement.classList.remove("prices-on");
     }
+    try {
+      localStorage.setItem("doorchamp-prices", visible ? "on" : "off");
+    } catch {}
   }, [visible]);
 
   return (

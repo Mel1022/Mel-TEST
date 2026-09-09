@@ -1,6 +1,3 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import { IconPhone } from "@/components/Icons";
 
 const PROBLEMS = [
@@ -71,16 +68,6 @@ const PROBLEMS = [
 ];
 
 export default function ProblemsSection() {
-  const [showPrices, setShowPrices] = useState(false);
-
-  useEffect(() => {
-    const el = document.documentElement;
-    const observer = new MutationObserver(() => {
-      setShowPrices(el.classList.contains("prices-on"));
-    });
-    observer.observe(el, { attributes: true, attributeFilter: ["class"] });
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <section className="bg-surface">
@@ -128,8 +115,8 @@ export default function ProblemsSection() {
                 <p className="text-white/75 text-sm leading-relaxed flex-1">
                   {p.body}
                 </p>
-                {p.price && showPrices && (
-                  <p className="mt-2 text-gold font-bold text-sm">{p.price}</p>
+                {p.price && (
+                  <p className="price-val mt-2 text-gold font-bold text-sm">{p.price}</p>
                 )}
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-white/70 group-hover:text-white transition-colors duration-200">
                   Get Help
