@@ -7,7 +7,7 @@ import { IconPhone, IconCheck, IconWrench, IconAlert, IconInstall, IconParts } f
 export const metadata: Metadata = {
   title: "Warehouse & Loading Dock Service Richmond BC | DoorChamp",
   description:
-    "Warehouse door & loading dock service in Richmond, Surrey, Delta, Burnaby, Coquitlam & Metro Vancouver. Dock levelers, overhead doors, springs, vehicle restraints. Same-day. Call (778) 800-0769.",
+    "Warehouse door & loading dock service in Richmond, Surrey, Delta, Burnaby, Coquitlam & Metro Vancouver. Dock levelers, overhead doors, springs, vehicle restraints. Same-day. Call (778) 732-0588.",
   alternates: { canonical: "/warehouses/" },
 };
 

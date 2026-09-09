@@ -73,7 +73,7 @@ const faqs = [
   },
   {
     q: "How fast can you respond if our loading-dock door is down?",
-    a: "Same-day response throughout Richmond and Metro Vancouver. For commercial clients on a maintenance contract, you get priority dispatch ahead of standard residential calls. Call (778) 800-0769 — we'll give you an honest ETA on the first call.",
+    a: "Same-day response throughout Richmond and Metro Vancouver. For commercial clients on a maintenance contract, you get priority dispatch ahead of standard residential calls. Call (778) 732-0588 — we'll give you an honest ETA on the first call.",
   },
   {
     q: "Do you handle high-cycle springs?",
@@ -130,7 +130,7 @@ export default function CommercialSpringRepairPage() {
             <a href={siteConfig.phone.href} className="emergency-btn inline-flex items-center justify-center gap-2 rounded-card bg-red-600 px-7 py-3.5 text-sm font-bold text-white hover:bg-red-700 transition-colors duration-200">
               <IconPhone className="w-4 h-4" /> Emergency: {siteConfig.phone.display}
             </a>
-            <a href="sms:+17788000769" className="inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors">
+            <a href="sms:+17787320588" className="inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors">
               💬 Or text the on-call tech
             </a>
           </div>

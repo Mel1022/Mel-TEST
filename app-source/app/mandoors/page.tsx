@@ -8,7 +8,7 @@ import { Accordion } from "./Accordion";
 export const metadata: Metadata = {
   title: "Mandoor Service Richmond BC — Closer, Hinge, Fire Label | DoorChamp",
   description:
-    "Commercial mandoor repair & installation in Richmond, Burnaby, Vancouver, Surrey & Metro Vancouver. Closers, hinges, fire-rated doors, panic devices. ANSI A250.8 compliant. Call (778) 800-0769.",
+    "Commercial mandoor repair & installation in Richmond, Burnaby, Vancouver, Surrey & Metro Vancouver. Closers, hinges, fire-rated doors, panic devices. ANSI A250.8 compliant. Call (778) 732-0588.",
   alternates: { canonical: "/mandoors/" },
 };
 

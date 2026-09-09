@@ -7,7 +7,7 @@ import { IconPhone, IconCheck } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "Garage Door Opener Repair & Installation in Richmond BC",
   description:
-    "Garage door opener repair and installation in Richmond BC. All brands including LiftMaster, Chamberlain, Genie. Same-day service. Call DoorChamp: (778) 800-0769.",
+    "Garage door opener repair and installation in Richmond BC. All brands including LiftMaster, Chamberlain, Genie. Same-day service. Call DoorChamp: (778) 732-0588.",
   alternates: { canonical: "/garage-door-openers/" },
 };
 

@@ -13,7 +13,7 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Richmond Garage Door Repair & Service | DoorChamp",
   description:
-    "Same-day garage door repair, spring replacement, and opener service in Richmond BC. Family-owned since 2007. Licensed, insured & WCB compliant. Call (778) 800-0769.",
+    "Same-day garage door repair, spring replacement, and opener service in Richmond BC. Family-owned since 2007. Licensed, insured & WCB compliant. Call (778) 732-0588.",
   alternates: { canonical: "/" },
 };
 
@@ -97,7 +97,7 @@ export default function HomePage() {
                 Get a Free Quote
               </Link>
               <a
-                href="tel:+17788000769"
+                href="tel:+17787320588"
                 className="hero-cta-pulse inline-flex items-center justify-center gap-2 rounded-card bg-gold px-7 py-4 text-sm font-bold text-navy-dark hover:bg-gold-dark transition-colors"
               >
                 <IconPhone className="w-4 h-4" />

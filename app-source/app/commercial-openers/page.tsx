@@ -8,7 +8,7 @@ import { IconPhone, IconCheck } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "Commercial Garage Door Openers Richmond BC | DoorChamp",
   description:
-    "Commercial garage door openers in Richmond, Burnaby, Surrey, Delta, Vancouver & Metro Vancouver. LiftMaster and Manaras-Opera operators sized to your duty cycle. Same-day. Call (778) 800-0769.",
+    "Commercial garage door openers in Richmond, Burnaby, Surrey, Delta, Vancouver & Metro Vancouver. LiftMaster and Manaras-Opera operators sized to your duty cycle. Same-day. Call (778) 732-0588.",
   alternates: { canonical: "/commercial-openers/" },
 };
 

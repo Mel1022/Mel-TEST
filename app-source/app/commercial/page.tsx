@@ -8,7 +8,7 @@ import { IconPhone, IconCheck } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "Commercial Garage Door Service in Richmond BC | DoorChamp",
   description:
-    "Commercial garage door repair & installation in Richmond, Burnaby, Surrey, Delta, Vancouver & Metro Vancouver. Sectional, high-speed, fire doors, loading docks. Call (778) 800-0769.",
+    "Commercial garage door repair & installation in Richmond, Burnaby, Surrey, Delta, Vancouver & Metro Vancouver. Sectional, high-speed, fire doors, loading docks. Call (778) 732-0588.",
   alternates: { canonical: "/commercial/" },
 };
 

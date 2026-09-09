@@ -9,7 +9,7 @@ import { IconPhone, IconCheck, IconAlert } from "@/components/Icons";
 export const metadata: Metadata = {
   title: "Garage Door Spring Repair & Replacement in Richmond BC",
   description:
-    "Broken garage door spring? Same-day torsion & extension spring repair in Richmond, Vancouver, Burnaby, Surrey, Delta & Metro Vancouver. Licensed, insured, WCB compliant. Call (778) 800-0769.",
+    "Broken garage door spring? Same-day torsion & extension spring repair in Richmond, Vancouver, Burnaby, Surrey, Delta & Metro Vancouver. Licensed, insured, WCB compliant. Call (778) 732-0588.",
   alternates: { canonical: "/garage-door-spring-repair/" },
 };
 
@@ -55,7 +55,7 @@ export default function SpringRepairPage() {
             <a href={siteConfig.phone.href} className="emergency-btn inline-flex items-center justify-center gap-2 rounded-card bg-red-600 px-7 py-3.5 text-sm font-bold text-white hover:bg-red-700 transition-colors duration-200">
               <IconPhone className="w-4 h-4" /> Emergency: {siteConfig.phone.display}
             </a>
-            <a href="sms:+17788000769" className="inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors">
+            <a href="sms:+17787320588" className="inline-flex items-center justify-center rounded-card border-2 border-white/40 text-white px-7 py-3.5 text-sm font-bold hover:border-white transition-colors">
               💬 Or text the on-call tech
             </a>
           </div>

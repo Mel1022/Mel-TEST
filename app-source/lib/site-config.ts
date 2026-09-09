@@ -5,8 +5,8 @@ export const siteConfig = {
   subTagline: "Same-Day Service · Family-Owned · Licensed & Insured",
   url: "https://doorchamp.ca",
   phone: {
-    display: "(778) 800-0769",
-    href: "tel:+17788000769",
+    display: "(778) 732-0588",
+    href: "tel:+17787320588",
   },
   email: "info@doorchamp.ca",
   address: {

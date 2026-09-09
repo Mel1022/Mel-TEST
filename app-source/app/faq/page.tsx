@@ -25,7 +25,7 @@ const faqSections = [
     title: "Service & Repair",
     faqs: [
       { q: "How quickly can you come out?", a: "We offer same-day service throughout Richmond and Metro Vancouver. In most cases we can reach you within a few hours of your call." },
-      { q: "Do you charge for a service call or estimate?", a: "Please call us at (778) 800-0769 to discuss your specific situation and current pricing." },
+      { q: "Do you charge for a service call or estimate?", a: "Please call us at (778) 732-0588 to discuss your specific situation and current pricing." },
       { q: "Can you fix my door the same day you come out?", a: "In most cases, yes. Our technicians carry the most common parts — springs, cables, rollers, hardware — on the truck. We'll quote you before starting any work." },
       { q: "My door makes a loud noise but still works. Should I call?", a: "Yes. Grinding, scraping, or banging noises are early warning signs of failing components. Addressing them now is always less expensive than an emergency call after a failure." },
       { q: "Do you work on both single and double garage doors?", a: "Yes — all residential door sizes and configurations, including single, double, and oversized doors." },
@@ -50,7 +50,7 @@ const faqSections = [
   {
     title: "Costs & Warranty",
     faqs: [
-      { q: "How much does a spring replacement cost?", a: "Spring replacement cost depends on the number and type of springs, and door size. We provide a clear quote before any work begins. Call (778) 800-0769 for current pricing." },
+      { q: "How much does a spring replacement cost?", a: "Spring replacement cost depends on the number and type of springs, and door size. We provide a clear quote before any work begins. Call (778) 732-0588 for current pricing." },
       { q: "Do you offer a warranty?", a: "Yes — every repair includes a one-year labour warranty. Parts are also covered by the manufacturer's warranty." },
       { q: "Do you take credit cards?", a: "Please call us to confirm current accepted payment methods." },
     ],

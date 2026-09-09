@@ -8,7 +8,7 @@ const STEPS = [
     n: "01",
     label: "CALL THE CHAMP",
     title: "Call or Request a Quote",
-    body: "Tell us what's happening with your garage door. Call (778) 800-0769 or request a quote online.",
+    body: "Tell us what's happening with your garage door. Call (778) 732-0588 or request a quote online.",
     icon: <IconPhone className="w-6 h-6" />,
   },
   {
@@ -224,7 +224,7 @@ export default function HowItWorksSection() {
             Get a Free Quote
           </Link>
           <a
-            href="tel:+17788000769"
+            href="tel:+17787320588"
             className="inline-flex items-center justify-center gap-2 rounded-card border-2 border-white/60 text-white px-8 py-4 text-sm font-bold hover:bg-white hover:text-navy hover:-translate-y-0.5 transition-all duration-200 uppercase tracking-wide"
           >
             <IconPhone className="w-4 h-4" />

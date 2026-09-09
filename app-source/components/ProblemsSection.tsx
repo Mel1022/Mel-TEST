@@ -126,7 +126,7 @@ export default function ProblemsSection() {
         `}</style>
         <div className="text-center mt-12">
           <a
-            href="tel:+17788000769"
+            href="tel:+17787320588"
             className="cta-pulse inline-flex items-center gap-3 rounded-card bg-[#2E8B62] px-10 py-5 text-base font-bold text-white hover:bg-[#146B4D] hover:-translate-y-1 transition-all duration-200"
           >
             <IconPhone className="w-5 h-5 flex-shrink-0" />
