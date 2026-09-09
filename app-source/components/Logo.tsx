@@ -7,7 +7,7 @@ export default function Logo({ variant = "dark", className = "" }: LogoProps) {
   return (
     <span className={`inline-flex items-center select-none ${className}`}>
       <img
-        src="/images/DCLogo.png"
+        src="/images/DCLogo-v2.png"
         alt="DoorChamp Garage Services"
         style={{ height: "40px", width: "auto" }}
       />
