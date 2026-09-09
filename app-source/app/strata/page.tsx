@@ -72,6 +72,20 @@ const programs = [
       "Photo & short-video report after the visit",
     ],
   },
+  {
+    tag: "Flexible",
+    name: "Customized",
+    price: null,
+    perVisit: null,
+    perYear: null,
+    description: "Mixed-use properties and buildings with varying door counts often need different visit frequencies per zone — monthly for a high-traffic parkade, annual for townhome units. We build a schedule and price that fits.",
+    features: [
+      "Set cadence per door type or zone",
+      "Scale visits as your portfolio grows",
+      "Single invoice across all service tiers",
+      "Photo & short-video report after every visit",
+    ],
+  },
 ];
 
 const managerBenefits = [
@@ -121,7 +135,7 @@ export default function StrataPage() {
             <span className="text-gold">by DoorChamp.</span>
           </h1>
           <p className="mt-5 text-white/75 text-lg max-w-2xl leading-relaxed">
-            Quarterly, bi-annual, and annual maintenance for Richmond strata corporations. COIs same-day.{" "}
+            Quarterly, bi-annual, annual, and fully customized maintenance programs for Richmond strata corporations. COIs same-day.{" "}
             <strong className="text-white">Free on-site quote</strong> — we walk every door with you before you sign.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -184,11 +198,11 @@ export default function StrataPage() {
       >
         <div className="absolute inset-0 bg-navy-dark/75" />
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
-          <p className="text-gold font-bold uppercase tracking-wide text-xs mb-3">Three Programs</p>
+          <p className="text-gold font-bold uppercase tracking-wide text-xs mb-3">Four Programs</p>
           <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white mb-10">
             Pick your cadence.
           </h2>
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {programs.map((p) => (
               <div
                 key={p.name}
@@ -204,11 +218,17 @@ export default function StrataPage() {
                 <h3 className={`font-heading font-extrabold text-2xl mb-1 ${p.highlight ? "text-white" : "text-navy-dark"}`}>
                   {p.name}
                 </h3>
-                <div className="flex items-baseline gap-1 mb-1">
-                  <span className={`font-heading font-extrabold text-3xl ${p.highlight ? "text-white" : "text-navy-dark"}`}><span className="price-val">{p.price}</span></span>
-                  <span className={`text-xs ${p.highlight ? "text-white/60" : "text-steel"}`}><span className="price-val">{p.perVisit}</span></span>
-                </div>
-                <p className={`text-xs mb-4 ${p.highlight ? "text-white/50" : "text-steel/70"}`}><span className="price-val">{p.perYear}</span></p>
+                {p.price ? (
+                  <>
+                    <div className="flex items-baseline gap-1 mb-1">
+                      <span className={`font-heading font-extrabold text-3xl ${p.highlight ? "text-white" : "text-navy-dark"}`}><span className="price-val">{p.price}</span></span>
+                      <span className={`text-xs ${p.highlight ? "text-white/60" : "text-steel"}`}><span className="price-val">{p.perVisit}</span></span>
+                    </div>
+                    <p className={`text-xs mb-4 ${p.highlight ? "text-white/50" : "text-steel/70"}`}><span className="price-val">{p.perYear}</span></p>
+                  </>
+                ) : (
+                  <p className="text-xs text-steel/70 mb-4 leading-snug">Priced per door count &amp; cadence — we quote after a free on-site assessment.</p>
+                )}
                 <Link
                   href="/request-a-quote/"
                   className={`self-start mb-5 inline-flex items-center gap-1 rounded-card px-5 py-2.5 text-xs font-bold transition-colors ${
@@ -217,7 +237,7 @@ export default function StrataPage() {
                       : "border border-navy/25 text-navy hover:bg-navy hover:text-white"
                   }`}
                 >
-                  Get pricing →
+                  {p.price ? "Get pricing →" : "Get a custom quote →"}
                 </Link>
                 <p className={`text-sm leading-relaxed mb-5 ${p.highlight ? "text-white/70" : "text-steel"}`}>{p.description}</p>
                 <ul className="space-y-2 mt-auto">
