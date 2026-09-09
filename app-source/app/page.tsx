@@ -11,10 +11,16 @@ import { IconPhone } from "@/components/Icons";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Richmond Garage Door Repair & Service | DoorChamp",
+  title: "DoorChamp Garage Services | Richmond BC",
   description:
-    "Same-day garage door repair, spring replacement, and opener service in Richmond BC. Family-owned since 2007. Licensed, insured & WCB compliant. Call (778) 732-0588.",
+    "Professional garage door repair, installation, opener service and maintenance in Richmond, BC. Fast, reliable service from DoorChamp.",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "DoorChamp Garage Services | Richmond BC",
+    description:
+      "Fast, reliable garage door repair, installation and maintenance services in Richmond, BC and surrounding areas.",
+    images: [{ url: "/images/og-doorchamp.png", width: 1200, height: 630, alt: "DoorChamp Garage Services" }],
+  },
 };
 
 

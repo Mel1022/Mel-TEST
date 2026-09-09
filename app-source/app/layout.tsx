@@ -10,20 +10,23 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Richmond Garage Door Repair & Service | DoorChamp",
-    template: `%s | DoorChamp Garage Doors`,
+    default: "DoorChamp Garage Services | Richmond BC",
+    template: `%s | DoorChamp`,
   },
   description:
-    "Richmond BC's trusted garage door experts. Same-day repair, spring replacement, opener service, and installation. Family-owned since 2007. Licensed, insured & WCB compliant.",
+    "Professional garage door repair, installation, opener service and maintenance in Richmond, BC. Fast, reliable service from DoorChamp.",
   openGraph: {
-    title: "Richmond Garage Door Repair & Service | DoorChamp",
+    title: "DoorChamp Garage Services | Richmond BC",
     description:
-      "Richmond BC's trusted garage door experts. Same-day repair, spring replacement, opener service, and installation. Family-owned since 2007.",
-    siteName: "DoorChamp Garage Door Service & Repair",
+      "Fast, reliable garage door repair, installation and maintenance services in Richmond, BC and surrounding areas.",
+    siteName: "DoorChamp Garage Services",
     type: "website",
+    images: [{ url: "/images/og-doorchamp.png", width: 1200, height: 630, alt: "DoorChamp Garage Services" }],
   },
   icons: {
     icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
   },
 };
 

@@ -1,13 +1,31 @@
 import { siteConfig } from "@/lib/site-config";
 
 export default function LocalBusinessSchema() {
+  const org = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${siteConfig.url}/#organization`,
+    name: "DoorChamp Garage Services",
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/images/DCLogo-v2.png`,
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: siteConfig.phone.display,
+      contactType: "customer service",
+      areaServed: "CA-BC",
+      availableLanguage: "English",
+    },
+    sameAs: [siteConfig.social.facebook, siteConfig.social.instagram, siteConfig.social.google],
+  };
+
   const schema = {
     "@context": "https://schema.org",
     "@type": "GarageDoorRepair",
-    name: "DoorChamp Garage Door Service & Repair",
+    "@id": `${siteConfig.url}/#localbusiness`,
+    name: "DoorChamp Garage Services",
     alternateName: "DoorChamp",
     description:
-      "Richmond BC's trusted garage door experts. Same-day repair, spring replacement, opener service, new door installation, commercial doors, loading docks, and sliding gates. Family-owned since 2007.",
+      "Professional garage door repair, installation, opener service and maintenance in Richmond, BC. Fast, reliable service from DoorChamp.",
     url: siteConfig.url,
     telephone: siteConfig.phone.href.replace("tel:", ""),
     email: siteConfig.email,
@@ -38,7 +56,7 @@ export default function LocalBusinessSchema() {
     ],
     priceRange: "$$",
     foundingDate: "2007",
-    slogan: "Richmond's Trusted Garage Door Experts.",
+    slogan: "When Your Door Needs a Champ.",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Garage Door Services",
@@ -55,10 +73,17 @@ export default function LocalBusinessSchema() {
   };
 
   return (
-    <script
-      type="application/ld+json"
-      // eslint-disable-next-line react/no-danger
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(org) }}
+      />
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+    </>
   );
 }

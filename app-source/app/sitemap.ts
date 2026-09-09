@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 
 const BASE = "https://doorchamp.ca";
+const LAST_MODIFIED = new Date("2025-09-01");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
@@ -11,6 +12,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/garage-door-installation/", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/garage-door-maintenance/", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/mandoors/", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/commercial/", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/commercial-new-doors/", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/commercial-openers/", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/commercial-spring-repair/", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/loading-docks/", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/sliding-gates/", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/warehouses/", priority: 0.8, changeFrequency: "monthly" as const },
@@ -26,7 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return routes.map(({ path, priority, changeFrequency }) => ({
     url: `${BASE}${path}`,
-    lastModified: new Date(),
+    lastModified: LAST_MODIFIED,
     changeFrequency,
     priority,
   }));

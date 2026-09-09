@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "DoorChamp",
   descriptor: "Garage Door Service & Repair",
-  tagline: "Richmond's Trusted Garage Door Experts.",
+  tagline: "When Your Door Needs a Champ.",
   subTagline: "Same-Day Service · Family-Owned · Licensed & Insured",
   url: "https://doorchamp.ca",
   phone: {
