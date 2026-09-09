@@ -73,8 +73,8 @@ const programs = [
     ],
   },
   {
-    tag: "Flexible",
-    name: "Customized",
+    tag: "Property-Specific",
+    name: "Flexible",
     price: null,
     perVisit: null,
     perYear: null,
