@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { IconPhone } from "@/components/Icons";
 
 const PROBLEMS = [
@@ -68,6 +71,8 @@ const PROBLEMS = [
 ];
 
 export default function ProblemsSection() {
+  const [showPrices, setShowPrices] = useState(true);
+
   return (
     <section className="bg-surface">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
@@ -83,6 +88,12 @@ export default function ProblemsSection() {
           <p className="mt-3 text-steel">
             Whatever it&apos;s doing, there&apos;s a reason — and we can fix it today.
           </p>
+          <button
+            onClick={() => setShowPrices((v) => !v)}
+            className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-steel/30 px-4 py-1.5 text-xs font-semibold text-steel hover:border-navy/40 hover:text-navy transition-colors"
+          >
+            {showPrices ? "Hide Prices" : "Show Prices"}
+          </button>
         </div>
 
         {/* Cards grid */}
@@ -114,7 +125,7 @@ export default function ProblemsSection() {
                 <p className="text-white/75 text-sm leading-relaxed flex-1">
                   {p.body}
                 </p>
-                {p.price && (
+                {p.price && showPrices && (
                   <p className="mt-2 text-gold font-bold text-sm">{p.price}</p>
                 )}
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-white/70 group-hover:text-white transition-colors duration-200">
