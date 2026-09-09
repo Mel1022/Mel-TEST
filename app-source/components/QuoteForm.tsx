@@ -3,7 +3,7 @@
 import { useState, useEffect, type FormEvent, type ReactNode } from "react";
 
 // Get your access key at https://web3forms.com — enter info@doorchamp.ca
-const WEB3FORMS_KEY = "YOUR_ACCESS_KEY_HERE";
+const WEB3FORMS_KEY = "a726ac2b-777e-4080-9249-1d033c943e0f";
 
 const helpOptions = [
   "Garage Door Repair",
