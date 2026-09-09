@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IconPhone } from "@/components/Icons";
 
 const PROBLEMS = [
@@ -73,6 +73,15 @@ const PROBLEMS = [
 export default function ProblemsSection() {
   const [showPrices, setShowPrices] = useState(true);
 
+  useEffect(() => {
+    const el = document.documentElement;
+    const observer = new MutationObserver(() => {
+      setShowPrices(el.classList.contains("prices-on"));
+    });
+    observer.observe(el, { attributes: true, attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="bg-surface">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
@@ -88,12 +97,6 @@ export default function ProblemsSection() {
           <p className="mt-3 text-steel">
             Whatever it&apos;s doing, there&apos;s a reason — and we can fix it today.
           </p>
-          <button
-            onClick={() => setShowPrices((v) => !v)}
-            className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-steel/30 px-4 py-1.5 text-xs font-semibold text-steel hover:border-navy/40 hover:text-navy transition-colors"
-          >
-            {showPrices ? "Hide Prices" : "Show Prices"}
-          </button>
         </div>
 
         {/* Cards grid */}
