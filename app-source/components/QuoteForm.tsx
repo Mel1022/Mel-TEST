@@ -2,6 +2,9 @@
 
 import { useState, useEffect, type FormEvent, type ReactNode } from "react";
 
+// Get your access key at https://web3forms.com — enter info@doorchamp.ca
+const WEB3FORMS_KEY = "YOUR_ACCESS_KEY_HERE";
+
 const helpOptions = [
   "Garage Door Repair",
   "Broken Spring",
@@ -15,6 +18,8 @@ const helpOptions = [
 
 export default function QuoteForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const [selectedHelp, setSelectedHelp] = useState("");
 
   useEffect(() => {
@@ -25,9 +30,33 @@ export default function QuoteForm() {
     }
   }, []);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    data.delete("photo"); // Web3Forms doesn't handle file uploads
+    data.append("access_key", WEB3FORMS_KEY);
+    data.append("subject", "New Quote Request — DoorChamp");
+    data.append("from_name", "DoorChamp Website");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data,
+      });
+      const json = await res.json();
+      if (json.success) {
+        setSubmitted(true);
+      } else {
+        setError("Something went wrong. Please call us directly at (778) 732-0588.");
+      }
+    } catch {
+      setError("Something went wrong. Please call us directly at (778) 732-0588.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (submitted) {
@@ -102,11 +131,14 @@ export default function QuoteForm() {
         />
       </Field>
 
+      {error && <p className="text-sm text-red-600 text-center">{error}</p>}
+
       <button
         type="submit"
-        className="w-full inline-flex items-center justify-center rounded-card bg-gold px-6 py-3.5 text-sm font-bold text-navy shadow-card hover:bg-gold-dark hover:text-white transition-colors"
+        disabled={loading}
+        className="w-full inline-flex items-center justify-center rounded-card bg-gold px-6 py-3.5 text-sm font-bold text-navy shadow-card hover:bg-gold-dark hover:text-white transition-colors disabled:opacity-60"
       >
-        Request My Quote
+        {loading ? "Sending…" : "Request My Quote"}
       </button>
 
       <p className="text-xs text-steel text-center">

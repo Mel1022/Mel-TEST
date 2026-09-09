@@ -2,6 +2,9 @@
 
 import { useState, type FormEvent, type ReactNode } from "react";
 
+// Get your access key at https://web3forms.com — enter info@doorchamp.ca
+const WEB3FORMS_KEY = "YOUR_ACCESS_KEY_HERE";
+
 const doorServices = [
   "Spring repair & replacement",
   "Opener installation & repair",
@@ -26,6 +29,8 @@ const otherTrades = [
 
 export default function PartnerForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const [services, setServices] = useState<string[]>([]);
   const [trades, setTrades] = useState<string[]>([]);
   const [agreed, setAgreed] = useState(false);
@@ -34,9 +39,34 @@ export default function PartnerForm() {
     setList(list.includes(val) ? list.filter((x) => x !== val) : [...list, val]);
   }
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    data.append("access_key", WEB3FORMS_KEY);
+    data.append("subject", "New Partner Application — DoorChamp");
+    data.append("from_name", "DoorChamp Website");
+    data.append("services", services.join(", "));
+    data.append("otherCapabilities", trades.join(", "));
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data,
+      });
+      const json = await res.json();
+      if (json.success) {
+        setSubmitted(true);
+      } else {
+        setError("Something went wrong. Please email us directly at info@doorchamp.ca.");
+      }
+    } catch {
+      setError("Something went wrong. Please email us directly at info@doorchamp.ca.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (submitted) {
@@ -214,11 +244,14 @@ export default function PartnerForm() {
         </span>
       </label>
 
+      {error && <p className="text-sm text-red-600 text-center">{error}</p>}
+
       <button
         type="submit"
-        className="w-full inline-flex items-center justify-center rounded-card bg-gold px-6 py-3.5 text-sm font-bold text-navy shadow-card hover:bg-gold-dark hover:text-white transition-colors"
+        disabled={loading}
+        className="w-full inline-flex items-center justify-center rounded-card bg-gold px-6 py-3.5 text-sm font-bold text-navy shadow-card hover:bg-gold-dark hover:text-white transition-colors disabled:opacity-60"
       >
-        Submit application
+        {loading ? "Sending…" : "Submit application"}
       </button>
 
       <p className="text-xs text-steel text-center">
