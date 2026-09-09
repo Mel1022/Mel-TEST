@@ -28,6 +28,7 @@ const PROBLEMS = [
     formValue: "Broken Spring",
     img: "/images/garage-door-spring.jpg",
     icon: <SpringIcon />,
+    price: "From $714",
   },
   {
     title: "Opener Not Responding",
@@ -106,6 +107,9 @@ export default function ProblemsSection() {
                 <p className="text-white/75 text-sm leading-relaxed flex-1">
                   {p.body}
                 </p>
+                {p.price && (
+                  <p className="mt-2 text-gold font-bold text-sm">{p.price}</p>
+                )}
                 <span className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-white/70 group-hover:text-white transition-colors duration-200">
                   Get Help
                   <span className="inline-block transition-transform duration-200 group-hover:translate-x-1">→</span>
