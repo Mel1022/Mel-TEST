@@ -9,7 +9,11 @@ export default function Logo({ variant = "dark", className = "" }: LogoProps) {
       <img
         src="/images/DCLogo.png"
         alt="DoorChamp Garage Services"
-        style={{ height: "64px", width: "auto" }}
+        style={{
+          height: "40px",
+          width: "auto",
+          mixBlendMode: variant === "light" ? "screen" : "multiply",
+        }}
       />
     </span>
   );
