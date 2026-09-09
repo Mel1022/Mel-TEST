@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     images: [{ url: "/images/og-doorchamp.png", width: 1200, height: 630, alt: "DoorChamp Garage Services" }],
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: "/favicon-v2.svg",
+    shortcut: "/favicon-v2.svg",
+    apple: "/favicon-v2.svg",
   },
 };
 
