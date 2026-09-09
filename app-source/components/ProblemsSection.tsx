@@ -7,6 +7,7 @@ const PROBLEMS = [
     formValue: "Garage Door Repair",
     img: "/images/garage-door-wont-open.webp",
     icon: <DoorIcon />,
+    price: "From $189",
   },
   {
     title: "Loud Grinding or Banging",
@@ -14,6 +15,7 @@ const PROBLEMS = [
     formValue: "Garage Door Repair",
     img: "/images/garage-door-grinding.jpg",
     icon: <NoiseIcon />,
+    price: "From $199",
   },
   {
     title: "Door Off Its Track",
@@ -21,6 +23,7 @@ const PROBLEMS = [
     formValue: "Door Off Track",
     img: "/images/garage-door-off-track.jpg",
     icon: <TrackIcon />,
+    price: "From $279",
   },
   {
     title: "Broken or Bent Spring",
@@ -36,6 +39,7 @@ const PROBLEMS = [
     formValue: "Garage Door Opener",
     img: "/images/garage-door-opener.jpg",
     icon: <RemoteIcon />,
+    price: "From $169",
   },
   {
     title: "Slow or Uneven Movement",
@@ -43,6 +47,7 @@ const PROBLEMS = [
     formValue: "Cable/Roller Problem",
     img: "/images/garage-door-slow.webp",
     icon: <UnbalancedIcon />,
+    price: "From $229",
   },
   {
     title: "Door Reverses Before Closing",
@@ -50,6 +55,7 @@ const PROBLEMS = [
     formValue: "Garage Door Opener",
     img: "/images/garage-door-broke-while-reversing-v0-tp7h0xjlsx1c1.jpg",
     icon: <ReverseIcon />,
+    price: "From $149",
   },
   {
     title: "Sagging or Damaged Panel",
@@ -57,6 +63,7 @@ const PROBLEMS = [
     formValue: "Garage Door Repair",
     img: "/images/garage-door-panel.jpg",
     icon: <PanelIcon />,
+    price: "From $429",
   },
 ];
 
