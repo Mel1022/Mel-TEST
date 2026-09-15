@@ -49,6 +49,9 @@ export default function QuoteForm() {
       const json = await res.json();
       if (json.success) {
         setSubmitted(true);
+        const w = window as { dataLayer?: object[] };
+        w.dataLayer = w.dataLayer || [];
+        w.dataLayer.push({ event: "generate_lead", lead_type: "quote_request" });
       } else {
         setError("Something went wrong. Please call us directly at (778) 732-0588.");
       }

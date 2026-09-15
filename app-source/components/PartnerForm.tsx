@@ -59,6 +59,9 @@ export default function PartnerForm() {
       const json = await res.json();
       if (json.success) {
         setSubmitted(true);
+        const w = window as { dataLayer?: object[] };
+        w.dataLayer = w.dataLayer || [];
+        w.dataLayer.push({ event: "contact_form_submit" });
       } else {
         setError("Something went wrong. Please email us directly at info@doorchamp.ca.");
       }

@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import EmergencyBanner from "@/components/EmergencyBanner";
 import StickyCallBar from "@/components/StickyCallBar";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
+import { GTMHeadScript, GTMBodyNoScript } from "@/components/GTM";
+import TrackingInit from "@/components/TrackingInit";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -34,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <GTMHeadScript />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -43,6 +46,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LocalBusinessSchema />
       </head>
       <body>
+        <GTMBodyNoScript />
+        <TrackingInit />
         <EmergencyBanner />
         <Header />
         <main>{children}</main>
