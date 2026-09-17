@@ -98,7 +98,7 @@ export default function SpringRepairPage() {
           <div className="grid sm:grid-cols-3 gap-6 items-stretch">
             {/* Quick Fix */}
             <div className="flex flex-col rounded-card bg-white border border-steel/15 overflow-hidden shadow-card">
-              <img src="/images/One Spring.png" alt="Single spring repair" className="w-full h-56 object-cover object-top" />
+              <img src="/images/One Spring.png" alt="Single spring repair" className="w-full" />
               <div className="flex flex-col flex-1 p-6">
                 <h3 className="font-heading font-extrabold text-xl text-navy-dark mb-0.5">Single Spring</h3>
                 <p className="font-bold text-gold text-lg">Flat-rate <span className="price-val">— $714</span></p>
@@ -137,7 +137,7 @@ export default function SpringRepairPage() {
               <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold text-navy-dark text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full whitespace-nowrap z-10">
                 Most Homeowners Choose This
               </span>
-              <img src="/images/Both Springs.png" alt="Both springs repair" className="w-full h-56 object-cover object-top" />
+              <img src="/images/Both Springs.png" alt="Both springs repair" className="w-full" />
               <div className="flex flex-col flex-1 p-6">
                 <h3 className="font-heading font-extrabold text-xl text-navy-dark mb-0.5">Both Springs</h3>
                 <p className="font-bold text-gold text-lg">Flat-rate <span className="price-val">— $827</span></p>
@@ -170,7 +170,7 @@ export default function SpringRepairPage() {
 
             {/* Forever Pair */}
             <div className="flex flex-col rounded-card bg-white border border-steel/15 overflow-hidden shadow-card">
-              <img src="/images/High Cycle.png" alt="High-cycle spring pair" className="w-full h-56 object-cover object-top" />
+              <img src="/images/High Cycle.png" alt="High-cycle spring pair" className="w-full" />
               <div className="flex flex-col flex-1 p-6">
                 <h3 className="font-heading font-extrabold text-xl text-navy-dark mb-0.5">High-Cycle Pair</h3>
                 <p className="font-bold text-gold text-lg">Flat-rate</p>
