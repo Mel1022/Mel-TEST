@@ -97,103 +97,121 @@ export default function SpringRepairPage() {
 
           <div className="grid sm:grid-cols-3 gap-6 items-stretch">
             {/* Quick Fix */}
-            <div className="flex flex-col rounded-card bg-white border border-steel/10 p-7">
-              <p className="text-xs font-bold uppercase tracking-widest text-steel mb-1">The Quick Fix</p>
-              <h3 className="font-heading font-extrabold text-xl text-navy-dark mb-1">Single Spring</h3>
-              <p className="font-bold text-navy-dark text-2xl mt-1"><span className="price-val">$714</span> <span className="text-sm font-normal text-steel">for 1 · Oil-tempered</span></p>
-              <p className="text-sm text-gold font-semibold mb-5 mt-1">Quick &amp; targeted</p>
-              <ul className="space-y-3 flex-1">
-                {[
-                  "One oil-tempered torsion spring replaced",
-                  "Standard 10,000-cycle spring",
-                  "Tested & safety-checked before we leave",
-                  "One-year labour warranty",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <IconCheck className="w-4 h-4 text-navy flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-steel leading-snug">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-5 text-xs text-steel/70 leading-relaxed">
-                Best when only one spring is broken and the other is recent. If both are the same age, ask us — the second is usually months away from going.
-              </p>
-              <a
-                href={siteConfig.phone.href}
-                className="mt-6 inline-flex items-center justify-center gap-2 rounded-card border-2 border-navy-dark text-navy-dark px-5 py-3 text-sm font-bold hover:bg-navy-dark hover:text-white transition-colors"
-              >
-                <IconPhone className="w-4 h-4" />
-                {siteConfig.phone.display}
-              </a>
+            <div
+              className="flex flex-col rounded-card overflow-hidden relative"
+              style={{ backgroundImage: "url('/images/garage-door-spring.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+            >
+              <div className="absolute inset-0 bg-navy-dark/82" />
+              <div className="relative z-10 flex flex-col flex-1 p-7">
+                <p className="text-xs font-bold uppercase tracking-widest text-white/50 mb-1">The Quick Fix</p>
+                <h3 className="font-heading font-extrabold text-xl text-white mb-1">Single Spring</h3>
+                <p className="font-bold text-white text-2xl mt-1"><span className="price-val">$714</span> <span className="text-sm font-normal text-white/60">for 1 · Oil-tempered</span></p>
+                <p className="text-sm text-gold font-semibold mb-5 mt-1">Quick &amp; targeted</p>
+                <ul className="space-y-3 flex-1">
+                  {[
+                    "One oil-tempered torsion spring replaced",
+                    "Standard 10,000-cycle spring",
+                    "Tested & safety-checked before we leave",
+                    "One-year labour warranty",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <IconCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-white/75 leading-snug">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-5 text-xs text-white/45 leading-relaxed">
+                  Best when only one spring is broken and the other is recent. If both are the same age, ask us — the second is usually months away from going.
+                </p>
+                <a
+                  href={siteConfig.phone.href}
+                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-card border-2 border-white/40 text-white px-5 py-3 text-sm font-bold hover:border-gold hover:text-gold transition-colors"
+                >
+                  <IconPhone className="w-4 h-4" />
+                  {siteConfig.phone.display}
+                </a>
+              </div>
             </div>
 
             {/* Honest Pair — featured */}
-            <div className="flex flex-col rounded-card bg-navy-dark border border-navy-dark p-7 relative">
-              <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold text-navy-dark text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full whitespace-nowrap">
+            <div
+              className="flex flex-col rounded-card overflow-hidden relative"
+              style={{ backgroundImage: "url('/images/spring-pricing-bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+            >
+              <div className="absolute inset-0 bg-navy-dark/75" />
+              <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold text-navy-dark text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full whitespace-nowrap z-20">
                 Most Homeowners Choose This
               </span>
-              <p className="text-xs font-bold uppercase tracking-widest text-white/50 mb-1">The Honest Pair</p>
-              <h3 className="font-heading font-extrabold text-xl text-white mb-1">Both Springs</h3>
-              <p className="font-bold text-white text-2xl mt-1"><span className="price-val">$827</span> <span className="text-sm font-normal text-white/70">for 2 · Oil-tempered · Same day</span></p>
-              <p className="text-sm text-gold font-semibold mb-5 mt-1">Best value</p>
-              <ul className="space-y-3 flex-1">
-                {[
-                  "Both oil-tempered torsion springs replaced as a matched pair",
-                  "Standard 10,000-cycle springs",
-                  "Free cable replacement",
-                  "Free hinge & track lubrication",
-                  "Free door balancing & tune-up",
-                  "Tested & safety-checked before we leave",
-                  "One-year labour warranty",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <IconCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-white/80 leading-snug">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-5 text-xs text-white/50 leading-relaxed">
-                If one spring snapped, the other is the same age. Doing both now is cheaper than a second service call in 4–6 months.
-              </p>
-              <a
-                href={siteConfig.phone.href}
-                className="mt-6 inline-flex items-center justify-center gap-2 rounded-card bg-gold px-5 py-3 text-sm font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors"
-              >
-                <IconPhone className="w-4 h-4" />
-                {siteConfig.phone.display}
-              </a>
+              <div className="relative z-10 flex flex-col flex-1 p-7">
+                <p className="text-xs font-bold uppercase tracking-widest text-white/50 mb-1">The Honest Pair</p>
+                <h3 className="font-heading font-extrabold text-xl text-white mb-1">Both Springs</h3>
+                <p className="font-bold text-white text-2xl mt-1"><span className="price-val">$827</span> <span className="text-sm font-normal text-white/60">for 2 · Oil-tempered · Same day</span></p>
+                <p className="text-sm text-gold font-semibold mb-5 mt-1">Best value</p>
+                <ul className="space-y-3 flex-1">
+                  {[
+                    "Both oil-tempered torsion springs replaced as a matched pair",
+                    "Standard 10,000-cycle springs",
+                    "Free cable replacement",
+                    "Free hinge & track lubrication",
+                    "Free door balancing & tune-up",
+                    "Tested & safety-checked before we leave",
+                    "One-year labour warranty",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <IconCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-white/80 leading-snug">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-5 text-xs text-white/45 leading-relaxed">
+                  If one spring snapped, the other is the same age. Doing both now is cheaper than a second service call in 4–6 months.
+                </p>
+                <a
+                  href={siteConfig.phone.href}
+                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-card bg-gold px-5 py-3 text-sm font-bold text-navy-dark hover:bg-gold-dark hover:text-white transition-colors"
+                >
+                  <IconPhone className="w-4 h-4" />
+                  {siteConfig.phone.display}
+                </a>
+              </div>
             </div>
 
             {/* Forever Pair */}
-            <div className="flex flex-col rounded-card bg-white border border-steel/10 p-7">
-              <p className="text-xs font-bold uppercase tracking-widest text-steel mb-1">The Forever Pair</p>
-              <h3 className="font-heading font-extrabold text-xl text-navy-dark mb-1">High-Cycle Pair</h3>
-              <p className="text-sm text-gold font-semibold mb-5">Longest life</p>
-              <ul className="space-y-3 flex-1">
-                {[
-                  "Both commercial-grade oil-tempered 25,000+ cycle springs",
-                  "Free cable replacement",
-                  "Free full preventive-maintenance service on the entire door",
-                  "Free silicone quiet rollers (10-pack)",
-                  "Free wireless keypad installed",
-                  "One-year labour warranty",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5">
-                    <IconCheck className="w-4 h-4 text-navy flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-steel leading-snug">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-5 text-xs text-steel/70 leading-relaxed">
-                For families who use the door 5–10+ times a day. Springs last 2–3× longer; quiet rollers stop the morning racket.
-              </p>
-              <a
-                href={siteConfig.phone.href}
-                className="mt-6 inline-flex items-center justify-center gap-2 rounded-card border-2 border-navy-dark text-navy-dark px-5 py-3 text-sm font-bold hover:bg-navy-dark hover:text-white transition-colors"
-              >
-                <IconPhone className="w-4 h-4" />
-                {siteConfig.phone.display}
-              </a>
+            <div
+              className="flex flex-col rounded-card overflow-hidden relative"
+              style={{ backgroundImage: "url('/images/warehouse-spring-25k-cycle.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
+            >
+              <div className="absolute inset-0 bg-navy-dark/82" />
+              <div className="relative z-10 flex flex-col flex-1 p-7">
+                <p className="text-xs font-bold uppercase tracking-widest text-white/50 mb-1">The Forever Pair</p>
+                <h3 className="font-heading font-extrabold text-xl text-white mb-1">High-Cycle Pair</h3>
+                <p className="text-sm text-gold font-semibold mb-5">Longest life</p>
+                <ul className="space-y-3 flex-1">
+                  {[
+                    "Both commercial-grade oil-tempered 25,000+ cycle springs",
+                    "Free cable replacement",
+                    "Free full preventive-maintenance service on the entire door",
+                    "Free silicone quiet rollers (10-pack)",
+                    "Free wireless keypad installed",
+                    "One-year labour warranty",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <IconCheck className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-white/75 leading-snug">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-5 text-xs text-white/45 leading-relaxed">
+                  For families who use the door 5–10+ times a day. Springs last 2–3× longer; quiet rollers stop the morning racket.
+                </p>
+                <a
+                  href={siteConfig.phone.href}
+                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-card border-2 border-white/40 text-white px-5 py-3 text-sm font-bold hover:border-gold hover:text-gold transition-colors"
+                >
+                  <IconPhone className="w-4 h-4" />
+                  {siteConfig.phone.display}
+                </a>
+              </div>
             </div>
           </div>
         </div>
