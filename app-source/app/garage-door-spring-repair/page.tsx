@@ -134,9 +134,6 @@ export default function SpringRepairPage() {
 
             {/* Honest Pair — featured */}
             <div className="flex flex-col rounded-card bg-white border-2 border-gold overflow-hidden shadow-card relative">
-              <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gold text-navy-dark text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full whitespace-nowrap z-10">
-                Most Homeowners Choose This
-              </span>
               <img src="/images/Both Springs.png" alt="Both springs repair" className="w-full" />
               <div className="flex flex-col flex-1 p-6">
                 <h3 className="font-heading font-extrabold text-xl text-navy-dark mb-0.5">Both Springs</h3>
