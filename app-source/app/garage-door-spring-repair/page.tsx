@@ -99,7 +99,7 @@ export default function SpringRepairPage() {
             {/* Quick Fix */}
             <div
               className="flex flex-col rounded-card overflow-hidden relative"
-              style={{ backgroundImage: "url('/images/garage-door-spring.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}
+              style={{ backgroundImage: "url('/images/One Spring.png')", backgroundSize: "cover", backgroundPosition: "center" }}
             >
               <div className="absolute inset-0 bg-navy-dark/82" />
               <div className="relative z-10 flex flex-col flex-1 p-7">
@@ -136,7 +136,7 @@ export default function SpringRepairPage() {
             {/* Honest Pair — featured */}
             <div
               className="flex flex-col rounded-card overflow-hidden relative"
-              style={{ backgroundImage: "url('/images/spring-pricing-bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}
+              style={{ backgroundImage: "url('/images/Both Springs.png')", backgroundSize: "cover", backgroundPosition: "center" }}
             >
               <div className="absolute inset-0 bg-navy-dark/75" />
               <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold text-navy-dark text-xs font-bold uppercase tracking-wider px-4 py-1 rounded-full whitespace-nowrap z-20">
@@ -179,7 +179,7 @@ export default function SpringRepairPage() {
             {/* Forever Pair */}
             <div
               className="flex flex-col rounded-card overflow-hidden relative"
-              style={{ backgroundImage: "url('/images/warehouse-spring-25k-cycle.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
+              style={{ backgroundImage: "url('/images/High Cycle.png')", backgroundSize: "cover", backgroundPosition: "center" }}
             >
               <div className="absolute inset-0 bg-navy-dark/82" />
               <div className="relative z-10 flex flex-col flex-1 p-7">
