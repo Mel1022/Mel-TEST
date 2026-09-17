@@ -100,9 +100,11 @@ export default function SpringRepairPage() {
             <div className="flex flex-col rounded-card bg-white border border-steel/15 overflow-hidden shadow-card">
               <img src="/images/One Spring.png" alt="Single spring repair" className="w-full" />
               <div className="flex flex-col flex-1 p-6">
-                <h3 className="font-heading font-extrabold text-xl text-navy-dark mb-0.5">Single Spring</h3>
-                <p className="font-bold text-gold text-lg">Flat-rate <span className="price-val">— $714</span></p>
-                <p className="text-xs text-steel mb-4">all-in · plus GST/PST</p>
+                <h3 className="font-heading font-extrabold text-xl text-navy-dark mb-1">Single Spring</h3>
+                <div className="price-val mb-4">
+                  <p className="font-bold text-gold text-xl leading-tight">$714 · oil-tempered torsion</p>
+                  <p className="text-xs text-steel mt-0.5">all-in · plus GST/PST</p>
+                </div>
                 <ul className="space-y-2.5 flex-1">
                   {[
                     "One oil-tempered torsion spring replaced",
@@ -136,9 +138,11 @@ export default function SpringRepairPage() {
             <div className="flex flex-col rounded-card bg-white border-2 border-gold overflow-hidden shadow-card relative">
               <img src="/images/Both Springs.png" alt="Both springs repair" className="w-full" />
               <div className="flex flex-col flex-1 p-6">
-                <h3 className="font-heading font-extrabold text-xl text-navy-dark mb-0.5">Both Springs</h3>
-                <p className="font-bold text-gold text-lg">Flat-rate <span className="price-val">— $827</span></p>
-                <p className="text-xs text-steel mb-4">all-in · plus GST/PST</p>
+                <h3 className="font-heading font-extrabold text-xl text-navy-dark mb-1">Both Springs</h3>
+                <div className="price-val mb-4">
+                  <p className="font-bold text-gold text-xl leading-tight">$827 · free cables included</p>
+                  <p className="text-xs text-steel mt-0.5">all-in · plus GST/PST</p>
+                </div>
                 <ul className="space-y-2.5 flex-1">
                   {[
                     "Both oil-tempered torsion springs replaced as a matched pair",
@@ -169,9 +173,11 @@ export default function SpringRepairPage() {
             <div className="flex flex-col rounded-card bg-white border border-steel/15 overflow-hidden shadow-card">
               <img src="/images/High Cycle.png" alt="High-cycle spring pair" className="w-full" />
               <div className="flex flex-col flex-1 p-6">
-                <h3 className="font-heading font-extrabold text-xl text-navy-dark mb-0.5">High-Cycle Pair</h3>
-                <p className="font-bold text-gold text-lg">Flat-rate</p>
-                <p className="text-xs text-steel mb-4">all-in · plus GST/PST</p>
+                <h3 className="font-heading font-extrabold text-xl text-navy-dark mb-1">High-Cycle Pair</h3>
+                <div className="price-val mb-4">
+                  <p className="font-bold text-gold text-xl leading-tight">$1,189 · 25,000-cycle springs</p>
+                  <p className="text-xs text-steel mt-0.5">all-in · plus GST/PST</p>
+                </div>
                 <ul className="space-y-2.5 flex-1">
                   {[
                     "Both commercial-grade oil-tempered 25,000+ cycle springs",
