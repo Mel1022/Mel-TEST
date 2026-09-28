@@ -36,3 +36,21 @@ These live in `app-source/lib/site-config.ts`, `app-source/app/service-areas/pag
 The quote request form (`app-source/components/QuoteForm.tsx`) is not yet wired to a
 backend, email service, or CRM — it currently just shows a confirmation message on
 submit. Connect it to a real endpoint before launch.
+
+## Generating images (Nano Banana / Gemini 2.5 Flash Image)
+
+`app-source/scripts/nano-banana.mjs` generates or edits photorealistic images (heroes,
+product shots, banners) via the Gemini API. It needs `GEMINI_API_KEY` set in the
+environment. Never commit the key or put it in any file under the published site.
+
+```bash
+cd app-source
+node scripts/nano-banana.mjs "<prompt>" hero.png
+ASPECT=16:9 node scripts/nano-banana.mjs "<prompt>" hero.png          # wide output (default is square)
+node scripts/nano-banana.mjs "<edit instruction>" v2.png --ref hero.png  # edit an existing image
+cwebp -q 82 hero.png -o public/hero.webp                                # web-optimize
+```
+
+Tips: ask for "photorealistic" and "no readable text", reuse one shared style suffix
+across a set of images, and chain small `--ref` edits to keep a subject consistent.
+A 429 "prepayment credits depleted" error means the account needs a top-up, not a code fix.
