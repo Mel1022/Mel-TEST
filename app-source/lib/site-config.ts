@@ -8,7 +8,7 @@ export const siteConfig = {
     display: "(778) 732-0588",
     href: "tel:+17787320588",
   },
-  email: "info@doorchamp.ca",
+  email: "sales@doorchamp.ca",
   address: {
     line: "12740 Trites Rd Unit 24B, Richmond BC V7E 3R8",
     street: "12740 Trites Rd Unit 24B",
