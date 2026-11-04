@@ -1,6 +1,7 @@
 # Website Copy — Commercial Garage Door & Dock Service (Stratas · Warehouses)
 
-**Status:** DRAFT v1 for review. Nothing is built from this yet.
+**Company:** Northline Commercial · **Region:** Vancouver and surrounding areas
+**Status:** DRAFT v2 for review. Hero copy supplied by client. Nothing is built from this yet.
 **Voice:** Direct, calm, competent. We talk to people who are accountable for a building (property managers, strata councils, facility and warehouse managers), not homeowners. Short sentences. No hype, no "we're passionate". Say what happens, when, and who is responsible.
 **Rule:** Anything in `[BRACKETS]` is a fact I don't have. Don't launch with brackets in place. No numbers or credentials have been invented.
 
@@ -29,26 +30,23 @@ Cares about: downtime per hour, dock doors and levelers, safety compliance, resp
 ## 1. Navigation & global
 
 **Nav:** Strata · Warehouse & Industrial · Services · Maintenance Programs · Projects · About · Contact
-**Header buttons:** `Request a Quote` (primary) · `[PHONE]` (click-to-call)
-**Mobile sticky bar:** `Call Now` · `Request a Quote`
-**Footer line:** Commercial garage door, gate and dock service for `[REGION]`.
-**Footer small print:** `[LICENSE / WCB / INSURANCE DETAILS]` · © `[YEAR]` `[COMPANY NAME]`
+**Header buttons:** `Request Service` (primary) · `[PHONE]` (click-to-call)
+**Mobile sticky bar:** `Call Now` · `Request Service`
+**Footer line:** Commercial garage door, gate and dock service for Vancouver and surrounding areas.
+**Footer small print:** `[LICENSE / WCB / INSURANCE DETAILS]` · © `[YEAR]` Northline Commercial
 
 ---
 
 ## 2. HOME
 
-### Hero
-**Eyebrow:** Commercial door, gate & dock service · `[REGION]`
-**Headline (recommended):** WHEN YOUR DOOR STOPS, YOUR BUILDING STOPS.
-**Alternates:**
-- DOORS THAT WORK. RECORDS THAT HOLD UP.
-- FOR BUILDINGS THAT CAN'T AFFORD A BROKEN DOOR.
-
-**Subhead:** Service, repair and preventive maintenance for strata parkades, warehouses and industrial sites. Fast diagnosis, clear written quotes, and a service record for every door.
-**Primary CTA:** Request a Quote
-**Secondary CTA:** Call Now · `[PHONE]`
-**Status chip:** Technicians available · `[RESPONSE TIME]`
+### Hero  (CLIENT-SUPPLIED — approved wording)
+**Headline:** COMMERCIAL DOOR SOLUTIONS. WITHOUT THE DOWNTIME.
+**Subhead:** Keeping strata properties, warehouses, and commercial facilities operating with dependable door maintenance, repairs, and installation.
+**Body:** Northline Commercial provides professional service for commercial overhead doors, loading dock equipment, parking garage doors, and access systems throughout Vancouver and surrounding areas.
+**Primary CTA:** REQUEST SERVICE
+**Secondary CTA:** EXPLORE OUR SERVICES
+**Tag line under buttons:** Commercial • Industrial • Strata
+*(My earlier headline options are dropped. Primary button label changes from "Request Service" to "Request Service" site-wide for consistency.)*
 
 ### Trust bar (scrolling)
 Licensed & insured `[DETAILS]` · WCB `[COMPLIANT / CLEARANCE LETTER ON REQUEST]` · Written inspection reports · Strata-ready quotes · Emergency repairs · Parts on the truck · `[WARRANTY]`
@@ -82,7 +80,7 @@ Dock doors, levelers, seals and high-cycle overhead doors. We keep trucks loadin
 | Need a maintenance contract or inspection report | **Preventive Maintenance Programs.** Scheduled visits, written reports, one budget line. |
 | Planning a replacement or upgrade | **Replacement & Upgrades.** Right-sized doors and operators, quoted clearly. |
 
-**Result card buttons:** Request a Quote · Call Now
+**Result card buttons:** Request Service · Call Now
 **Urgent note:** Treat as urgent. Don't operate the door until it's been inspected.
 
 ### Services overview
@@ -146,7 +144,7 @@ Three placeholder slots: `[REAL REVIEW]` · `[NAME, ROLE]` · `[STRATA / COMPANY
 
 ### Service area
 **Heading:** Where we work.
-**Body:** We serve commercial properties across `[REGION]`. Not sure we cover your site? Call and we'll tell you straight.
+**Body:** We serve commercial properties across Vancouver and surrounding areas. Not sure we cover your site? Call and we'll tell you straight.
 **Map CTA:** Request service in this area
 
 ### FAQ (Home)
@@ -180,13 +178,13 @@ A: `[WARRANTY DETAILS]`.
 ### Final CTA
 **Heading:** Let's get your doors under control.
 **Body:** Send us the details, or call. We'll tell you what's wrong, what it costs and what to do next.
-**Buttons:** Request a Quote · Call Now · Book a Service Visit
+**Buttons:** Request Service · Call Now · Book a Service Visit
 
 ---
 
 ## 3. STRATA & MULTI-FAMILY PAGE
-**SEO title:** Strata & Multi-Family Garage Door, Gate & Parkade Service | `[COMPANY NAME]`
-**Meta description:** Parkade door and gate repair, maintenance programs and council-ready quotes for stratas and property managers in `[REGION]`. Request a quote.
+**SEO title:** Strata & Multi-Family Garage Door, Gate & Parkade Service | Northline Commercial
+**Meta description:** Parkade door and gate repair, maintenance programs and council-ready quotes for stratas and property managers in Vancouver and surrounding areas. Request a quote.
 
 **Eyebrow:** Strata & multi-family
 **H1:** PARKADE DOORS THAT RESIDENTS NEVER HAVE TO THINK ABOUT.
@@ -213,13 +211,13 @@ Most parkade failures give warning signs: slow travel, noise, sensor faults. A s
 
 **Section: Common strata questions** (use FAQ items on quotes, reports, insurance, access, depreciation report support `[CONFIRM]`)
 
-**CTA band:** Managing more than one building? Ask about portfolio service. `[CONFIRM]` · Request a Quote
+**CTA band:** Managing more than one building? Ask about portfolio service. `[CONFIRM]` · Request Service
 
 ---
 
 ## 4. WAREHOUSE & INDUSTRIAL PAGE
-**SEO title:** Warehouse & Industrial Overhead Door and Loading Dock Service | `[COMPANY NAME]`
-**Meta description:** Overhead door repair, loading dock levelers, seals and preventive maintenance for warehouses and industrial sites in `[REGION]`. Request a site assessment.
+**SEO title:** Warehouse & Industrial Overhead Door and Loading Dock Service | Northline Commercial
+**Meta description:** Overhead door repair, loading dock levelers, seals and preventive maintenance for warehouses and industrial sites in Vancouver and surrounding areas. Request a site assessment.
 
 **Eyebrow:** Warehouse & industrial
 **H1:** UPTIME IS THE PRODUCT.
@@ -250,7 +248,7 @@ Door-by-door inspection, lubrication, adjustment and testing on a schedule that 
 ---
 
 ## 5. SERVICES PAGE (commercial only)
-**SEO title:** Commercial Garage Door, Gate & Loading Dock Services | `[COMPANY NAME]`
+**SEO title:** Commercial Garage Door, Gate & Loading Dock Services | Northline Commercial
 **H1:** EVERY DOOR. EVERY DOCK. ONE TEAM.
 **Intro:** Service, repair and maintenance for the doors, gates and dock equipment that keep commercial buildings working.
 
@@ -296,7 +294,7 @@ Each service block: **What it is · Common problems · What you get · CTA (Requ
 ---
 
 ## 6. MAINTENANCE PROGRAMS PAGE
-**SEO title:** Commercial Door & Dock Maintenance Programs | `[COMPANY NAME]`
+**SEO title:** Commercial Door & Dock Maintenance Programs | Northline Commercial
 **H1:** SCHEDULED, NOT SURPRISED.
 **Intro:** A maintenance program swaps emergency calls for planned visits, so doors keep working and costs stay predictable.
 
@@ -358,8 +356,8 @@ Each service block: **What it is · Common problems · What you get · CTA (Requ
 ---
 
 ## 10. SEO & META (home)
-**Title:** Commercial Garage Door & Loading Dock Service for Stratas & Warehouses | `[COMPANY NAME]`
-**Description:** Repair, maintenance and emergency service for strata parkade doors and gates, warehouse overhead doors and loading docks in `[REGION]`. Written quotes and service reports.
+**Title:** Commercial Garage Door & Loading Dock Service for Stratas & Warehouses | Northline Commercial
+**Description:** Repair, maintenance and emergency service for strata parkade doors and gates, warehouse overhead doors and loading docks in Vancouver and surrounding areas. Written quotes and service reports.
 **Open Graph title:** When your door stops, your building stops.
 **Primary keywords:** strata garage door repair `[CITY]`, parkade gate repair, commercial overhead door repair, loading dock leveler repair, warehouse door maintenance, commercial garage door service
 
