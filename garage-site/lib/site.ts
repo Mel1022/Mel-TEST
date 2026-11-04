@@ -3,6 +3,9 @@
  * Everything in [BRACKETS] is a placeholder — replace before launch.
  */
 export const site = {
+  // Real hero photo: put a file in /public (e.g. "/hero.jpg") and set the path + alt text. Empty = illustrated fallback.
+  heroImage: "",
+  heroAlt: "Modern home with a contemporary garage door",
   name: "[Company Name]",
   short: "Company",
   url: "https://example.com", // [WEBSITE URL]
