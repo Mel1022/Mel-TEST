@@ -39,9 +39,9 @@ export default function Hero() {
   return (
     <section ref={root} className="relative min-h-[100svh] flex items-end overflow-hidden" aria-label="Introduction">
       <div className="absolute inset-0 will-change-transform" aria-hidden="true">
-        <div ref={bg} className="absolute top-0 bottom-0 right-0 left-0 lg:left-[25%] pt-24 pb-10 lg:pr-10"><GarageScene /></div>
+        <div ref={bg} className="absolute inset-x-0 -top-4 bottom-[38%] lg:inset-0"><GarageScene /></div>
       </div>
-      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-transparent" />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-transparent lg:via-ink/25" />
       <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-ink via-ink/50 to-transparent lg:via-ink/30" />
       <div aria-hidden="true" className="absolute inset-0 grid-bg opacity-[0.25] [mask-image:radial-gradient(ellipse_at_70%_40%,black,transparent_70%)]" />
 
