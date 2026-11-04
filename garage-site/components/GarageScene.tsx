@@ -12,6 +12,19 @@ export default function GarageScene() {
     const fb = setTimeout(() => setOpen((o) => (o === 0 ? 0.7 : o)), 3200);
     return () => { window.removeEventListener("intro-done", go); clearTimeout(fb); };
   }, []);
+  if (site.heroVideo) {
+    return (
+      <div className="relative w-full h-full overflow-hidden bg-ink">
+        <video className="w-full h-full object-cover" src={site.heroVideo} poster={site.heroPoster || undefined} autoPlay muted loop playsInline preload="auto" aria-label={site.heroAlt} />
+        <div aria-hidden="true" className="absolute inset-0 flex flex-col">
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div key={i} className="flex-1 bg-gradient-to-b from-[#0b2b42] to-[#071d2e] border-b border-black/60"
+              style={{ transform: open ? "translateY(-105%)" : "none", transition: `transform 1.6s cubic-bezier(.65,0,.25,1) ${(5 - i) * 0.09}s` }} />
+          ))}
+        </div>
+      </div>
+    );
+  }
   if (site.heroImage) {
     return (
       <div className="relative w-full h-full overflow-hidden bg-ink">

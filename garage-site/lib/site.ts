@@ -4,6 +4,10 @@
  */
 export const site = {
   // Real hero photo: put a file in /public (e.g. "/hero.jpg"), set the path + alt text. Empty = illustrated fallback.
+  // Hero VIDEO (preferred over image): put an mp4 in /public (e.g. "/hero.mp4", ~1080p, <8MB, no audio needed).
+  // heroPoster is the still shown while it loads and for reduced-motion users. Only use footage you own or are licensed to use.
+  heroVideo: "",
+  heroPoster: "",
   heroImage: "",
   heroAlt: "Commercial building with an overhead door and loading dock",
   name: "Northline Commercial",
