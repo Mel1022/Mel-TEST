@@ -31,15 +31,15 @@ export default function Header() {
       <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${hidden && !open ? "-translate-y-full" : "translate-y-0"} ${scrolled ? "glass !border-x-0 !border-t-0 py-3 bg-ink/70" : "py-5"}`}>
         <div className="container-x flex items-center justify-between gap-6">
           <Link href="/" aria-label={`${site.name} home`}><Logo className="h-8 sm:h-10" /></Link>
-          <nav aria-label="Primary" className="hidden lg:flex items-center gap-8">
+          <nav aria-label="Primary" className="hidden xl:flex items-center gap-7 whitespace-nowrap">
             {nav.map((n) => (
               <Link key={n.href} href={n.href} aria-current={path.startsWith(n.href) ? "page" : undefined} className="nav-link text-[13px] font-medium tracking-wide text-white/80 hover:text-white">{n.label}</Link>
             ))}
           </nav>
           <div className="flex items-center gap-3">
-            <a href={site.phone.href} className="hidden md:inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-accent transition-colors"><Phone size={16} className="text-accent" />{site.phone.display}</a>
-            <Link href="/contact/" className="btn btn-primary !py-3 !px-5 hidden sm:inline-flex">Request Service</Link>
-            <button type="button" className="lg:hidden w-11 h-11 grid place-items-center border border-white/20 text-white" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(!open)}>
+            <a href={site.phone.href} className="hidden 2xl:inline-flex whitespace-nowrap items-center gap-2 text-sm font-semibold text-white hover:text-accent transition-colors"><Phone size={16} className="text-accent" />{site.phone.display}</a>
+            <Link href="/contact/" className="btn btn-primary !py-3 !px-5 hidden sm:inline-flex whitespace-nowrap">Request Service</Link>
+            <button type="button" className="xl:hidden w-11 h-11 grid place-items-center border border-white/20 text-white" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setOpen(!open)}>
               {open ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>

@@ -27,7 +27,7 @@ export const site = {
 
 export const nav = [
   { label: "Strata", href: "/strata/" },
-  { label: "Warehouse & Industrial", href: "/warehouse/" },
+  { label: "Warehouse", href: "/warehouse/" },
   { label: "Services", href: "/services/" },
   { label: "Maintenance", href: "/maintenance/" },
   { label: "Projects", href: "/projects/" },

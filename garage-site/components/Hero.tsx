@@ -47,7 +47,7 @@ export default function Hero() {
 
       <div className="container-x relative z-10 w-full pt-36 pb-16 sm:pb-24">
         <p className="hero-fade eyebrow flex items-center gap-3 mb-6"><Radio size={14} /> Commercial door, gate &amp; dock service · {site.region}</p>
-        <h1 className="h-mega max-w-6xl !text-[clamp(2.4rem,7.6vw,7rem)]" aria-label="Commercial door solutions. Without the downtime.">
+        <h1 className="h-mega max-w-6xl !text-[clamp(2.2rem,6vw,5.6rem)]" aria-label="Commercial door solutions. Without the downtime.">
           <span className="line hero-line"><span>Commercial door</span></span>
           <span className="line hero-line"><span>solutions.</span></span>
           <span className="line hero-line"><span className="text-accent">Without the downtime.</span></span>
