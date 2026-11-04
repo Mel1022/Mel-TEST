@@ -8,13 +8,13 @@ import Loader from "@/components/Loader";
 import ScrollFX from "@/components/ScrollFX";
 import Schema from "@/components/Schema";
 
-export const viewport: Viewport = { themeColor: "#06080a", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#04141f", width: "device-width", initialScale: 1 };
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: { default: `Garage Door Repair, Installation & Service | ${site.name}`, template: `%s | ${site.name}` },
-  description: "Professional garage door installation, repair and maintenance for homes and businesses. Expert technicians, reliable service, solutions built to last.",
-  openGraph: { type: "website", siteName: site.name, title: `Engineered for performance. Built on reliability. | ${site.name}`, description: "Professional garage door installation, repair and maintenance. Get a free quote today.", images: [{ url: "/og.svg", width: 1200, height: 630, alt: "Garage door service" }] },
+  title: { default: `Commercial Door, Gate & Loading Dock Service | ${site.name}`, template: `%s | ${site.name}` },
+  description: `Repair, maintenance, installation and emergency service for strata parkade doors and gates, warehouse overhead doors and loading docks in ${site.region}.`,
+  openGraph: { type: "website", siteName: site.name, title: `Commercial door solutions. Without the downtime. | ${site.name}`, description: "Door, gate and dock service for stratas, warehouses and commercial facilities.", images: [{ url: "/og.svg", width: 1200, height: 630, alt: "Northline Commercial — commercial door solutions" }] },
   twitter: { card: "summary_large_image" },
   icons: { icon: "/favicon.svg" },
 };
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Schema />
       </head>
       <body>
-        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-lime focus:text-black focus:px-4 focus:py-2">Skip to content</a>
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-accent focus:text-black focus:px-4 focus:py-2">Skip to content</a>
         <Loader />
         <ScrollFX />
         <Header />

@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { Phone, ChevronDown, Radio } from "lucide-react";
+import { ChevronDown, Radio } from "lucide-react";
 import Button from "./Magnetic";
 import GarageScene from "./GarageScene";
 import { site } from "@/lib/site";
@@ -46,26 +46,28 @@ export default function Hero() {
       <div aria-hidden="true" className="absolute inset-0 grid-bg opacity-[0.25] [mask-image:radial-gradient(ellipse_at_70%_40%,black,transparent_70%)]" />
 
       <div className="container-x relative z-10 w-full pt-36 pb-16 sm:pb-24">
-        <p className="hero-fade eyebrow flex items-center gap-3 mb-6"><Radio size={14} /> Garage door experts · {site.serviceAreas[0]} &amp; surrounding areas</p>
-        <h1 className="h-mega max-w-6xl" aria-label="When your garage door stops, we show up.">
-          <span className="line hero-line"><span>When your</span></span>
-          <span className="line hero-line"><span>garage door stops,</span></span>
-          <span className="line hero-line"><span className="text-lime">we show up.</span></span>
+        <p className="hero-fade eyebrow flex items-center gap-3 mb-6"><Radio size={14} /> Commercial door, gate &amp; dock service · {site.region}</p>
+        <h1 className="h-mega max-w-6xl !text-[clamp(2.4rem,7.6vw,7rem)]" aria-label="Commercial door solutions. Without the downtime.">
+          <span className="line hero-line"><span>Commercial door</span></span>
+          <span className="line hero-line"><span>solutions.</span></span>
+          <span className="line hero-line"><span className="text-accent">Without the downtime.</span></span>
         </h1>
-        <p className="hero-fade mt-8 max-w-xl text-base sm:text-lg text-white/75 leading-relaxed">Professional garage door installation, repair, and maintenance. Expert technicians. Reliable service. Solutions built to last.</p>
-        <div className="hero-fade mt-10 flex flex-wrap gap-4">
-          <Button href="/contact/">Get a free quote</Button>
-          <Button href={site.phone.href} variant="ghost"><Phone size={16} /> Call now</Button>
+        <p className="hero-fade mt-8 max-w-2xl text-base sm:text-lg text-white/80 leading-relaxed">Keeping strata properties, warehouses, and commercial facilities operating with dependable door maintenance, repairs, and installation.</p>
+        <p className="hero-fade mt-4 max-w-2xl text-sm sm:text-base text-silver leading-relaxed">{site.name} provides professional service for commercial overhead doors, loading dock equipment, parking garage doors, and access systems throughout {site.region}.</p>
+        <div className="hero-fade mt-9 flex flex-wrap gap-4">
+          <Button href="/contact/">Request service</Button>
+          <Button href="/services/" variant="ghost">Explore our services</Button>
         </div>
+        <p className="hero-fade mt-7 font-display text-xs sm:text-sm tracking-[0.28em] uppercase text-white/60">Commercial <span className="text-accent mx-1">•</span> Industrial <span className="text-accent mx-1">•</span> Strata</p>
 
         <div className="hero-card hero-fade hidden lg:block absolute right-8 bottom-24 glass p-5 w-64">
           <p className="eyebrow !text-[10px]">Service status</p>
-          <p className="mt-2 flex items-center gap-2 font-display font-semibold"><span className="relative flex h-2.5 w-2.5"><span className="absolute inset-0 rounded-full bg-lime pulse-ring" /><span className="relative h-2.5 w-2.5 rounded-full bg-lime" /></span> Technicians available</p>
-          <p className="mt-2 text-xs text-silver">[RESPONSE TIME] · Call for urgent repairs</p>
+          <p className="mt-2 flex items-center gap-2 font-display font-semibold"><span className="relative flex h-2.5 w-2.5"><span className="absolute inset-0 rounded-full bg-accent pulse-ring" /><span className="relative h-2.5 w-2.5 rounded-full bg-accent" /></span> Technicians available</p>
+          <p className="mt-2 text-xs text-silver">{site.responseTime} · Call for urgent repairs</p>
         </div>
       </div>
       <a href="#trust" aria-label="Scroll to content" className="hero-fade absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-white/60">
-        Scroll<span className="block w-px h-10 bg-gradient-to-b from-lime to-transparent" /><ChevronDown size={14} className="bob -mt-1 text-lime" />
+        Scroll<span className="block w-px h-10 bg-gradient-to-b from-accent to-transparent" /><ChevronDown size={14} className="bob -mt-1 text-accent" />
       </a>
     </section>
   );

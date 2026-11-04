@@ -24,7 +24,7 @@ export default function DoorArt({ style = "raised", color = "#2b3237", windows =
       <defs>
         <clipPath id={`c${id}`}><rect x={X} y={Y} width={W} height={H} /></clipPath>
         <linearGradient id={`g${id}`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={hi} /><stop offset="1" stopColor={lo} /></linearGradient>
-        <linearGradient id={`i${id}`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#0a0d0f" /><stop offset="1" stopColor={light ? "#27330b" : "#0a0d0f"} /></linearGradient>
+        <linearGradient id={`i${id}`} x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#04141f" /><stop offset="1" stopColor={light ? "#27330b" : "#04141f"} /></linearGradient>
         <linearGradient id={`gl${id}`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#7fa3b4" stopOpacity=".55" /><stop offset=".5" stopColor="#1b2a33" stopOpacity=".9" /><stop offset="1" stopColor="#5c7d8d" stopOpacity=".5" /></linearGradient>
       </defs>
       {/* facade */}
@@ -33,7 +33,7 @@ export default function DoorArt({ style = "raised", color = "#2b3237", windows =
       <rect x={X - 10} y={Y - 10} width={W + 20} height={H + 10} fill="#0b0f12" stroke="#fff" strokeOpacity=".12" />
       {/* interior */}
       <rect x={X} y={Y} width={W} height={H} fill={`url(#i${id})`} />
-      {light && <ellipse cx={X + W / 2} cy={Y + H - 4} rx={W / 2.2} ry="26" fill="#c8ff2e" opacity={0.25 * Math.min(1, open * 3)} />}
+      {light && <ellipse cx={X + W / 2} cy={Y + H - 4} rx={W / 2.2} ry="26" fill="#e36e02" opacity={0.25 * Math.min(1, open * 3)} />}
       <g stroke="#fff" strokeOpacity=".08"><line x1={X} y1={Y + 24} x2={X + W} y2={Y + 24} /><line x1={X + 12} y1={Y} x2={X + 12} y2={Y + H} /><line x1={X + W - 12} y1={Y} x2={X + W - 12} y2={Y + H} /></g>
       {/* panels */}
       <g clipPath={`url(#c${id})`}>

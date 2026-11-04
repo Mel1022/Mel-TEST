@@ -4,10 +4,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#06080a",
-        graphite: "#0f1316",
-        panel: "#151a1e",
-        lime: { DEFAULT: "#c8ff2e", dim: "#9fd41a" },
+        ink: "#04141f",
+        graphite: "#082133",
+        panel: "#0d2d45",
+        accent: { DEFAULT: "#e36e02", dim: "#b85900" },
         silver: { DEFAULT: "#aeb7b3", dim: "#6f7a76" },
       },
       fontFamily: {
